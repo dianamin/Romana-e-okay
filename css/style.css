@@ -1,0 +1,110 @@
+header {
+	width: 100%;
+	height: 25%;
+	background: url('../img/banner.jpg');
+	background-position: center;
+	border-bottom: double white;
+}
+.title {
+	padding-top: 20px;
+	font-size: 20px;
+	font-family: Impact;
+	font-weight: 100;
+	letter-spacing: 3;
+	word-spacing: 5;
+	text-shadow: 0 0 10px black;
+	text-align: center;
+	color: white;
+}
+
+#logo{
+	font-size: 30px;
+	padding: 19px;
+	color: white;
+	width: 70px;
+	margin-top: -55px;
+	border-radius: 100%;
+	background-color: #000000;
+	box-shadow: 0 0 10px black;
+	transition: all 1s;
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
+	-o-transition: all 1s;
+}
+#logo:hover {
+	transform: rotate(360deg);
+	-webkit-transform: rotate(360deg);
+	-moz-transform: rotate(360deg);
+	-o-transform: rotate(360deg);
+}
+
+.dot{
+	font-size: 15px;
+	padding: 7px;
+	color: white;
+	width: 30px;
+	border-radius: 100%;
+	background-color: #000000;
+	box-shadow: 0 0 10px black;
+	transition: all 1s;
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
+	-o-transition: all 1s;
+}
+.dot:hover {
+	transform: rotate(360deg);
+	-webkit-transform: rotate(360deg);
+	-moz-transform: rotate(360deg);
+	-o-transform: rotate(360deg);
+}
+
+#content {
+	width: 100%;
+	padding: 40px;
+	text-align: justify;
+	background: url('../img/contentbg.jpg');
+	min-height: 200px;
+}
+
+#top-line {
+	height: 20px;
+	width: 100%;
+	background-color: #dddddd;
+}
+
+#menu {
+	height: 30px;
+	font-size: 14px;
+	font-family: Verdana;
+	text-align: center;
+}
+.button {
+	cursor: pointer;
+	padding-left: 15px;
+	padding-right: 15px;
+	color: black;
+	display: list-item;
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-o-transition: all 0.5s;
+}
+.button:hover, .active {
+	background-color: #eeeeee;
+	color: rgb(199, 105, 116);
+}
+
+.subtitle-dot {
+	display: inline-block;
+	margin-left: 10%;
+}
+.subtitle {
+	font-family: Impact;
+	font-size: 25px;
+	margin-left: 10px;
+}
+.text-block {
+	width: 80%;
+	font-family: Verdana;
+	text-align: justify;
+}
