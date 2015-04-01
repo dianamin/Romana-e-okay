@@ -1,4 +1,4 @@
-<html ng-app>
+<html ng-app = "app">
 
 <head>
 	<meta charset = "utf-8" />
@@ -7,9 +7,10 @@
     <link rel = "stylesheet" href = "css/bootstrap.css" />
 	<link rel = "stylesheet" href = "css/style.css" />
 	<script src = "js/angular.js"></script>
+	<script src = "js/pagechange.js"></script>
 </head>
 
-<body>
+<body ng-controller = "PageChangeCtrl">
 	<header> 
 		<div class = "title">
 			<h1 style = "font-size: 45px;"> Româna e okay! </h1>
@@ -18,19 +19,18 @@
 	<div id = "top-line"> </div>
 	<center> <div id = "logo"> <span class = "glyphicon glyphicon-thumbs-up"></span> </div> </center>
 	<ul class = "nav-pills" id = "menu">
-			<li class = "active button"> Perioada pașoptistă </li>
-			<li class = "button"> Junimea </li>
-			<li class = "button"> Posteminescianism </li>
-			<li class = "button"> Perioada interbelică </li>
-			<li class = "button"> Perioada postbelică </li>
-			<li class = "button"> Test </li>
-			<li class = "button"> Tips pentru bac </li>
-			<li class = "button"> Teme maker </li>
+			<li ng-class = "{'button' : 1 > 0, 'active': selected == 1}" ng-click = "selected = 1"> Perioada pașoptistă </li>
+			<li ng-class = "{'button' : 1 > 0, 'active': selected == 2}" ng-click = "selected = 2"> Junimea </li>
+			<li ng-class = "{'button' : 1 > 0, 'active': selected == 3}" ng-click = "selected = 3"> Posteminescianism </li>
+			<li ng-class = "{'button' : 1 > 0, 'active': selected == 4}" ng-click = "selected = 4"> Perioada interbelică </li>
+			<li ng-class = "{'button' : 1 > 0, 'active': selected == 5}" ng-click = "selected = 5"> Perioada postbelică </li>
+			<li ng-class = "{'button' : 1 > 0, 'active': selected == 6}" ng-click = "selected = 6"> Test </li>
+			<li ng-class = "{'button' : 1 > 0, 'active': selected == 7}" ng-click = "selected = 7"> Tips pentru bac </li>
+			<li ng-class = "{'button' : 1 > 0, 'active': selected == 8}" ng-click = "selected = 8"> Teme maker </li>
 	</ul>
 
 	<!-- placeholder -->
-	<div id = "content">
-		<div class = "dot subtitle-dot"> <span class = "glyphicon glyphicon-cog"> </span> </div>
+		<div class = "dot subtitle-dot" ng-click = "selected = 0"> <span class = "glyphicon glyphicon-cog"> </span> </div>
 		<span class = "subtitle"> Context </span>
 		<center>
 			<div class = "text-block">
