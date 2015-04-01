@@ -107,4 +107,13 @@ header {
 	width: 80%;
 	font-family: Verdana;
 	text-align: justify;
+	margin-top: 20px;
+}
+
+.text-label {
+	width: 250px;
+	padding-left: 50px;
+	padding-right: 10px;
+	font-size: 20px;
+	background-color: rgba(0, 255, 0, 0.5);
 }
