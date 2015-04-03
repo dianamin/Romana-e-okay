@@ -9,6 +9,7 @@
 	<script src = "data/context.js"></script>
 	<script src = "js/angular.js"></script>
 	<script src = "js/pagechange.js"></script>
+	<script src = "js/answers.js"></script>
 </head>
 
 <body ng-controller = "PageChangeCtrl">
@@ -41,9 +42,7 @@
 
 				<h4 ng-show = "hasLider()"> Mentor: {{currentContext.lider}} </h4>
 
-				<div>
-					{{currentContext.details}}
-				</div>
+				<div ng-include = "currentContext.details"></div>
 
 			</div>
 		</center>

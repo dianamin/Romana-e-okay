@@ -1,0 +1,49 @@
+
+
+<div ng-controller = "AnswersCtrl">
+<p> 
+	Perioada pașoptistă (1830 - 1860) are în centru revoluția anului 
+	<input type = "number" min = 1840 max = 1850 ng-model = "RevYear" class = "form-control short-input-box"/>
+	<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkRevYear()"></span>
+	<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkRevYear()"></span>.
+</p>
+
+<h5> Care sunt obiectivele mișcării pașoptiste? <span class = "glyphicon glyphicon-ok-sign"> </span> </h5>
+<p>	Printre obiectivele mișcării pașoptiste se numără: </p>
+<ul>
+	<li> modernizarea societății românești <span class = "glyphicon glyphicon-hand-up"> </span> </li>
+	<li> independența politică <span class = "glyphicon glyphicon-briefcase"> </span> </li>
+	<li> libertatea națională <span class = "glyphicon glyphicon-send"> </span> </li>
+	<li> unirea provinciilor române <span class = "glyphicon glyphicon-flag"> </span> </li>
+</ul>
+
+Epoca pașoptistă marchează 
+<div class = "form-group has-feedback" ng-class = "{'has-success' : checkPosition(), 'has-error': !checkPosition()}" style = "display: inline-block;"> 
+	<input type = "text" ng-model = "Position" value = "{{Position}}" ng-class = "{'form-control' : true, 'short-input-box' : true}"/>
+	<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkPosition()"></span>
+	<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkPosition()"></span>
+</div> 
+literaturii noastre moderne. 
+
+<h5> Cine sunt scriitorii pașoptiști? <span class = "glyphicon glyphicon-user"> </span> </h5>
+<p>
+Scriitorii pașoptiști sunt tineri educați în occident și devin promotorii renașterii naționale atât prin mesajul operei literare, cât și prin implicarea activă în viața politică. Plini de elan, ei încearcă pentru prima dată o sincronizare cu Europa Occidentală.
+</p>
+
+<h5> Cum reusesc să ridice nivelul cultural al românilor? </h5>
+<p>
+Scriitorii sunt nevoiți să „ardă etapele” care se desfășoară succesiv în literatura occidentală, în decursul a mai bine de un secol si jumătate.
+</p>
+
+<h5> Care este principala trăsătură a pașoptismului? </p>
+<center>
+	<input type = "radio" name = "Characteristic" ng-model = "Characteristic_Check1" class = "big-dot" /> Un singur curent literar <br />
+	<input type = "radio" name = "Characteristic" ng-model = "Characteristic_Check2" class = "big-dot" /> Coexistența curentelor literare <br />
+	<input type = "radio" name = "Characteristic" ng-model = "Characteristic_Check3" class = "big-dot" /> Elementele moderniste din opere <br />
+	<input type = "radio" name = "Characteristic" ng-model = "Characteristic_Check4" class = "big-dot" /> Dezvoltarea romanului
+
+
+
+</center>
+
+</div>

@@ -2,7 +2,7 @@ var context = [
 	{
 		"name": "Pașoptismul",
 		"lider": "Mihail Kogălniceanu",
-		"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet viverra neque. Vivamus vel facilisis tortor, ut posuere arcu. Mauris dignissim dapibus ligula, et faucibus elit condimentum at."
+		"details": "data/pasoptism.html"
 	},
 	{
 		"name": "Junimea",
