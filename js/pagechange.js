@@ -1,5 +1,6 @@
 var app = angular.module('app', []);
 
+
 app.controller('PageChangeCtrl', function ($scope) {
 	$scope.selected = 1;
 	$scope.currentContext = context[0];
@@ -16,6 +17,13 @@ app.controller('PageChangeCtrl', function ($scope) {
 		}
 	}
 });
+
+var showElement = function(id) {
+	document.getElementById(id).setAttribute("style", "animation: fade-in 1s; -webkit-animation: fade-in 1s");
+}
+var hideElement = function(id) {
+	document.getElementById(id).setAttribute("style", "animation: fade-out 1s; -webkit-animation: fade-out 1s");
+}
 
 var getLevenshteinDistance = function(string1, string2) {
 	var n = string1.length;
@@ -40,6 +48,8 @@ var getLevenshteinDistance = function(string1, string2) {
 
 	return distance[n][m];
 }
+
+
 
 var acceptedError = function(string1, string2) {
 	var n = string1.length;
@@ -75,5 +85,10 @@ app.controller('AnswersCtrl', function($scope) {
 			return true;
 		}
 		return false;
+	}
+	$scope.checkCharacteristics = function() {
+		if ($scope.CharacteristicCheck != "Coexistența curentelor literare") return false;
+		showElement("characteristic1");
+		return true;
 	}
 });

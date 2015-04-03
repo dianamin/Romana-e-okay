@@ -1,49 +1,101 @@
 
 
 <div ng-controller = "AnswersCtrl">
-<p> 
-	Perioada pașoptistă (1830 - 1860) are în centru revoluția anului 
-	<input type = "number" min = 1840 max = 1850 ng-model = "RevYear" class = "form-control short-input-box"/>
-	<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkRevYear()"></span>
-	<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkRevYear()"></span>.
-</p>
+	<p> 
+		Perioada pașoptistă (1830 - 1860) are în centru revoluția anului 
+		<input type = "number" min = 1840 max = 1850 ng-model = "RevYear" class = "form-control short-input-box"/>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkRevYear()"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkRevYear()"></span>.
+	</p>
 
-<h5> Care sunt obiectivele mișcării pașoptiste? <span class = "glyphicon glyphicon-ok-sign"> </span> </h5>
-<p>	Printre obiectivele mișcării pașoptiste se numără: </p>
-<ul>
-	<li> modernizarea societății românești <span class = "glyphicon glyphicon-hand-up"> </span> </li>
-	<li> independența politică <span class = "glyphicon glyphicon-briefcase"> </span> </li>
-	<li> libertatea națională <span class = "glyphicon glyphicon-send"> </span> </li>
-	<li> unirea provinciilor române <span class = "glyphicon glyphicon-flag"> </span> </li>
-</ul>
+	<h5> Care sunt obiectivele mișcării pașoptiste? <span class = "glyphicon glyphicon-ok-sign"> </span> </h5>
+	<p>	Printre obiectivele mișcării pașoptiste se numără: </p>
+	<ul>
+		<li> modernizarea societății românești <span class = "glyphicon glyphicon-hand-up"> </span> </li>
+		<li> independența politică <span class = "glyphicon glyphicon-briefcase"> </span> </li>
+		<li> libertatea națională <span class = "glyphicon glyphicon-send"> </span> </li>
+		<li> unirea provinciilor române <span class = "glyphicon glyphicon-flag"> </span> </li>
+	</ul>
 
-Epoca pașoptistă marchează 
-<div class = "form-group has-feedback" ng-class = "{'has-success' : checkPosition(), 'has-error': !checkPosition()}" style = "display: inline-block;"> 
-	<input type = "text" ng-model = "Position" value = "{{Position}}" ng-class = "{'form-control' : true, 'short-input-box' : true}"/>
-	<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkPosition()"></span>
-	<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkPosition()"></span>
-</div> 
-literaturii noastre moderne. 
+	Epoca pașoptistă marchează 
+	<div class = "form-group has-feedback" ng-class = "{'has-success' : checkPosition(), 'has-error': !checkPosition()}" style = "display: inline-block;"> 
+		<input type = "text" ng-model = "Position" value = "{{Position}}" ng-class = "{'form-control' : true, 'short-input-box' : true}"/>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkPosition()"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkPosition()"></span>
+	</div> 
+	literaturii noastre moderne. 
 
-<h5> Cine sunt scriitorii pașoptiști? <span class = "glyphicon glyphicon-user"> </span> </h5>
-<p>
-Scriitorii pașoptiști sunt tineri educați în occident și devin promotorii renașterii naționale atât prin mesajul operei literare, cât și prin implicarea activă în viața politică. Plini de elan, ei încearcă pentru prima dată o sincronizare cu Europa Occidentală.
-</p>
+	<h5> Cine sunt scriitorii pașoptiști? <span class = "glyphicon glyphicon-user"> </span> </h5> 
+	<p>
+	Scriitorii pașoptiști sunt tineri educați în occident și devin promotorii renașterii naționale atât prin mesajul operei literare, cât și prin implicarea activă în viața politică. Plini de elan, ei încearcă pentru prima dată o sincronizare cu Europa Occidentală.
+	</p>
 
-<h5> Cum reusesc să ridice nivelul cultural al românilor? </h5>
-<p>
-Scriitorii sunt nevoiți să „ardă etapele” care se desfășoară succesiv în literatura occidentală, în decursul a mai bine de un secol si jumătate.
-</p>
+	<h5> Cum reusesc să ridice nivelul cultural al românilor? <span class = "glyphicon glyphicon-book"> </span> </h5>
+	<p>
+	Scriitorii sunt nevoiți să „ardă etapele” care se desfășoară succesiv în literatura occidentală, în decursul a mai bine de un secol si jumătate.
+	</p>
 
-<h5> Care este principala trăsătură a pașoptismului? </p>
-<center>
-	<input type = "radio" name = "Characteristic" ng-model = "Characteristic_Check1" class = "big-dot" /> Un singur curent literar <br />
-	<input type = "radio" name = "Characteristic" ng-model = "Characteristic_Check2" class = "big-dot" /> Coexistența curentelor literare <br />
-	<input type = "radio" name = "Characteristic" ng-model = "Characteristic_Check3" class = "big-dot" /> Elementele moderniste din opere <br />
-	<input type = "radio" name = "Characteristic" ng-model = "Characteristic_Check4" class = "big-dot" /> Dezvoltarea romanului
+	<h5> Care este principala trăsătură a pașoptismului? <span class = "glyphicon glyphicon-pencil"> </span> </h5>
+	<center>
+		<input type = "radio" name = "Characteristic" ng-model = "CharacteristicCheck" class = "big-dot" value = "Un singur curent literar" /> Un singur curent literar <br />
+		<input type = "radio" name = "Characteristic" ng-model = "CharacteristicCheck" class = "big-dot" value = "Coexistența curentelor literare" /> Coexistența curentelor literare <br />
+		<input type = "radio" name = "Characteristic" ng-model = "CharacteristicCheck" class = "big-dot" value = "Elementele moderniste din opere" /> Elementele moderniste din opere <br />
+		<input type = "radio" name = "Characteristic" ng-model = "CharacteristicCheck" class = "big-dot" value = "Dezvoltarea romanului" /> Dezvoltarea romanului <br />
+		<br />
+		<div class = "alert alert-success" style = "opacity: 0;" ng-show = "checkCharacteristics()" id = "characteristic1">
+			Curentele literare din occident (iluminismul, preromantismul, romantismul, clasicismul și realismul incipient) sunt asimilate simultan. Deci, principala trăsătură a pașoptismului constă în coexistența curentelor literare, nu numai în opera aceluiași scriitor, ci chiar și în aceeași creație.
+		</div>
+	</center>
 
+	<h5> Cine sunt cei doi mentori? <span class = "glyphicon glyphicon-bullhorn"> </span> </h5>
 
+	<center>
+		<table>
+			<tr> 
+				<td> <img src = "img/ihr.jpg" class = "img-round" /> </td>
+				<td width = 100> </td>
+				<td> <img src = "img/mk.jpg" class = "img-round" /> </td>
+			</tr>
+			<tr>
+				<td> Ion Heliade-Rădulescu </td>
+				<td> </td>
+				<td> Mihail Kogălniceanu </td>
+			</tr>
+		</table>
+	</center>
 
-</center>
+	<br />
+
+	<p>
+		Într-o primă etapă, corespunzătoare primei generații pașoptiste, acest rol îi revine lui Ion Heliade-Rădulescu, prin articolele din ziarul „Curierul românesc” (1829) căruia i se adaugă din 1837 suplimentul literar „Curierul de ambe sexe”. Datorită îndemnurilor adresate tinerilor scriitori, a fost posibil debutul unei întregi generații între 1830 și 1840: Vasile Cârlova, Grigore Alexandrescu, Dimitrie Bolintineanu, Cezar Bolliac.
+	</p>
+
+	<blockquote>
+		<p>Nu e vreme de critică, copii; e vreme de scris; să scrieți cât veți putea și cum veți putea</p>
+		<footer>Ion Heliade-Rădulescu</footer>
+	</blockquote>
+
+	<p> A doua etapă este marcată de contribuția lui Mihail Kogălniceanu, redactorul revistei ieșene „Dacia literară”, care are ca obiectiv exclusiv literatura. Programul revistei orientează literatura timpului, în cele trei numere apărute se publică opere ale celor mai valoroși scriitori ai vremii (C. Negtuzzi, Vasile Alecsandri, Grigore Alexandrescu etc.), dar direcția imprimată se reflectă în toată literatura epocii. </p>
+
+	<h5> Ce e cu Dacia literară? </h5>
+	<div class = "row">
+		<div class = "col-md-4 col-sm-4"> <img src = "img/dacia literara.jpg" class = "img-300"/> </div>
+		<div class = "col-md-8 col-sm-8">
+			<p> Pașoptismul este marcat de programul teoretic „Introducție”, redactat de M. Kogălniceanu. Publicat în primul număr al revistei, articolul-program reprezintă manifestul literar al romantismului românesc.
+			La începutul articolului, mentorul prezintă activitatea gazetelor românești apărute anterior față de care Dacia literară urmărește să aducă un suflu nou, sugerat și de titlul revistei. </p>
+			<br />
+			<p> Punctele articolului-program sunt: </p>
+			<ol>
+				<li> Întemeierea spiritului critic în literatura română pe principiul estetic: „Critica noastră va fi nepărtinitoare; vom critica cartea, iar nu persoana.” </li>
+				<li> Afirmarea idealului de realizare a unității limbii și a literaturii române: „țălul nostru este realizarea dorinții ca românii să aibă o limbă și o literatură comună pentru toți.” </li>
+				<li> Combaterea imitațiilor și a traducerilor mediocre: „Dorul imitației s-a făcut la noi o manie primejdioasă, pentru că omoară în noi duhul național. Această manie este mai ales covârșitoare în literatură. [...] Traducțiile însă nu fac o literatură.” </li>
+				<li> Promovarea unei literaturi originale, prin indicarea unor surse de inspirație în conformitate cu specificul național și cu estetica romantică: „Istoria noastră are destule fapte eroice, frumoasele noastre țări sunt destul de mari, obiceiurile noastre sunt destul de pitoreci si de poetice pentru ca să putem găsi și la noi sujeturi de scris, fără să avem pentru aceasta trebuință să ne împrumutăm de la alte nații.” </li>
+			</ol>
+		</div>
+	</div>
+
+	<h5> Cine sunt reprezentanții? </h5>
 
 </div>
+
+

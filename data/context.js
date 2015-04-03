@@ -1,7 +1,7 @@
 var context = [
 	{
 		"name": "Pașoptismul",
-		"lider": "Mihail Kogălniceanu",
+		"lider": "Ion Heliade-Rădulescu / Mihail Kogălniceanu",
 		"details": "data/pasoptism.html"
 	},
 	{

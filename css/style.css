@@ -127,3 +127,63 @@ header {
 	width: 20px;
 	height: 20px;
 }
+
+h5 {
+	font-size: 18px;
+	padding: 5px;
+	margin-top: 50px;
+	background-color: #800000;
+	color: white;	
+}
+
+
+@keyframes fade-in {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+@-webkit-keyframes fade-in {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+@keyframes fade-out {
+	0% {opacity: 1;}
+	100% {opacity: 0;}
+}
+@-webkit-keyframes fade-out {
+	0% {opacity: 1;}
+	100% {opacity: 0;}
+}
+
+.img-300 {
+	width: 90%;
+	box-shadow: 0 0 10px;
+	transition: all 1s;
+	-moz-transition: all 1s;
+	-webkit-transition: all 1s;
+	-o-transition: all 1s;
+}
+.img-300:hover{ 
+	width: 100%;
+}
+
+.img-text {
+	display: inline-block;
+	width: auto;
+}
+
+.img-round {
+	height: 150px;
+	border-radius: 1000000px;
+	transition: all 1s;
+	-moz-transition: all 1s;
+	-webkit-transition: all 1s;
+	-o-transition: all 1s;
+}
+.img-round:hover {
+	box-shadow: 0 0 100px #800000;
+}
+
+td {
+	text-align: center;
+}
