@@ -62,7 +62,8 @@ header {
 	width: 100%;
 	padding: 40px;
 	text-align: justify;
-	background: url('../img/contentbg.jpg');
+	background: url('../img/contentbg2.jpg');
+	background-attachment: fixed;
 	min-height: 200px;
 }
 
@@ -186,4 +187,10 @@ h5 {
 
 td {
 	text-align: center;
+	margin-left: 14px;
+}
+
+.reprezentanti td {
+	text-align: left;
+	padding-left: 10px;
 }

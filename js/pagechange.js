@@ -32,9 +32,7 @@ var getLevenshteinDistance = function(string1, string2) {
 	var distance = [];
 
 	for (var i = 0; i <= n; i++) distance[i] = new Array(m + 1);
-
 	distance[0][0] = 0;
-
 	for (var i = 0; i <= m; i++) distance[0][i] = i;
 	for (var i = 0; i <= n; i++) distance[i][0] = i;
 
@@ -48,8 +46,6 @@ var getLevenshteinDistance = function(string1, string2) {
 
 	return distance[n][m];
 }
-
-
 
 var acceptedError = function(string1, string2) {
 	var n = string1.length;
@@ -90,5 +86,59 @@ app.controller('AnswersCtrl', function($scope) {
 		if ($scope.CharacteristicCheck != "Coexistența curentelor literare") return false;
 		showElement("characteristic1");
 		return true;
+	}
+
+	$scope.ProseWritersNumber = 5;
+	$scope.ProseWriter = new Array($scope.ProseWritersNumber);
+	$scope.CorrectProseWriters = [false, true, false, true, false];
+	$scope.showProseWriters = false;
+	$scope.RightProseWriters = true;
+	$scope.checkProseWriters = function() {
+		$scope.RightProseWriters = true;
+		for (var i = 0; i < $scope.ProseWritersNumber; i++) {
+			if (typeof $scope.ProseWriter[i] === "undefined") {
+				if ($scope.CorrectProseWriters[i] == true) $scope.RightProseWriters = false;
+			}
+			else if ($scope.ProseWriter[i] != $scope.CorrectProseWriters[i]) $scope.RightProseWriters = false;
+		}
+		$scope.showProseWriters = true;
+		showElement("ProseWriters");
+		return $scope.RightProseWriters;
+	}
+
+	$scope.PoetryWritersNumber = 5;
+	$scope.PoetryWriter = new Array($scope.PoetryWritersNumber);
+	$scope.CorrectPoetryWriters = [true, false, true, true, true];
+	$scope.showPoetryWriters = false;
+	$scope.RightPoetryWriters = true;
+	$scope.checkPoetryWriters = function() {
+		$scope.RightPoetryWriters = true;
+		for (var i = 0; i < $scope.PoetryWritersNumber; i++) {
+			if (typeof $scope.PoetryWriter[i] === "undefined") {
+				if ($scope.CorrectPoetryWriters[i] == true) $scope.RightPoetryWriters = false;
+			}
+			else if ($scope.PoetryWriter[i] != $scope.CorrectPoetryWriters[i]) $scope.RightPoetryWriters = false;
+		}
+		$scope.showPoetryWriters = true;
+		showElement("PoetryWriters");
+		return $scope.RightPoetryWriters;
+	}
+
+	$scope.DramaWritersNumber = 5;
+	$scope.DramaWriter = new Array($scope.DramaWritersNumber);
+	$scope.CorrectDramaWriters = [true, true, false, false, true];
+	$scope.showDramaWriters = false;
+	$scope.RightDramaWriters = true;
+	$scope.checkDramaWriters = function() {
+		$scope.RightDramaWriters = true;
+		for (var i = 0; i < $scope.DramaWritersNumber; i++) {
+			if (typeof $scope.DramaWriter[i] === "undefined") {
+				if ($scope.CorrectDramaWriters[i] == true) $scope.RightDramaWriters = false;
+			}
+			else if ($scope.DramaWriter[i] != $scope.CorrectDramaWriters[i]) $scope.RightDramaWriters = false;
+		}
+		$scope.showDramaWriters = true;
+		showElement("DramaWriters");
+		return $scope.RightDramaWriters;
 	}
 });
