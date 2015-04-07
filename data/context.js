@@ -7,7 +7,7 @@ var context = [
 	{
 		"name": "Junimea",
 		"lider": "Titu Maiorescu",
-		"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet viverra neque. Vivamus vel facilisis tortor, ut posuere arcu. Mauris dignissim dapibus ligula, et faucibus elit condimentum at."
+		"details": "data/junimea.html"
 	},
 	{
 		"name": "Posteminescianism",

@@ -1,4 +1,9 @@
-var app = angular.module('app', []);
+var app = angular.module('app', ['ngRoute']);
+
+app.config(function($routeProvider) {
+	$routeProvider.
+		when('/', {templateUrl: '/pages/pasoptism.html'})
+});
 
 
 app.controller('PageChangeCtrl', function ($scope) {
@@ -18,48 +23,8 @@ app.controller('PageChangeCtrl', function ($scope) {
 	}
 });
 
-var showElement = function(id) {
-	document.getElementById(id).setAttribute("style", "animation: fade-in 1s; -webkit-animation: fade-in 1s");
-}
-var hideElement = function(id) {
-	document.getElementById(id).setAttribute("style", "animation: fade-out 1s; -webkit-animation: fade-out 1s");
-}
 
-var getLevenshteinDistance = function(string1, string2) {
-	var n = string1.length;
-	var m = string2.length;
-
-	var distance = [];
-
-	for (var i = 0; i <= n; i++) distance[i] = new Array(m + 1);
-	distance[0][0] = 0;
-	for (var i = 0; i <= m; i++) distance[0][i] = i;
-	for (var i = 0; i <= n; i++) distance[i][0] = i;
-
-	for (var i = 1; i <= n; i++) {
-		for (var j = 1; j <= m; j++) {
-			if (string1[i - 1] == string2[j - 1]) distance[i][j] = distance[i - 1][j - 1];
-			else distance[i][j] = Math.min(distance[i - 1][j], distance[i - 1][j - 1], distance[i][j - 1]) + 1;
-		}
-	}
-
-
-	return distance[n][m];
-}
-
-var acceptedError = function(string1, string2) {
-	var n = string1.length;
-	var m = string2.length;
-
-	var d = getLevenshteinDistance(string1, string2);
-
-	var epsilon = Math.min(n, m) / 2;
-	return epsilon;
-}
-
-getLevenshteinDistance("inceputul", "inceputul");
-
-app.controller('AnswersCtrl', function($scope) {
+app.controller('AnswersPasoptismCtrl', function($scope) {
 	$scope.checkRevYear = function() {
 		return $scope.RevYear == 1848;
 	}
@@ -142,3 +107,56 @@ app.controller('AnswersCtrl', function($scope) {
 		return $scope.RightDramaWriters;
 	}
 });
+
+app.controller('AnswersJunimeaCtrl', function ($scope) {
+	$scope.checkCrossingPhases = function() {
+		console.log($scope.CrossingPhases);
+		return $scope.CrossingPhases == "ardere";
+	}
+	$scope.Intersection = new Array(5);
+	$scope.CommonIdeas = [true, false, true, true, false];
+	$scope.checkIntersection = function() {
+		for (var i = 0; i < 5; i++) {
+			if (typeof $scope.Intersection[i] === "undefined") {
+				if ($scope.CommonIdeas[i] == true) return false;
+			}
+			else if ($scope.Intersection[i] != $scope.CommonIdeas[i]) return false;
+		}
+		return true;
+	}
+
+	$scope.checkCity = function() {
+		var s = $scope.City;
+		if (s == undefined) return false;
+		s = s.toLowerCase();
+		var error = getLevenshteinDistance(s, "Iași");
+		if (error == 0) return true;
+		else if (error <= acceptedError(s, "iași")) {
+			$scope.Position = "iași";
+			return true;
+		}
+	}
+	$scope.checkYear = function() {	
+		return $scope.Year == 1863;
+	}
+
+	$scope.ClassicsNumber = 7;
+	$scope.Classics = new Array(7);
+	$scope.TrueClassics = [true, false, true, false, false, true, true];
+	$scope.showClassics = false;
+	$scope.RightClassics = false;
+	
+	$scope.checkClassics = function() {
+		$scope.RightClassics = true;
+		for (var i = 0; i < $scope.ClassicsNumber; i++) {
+			if (typeof $scope.Classics[i] === "undefined") {
+				if ($scope.TrueClassics[i] == true) $scope.RightClassics = false;
+			}
+			else if ($scope.TrueClassics[i] != $scope.Classics[i]) $scope.RightClassics = false;
+		}
+		$scope.showClassics = true;
+		showElement("Classics");
+		return $scope.RightClassics;
+	}
+});
+

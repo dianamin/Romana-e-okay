@@ -1,6 +1,6 @@
 
 
-<div ng-controller = "AnswersCtrl">
+<div ng-controller = "AnswersPasoptismCtrl">
 	<p> 
 		Perioada pașoptistă (1830 - 1860) are în centru revoluția anului 
 		<input type = "number" min = 1840 max = 1850 ng-model = "RevYear" class = "form-control short-input-box"/>
@@ -98,125 +98,124 @@
 	</div>
 
 	<h5> Cine sunt reprezentanții? </h5>
-		<div class = "row">
-			<div class = "col-md-4 col-sm-4">
-				<span style = "font-size: 20px;"> Proză </span> <br />
+	<div class = "row">
+		<div class = "col-md-4 col-sm-4">
+			<span style = "font-size: 20px;"> Proză </span> <br />
+			<center>
+			<table class = "reprezentanti">
+				<tr> 
+					<td><input type = "checkbox" class = "big-dot" ng-model = "ProseWriter[0]" /> </td> 
+					<td> Ion Creangă </td>
+				</tr>
+				<tr> 
+					<td><input type = "checkbox" class = "big-dot" ng-model = "ProseWriter[1]" /> </td> 
+					<td> Costache Negruzzi </td>
+				</tr>
+				<tr> 
+					<td><input type = "checkbox" class = "big-dot" ng-model = "ProseWriter[2]" /> </td> 
+					<td> Mihail Sadoveanu </td>
+				</tr>
+				<tr> 
+					<td><input type = "checkbox" class = "big-dot" ng-model = "ProseWriter[3]" /> </td> 
+					<td> Alecu Russo </td>
+				</tr>
+				<tr> 
+					<td><input type = "checkbox" class = "big-dot" ng-model = "ProseWriter[4]" /> </td> 
+					<td> Marin Preda </td>
+				</tr>
+			</table>
+			<br />
+			<button class = "btn btn-danger" ng-click = "checkProseWriters()"> Verifică </button>
+			</center>
+
+			<div class = "alert alert-success" style = "opacity: 0;" ng-show = "showProseWriters == true" id = "ProseWriters">
 				<center>
-				<table class = "reprezentanti">
-					<tr> 
-						<td><input type = "checkbox" class = "big-dot" ng-model = "ProseWriter[0]" /> </td> 
-						<td> Ion Creangă </td>
-					</tr>
-					<tr> 
-						<td><input type = "checkbox" class = "big-dot" ng-model = "ProseWriter[1]" /> </td> 
-						<td> Costache Negruzzi </td>
-					</tr>
-					<tr> 
-						<td><input type = "checkbox" class = "big-dot" ng-model = "ProseWriter[2]" /> </td> 
-						<td> Mihail Sadoveanu </td>
-					</tr>
-					<tr> 
-						<td><input type = "checkbox" class = "big-dot" ng-model = "ProseWriter[3]" /> </td> 
-						<td> Alecu Russo </td>
-					</tr>
-					<tr> 
-						<td><input type = "checkbox" class = "big-dot" ng-model = "ProseWriter[4]" /> </td> 
-						<td> Marin Preda </td>
-					</tr>
-				</table>
-				<br />
-				<button class = "btn btn-danger" ng-click = "checkProseWriters()"> Verifică </button>
+					<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "RightProseWriters"></span>
+					<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!RightProseWriters"></span>
+					<br />
+					Reprezentanții sunt Costache Negruzzi si Alecu Russo.
 				</center>
-
-				<div class = "alert alert-success" style = "opacity: 0;" ng-show = "showProseWriters == true" id = "ProseWriters">
-					<center>
-						<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "RightProseWriters"></span>
-						<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!RightProseWriters"></span>
-						<br />
-						Reprezentanții sunt Costache Negruzzi si Alecu Russo.
-					</center>
-				</div>
-			</div>
-
-			<div class = "col-md-4 col-sm-4">
-				<span style = "font-size: 20px;"> Poezie </span> <br />
-				<center>
-				<table class = "reprezentanti">
-					<tr> 
-						<td><input type = "checkbox" class = "big-dot" ng-model = "PoetryWriter[0]" /> </td> 
-						<td> Grigore Alexandrescu </td>
-					</tr>
-					<tr> 
-						<td><input type = "checkbox" class = "big-dot" ng-model = "PoetryWriter[1]" /> </td> 
-						<td> Mihai Eminescu </td>
-					</tr>
-					<tr> 
-						<td><input type = "checkbox" class = "big-dot" ng-model = "PoetryWriter[2]" /> </td> 
-						<td> Vasile Alecsandri </td>
-					</tr>
-					<tr> 
-						<td><input type = "checkbox" class = "big-dot" ng-model = "PoetryWriter[3]" /> </td> 
-						<td> Gheorghe Asachi </td>
-					</tr>
-					<tr> 
-						<td><input type = "checkbox" class = "big-dot" ng-model = "PoetryWriter[4]" /> </td> 
-						<td> Andrei Mureșeanu </td>
-					</tr>
-				</table>
-				<br />
-				<button class = "btn btn-danger" ng-click = "checkPoetryWriters()"> Verifică </button>
-				</center>
-
-				<div class = "alert alert-success" style = "opacity: 0;" ng-show = "showPoetryWriters == true" id = "PoetryWriters">
-					<center>
-						<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "RightPoetryWriters"></span>
-						<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!RightPoetryWriters"></span>
-						<br />
-						Reprezentanții sunt Grigore Alexandrescu, Vasile Alecsandri, Gheorghe Asachi și Andrei Mureșeanu.
-					</center>
-				</div>
-			</div>
-
-			<div class = "col-md-4 col-sm-4">
-				<span style = "font-size: 20px;"> Dramaturgie </span> <br />
-				<center>
-				<table class = "reprezentanti">
-					<tr> 
-						<td><input type = "checkbox" class = "big-dot" ng-model = "DramaWriter[0]" /> </td> 
-						<td> Costache Caragiale </td>
-					</tr>
-					<tr> 
-						<td><input type = "checkbox" class = "big-dot" ng-model = "DramaWriter[1]" /> </td> 
-						<td> Vasile Alecsandri </td>
-					</tr>
-					<tr> 
-						<td><input type = "checkbox" class = "big-dot" ng-model = "DramaWriter[2]" /> </td> 
-						<td> Ion Luca Caragiale </td>
-					</tr>
-					<tr> 
-						<td><input type = "checkbox" class = "big-dot" ng-model = "DramaWriter[3]" /> </td> 
-						<td> Marin Sorescu </td>
-					</tr>
-					<tr> 
-						<td><input type = "checkbox" class = "big-dot" ng-model = "DramaWriter[4]" /> </td> 
-						<td> Gheorghe Asachi </td>
-					</tr>
-				</table>
-				<br />
-				<button class = "btn btn-danger" ng-click = "checkDramaWriters()"> Verifică </button>
-				</center>
-
-				<div class = "alert alert-success" style = "opacity: 0;" ng-show = "showDramaWriters == true" id = "DramaWriters">
-					<center>
-						<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "RightDramaWriters"></span>
-						<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!RightDramaWriters"></span>
-						<br />
-						Reprezentanții sunt Costache Caragiale, Vasile Alecsandri și Gheorghe Asachi.
-					</center>
-				</div>
 			</div>
 		</div>
 
+		<div class = "col-md-4 col-sm-4">
+			<span style = "font-size: 20px;"> Poezie </span> <br />
+			<center>
+			<table class = "reprezentanti">
+				<tr> 
+					<td><input type = "checkbox" class = "big-dot" ng-model = "PoetryWriter[0]" /> </td> 
+					<td> Grigore Alexandrescu </td>
+				</tr>
+				<tr> 
+					<td><input type = "checkbox" class = "big-dot" ng-model = "PoetryWriter[1]" /> </td> 
+					<td> Mihai Eminescu </td>
+				</tr>
+				<tr> 
+					<td><input type = "checkbox" class = "big-dot" ng-model = "PoetryWriter[2]" /> </td> 
+					<td> Vasile Alecsandri </td>
+				</tr>
+				<tr> 
+					<td><input type = "checkbox" class = "big-dot" ng-model = "PoetryWriter[3]" /> </td> 
+					<td> Gheorghe Asachi </td>
+				</tr>
+				<tr> 
+					<td><input type = "checkbox" class = "big-dot" ng-model = "PoetryWriter[4]" /> </td> 
+					<td> Andrei Mureșeanu </td>
+				</tr>
+			</table>
+			<br />
+			<button class = "btn btn-danger" ng-click = "checkPoetryWriters()"> Verifică </button>
+			</center>
+
+			<div class = "alert alert-success" style = "opacity: 0;" ng-show = "showPoetryWriters == true" id = "PoetryWriters">
+				<center>
+					<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "RightPoetryWriters"></span>
+					<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!RightPoetryWriters"></span>
+					<br />
+					Reprezentanții sunt Grigore Alexandrescu, Vasile Alecsandri, Gheorghe Asachi și Andrei Mureșeanu.
+				</center>
+			</div>
+		</div>
+
+		<div class = "col-md-4 col-sm-4">
+			<span style = "font-size: 20px;"> Dramaturgie </span> <br />
+			<center>
+			<table class = "reprezentanti">
+				<tr> 
+					<td><input type = "checkbox" class = "big-dot" ng-model = "DramaWriter[0]" /> </td> 
+					<td> Costache Caragiale </td>
+				</tr>
+				<tr> 
+					<td><input type = "checkbox" class = "big-dot" ng-model = "DramaWriter[1]" /> </td> 
+					<td> Vasile Alecsandri </td>
+				</tr>
+				<tr> 
+					<td><input type = "checkbox" class = "big-dot" ng-model = "DramaWriter[2]" /> </td> 
+					<td> Ion Luca Caragiale </td>
+				</tr>
+				<tr> 
+					<td><input type = "checkbox" class = "big-dot" ng-model = "DramaWriter[3]" /> </td> 
+					<td> Marin Sorescu </td>
+				</tr>
+				<tr> 
+					<td><input type = "checkbox" class = "big-dot" ng-model = "DramaWriter[4]" /> </td> 
+					<td> Gheorghe Asachi </td>
+				</tr>
+			</table>
+			<br />
+			<button class = "btn btn-danger" ng-click = "checkDramaWriters()"> Verifică </button>
+			</center>
+
+			<div class = "alert alert-success" style = "opacity: 0;" ng-show = "showDramaWriters == true" id = "DramaWriters">
+				<center>
+					<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "RightDramaWriters"></span>
+					<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!RightDramaWriters"></span>
+					<br />
+					Reprezentanții sunt Costache Caragiale, Vasile Alecsandri și Gheorghe Asachi.
+				</center>
+			</div>
+		</div>
+	</div>
 </div>
 
 
