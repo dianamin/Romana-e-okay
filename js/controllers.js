@@ -110,7 +110,6 @@ app.controller('AnswersPasoptismCtrl', function($scope) {
 
 app.controller('AnswersJunimeaCtrl', function ($scope) {
 	$scope.checkCrossingPhases = function() {
-		console.log($scope.CrossingPhases);
 		return $scope.CrossingPhases == "ardere";
 	}
 	$scope.Intersection = new Array(5);
@@ -129,12 +128,13 @@ app.controller('AnswersJunimeaCtrl', function ($scope) {
 		var s = $scope.City;
 		if (s == undefined) return false;
 		s = s.toLowerCase();
-		var error = getLevenshteinDistance(s, "Iași");
+		var error = getLevenshteinDistance(s, "iași");
 		if (error == 0) return true;
 		else if (error <= acceptedError(s, "iași")) {
-			$scope.Position = "iași";
+			$scope.Position = "Iași";
 			return true;
 		}
+		return false;
 	}
 	$scope.checkYear = function() {	
 		return $scope.Year == 1863;
@@ -157,6 +157,54 @@ app.controller('AnswersJunimeaCtrl', function ($scope) {
 		$scope.showClassics = true;
 		showElement("Classics");
 		return $scope.RightClassics;
+	}
+
+	$scope.CharacteristicsNumber = 7;
+	$scope.Characteristic = new Array($scope.CharacteristicsNumber);
+	$scope.showCharacteristics = false;
+	$scope.RightCharacteristics = false;
+	$scope.TrueCharacteristics = [true, false, true, true, true, false, true];
+	$scope.checkCharacteristics = function() {
+		$scope.RightCharacteristics = true;
+		for (var i = 0; i < $scope.CharacteristicsNumber; i++) {
+			if (typeof $scope.Characteristic[i] === "undefined") {
+				if ($scope.TrueCharacteristics[i] == true) $scope.RightCharacteristics = false;
+			}
+			else if ($scope.TrueCharacteristics[i] != $scope.Characteristic[i]) $scope.RightCharacteristics = false;
+		}
+		$scope.showCharacteristics = true;
+		showElement("Characteristics");
+
+		return $scope.RightCharacteristics;
+	}
+
+	$scope.Direction = "";
+	$scope.checkDirection = function() {
+		var s = $scope.Direction;
+		if (s == undefined) return false;
+		s = s.toLowerCase();
+		var error = getLevenshteinDistance(s, "nouă");
+		if (error == 0) return true;
+		else if (error <= acceptedError(s, "nouă")) {
+			$scope.Direction = "nouă";
+			return true;
+		}
+		return false;
+	}
+
+	$scope.VolumeName = "";
+	$scope.checkVolumeName = function() {
+		var s = $scope.VolumeName;
+		if (s == undefined) return false;
+		s = s.toLowerCase();
+		var error = getLevenshteinDistance(s, "critice");
+		if (error == 0) return true;
+		else if (error <= acceptedError(s, "critice")) {
+			$scope.VolumeName = "Critice";
+			console.log("yay");
+			return true;
+		}
+		return false;
 	}
 });
 
