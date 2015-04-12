@@ -12,7 +12,7 @@ var context = [
 	{
 		"name": "Posteminescianism",
 		"lider": "-",
-		"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet viverra neque. Vivamus vel facilisis tortor, ut posuere arcu. Mauris dignissim dapibus ligula, et faucibus elit condimentum at."
+		"details": "data/posteminescianism.html" 
 	},
 	{
 		"name": "Perioada interbelică",

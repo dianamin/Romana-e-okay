@@ -124,6 +124,11 @@ header {
 	display: inline-block;
 }
 
+.medium-input-box {
+	width: 180px !important;
+	display: inline-block;
+}
+
 .big-dot {
 	width: 20px;
 	height: 20px;

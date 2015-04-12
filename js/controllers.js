@@ -131,7 +131,7 @@ app.controller('AnswersJunimeaCtrl', function ($scope) {
 		var error = getLevenshteinDistance(s, "iași");
 		if (error == 0) return true;
 		else if (error <= acceptedError(s, "iași")) {
-			$scope.Position = "Iași";
+			$scope.City = "Iași";
 			return true;
 		}
 		return false;
@@ -208,3 +208,37 @@ app.controller('AnswersJunimeaCtrl', function ($scope) {
 	}
 });
 
+app.controller('AnswersPosteminescianismCtrl', function ($scope) {
+	$scope.CharacteristicsNumber = 7;
+	$scope.Characteristics = new Array($scope.CharacteristicsNumber);
+	$scope.showCharacteristics = false;
+	$scope.RightCharacteristics = false;
+	$scope.TrueCharacteristics = [true, false, true, false, true, false, true];
+	$scope.checkCharacteristics = function() {
+		$scope.RightCharacteristics = true;
+		for (var i = 0; i < $scope.CharacteristicsNumber; i++) {
+			if (typeof $scope.Characteristics[i] === "undefined") {
+				if ($scope.TrueCharacteristics[i] == true) $scope.RightCharacteristics = false;
+			}
+			else if ($scope.TrueCharacteristics[i] != $scope.Characteristics[i]) $scope.RightCharacteristics = false;
+		}
+		$scope.showCharacteristics = true;
+		showElement("Characteristics");
+
+		return $scope.RightCharacteristics;
+	}
+
+	$scope.Current = "";
+	$scope.checkCurrent = function() {
+		var s = $scope.Current;
+		if (s == undefined) return false;
+		s = s.toLowerCase();
+		var error = getLevenshteinDistance(s, "tradiționalismul");
+		if (error == 0) return true;
+		else if (error <= acceptedError(s, "tradiționalismul")) {
+			$scope.Current = "tradiționalismul";
+			return true;
+		}
+		return false;
+	}
+});
