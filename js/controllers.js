@@ -242,3 +242,67 @@ app.controller('AnswersPosteminescianismCtrl', function ($scope) {
 		return false;
 	}
 });
+
+
+app.controller('AnswersInterbelicaCtrl', function ($scope) {
+	$scope.Magazine = "";
+	$scope.checkMagazine = function() {
+		var s = $scope.Magazine;
+		if (s == undefined) return false;
+		s = s.toLowerCase();
+		var error = getLevenshteinDistance(s, "sburătorul");
+		if (error == 0) return true;
+		else if (error <= acceptedError(s, "sburătorul")) {
+			$scope.Magazine = "Sburătorul";
+			return true;
+		}
+		return false;
+	}
+
+	$scope.Theory = "";
+	$scope.checkTheory = function() {
+		var s = $scope.Theory;
+		if (s == undefined) return false;
+		s = s.toLowerCase();
+		var error = getLevenshteinDistance(s, "imitației");
+		if (error == 0) return true;
+		else if (error <= acceptedError(s, "imitației")) {
+			$scope.Theory = "imitației";
+			return true;
+		}
+		return false;
+	}
+
+	$scope.CharacteristicsNumber = 6;
+	$scope.Characteristics = new Array($scope.CharacteristicsNumber);
+	$scope.showCharacteristics = false;
+	$scope.RightCharacteristics = false;
+	$scope.TrueCharacteristics = [true, true, true, true, true, false, true];
+	$scope.checkCharacteristics = function() {
+		$scope.RightCharacteristics = true;
+		for (var i = 0; i < $scope.CharacteristicsNumber; i++) {
+			if (typeof $scope.Characteristics[i] === "undefined") {
+				if ($scope.TrueCharacteristics[i] == true) $scope.RightCharacteristics = false;
+			}
+			else if ($scope.TrueCharacteristics[i] != $scope.Characteristics[i]) $scope.RightCharacteristics = false;
+		}
+		$scope.showCharacteristics = true;
+		showElement("Characteristics");
+
+		return $scope.RightCharacteristics;
+	}
+
+	$scope.Period = "";
+	$scope.checkPeriod = function() {
+		var s = $scope.Period;
+		if (s == undefined) return false;
+		s = s.toLowerCase();
+		var error = getLevenshteinDistance(s, "interbelică");
+		if (error == 0) return true;
+		else if (error <= acceptedError(s, "interbelică")) {
+			$scope.Period = "interbelică";
+			return true;
+		}
+		return false;
+	}
+});

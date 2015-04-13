@@ -17,7 +17,7 @@ var context = [
 	{
 		"name": "Perioada interbelică",
 		"lider": "Eugen Lovinescu",
-		"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet viverra neque. Vivamus vel facilisis tortor, ut posuere arcu. Mauris dignissim dapibus ligula, et faucibus elit condimentum at."
+		"details": "data/interbelica2.html" 
 	},
 	{
 		"name": "Perioada postbelică",
