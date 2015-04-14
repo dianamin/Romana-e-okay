@@ -146,6 +146,11 @@ header {
 	display: inline-block;
 }
 
+.long-input-box {
+	width: 300px !important;
+	display: inline-block;
+}
+
 .big-dot {
 	width: 20px;
 	height: 20px;
@@ -251,4 +256,9 @@ td {
 
 .creation-presentation:hover {
 	height: 150px;
+}
+
+.inline-form {
+	display: inline-block;
+	vertical-align: middle;
 }

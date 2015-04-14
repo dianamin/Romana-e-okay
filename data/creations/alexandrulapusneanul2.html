@@ -1,0 +1,114 @@
+<div ng-controller = "AlexandruLapusneanulCtrl">
+	<h4> Alexandru Lăpușeanul </h4>
+	<p> Nuvela „Alexandru Lăpușneanul” este prima nuvelă romantică de inspirație istorică din literatura română. Publicată în perioada pașoptistă, în primul număr al revistei
+		<i> 
+		<input type = "text" class = "form-control short-input-box" ng-model = "Magazine" value = "{Magazine}">
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkMagazine()"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkMagazine()"></span>
+		</i>
+	(1840), nuvela ilustrează una dintre sursele literaturii romantice, istoria națională, potrivit recomandărilor lui
+		<input type = "text" class = "form-control medium-input-box" ng-model = "Lider" value = "{Lider}">
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkLider()"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkLider()"></span>
+		din articolul-program al revistei, intitulat 
+		<i>
+		<input type = "text" class = "form-control short-input-box" ng-model = "Article" value = "{Article}">
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkArticle()"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkArticle()"></span>
+		</i>
+		, care constituie și manifestul literar al romantismului românesc.
+	</p>
+	<p> Ulterior, nuvela „Alexandru Lăpușneanul” a fost inclusă în ciclul „Fragmente istorice”, din volumul „Păcatele tinereților” (1875).</p>
+
+	<h5> Ce este o nuvelă? </h5>
+	<div class = "well">
+		<b> Nuvelă </b> = specie epică în 
+		<div class = "inline-form">
+			<input type = "radio" name = "Type" ng-model = "Type" class = "big-dot" value = "proza" /> proză <br />
+			<input type = "radio" name = "Type" ng-model = "Type" class = "big-dot" value = "versuri" /> versuri
+		</div>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkType()"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkType()"></span>
+		, cu o construcție riguroasă, având un fir narativ central. Se observă concizia intrigii, tendința
+		<div class = "inline-form">
+			<input type = "radio" name = "Perspective" ng-model = "Perspective" class = "big-dot" value = "subiectivizare" /> subiectivizare <br />
+			<input type = "radio" name = "Perspective" ng-model = "Perspective" class = "big-dot" value = "obiectivizare" /> obiectivizare
+		</div>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkPerspective()"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkPerspective()"></span>
+		a perspectivei narative și verosimilitatea faptelor. Personajele sunt relativ 
+		<div class = "inline-form">
+			<input type = "radio" name = "CharactersNumber" ng-model = "CharactersNumber" class = "big-dot" value = "multe" /> multe <br />
+			<input type = "radio" name = "CharactersNumber" ng-model = "CharactersNumber" class = "big-dot" value = "putine" /> puține
+		</div>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkCharactersNumber()"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkCharactersNumber()"></span>
+		, caracterizate succint și gravitează în jurul personajului principal.
+	</div>
+
+	<h5> De ce este o nuvelă romantică? </h5>
+	<p> Este o nuvelă romantică datorită mai multor trăsături: specie, inspirație istorică, temă, conflict, narațiune liniară, <b> culoare locală </b>, personaje excepționale în sitații excepționle, personaje în antiteză, culoare locală, gesturi spectaculoase și memorabile. </p>
+
+	<h5> De ce este o nuvelă istorică? </h5>
+	<p> Nuvela istorică este o specie literară cultivată de romantici care evocă trecutul istoric (Evul Mediu) prin temă, personaje și <b> culoarea locală </b> (mentalități, comportamente, relații sociale, limbaj). </p>
+	<p> Scriitorii pașoptiști se inspiră din cronici și din folclor, conform esteticii romantice și recomandărilor din <i> Introducție </i>. </p>
+
+	<h5> Care sunt sursele de inspirație? </h5>
+	<p> 
+		<input type = "text" class = "form-control medium-input-box" ng-model = "Name" value = "{Name}" />
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkName()"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkName()"></span>
+		, întemeietorul nuvelei istorice românești, este primul scriitor care valorifică într-o creație literară cronicile moldovenești (<i> Letopisețul Țării Moldovei </i> de Grigore Ureche și de Miron Costin).
+	</p>
+	<p> Din cronica lui Ureche, Negruzzi preia imaginea personalității domnitorului Alexandru Lăpușneanul, dar și scene, fapte și replici (de exemplu motto-urile capitolelor I și al IV-lea), dar se distanțează de realitatea istorică prin apelul la ficțiune și prin viziunea romantică asupra istoriei, influențată de ideologia pașoptistă. </p>
+
+	<h5> Care este tema operei? </h5>
+	<p> Nuvela are ca temă lupta pentru putere în epoca medievală (în Moldova, la mijlocul secolului al XVI-lea). Evocarea artistică a celei de-a doua domnii a lui Alexandru Lăpușneanul (1564-1569) evidențiază lupta pentru impunerea autorității domnești și consecințele deținerii puterii de un domnitor crud, tiran. </p>
+
+	<h5> Care este perspectiva narativă? </h5>
+	<p> Naratorul este omniscient, omniprezent, sobru, detașat, predominant obiectiv, dar intervine direct prin câteva epitete de caracterizare („tiran”, „curtezan”, „mișelul boier”, „deșănțată cuvântare”). Narațiunea la persoana a III-a (cu focalizare zero, viziunea „dindărăt”) amintește prin obiectivitate și concizie de relatarea cronicarilor.
+
+	<h5> Care sunt tehnicile narative utilizate? </h5>
+	<p> Narațiunea se desfășoară linear, cronologic, prin înlănțuirea secvențelor narative și a episoadelor, particularitate narativă romantică. </p>
+
+	<h5> Cum sunt incipitul și finalul? </h5>
+	<p> Incipitul și finalul se remarcă prin sobrietatea auctorială. Paragraful inițial rezumă evenimentele care motivează revenirea la tron a lui Lăpușneanul și atitudinea lui vindicativă. Frazele finale consemnează sfârșitul tiranului în mod concis, lapidar și obiectiv, amintind de stilul cronicarului, iar prin menționarea portretului votiv se realizează caracterul verosimil, specific nuvelei. </p>
+	<i>
+		 „Acest fel fu sfârșitul lui Alexandru Lăpușneanul, care lăsă o pată de sânge în istoria Moldaviei. La monastirea Slatina, zidită de el, unde e îngropat, se vede și astăzi portretul lui și al familiei sale.”
+	</i>
+
+	<h5> Cum este construit subiectul? </h5>
+	<p> Echilibrul compozițional este realizat prin organizarea textului narativ în patru capitole care fixează momentele subiectului: </p>
+	<ul>
+		<li>
+			Capitolul I 
+			<input type = "text" class = "form-control long-input-box" ng-model = "Chapter1" value = "{Chapter1}" />
+			<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkChapter1()"></span>
+			<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkChapter1()"></span>
+			(răspunsul dat de Lăpușneanul soliei de boieri care îi ceruseră să se întoarcă de unde a venit pentru că „norodul” nu îl vrea) - cuprinde <b> expozițiunea </b> și intriga. Alexandru Lăpușneanul se întoarce la tronul Moldovei, în 1564, în fruntea unei armate turcești și se întâlnește cu solia formată din cei patri boieri trimiși de Tomșa: Veveriță, Moțoc, Spancioc, Stroici. Intriga este reprezentată de hotărârea domnului de a-și relua tronul și dorința sa de răzbunare față de boierii trăđători.
+		</li>
+		<li>
+			Capitolul al II-lea 
+			<input type = "text" class = "form-control long-input-box" ng-model = "Chapter2" value = "{Chapter2}" />
+			<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkChapter2()"></span>
+			<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkChapter2()"></span>
+			(avertismentul pe care văduva unui boier decapitat îl adresează doamnei Ruxanda) -
+			corespunde, ca moment al subiectului, <b> desfășurării acțiunii </b> și cuprinde o serie de evenimente declanșate de reluarea tronului de către Alexandru Lăpușneanul: fuga lui Tomșa în Muntenia, incendierea cetăților, desființarea armatei pământene, confiscarea averilor boierești, uciderea unor boieri, intervenția doamnei Ruxanda pe lângă domnitor pentru a înceta omorurile și promisiunea pe care acesta i-o face.
+		</li>
+		<li>
+			Capitolul al III-lea 
+			<input type = "text" class = "form-control long-input-box" ng-model = "Chapter3" value = "{Chapter3}" />
+			<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkChapter3()"></span>
+			<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkChapter3()"></span>
+			(cererea vindicativă a norodului care găsește în Moțoc vinovatul pentru toate nemulțumirile) - conține mai multe scene romantice, prin caracterul memorabil sau excepțional: participarea și discursul domnitorului la slujba religioasă de la mitropolie, ospățul de la palat și uciderea celor 47 de boieri, omorârea lui Moțoc de mulțimea revoltată și „leacul de frică” pentru doamna Ruxanda. Capitolul cuprinde <b> punctul culminant </b>.
+		</li>
+		<li>
+			Capitolul al IV-lea - 
+			<input type = "text" class = "form-control long-input-box" ng-model = "Chapter4" value = "{Chapter4}" />
+			<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkChapter4()"></span>
+			<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkChapter4()"></span>
+			(amenințarea rostită de Lăpușneanul care, bolnav, fusese călugărit potrivit obiceiului vremii, pierzând astfel puterea domnească) - este înfățișat <b> deznodământul </b>, moartea tiranului prin otrăvire. După 4 ani de la cumplitele evenimente, Lăpușneanul se retrage în cetatea Hotinului. Bolnav de friguri, domnul este călugărit după obiceiul vremii. Deoarece când își revine, amenință să-i ucidă pe toți (inclusiv pe propriul fiu, urmașul la tron), doamna Ruxanda acceptă sfatul boierilor de a-l otrăvi. 
+		</li>
+	</ul>
+
+</div>

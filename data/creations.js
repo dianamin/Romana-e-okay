@@ -6,7 +6,7 @@ creations = [
 			"author": "Costache Negruzzi",
 			"type": "Nuvela romantică și istorică",
 			"img" : "img/pasoptism/al.jpg",
-			"page" : "data/creations/alexandrulapusneanul.html"
+			"page" : "data/creations/alexandrulapusneanul2.html"
 		},
 		{
 			"id" : "1",
