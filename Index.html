@@ -79,7 +79,9 @@
 							<ul style = "list-style: none;">
 								<li class = "creation" 
 									ng-repeat = "creation in currentContext.creations"
-									back-img = {{creation.img}}>
+									back-img = {{creation.img}}
+									ng-click = "openCreation(creation.id)"
+									>
 									<div class = "creation-presentation">
 										<b> {{creation.name}} </b>
 										<br /> <br />
@@ -91,7 +93,9 @@
 							</ul>
 						</center>
 
-
+						<div ng-show = "SelectedCreation != -1" ng-include = "SelectedCreation">
+							:)
+						</div>
 					</div>
 
 				</div>

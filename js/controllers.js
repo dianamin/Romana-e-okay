@@ -5,6 +5,7 @@ app.controller('PageChangeCtrl', function ($scope) {
 	$scope.currentContext = context[0];
 	$scope.Contexts = 5;
 	$scope.chosenView = "none";
+	$scope.SelectedCreation = -1;
 
 	$scope.hasLider = function() {
 		return $scope.currentContext.lider != "-";
@@ -12,6 +13,7 @@ app.controller('PageChangeCtrl', function ($scope) {
 
 	$scope.changePage = function(x) {
 		if (x == 0) $scope.selected = 0;
+		$scope.SelectedCreation = -1;
 		if (x > 0 && x <= $scope.Contexts) {
 			$scope.selected = x;
 			$scope.currentContext = context[x - 1];
@@ -22,6 +24,12 @@ app.controller('PageChangeCtrl', function ($scope) {
 	$scope.chooseView = function(x) {
 		$scope.chosenView = x;
 		showElement(x);
+	}
+
+	$scope.openCreation = function(id) {
+		$scope.SelectedCreation = creations[$scope.selected - 1][id].page;
+		console.log($scope.SelectedCreation);
+
 	}
 
 });
