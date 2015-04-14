@@ -2,12 +2,14 @@ var context = [
 	{
 		"name": "Pașoptismul",
 		"lider": "Ion Heliade-Rădulescu / Mihail Kogălniceanu",
-		"details": "data/pasoptism.html"
+		"details": "data/pasoptism.html",
+		"creations" : creations[0]
 	},
 	{
 		"name": "Junimea",
 		"lider": "Titu Maiorescu",
-		"details": "data/junimea.html"
+		"details": "data/junimea.html",
+		"creations" : creations[1]
 	},
 	{
 		"name": "Posteminescianism",

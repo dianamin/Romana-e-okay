@@ -1,27 +1,39 @@
 var app = angular.module('app', ['ngRoute']);
 
-app.config(function($routeProvider) {
-	$routeProvider.
-		when('/', {templateUrl: '/pages/pasoptism.html'})
-});
-
-
 app.controller('PageChangeCtrl', function ($scope) {
 	$scope.selected = 1;
 	$scope.currentContext = context[0];
 	$scope.Contexts = 5;
+	$scope.chosenView = "none";
 
 	$scope.hasLider = function() {
 		return $scope.currentContext.lider != "-";
 	}
 
 	$scope.changePage = function(x) {
-		if (x <= $scope.Contexts) {
+		if (x > 0 && x <= $scope.Contexts) {
 			$scope.selected = x;
 			$scope.currentContext = context[x - 1];
+			$scope.chosenView = "none";
 		}
 	}
+
+	$scope.chooseView = function(x) {
+		$scope.chosenView = x;
+		showElement(x);
+	}
+
 });
+
+app.directive('backImg', function(){
+    return function(scope, element, attrs){
+        var url = attrs.backImg;
+        element.css({
+            'background-image': 'url(' + url +')',
+            'background-size' : 'cover'
+        });
+    };
+})
 
 
 app.controller('AnswersPasoptismCtrl', function($scope) {
@@ -341,6 +353,7 @@ app.controller('AnswersPostbelicaCtrl', function ($scope) {
 		}
 		return false;
 	}
+
 	$scope.CharacteristicsNumber = 6;
 	$scope.Characteristics = new Array($scope.CharacteristicsNumber);
 	$scope.showCharacteristics = false;
@@ -359,6 +372,7 @@ app.controller('AnswersPostbelicaCtrl', function ($scope) {
 
 		return $scope.RightCharacteristics;
 	}
+
 	$scope.checkGeneration = function() {
 		return $scope.Generation == 80;
 	}

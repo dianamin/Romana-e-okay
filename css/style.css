@@ -97,13 +97,17 @@ header {
 
 .subtitle-dot {
 	display: inline-block;
-	margin-left: 10%;
 }
 .subtitle {
 	font-family: Impact;
 	font-size: 25px;
 	margin-left: 10px;
 }
+.subtitle-button {
+	width: 200px;
+	text-align: center;
+}
+
 .text-block {
 	width: 80%;
 	font-family: Verdana;
@@ -199,3 +203,23 @@ td {
 	text-align: left;
 	padding-left: 10px;
 }
+
+.creation {
+	display: inline-block;
+	height: 200px;
+	width: 250px;
+	text-align: center;
+	background-position: center;
+	margin-left: 15px;
+}
+
+.creation-presentation: {	
+	height: 100px;
+	overflow: hidden;
+	background-color: rgb(0, 0, 0, 0.5);
+	color: white;
+	font-family: Impact;
+	width: 100%;
+	padding: 5px;
+	text-align: center;
+};

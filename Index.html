@@ -6,6 +6,7 @@
     <link rel = "stylesheet" href = "css/glyphicons.css" />
     <link rel = "stylesheet" href = "css/bootstrap.css" />
 	<link rel = "stylesheet" href = "css/style.css" />
+	<script src = "data/creations.js"></script>
 	<script src = "data/context.js"></script>
 	<script src = "js/angular.js"></script>
 	<script src = "js/angular-route.js"></script>
@@ -23,28 +24,69 @@
 	<div id = "top-line"> </div>
 	<center> <div id = "logo"> <span class = "glyphicon glyphicon-thumbs-up"></span> </div> </center>
 	<ul class = "nav-pills" id = "menu">
-			<li ng-class = "{'button' : 1 > 0, 'active': selected == 1}" ng-click = "changePage(1)"> Perioada pașoptistă </li>
-			<li ng-class = "{'button' : 1 > 0, 'active': selected == 2}" ng-click = "changePage(2)"> Junimea </li>
-			<li ng-class = "{'button' : 1 > 0, 'active': selected == 3}" ng-click = "changePage(3)"> Posteminescianism </li>
-			<li ng-class = "{'button' : 1 > 0, 'active': selected == 4}" ng-click = "changePage(4)"> Perioada interbelică </li>
-			<li ng-class = "{'button' : 1 > 0, 'active': selected == 5}" ng-click = "changePage(5)"> Perioada postbelică </li>
-			<li ng-class = "{'button' : 1 > 0, 'active': selected == 6}" ng-click = "changePage(6)"> Test </li>
-			<li ng-class = "{'button' : 1 > 0, 'active': selected == 7}" ng-click = "changePage(7)"> Tips pentru bac </li>
-			<li ng-class = "{'button' : 1 > 0, 'active': selected == 8}" ng-click = "changePage(8)"> Teme maker </li>
+			<li class = "button" ng-class = "{'active': selected == 1}" ng-click = "changePage(1)"> Perioada pașoptistă </li>
+			<li class = "button" ng-class = "{'active': selected == 2}" ng-click = "changePage(2)"> Junimea </li>
+			<li class = "button" ng-class = "{'active': selected == 3}" ng-click = "changePage(3)"> Posteminescianism </li>
+			<li class = "button" ng-class = "{'active': selected == 4}" ng-click = "changePage(4)"> Perioada interbelică </li>
+			<li class = "button" ng-class = "{'active': selected == 5}" ng-click = "changePage(5)"> Perioada postbelică </li>
+			<li class = "button" ng-class = "{'active': selected == 6}" ng-click = "changePage(6)"> Test </li>
+			<li class = "button" ng-class = "{'active': selected == 7}" ng-click = "changePage(7)"> Tips pentru bac </li>
+			<li class = "button" ng-class = "{'active': selected == 8}" ng-click = "changePage(8)"> Teme maker </li>
 	</ul>
 
 	<div id = "content">
 	<!-- placeholder -->
-		<div class = "dot subtitle-dot" ng-click = "selected = 0"> <span class = "glyphicon glyphicon-cog"> </span> </div>
-		<span class = "subtitle"> Context </span>
+		
+
 		<center>
 			<div class = "text-block">
 				<h3> {{currentContext.name}} </h3>
 				<hr />
 
 				<h4 ng-show = "hasLider()"> Mentor: {{currentContext.lider}} </h4>
+				
+				<center>
+					<br />
+					Vreau să aflu despre: <br />
+		  			<button class = "btn btn-default subtitle-button" ng-click = "chooseView('context')">
+						<div class = "dot subtitle-dot"> 
+							<span class = "glyphicon glyphicon-cog"> </span> 
+						</div> 
+						<span class = "subtitle"> Context </span> 
+		  			</button>
+		  			<button class = "btn btn-default subtitle-button" ng-click = "chooseView('creations')">
+						<div class = "dot subtitle-dot"> 
+							<span class = "glyphicon glyphicon-book"> </span> 
+						</div> 
+						<span class = "subtitle"> Opere </span> 
+		  			</button>
+					<br />
+					<br />
+	  			</center>
 
-				<div ng-include = "currentContext.details"></div>
+				<div ng-show = "chosenView == 'context'" 
+					ng-include = "currentContext.details" 
+					id = "context" 
+					style = "opacity: 0;">
+				</div>
+				<div ng-show = "chosenView == 'creations'" 
+					id = "creations" 
+					style = "opacity: 0;">
+					abc
+					<center>
+						<ul style = "list-style: none;">
+							<li class = "creation" 
+								ng-repeat = "creation in currentContext.creations"
+								back-img = {{creation.img}}>
+								<div class = "creation-presentation">
+									{{creation.name}}
+								</div>
+							</li>
+						</ul>
+					</center>
+
+
+				</div>
 
 			</div>
 		</center>
