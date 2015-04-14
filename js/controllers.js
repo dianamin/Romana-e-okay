@@ -273,11 +273,11 @@ app.controller('AnswersInterbelicaCtrl', function ($scope) {
 		return false;
 	}
 
-	$scope.CharacteristicsNumber = 6;
+	$scope.CharacteristicsNumber = 7;
 	$scope.Characteristics = new Array($scope.CharacteristicsNumber);
 	$scope.showCharacteristics = false;
 	$scope.RightCharacteristics = false;
-	$scope.TrueCharacteristics = [true, true, true, true, true, false, true];
+	$scope.TrueCharacteristics = [true, true, true, true, false, true];
 	$scope.checkCharacteristics = function() {
 		$scope.RightCharacteristics = true;
 		for (var i = 0; i < $scope.CharacteristicsNumber; i++) {
@@ -304,5 +304,62 @@ app.controller('AnswersInterbelicaCtrl', function ($scope) {
 			return true;
 		}
 		return false;
+	}
+
+	$scope.Characteristics2Number = 5;
+	$scope.Characteristics2 = new Array($scope.Characteristics2Number);
+	$scope.showCharacteristics2 = false;
+	$scope.RightCharacteristics2 = false;
+	$scope.TrueCharacteristics2 = [true, true, true, true, false];
+	$scope.checkCharacteristics2 = function() {
+		$scope.RightCharacteristics2 = true;
+		for (var i = 0; i < $scope.Characteristics2Number; i++) {
+			if (typeof $scope.Characteristics2[i] === "undefined") {
+				if ($scope.TrueCharacteristics2[i] == true) $scope.RightCharacteristics2 = false;
+			}
+			else if ($scope.TrueCharacteristics2[i] != $scope.Characteristics2[i]) $scope.RightCharacteristics2 = false;
+		}
+		$scope.showCharacteristics2 = true;
+		showElement("Characteristics2");
+
+		return $scope.RightCharacteristics2;
+	}
+});
+
+
+app.controller('AnswersPostbelicaCtrl', function ($scope) {
+	$scope.Novel = "";
+	$scope.checkNovel = function() {
+		var s = $scope.Novel;
+		if (s == undefined) return false;
+		s = s.toLowerCase();
+		var error = getLevenshteinDistance(s, "moromeții");
+		if (error == 0) return true;
+		else if (error <= acceptedError(s, "moromeții")) {
+			$scope.Novel = "Moromeții";
+			return true;
+		}
+		return false;
+	}
+	$scope.CharacteristicsNumber = 6;
+	$scope.Characteristics = new Array($scope.CharacteristicsNumber);
+	$scope.showCharacteristics = false;
+	$scope.RightCharacteristics = false;
+	$scope.TrueCharacteristics = [true, true, false, true, true, false];
+	$scope.checkCharacteristics = function() {
+		$scope.RightCharacteristics = true;
+		for (var i = 0; i < $scope.CharacteristicsNumber; i++) {
+			if (typeof $scope.Characteristics[i] === "undefined") {
+				if ($scope.TrueCharacteristics[i] == true) $scope.RightCharacteristics = false;
+			}
+			else if ($scope.TrueCharacteristics[i] != $scope.Characteristics[i]) $scope.RightCharacteristics = false;
+		}
+		$scope.showCharacteristics = true;
+		showElement("Characteristics");
+
+		return $scope.RightCharacteristics;
+	}
+	$scope.checkGeneration = function() {
+		return $scope.Generation == 80;
 	}
 });
