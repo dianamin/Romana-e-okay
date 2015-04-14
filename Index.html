@@ -12,6 +12,7 @@
 	<script src = "js/angular-route.js"></script>
 	<script src = "js/usefulfunctions.js"></script>
 	<script src = "js/controllers.js"></script>
+	<script src = "js/creations controllers.js"></script>
 	<script src = "js/answers.js"></script>
 </head>
 
@@ -72,17 +73,17 @@
 						id = "context" 
 						style = "opacity: 0;">
 					</div>
-					<div ng-show = "chosenView == 'creations'" 
-						id = "creations" 
+					<div id = "creations" 
+						ng-show = "chosenView == 'creations'" 
 						style = "opacity: 0;">
 						<center>
-							<ul style = "list-style: none;">
+							<ul id = "creationsMenu">
 								<li class = "creation" 
 									ng-repeat = "creation in currentContext.creations"
 									back-img = {{creation.img}}
 									ng-click = "openCreation(creation.id)"
 									>
-									<div class = "creation-presentation">
+									<div class = "creation-presentation" ng-click = "openCreation(creation.id)"	>
 										<b> {{creation.name}} </b>
 										<br /> <br />
 										{{creation.author}}
@@ -93,7 +94,8 @@
 							</ul>
 						</center>
 
-						<div ng-show = "SelectedCreation != -1" ng-include = "SelectedCreation">
+						<div ng-show = "SelectedCreation != -1" 
+							 ng-include = "SelectedCreation">
 							:)
 						</div>
 					</div>

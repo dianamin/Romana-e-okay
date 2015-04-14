@@ -245,6 +245,10 @@ td {
 	-o-transition: all 1s;
 }
 
+#creationsMenu {
+	list-style: none;
+}
+
 .creation-presentation:hover {
 	height: 150px;
 }

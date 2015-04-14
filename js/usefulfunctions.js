@@ -3,7 +3,7 @@ var showElement = function(id) {
 	document.getElementById(id).setAttribute("style", "animation: fade-in 1s; -webkit-animation: fade-in 1s");
 }
 var hideElement = function(id) {
-	document.getElementById(id).setAttribute("style", "animation: fade-out 1s; -webkit-animation: fade-out 1s");
+	document.getElementById(id).setAttribute("style", "animation: fade-out 1s; -webkit-animation: fade-out 1s; opacity: 0;");
 }
 
 var getLevenshteinDistance = function(string1, string2) {
