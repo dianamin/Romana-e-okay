@@ -14,16 +14,19 @@ var context = [
 	{
 		"name": "Posteminescianism",
 		"lider": "-",
-		"details": "data/posteminescianism.html" 
+		"details": "data/posteminescianism.html",
+		"creations" : creations[2]
 	},
 	{
 		"name": "Perioada interbelică",
 		"lider": "Eugen Lovinescu",
-		"details": "data/interbelica2.html" 
+		"details": "data/interbelica2.html",
+		"creations" : creations[3]
 	},
 	{
 		"name": "Perioada postbelică",
 		"lider": "-",
-		"details": "data/posbelica2.html"
+		"details": "data/posbelica2.html",
+		"creations" : creations[4]
 	}
 ]

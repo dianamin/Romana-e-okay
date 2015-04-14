@@ -72,15 +72,18 @@
 				<div ng-show = "chosenView == 'creations'" 
 					id = "creations" 
 					style = "opacity: 0;">
-					abc
 					<center>
 						<ul style = "list-style: none;">
 							<li class = "creation" 
 								ng-repeat = "creation in currentContext.creations"
 								back-img = {{creation.img}}>
 								<div class = "creation-presentation">
-									{{creation.name}}
-								</div>
+									<b> {{creation.name}} </b>
+									<br /> <br />
+									{{creation.author}}
+									<br />
+									{{creation.type}}
+								<div>
 							</li>
 						</ul>
 					</center>
