@@ -1,7 +1,7 @@
 var app = angular.module('app', ['ngRoute']);
 
 app.controller('PageChangeCtrl', function ($scope) {
-	$scope.selected = 1;
+	$scope.selected = 0;
 	$scope.currentContext = context[0];
 	$scope.Contexts = 5;
 	$scope.chosenView = "none";
@@ -11,6 +11,7 @@ app.controller('PageChangeCtrl', function ($scope) {
 	}
 
 	$scope.changePage = function(x) {
+		if (x == 0) $scope.selected = 0;
 		if (x > 0 && x <= $scope.Contexts) {
 			$scope.selected = x;
 			$scope.currentContext = context[x - 1];

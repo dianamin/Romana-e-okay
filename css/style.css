@@ -26,6 +26,7 @@ header {
 	border-radius: 100%;
 	background-color: #000000;
 	box-shadow: 0 0 10px black;
+	cursor: pointer;
 	transition: all 1s;
 	-webkit-transition: all 1s;
 	-moz-transition: all 1s;
@@ -107,6 +108,17 @@ header {
 	width: 200px;
 	text-align: center;
 	margin: 20px;
+	transition: all 2s;
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
+	-o-transition: all 1s;
+}
+.subtitle-button:hover {
+	width: 200px;
+	text-align: center;
+	margin: 20px;
+	color: #eeeeee;
+	background-color: #333333;
 }
 
 .text-block {
