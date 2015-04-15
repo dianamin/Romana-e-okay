@@ -19,15 +19,15 @@ creations = [
 	],
 	[
 		{
-			"id" : "2",
+			"id" : "0",
 			"name": "Luceafărul",
 			"author": "Mihai Eminescu",
 			"type": "Poezia romantică",
 			"img" : "img/junimea/l.jpg",
-			"page" : "data/creations/alexandrulapusneanul.html"
+			"page" : "data/creations/luceafarul.html"
 		},
 		{
-			"id" : "3",
+			"id" : "1",
 			"name": "Povestea lui Harap Alb",
 			"author": "Ion Creangă",
 			"type": "Basmul cult",
@@ -35,7 +35,7 @@ creations = [
 			"page" : "data/creations/alexandrulapusneanul.html"
 		},
 		{
-			"id" : "4",
+			"id" : "2",
 			"name": "O scrisoare pierdută",
 			"author": "Ion Luca Caragiale",
 			"type": "Comedia",
@@ -43,7 +43,7 @@ creations = [
 			"page" : "data/creations/alexandrulapusneanul.html"
 		},
 		{
-			"id" : "5",
+			"id" : "3",
 			"name": "Moara cu noroc",
 			"author": "Ioan Slavici",
 			"type": "Nuvela realistă și psihologică",
@@ -53,7 +53,7 @@ creations = [
 	],
 	[
 		{
-			"id" : "6",
+			"id" : "0",
 			"name": "Rugăciune",
 			"author": "Octavian Goga",
 			"type": "Poezia posteminescianistă",
@@ -63,7 +63,7 @@ creations = [
 	],
 	[
 		{
-			"id" : "7",
+			"id" : "1",
 			"name": "Plumb",
 			"author": "George Bacovia",
 			"type": "Poezia simbolistă",
@@ -71,7 +71,7 @@ creations = [
 			"page" : "data/creations/alexandrulapusneanul.html"
 		},
 		{
-			"id" : "8",
+			"id" : "2",
 			"name": "Flori de mucigai",
 			"author": "Tudor Arghezi",
 			"type": "Poezia modernistă",
@@ -79,7 +79,7 @@ creations = [
 			"page" : "data/creations/alexandrulapusneanul.html"
 		},
 		{
-			"id" : "9",
+			"id" : "3",
 			"name": "Eu nu strivesc corola de minuni a lumii",
 			"author": "Lucian Blaga",
 			"type": "Poezia modernistă",
@@ -87,7 +87,7 @@ creations = [
 			"page" : "data/creations/alexandrulapusneanul.html"
 		},
 		{
-			"id" : "10",
+			"id" : "4",
 			"name": "Riga Crypto și lapona Enigel",
 			"author": "Ion Barbu",
 			"type": "Poezia modernistă",
@@ -95,7 +95,7 @@ creations = [
 			"page" : "data/creations/alexandrulapusneanul.html"
 		},
 		{
-			"id" : "11",
+			"id" : "5",
 			"name": "Ultima noapte de dragoste, întâia noapte de război",
 			"author": "Camil Petrescu",
 			"type": "Romanul psihologic",
@@ -103,7 +103,7 @@ creations = [
 			"page" : "data/creations/alexandrulapusneanul.html"
 		},
 		{
-			"id" : "12",
+			"id" : "6",
 			"name": "Ion",
 			"author": "Liviu Rebreanu",
 			"type": "Romanul realist obiectiv",
@@ -111,7 +111,7 @@ creations = [
 			"page" : "data/creations/alexandrulapusneanul.html"
 		},
 		{
-			"id" : "13",
+			"id" : "7",
 			"name": "Enigma Otiliei",
 			"author": "George Călinescu",
 			"type": "Romanul mitic",
@@ -119,7 +119,7 @@ creations = [
 			"page" : "data/creations/alexandrulapusneanul.html"
 		},
 		{
-			"id" : "14",
+			"id" : "8",
 			"name": "Baltagul",
 			"author": "Mihail Sadoveanu",
 			"type": "Romanul mitic",
@@ -129,7 +129,7 @@ creations = [
 	],
 	[
 		{
-			"id" : "15",
+			"id" : "0",
 			"name": "Moromeții",
 			"author": "Marin Preda",
 			"type": "Roman postbelic",
@@ -137,7 +137,7 @@ creations = [
 			"page" : "data/creations/alexandrulapusneanul.html"
 		},
 		{
-			"id" : "16",
+			"id" : "1",
 			"name": "Către Galateea",
 			"author": "Nichita Stănescu",
 			"type": "Romanul mitic",
@@ -145,7 +145,7 @@ creations = [
 			"page" : "data/creations/alexandrulapusneanul.html"
 		},
 		{
-			"id" : "17",
+			"id" : "2",
 			"name": "Iona",
 			"author": "Marin Sorescu",
 			"type": "Teatru postbelic",

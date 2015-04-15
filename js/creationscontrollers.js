@@ -298,3 +298,8 @@ app.controller('ChiritaCtrl', function($scope) {
 		return false;
 	}
 });
+
+
+app.controller('LuceafarulCtrl', function($scope) {
+
+});

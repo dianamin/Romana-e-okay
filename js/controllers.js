@@ -29,6 +29,7 @@ app.controller('PageChangeCtrl', function ($scope) {
 	}
 
 	$scope.openCreation = function(id) {
+		console.log(creations[$scope.selected - 1][id].page);
 		$scope.SelectedCreation = creations[$scope.selected - 1][id].page;
 	}
 
