@@ -379,14 +379,18 @@ app.controller('LuceafarulCtrl', function($scope) {
 	}
 
 	$scope.checkName = function() {
-		var s = $scope.Sugestion;
+		var s = $scope.Name;
 		if (s == undefined) return false;
 		s = s.toLowerCase();
 		var error = getLevenshteinDistance(s, "cătălina");
 		if (error <= acceptedError(s, "cătălina")) {
-			$scope.Sugestion = "cătălina";
+			$scope.Name = "Cătălina";
 			return true;
 		}
 		return false;
+	}
+
+	$scope.checkLevel = function() {
+		return $scope.Level == "fonetic";
 	}
 });
