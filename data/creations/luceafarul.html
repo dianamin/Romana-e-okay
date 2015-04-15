@@ -1,4 +1,4 @@
-<div ng-controller = "LuceafarulCtrl">
+<div ng-controller = "GeneralCheckerCtrl">
 	<h4> Luceafărul </h4>
 	<p> Poemul <i> Luceafărul </i> a apărut în 1883, în <i> Almanahul Societății Academice Social-Literare </i> <b> România Jună </b> din Viena, fiind apoi reprodus în revista <i> Convorbiri literare</i>. </p>
 
@@ -15,12 +15,12 @@
 	<p> 
 		Răzbunarea nu i se pare potrivită pentru superioara ființă nemuritoare, așa că zmeul din poemul lui Eminescu rostește cu amărăciune către cei doi pământeni: „Fiți 
 		<input type = "text" class = "form-control short-input-box" ng-model = "Happy" value = "{Happy}">
-		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkHappy()"></span>
-		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkHappy()"></span>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Happy', 'fericiți')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Happy', 'fericiți')"></span>
 		 - cu glasu-i stins a spus -/ Atât de 
 		<input type = "text" class = "form-control short-input-box" ng-model = "Happy" value = "{Happy}">
-		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkHappy()"></span>
-		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkHappy()"></span>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Happy', 'fericiți')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Happy', 'fericiți')"></span>
 		, cât viața toată/ Un singur chin s-aveți - de-a nu muri deodată!”.
 	</p>
 
@@ -34,8 +34,8 @@
 			<input type = "radio" name = "Destiny" ng-model = "Destiny" class = "big-dot" value = "accepte" /> accepte <br />
 			<input type = "radio" name = "Destiny" ng-model = "Destiny" class = "big-dot" value = "depaseasca" /> depășească
 		</div>
-		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkDestiny()"></span>
-		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkDestiny()"></span>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkRadio('Destiny', 'depaseasca')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkRadio('Destiny', 'depaseasca')"></span>
 		).  
 	</p>
 
@@ -70,8 +70,8 @@
 	<p> 
 		Compoziția romantică se realizează prin opoziția planurilor cosmic și terestru și a două ipostaze ale cunoașterii: 
 		<input type = "text" class = "form-control short-input-box" ng-model = "Genius" value = "{Genius}">
-		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkGenius()"></span>
-		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkGenius()"></span>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Genius', 'geniul')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Genius', 'geniul')"></span>
 		și omul comun.
 	</p>
 	<p> Simetria compozițională se realizează în cele patru părți ale poemului astfel: cele două planuri interferează în prima și ultima parte, pe când partea a doua reflectă doar planul terestru (iubirea dintre Cătalin și Cătălina), iar partea a treia este consacrată planului cosmic (călătoria lui Hyperion la Demiurg, ruga și răspunsul). </p>
@@ -80,8 +80,8 @@
 	<p> 
 		Incipitul poemului se află sub semnul 
 		<input type = "text" class = "form-control short-input-box" ng-model = "Sign" value = "{Sign}">
-		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkSign()"></span>
-		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkSign()"></span>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Sign', 'basmului')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Sign', 'basmului')"></span>
 		. Timpul este mitic (<i> illio tempore </i>): „A fost o dată ca-n povești/ A fost ca niciodată”. Cadrul abstract este umanizat. Portretul fetei de împărat, realizat prin superlativul absolut de factură populară „o prea frumoasă fată, scoate în evidență unicitatea terestră. Fata de împărat reprezintă pământul însuși, iar comparațiile - „Cum e Fecioara între sfinți, Și luna între stele” - propun o posibilă dualitate: puritate și predispoziție spre înălțimile astrale. 
 	</p>
 
@@ -106,8 +106,8 @@
 	<p>
 		Apariția iubirii este susținută de mitul 
 		<input type = "text" class = "form-control short-input-box" ng-model = "Myth" value = "{Myth}">
-		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkMyth()"></span>
-		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkMyth()"></span>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Myth', 'zburătorului')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Myth', 'zburătorului')"></span>
 		, dar mișcările sunt de mare finețe și au loc în plan oniric:
 	</p>
 
@@ -164,8 +164,8 @@
 	<p> Acest „dor de moarte” ilustrează dualitatea ființei pământene, aspirația specific umană spre absolut, dar și atracția către ființa inaccesibilă. Pasiunea ei este generată și de obstacolul impus de apartenența la condiții diferite, de dorința specific romantică de a transforma imposibilul în posibil. </p>
 	<p> Puterea de sacrificiu a omului de geniu în numele împlinirii idealului absolut este ilistrată de intensitatea sentimentului de iubire, care duce la renunțarea la 
 		<input type = "text" class = "form-control short-input-box" ng-model = "Immortality" value = "{Immortality}">
-		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkImmortality()"></span>
-		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkImmortality()"></span>.
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Immortality', 'nemurire')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Immortality', 'nemurire')"></span>.
 	</p>
 
 	<h5> Partea a III-a </h5>
@@ -179,9 +179,9 @@
 		<div class = "col-md-9 col-sm-9">
 			<p> 
 				În dialogul cu Demiurgul, Luceafărul însetat de repaos - „Și din repaos m-am născut,/ Mi-e sete de repaos” - adică de viață finită, de stingere, este numit Hyperion (nume de sugestie 
-					<input type = "text" class = "form-control short-input-box" ng-model = "Sugestion" value = "{Sugestion}">
-					<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkSugestion()"></span>
-					<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkSugestion()"></span>
+				<input type = "text" class = "form-control short-input-box" ng-model = "Sugestion" value = "{Sugestion}">
+				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Sugestion', 'mitologică')"></span>
+				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Sugestion', 'mitologică')"></span>
 				, gr. <i> cel care merge pe deasupra</i>). După Hesiod, Hyperion, divinitate simbolică, era fiul Cerului, tatăl soarelui și al Lunii, un titan ucis din invidie de alți titani. După Homer, Hyperion este Soarele însuși.
 			</p>
 			<br /> <br />
@@ -210,8 +210,8 @@
 	<p> 
 		Demiurgul îi oferă lui Hyperion diferite ipostaze ale geniului în schimb: filozoful, poetul, geniul militar. În final, îi prezintă argumentul infedilității, dovedindu-i încă o dată Luceafărului superioritatea sa, și în iubire, fața de muritoarea 
 		<input type = "text" class = "form-control short-input-box" ng-model = "Name" value = "{Name}">
-		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkName()"></span>
-		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkName()"></span>.
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Name', 'Cătălina')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Name', 'Cătălina')"></span>.
 	</p>
 
 	<h5> Partea a IV-a </h5>

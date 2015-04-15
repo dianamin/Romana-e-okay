@@ -32,7 +32,7 @@ creations = [
 			"author": "Ion Creangă",
 			"type": "Basmul cult",
 			"img" : "img/junimea/ha.jpg",
-			"page" : "data/creations/alexandrulapusneanul.html"
+			"page" : "data/creations/harapalb.html"
 		},
 		{
 			"id" : "2",

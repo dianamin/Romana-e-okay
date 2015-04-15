@@ -1,0 +1,5 @@
+<div ng-controller = "GeneralCheckerCtrl">
+	<input type = "text" class = "form-control short-input-box" ng-model = "Test" value = "{Test}">
+	<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Test', 'ABC')"></span>
+	<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Test', 'ABC')"></span>
+</div>
