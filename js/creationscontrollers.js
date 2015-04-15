@@ -301,5 +301,92 @@ app.controller('ChiritaCtrl', function($scope) {
 
 
 app.controller('LuceafarulCtrl', function($scope) {
+	$scope.checkHappy = function() {
+		var s = $scope.Happy;
+		if (s == undefined) return false;
+		s = s.toLowerCase();
+		var error = getLevenshteinDistance(s, "fericiți");
+		if (error <= acceptedError(s, "fericiți")) {
+			$scope.Happy = "fericiți";
+			return true;
+		}
+		return false;
+	}
 
+	$scope.checkDestiny = function() {
+		console.log($scope.Destiny);
+		return ($scope.Destiny == "depaseasca");
+	}
+
+	$scope.checkGenius = function() {
+		var s = $scope.Genius;
+		if (s == undefined) return false;
+		s = s.toLowerCase();
+		var error = getLevenshteinDistance(s, "geniul");
+		if (error <= acceptedError(s, "geniul")) {
+			$scope.Genius = "geniul";
+			return true;
+		}
+		return false;
+	}
+
+	$scope.checkSign = function() {
+		var s = $scope.Sign;
+		if (s == undefined) return false;
+		s = s.toLowerCase();
+		var error = getLevenshteinDistance(s, "basmului");
+		if (error <= acceptedError(s, "basmului")) {
+			$scope.Sign = "basmului";
+			return true;
+		}
+		return false;
+	}
+
+	$scope.checkMyth = function() {
+		var s = $scope.Myth;
+		if (s == undefined) return false;
+		s = s.toLowerCase();
+		var error = getLevenshteinDistance(s, "zburătorului");
+		if (error <= acceptedError(s, "zburătorului")) {
+			$scope.Myth = "zburătorului";
+			return true;
+		}
+		return false;
+	}
+
+	$scope.checkImmortality = function() {
+		var s = $scope.Immortality;
+		if (s == undefined) return false;
+		s = s.toLowerCase();
+		var error = getLevenshteinDistance(s, "nemurire");
+		if (error <= acceptedError(s, "nemurire")) {
+			$scope.Immortality = "nemurire";
+			return true;
+		}
+		return false;
+	}
+
+	$scope.checkSugestion = function() {
+		var s = $scope.Sugestion;
+		if (s == undefined) return false;
+		s = s.toLowerCase();
+		var error = getLevenshteinDistance(s, "mitologică");
+		if (error <= acceptedError(s, "mitologică")) {
+			$scope.Sugestion = "mitologică";
+			return true;
+		}
+		return false;
+	}
+
+	$scope.checkName = function() {
+		var s = $scope.Sugestion;
+		if (s == undefined) return false;
+		s = s.toLowerCase();
+		var error = getLevenshteinDistance(s, "cătălina");
+		if (error <= acceptedError(s, "cătălina")) {
+			$scope.Sugestion = "cătălina";
+			return true;
+		}
+		return false;
+	}
 });
