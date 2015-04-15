@@ -1,5 +1,3 @@
-
-
 app.controller('AnswersPasoptismCtrl', function($scope) {
 	$scope.checkRevYear = function() {
 		return $scope.RevYear == 1848;

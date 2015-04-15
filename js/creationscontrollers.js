@@ -105,4 +105,196 @@ app.controller('AlexandruLapusneanulCtrl', function($scope) {
 		}
 		return false;
 	}
+
+	$scope.checkConflict1 = function() {
+		var s = $scope.Conflict1;
+		if (s == undefined) return false;
+		s = s.toLowerCase();
+		var error = getLevenshteinDistance(s, "domnitor");
+		if (error <= acceptedError(s, "domnitor")) {
+			$scope.Conflict1 = "Domnitor";
+			return true;
+		}
+		return false;
+	}
+
+	$scope.checkConflict2 = function() {
+		var s = $scope.Conflict2;
+		if (s == undefined) return false;
+		s = s.toLowerCase();
+		var error = getLevenshteinDistance(s, "boieri");
+		if (error <= acceptedError(s, "boieri")) {
+			$scope.Conflict2 = "Boieri";
+			return true;
+		}
+		return false;
+	}
+
+	$scope.checkConflict3 = function() {
+		var s = $scope.Conflict3;
+		if (s == undefined) return false;
+		s = s.toLowerCase();
+		var error = getLevenshteinDistance(s, "Moțoc");
+		if (error <= acceptedError(s, "Moțoc")) {
+			$scope.Conflict3 = "Moțoc";
+			return true;
+		}
+		return false;
+	}
+
+	$scope.checkConflict4 = function() {
+		var s = $scope.Conflict4;
+		if (s == undefined) return false;
+		s = s.toLowerCase();
+		var error = getLevenshteinDistance(s, "mulțime");
+		if (error <= acceptedError(s, "mulțime")) {
+			$scope.Conflict4 = "Mulțime";
+			return true;
+		}
+		error = getLevenshteinDistance(s, "popor");
+		if (error <= acceptedError(s, "popor")) {
+			$scope.Conflict4 = "Popor";
+			return true;
+		}
+		return false;
+	}
+
+	$scope.checkConflict5 = function() {
+		var s = $scope.Conflict5;
+		if (s == undefined) return false;
+		s = s.toLowerCase();
+		var error = getLevenshteinDistance(s, "ruxanda");
+		if (error <= acceptedError(s, "ruxanda")) {
+			$scope.Conflict5 = "Doamna Ruxanda";
+			return true;
+		}
+		error = getLevenshteinDistance(s, "doamna ruxanda");
+		if (error <= acceptedError(s, "doamna ruxanda")) {
+			$scope.Conflict5 = "Doamna Ruxanda";
+			return true;
+		}
+		return false;
+	}
+
+	$scope.checkCharacterization1 = function() {
+		var s = $scope.Characterization1;
+		if (s == undefined) return false;
+		s = s.toLowerCase();
+		var error = getLevenshteinDistance(s, "direct");
+		if (error <= acceptedError(s, "direct")) {
+			$scope.Characterization1 = "direct";
+			return true;
+		}
+		return false;
+	}
+
+	$scope.checkCharacterization2 = function() {
+		var s = $scope.Characterization2;
+		if (s == undefined) return false;
+		s = s.toLowerCase();
+		var error = getLevenshteinDistance(s, "indirect");
+		if (error <= acceptedError(s, "indirect")) {
+			$scope.Characterization2 = "indirect";
+			return true;
+		}
+		return false;
+	}
+});
+
+app.controller('ChiritaCtrl', function($scope) {
+	$scope.checkConflict1 = function() {
+		var s = $scope.Conflict1;
+		if (s == undefined) return false;
+		s = s.toLowerCase();
+		var error = getLevenshteinDistance(s, "chirița");
+		if (error <= acceptedError(s, "chirița")) {
+			$scope.Conflict1 = "Chirița";
+			return true;
+		}
+		return false;
+	}
+
+	$scope.checkConflict2 = function() {
+		var s = $scope.Conflict2;
+		if (s == undefined) return false;
+		s = s.toLowerCase();
+		var error = getLevenshteinDistance(s, "bârzoi");
+		if (error <= acceptedError(s, "bârzoi")) {
+			$scope.Conflict2 = "Bârzoi";
+			return true;
+		}
+		return false;
+	}
+
+	$scope.checkConflict3 = function() {
+		var s = $scope.Conflict3;
+		if (s == undefined) return false;
+		s = s.toLowerCase();
+		var error = getLevenshteinDistance(s, "luluța");
+		if (error <= acceptedError(s, "luluța")) {
+			$scope.Conflict3 = "Luluța";
+			return true;
+		}
+		return false;
+	}
+
+	$scope.checkConflict4 = function() {
+		var s = $scope.Conflict4;
+		if (s == undefined) return false;
+		s = s.toLowerCase();
+		var error = getLevenshteinDistance(s, "leonaș");
+		if (error <= acceptedError(s, "leonaș")) {
+			$scope.Conflict4 = "Leonaș";
+			return true;
+		}
+		return false;
+	}
+
+	$scope.checkCity = function() {
+		var s = $scope.City;
+		if (s == undefined) return false;
+		s = s.toLowerCase();
+		var error = getLevenshteinDistance(s, "iași");
+		if (error <= acceptedError(s, "iași")) {
+			$scope.City = "Iași";
+			return true;
+		}
+		return false;
+	}
+
+	$scope.checkTeacher = function() {
+		var s = $scope.Teacher;
+		if (s == undefined) return false;
+		s = s.toLowerCase();
+		var error = getLevenshteinDistance(s, "șarl");
+		if (error <= acceptedError(s, "șarl")) {
+			$scope.Teacher = "Șarl";
+			return true;
+		}
+		return false;
+	}
+
+	$scope.checkLanguage = function() {
+		var s = $scope.Language;
+		if (s == undefined) return false;
+		s = s.toLowerCase();
+		var error = getLevenshteinDistance(s, "franceza");
+		if (error <= acceptedError(s, "franceza")) {
+			$scope.Language = "franceza";
+			return true;
+		}
+		return false;
+	}
+
+	$scope.checkName = function() {
+		var s = $scope.Name;
+		if (s == undefined) return false;
+		s = s.toLowerCase();
+		var error = getLevenshteinDistance(s, "luluța");
+		if (error <= acceptedError(s, "luluța")) {
+			$scope.Name = "Luluța";
+			return true;
+		}
+		return false;
+	}
 });

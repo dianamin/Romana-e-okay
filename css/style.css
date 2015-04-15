@@ -262,3 +262,22 @@ td {
 	display: inline-block;
 	vertical-align: middle;
 }
+
+.conflict-part {
+	width: 60%;
+	border-radius: 15px;
+	box-shadow: 0 0 10px #800000;
+	transition: all 1s;
+	-moz-transition: all 1s;
+	-webkit-transition: all 1s;
+	-o-transition: all 1s;
+}
+
+.conflict-part:hover {
+	box-shadow: 0 0 50px #800000;
+}
+
+.conflict-text {
+	text-align: center;
+	padding-top: 30px;
+}
