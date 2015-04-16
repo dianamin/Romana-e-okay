@@ -1,5 +1,45 @@
 <div ng-controller = "GeneralCheckerCtrl">
-	<input type = "text" class = "form-control short-input-box" ng-model = "Test" value = "{Test}">
-	<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Test', 'ABC')"></span>
-	<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Test', 'ABC')"></span>
+	<h4> Povestea lui Harap-Alb </h4>
+	<p> 
+		<i> Povestea lui Harap-Alb </i> de Ion creangă este un basm 
+		<input type = "text" class = "form-control short-input-box" ng-model = "Fairytale" value = "{Fairytale}">
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Fairytale', 'cult')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Fairytale', 'cult')"></span> și a fost publicat în convorbiri literare, în 1877. 
+	</p>
+
+
+	<h5> Ce este basmul? </h5>
+
+	<blockquote>
+		Basmul este [...] o oglindire a vieții în moduri fabuloase.
+		<footer> G. Călinescu </footer>
+	</blockquote>
+
+	<p> Basmul a apărut în epica populară, ulterior pătrunzând și în literatura cultă (în secolul al XIX-lea, în perioada de afirmare a esteticii romantice). </p>
+
+	<div class = "well">
+	 	<b> Basm </b> = specie a 
+		<div class = "inline-form">
+			<input type = "radio" name = "Genre" ng-model = "Genre" class = "big-dot" value = "liricii" /> liricii <br />
+			<input type = "radio" name = "Genre" ng-model = "Genre" class = "big-dot" value = "epicii" /> epicii
+		</div>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkRadio('Genre', 'epicii')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkRadio('Genre', 'epicii')"></span>
+		,
+		<div class = "inline-form">
+			<input type = "radio" name = "Narration" ng-model = "Narration" class = "big-dot" value = "naratiune" /> narațiune <br />
+			<input type = "radio" name = "Narration" ng-model = "Narration" class = "big-dot" value = "descriere" /> descriere
+		</div>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkRadio('Narration', 'naratiune')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkRadio('Narration', 'naratiune')"></span>
+		amplă, indicând supranaturalul/fabulosul. Personajele (oameni, dar și ființe himerice) sunt purtatoare ale unor valori simbolice: binele și răul în diversele lor ipostaze. Conflictele dintre bine și rău se încheie, de obicei, prin victoria forțelor 
+		<div class = "inline-form">
+			<input type = "radio" name = "Victory" ng-model = "Victory" class = "big-dot" value = "binelui" /> binelui <br />
+			<input type = "radio" name = "Victory" ng-model = "Victory" class = "big-dot" value = "răului" /> răului
+		</div>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkRadio('Victory', 'binelui')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkRadio('Victory', 'binelui')"></span>.
+
+	</div>
+
 </div>
