@@ -68,7 +68,7 @@ creations = [
 			"author": "George Bacovia",
 			"type": "Poezia simbolistă",
 			"img" : "img/interbelic/p.jpg",
-			"page" : "data/creations/alexandrulapusneanul.html"
+			"page" : "data/creations/plumb.html"
 		},
 		{
 			"id" : "1",
@@ -119,7 +119,7 @@ creations = [
 			"page" : "data/creations/alexandrulapusneanul.html"
 		},
 		{
-			"id" : "7",
+			"id" : "7	",
 			"name": "Baltagul",
 			"author": "Mihail Sadoveanu",
 			"type": "Romanul mitic",
