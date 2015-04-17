@@ -119,12 +119,12 @@ creations = [
 			"page" : "data/creations/alexandrulapusneanul.html"
 		},
 		{
-			"id" : "7	",
+			"id" : "7",
 			"name": "Baltagul",
 			"author": "Mihail Sadoveanu",
 			"type": "Romanul mitic",
 			"img" : "img/interbelic/b.jpg",
-			"page" : "data/creations/alexandrulapusneanul.html"
+			"page" : "data/creations/baltagul.html"
 		}
 	],
 	[

@@ -1,0 +1,182 @@
+<div ng-controller = "GeneralCheckerCtrl">
+	<h4> Baltagul </h4>
+
+	<p> Publicat în 1930, romanul „Baltagul” este „probabil singurul roman obiectiv” al scriitorului (Nicolae Manolescu). Prin amestecul de elemente realiste și narațiune arhetipală, romanul aduce o formulă românească inedită în peisajul epicii interbelice: polimorfismul structurii. </p>
+
+	<h5> Ce este romanul? </h5>
+
+	<p> 
+		Romanul este o creație epică în proză de
+		<div class = "inline-form">
+			<input type = "radio" name = "Size" ng-model = "Size" class = "big-dot" value = "mici" /> mici <br />
+			<input type = "radio" name = "Size" ng-model = "Size" class = "big-dot" value = "mari" /> mari
+		</div>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkRadio('Size', 'multe')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkRadio('Size', 'multe')"></span>
+		dimensiuni, cu acțiune 
+		<div class = "inline-form">
+			<input type = "radio" name = "Conflict" ng-model = "Conflict" class = "big-dot" value = "complexă" /> complexă <br />
+			<input type = "radio" name = "Conflict" ng-model = "Conflict" class = "big-dot" value = "simplistă" /> simplistă
+		</div>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkRadio('Plans', 'complexă')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkRadio('Plans', 'complexă')"></span>
+		, desfășurată pe 
+		<div class = "inline-form">
+			<input type = "radio" name = "Plans" ng-model = "Plans" class = "big-dot" value = "putine" /> un singur plan <br />
+			<input type = "radio" name = "Plans" ng-model = "Plans" class = "big-dot" value = "multe" /> mai multe planuri
+		</div>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkRadio('Plans', 'multe')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkRadio('Plans', 'multe')"></span>
+		cu indici spațiali și temporali precizați, antrenând un număr 
+		<div class = "inline-form">
+			<input type = "radio" name = "Number" ng-model = "Number" class = "big-dot" value = "mare" /> mare <br />
+			<input type = "radio" name = "Number" ng-model = "Number" class = "big-dot" value = "mic" /> mic
+		</div>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkRadio('Plans', 'mare')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkRadio('Plans', 'mare')"></span>
+		de personaje puternic individualizate.  
+	</p>
+
+	<p> Prin multitudinea de aspecte înfățișate, romanul oferă o imagine amplă asupra vieții. </p>
+
+	<h5> Cum este structurat romanul? </h5>
+
+	<p> Romanul este structurat pe doua coordonate fundamentale: aspectul realist și cel mitic. </p>
+
+	<p> 
+		Aspectul 
+		<input type = "text" class = "form-control short-input-box" ng-model = "Aspect1" value = "{Aspect1}">
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Aspect1', 'realist')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Aspect1', 'realist')"></span>
+		se referă la prezentarea <b> monografiei </b> satului moldovenesc Măgura. Apare descrierea satului cu scene de viață cotidiană, descrierea gospodăriei țărănești și a obiceiurilor păstorilor, a locurilor de popas până la Doma cu marile ceremonii ale existenței umane (botezul, nunta), dar și prezentarea credinței creștine și a practicilor magice.
+	</p>
+
+	<p> În prim plan este căutarea asociată cu motivul labirintului și pedepsirea celor care l-au ucis pe Nechifor Lipan, un scenariu ce respectă schema specifică unui roman polițist. Vitoria reconstituie împreună cu fiul său, Gheorghiță, drumul parcurs de soțul ei, pentru elucidarea adevărului și săvârșirea dreptății. Drumul parcurs de Gheorghiță împreună cu mama sa îl ajută să se formeze ca bărbat pentru a prelua în final rolul tatălui conferă romanului caracterul de <b> roman inițiatic</b>.  </p>
+
+	<p>
+		Aspectul 
+		<input type = "text" class = "form-control short-input-box" ng-model = "Aspect2" value = "{Aspect2}">
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Aspect2', 'mitic')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Aspect2', 'mitic')"></span> 
+		se referă la sensul ritual al gesturilor personajului principal. Orizontul mitic include modul de înțelegere a lumii de către personaje, comuniunea om-natură și mitul marii treceri.
+	</p>
+
+	<p> Motivul transhumanței și asemănărea dintre roman și balada populară „Miorița” încadrează romanul în <b> tipologia romanului mioritic</b>. Însuși scriitorul sugerează această relație dintre opera sa și balada populară prin motto-ul <i> „Stăpâne, stăpâne,/ Mai chiamă ș-un câine...”</i>. Al. Paleologu numește romanul „o anti-Mioriță”. </p>
+
+	<h5> Care este tema romanului? </h5>
+
+	<p> Tema romanului este aventura căutării, a descoperirii adevărului într-un univers ghidat mai ales de legile nescrise, de tradiții, obiceiuri, superstiții. Opera conține deci marile teme sadoveniene: viața pastorală, natura, miturile, iubirea, arta povestirii, înțelepciunea. </p>
+
+	<h5> Ce semnifică titlul? </h5>
+
+	<div class = "row">
+		<div class = "col-md-8 col-sm-8">
+			<p> Titlul operei este un obiect simbolic, ambivalent. Toporul cu două tăișuri este o armă a crimei și totodată instrumentul actului justițiar, reparator. </p>
+			<br />
+			<p> Baltagul tânărului Gheorghiță se păstrează neatins de sângele ucigașului. Criticul Marin Mincu asociază baltagul cu labrys-ul, securea dublă cu care a fost doborât minotaurul, monstrul mitic. </p>
+			<br />
+			<p> Semnificație simbolică are și numele protagonistei. Acesta desemnează victoria dreptății. </p>
+		</div>
+		<div class = "col-md-4 col-sm-4">
+			<center> <img class = "img-300" src = "img/interbelic/baltag.jpg" /> </center>
+		</div>
+	</div>
+
+
+	<h5> Cum e perspectiva narativă? </h5>
+	<p>	
+		Narațiunea la persoana a III-a și naratorul omniprezent și omniscient reconstituie în mod 
+		<input type = "text" class = "form-control short-input-box" ng-model = "Objective" value = "{Objective}">
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Objective', 'obiectiv')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Objective', 'obiectiv')"></span>
+		prin tehnica detaliului și a observației, lumea satului de munteni și acțiunile Vitoriei. Viziunea auctorială este o trăsătură a romanului obiectiv. Vitoria va prelua rolul naratorului la parastasul soțului său.
+	</p>
+
+	<h5> Cum este construit subiectul? </h5>
+
+	<p>	Secvențele narative sunt legate prin înlănțuire și alternanță. Peisajele descriptive fixează diferite aspecte ale cadrului sau elemente de portret fizic individual (al Vitoriei, al lui Gheorghiță) sau colectiv (muntenii, „locuitorii de sub brad”). Narațiunea este nuanțată de secvențe dialogate. </p>
+	<p> Timpul derulării acțiunii este precizat prin repere temporale: „aproape de Sf. Andrei”, „în Postul Mare”, „10 Martie”. Cadrul spațial este inițial satul Măgura Tarcăului, zona Dornelor și a Bisriței, iar apoi Cristești, în balta Jijiei. Fiind un roman realist, traseul urmat de Vitoria împreună cu fiul ei, pe urmele lui Nechifor, conține toponime existente pe hartă.Secvențele narative sunt legate prin înlănțuire și alternanță. Peisajele descriptive fixează diferite aspecte ale cadrului sau elemente de portret fizic individual (al Vitoriei, al lui Gheorghiță) sau colectiv (muntenii, „locuitorii de sub brad”). Narațiunea este nuanțată de secvențe dialogate. </p>
+	<p> Timpul derulării acțiunii este precizat prin repere temporale: „aproape de Sf. Andrei”, „în Postul Mare”, „10 Martie”. Cadrul spațial este inițial satul Măgura Tarcăului, zona Dornelor și a Bisriței, iar apoi Cristești, în balta Jijiei. Fiind un roman realist, traseul urmat de Vitoria împreună cu fiul ei, pe urmele lui Nechifor, conține toponime existente pe hartă. </p>
+	<p> Romanul este structurat în 16 capitole cu acțiune desfășurată cronologic, după momentele subiectului. </p>
+
+	<h5> Ce se întâmplă? </h5>
+
+
+	<div class = "row">
+		<div class = "col-md-8 col-sm-8">
+			<p>	<b> Prima parte </b> (capitolele I – IV) prezintă frământările Vitoriei în așteptarea soțului și pregătirile de drum și include expozițiunea și intriga. </p>
+
+			<p>	În expozițiune se prezintă satul Măgura Tarcăului și schița portretului fizic al Vitoriei, surprinsă torcând pe prispă și gândindu-se la întârzierea soțului său plecat la Dorna să cumpere oi. </p>
+
+			<p>	Intriga cuprinde frământările ei și acțiunile întreprinse înainte de plecarea ei în căutarea soțului: ține post negru 12 vineri, se închină la icoana Sfintei Ana de la mânăstirea Bistrița, anunță autoritățile de dispariția soțului, vinde unele lucruri pentru a face rost de bani, pe Minodora o lasă la Mânăstirea Văratec iar lui Gheorghița îi încredințează un baltag sfințit. </p>	
+			<br />
+		</div>
+		<div class = "col-md-4 col-sm-4">
+			<center> <img class = "img-300" src = "img/interbelic/tarcau.jpg" /> </center>
+		</div>
+	</div>
+
+
+	<div class = "row">
+		<div class = "col-md-4 col-sm-4">
+			<center> <img class = "img-300" src = "img/interbelic/vitoria.jpg" /> </center>
+		</div>
+		<div class = "col-md-8 col-sm-8">
+			<p> <b> Partea a doua </b> (capitolele VII – XIII) cuprinde desfășurarea acțiunii. Vitoria și fiul său reconstituie traseul lui Nechifor Lipan și fac o serie de popasuri unde află informații importante. La canțelaria de la Vatra Dornei află de actul de vânzare a oilor. De asemenea, ei întâlnesc o cumetrie la Borca și o nuntă la Cruci. Succesiunea acestor mari momente din viața omului dă de gândit Vitoriei. Aceasta anticipează înmormântarea din final.. </p>
+			<p> Protagonista își dă seama ca soțul ei a dispărut între Suha și Sabasa. Cu ajutorul câinelui regăsit, Lupu, femeia descoperă într-o râpă rămășițele lui Lipan, în dreptul Crucii Talienilor. </p>
+			<br />
+		</div>
+	</div>
+
+
+	<div class = "row">
+		<div class = "col-md-8 col-sm-8">
+			<p> <b> Ultima parte </b> (capitolele XIV – XVI) prezintă sfârșitul drumului: ancheta poliției, înmormântarea, parastasul lui Nechifor Lipan și pedepsirea ucigașului. </p>
+
+			<p> Coborârea în râpă și vegherea nocturnă a mortului marchează maturizarea lui Gheorghiță, dovedită de înfăptuirea actului de dreptate la parastas. </p>
+
+			<p> Punctul culminant este momentul în care Vitoria reconstituie cu fidelitate scena crimei, surprinzându-i chiar și pe ucigașii Calistrat Bogza și Ilie Cuțui. Primul își recunoaște vina, însă al doilea devine agresiv. Este lovit de Gheorghiță cu baltagul lui Nechifor și sfâșiat de câinele Lupu, făcându-se astfel dreptate. </p>
+			<br /> 
+		</div>
+		<div class = "col-md-4 col-sm-4">
+			<center> <img class = "img-300" src = "img/interbelic/cutui.jpg" /> </center>
+		</div>
+	</div>
+
+	<p> Deznodământul îl surprinde pe Bogza care își cere iertare și își recunoaște fapta. </p>
+
+	<h5> Cum este caracterizată Vitoria? </h5>
+
+	<p> Personajul principal, femeia voluntara, este „un exponent al speței” (G. Călinescu) în relație cu lumea arhaică, dar și o individualitate, prin însușirile ei. „Vitoria e ca un Hamlet feminin, care bănuiește cu metodă, cercetează cu disimulație, pune la cale reprezentațiuni trădătoare și, când dovada s-a făcut, dă drum răzbunării”. </p>
+
+	<p> Este o femeie puternică, hotărâtă. Ea afirmă ca nu va mai avea odihnă până nu își va gasi soțul. Este curajoasă și lucidă. Inteligența ei nativă și stăpânirea de sine sunt evidențiate pe drum și mai ales la parastas, când demască ucigașii. </p>
+
+
+	<div class = "row">
+		<div class = "col-md-4 col-sm-4">
+			<center> <img class = "img-300" src = "img/interbelic/vitoria2.jpg" /> </center>
+		</div>
+		<div class = "col-md-8 col-sm-8">
+			<p> Vitoria transmite copiilor respectul tradițiilor și este refractară la noutățile civilizației: „În tren ești oog, mut și chior”. Ca mamă, îi interzice Minodorei șa se îndrepărteze de tradiție: „Îți arât eu coc, valț și bluză...! Nici eu, nci bunică-ta, nici bunică-mea n-am știut de acestea – și-n legea noastră trebuie să trăiești și tu!”. Prin călătorie, contribuie la maturizarea lui Gheorghiță. <p>	
+
+			<p> Protagonista respectă obicieiurile de cumetrie și de nuntă („a primit plosca și a făcut frumoasă urare miresei”) și veghează la îndeplinirea rânduielilor din ritualul înmormântării: priveghiul, drumul la cimitir, bocitul, slujba religioasă, pomana, praznicul. </p>
+		</div>
+	</div>
+
+	<p> Țipătul dinaintea coborârii coșciugului și gesturile concentrează iubirea si durerea pierderii soțului: „Cu așa glas a strigat, încât prin toți cei de față a trecut un cutremur. S-a dărâmat în genunchi, și-a rezemat fruntea de marginea sicriului. </p>
+
+	<p> Personajul complex este realizat prin tehnica basoreliefului și individualizat prin caracterizare directa și indirectă. (prin fapte, vorbe, atitudini, gesturi, relații cu alte personaje, nume). </p>
+
+	<p> Portretul fizic relevă frumusețea personajului prin tehnica detaliului semnificativ: „Nu mai era tânără, dar avea o frumuseță neobișnuită în privire. Ochii îi străluceau ca-ntr-o ușoară ceața în dosul genelor lungi și răsfrânte în cârligașe”. </p>
+
+	<p> Natura devine o cutie de rezonanță a sentimentelor femeii, îndrumând-o în căutarea soțului său: la Dorna, dar și la Crucea Talienilor, vântul o anunță că se află pe drumul cel bun. </p>
+
+	<h5> Care sunt celelalte personaje? </h5>
+
+	<p> Personaj secundar, <b> Gheorghiță </b> reprezintă generație tânără. El trece printr-un drum inițiatic spre maturizare. </p>
+
+	<p> <b> Nechifor Lipan </b> este caracterizat în absență prin retrospectivă. Simbolizează destinul numitor al oamenilor. Numele său „cel adevărat și tainic”, de botez, este tot Gheorghiță, dar primise numele Nechifor (purtător de victorie). </p>
+
+	<p> Personajele episodice sunt Minodora, fiica receptivă la noutățile civilizației care este trimisă la mânăstire pentru purificare, moș Pricop (ospitalitatea), parintele Dănilă (autoritatea spirituală în satul arhaic, baba Maranda (superstițiile) – personaje specifice pentru lumea satului arhaic. </p>
+
+</div>
