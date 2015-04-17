@@ -289,3 +289,7 @@ td {
 	text-align: center;
 	padding-top: 30px;
 }
+
+td {
+	text-align: justify;;
+}
