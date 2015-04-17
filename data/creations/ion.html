@@ -1,0 +1,152 @@
+<div ng-controller = "GeneralCheckerCtrl">
+	<h4> Ion </h4>
+
+	<p> Publicat în 1920, romanul interbelic „Ion” reprezintă primul roman al lui Liviu Rebreanu. Este o capodoperă care înfățișează universul rural în mod realist, fără idilizarea din proza sămănătoristă. </p>
+
+	<p> E. Lovinescu numește romanul „Ion” cea mai puternică creație obiectivă din literatura română. </p>
+
+	<h5> De ce este <i> Ion </i> un roman? </h5>
+	<p style = "display: inline-block;">
+		Având ca trăsături amploarea acțiunii desfășurată pe 
+		<div class = "inline-form">
+			<input type = "radio" name = "Plans" ng-model = "Plans" class = "big-dot" value = "putine" /> un singur plan <br />
+			<input type = "radio" name = "Plans" ng-model = "Plans" class = "big-dot" value = "multe" /> mai multe planuri
+		</div>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkRadio('Plans', 'multe')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkRadio('Plans', 'multe')"></span>
+		, conflictul 
+		<div class = "inline-form">
+			<input type = "radio" name = "Conflict" ng-model = "Conflict" class = "big-dot" value = "complex" /> complex <br />
+			<input type = "radio" name = "Conflict" ng-model = "Conflict" class = "big-dot" value = "simplist" /> simplist
+		</div>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkRadio('Plans', 'complex')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkRadio('Plans', 'complex')"></span>
+		, prezența unui număr 
+		<div class = "inline-form">
+			<input type = "radio" name = "Number" ng-model = "Number" class = "big-dot" value = "mare" /> mare <br />
+			<input type = "radio" name = "Number" ng-model = "Number" class = "big-dot" value = "mic" /> mic
+		</div>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkRadio('Plans', 'mare')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkRadio('Plans', 'mare')"></span>
+		de personaje și realizarea unei imagini ample asupra vieții, opera „Ion” este un roman. 
+	</p>
+
+	<h5> Cum este viziunea narativă? </h5>
+	<p style = "display: inline-block;">
+		Relatarea la persoana a III-a, prezența naratorul omniscient (știe mai mult decât personajele) și omniprezent (dirijează evoluția personajelor ca un regizor universal), tonul impersonal și atitudinea detașată încadrează opera în tipologia romanului obiectiv. Viziunea narativă este deci obiectivă, <div class = "inline-form">
+			<input type = "radio" name = "Perspective1" ng-model = "Perspective1" class = "big-dot" value = "actoriala" /> actorială <br />
+			<input type = "radio" name = "Perspective1" ng-model = "Perspective1" class = "big-dot" value = "auctorială" /> auctorială
+		</div>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkRadio('Perspective1', 'auctorială')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkRadio('Perspective1', 'auctorială')"></span>.
+	</p>
+
+	<p> Naratorul plăsmuiește traiectoriile existenței personajelor conform unui destin prestabilit și conform legii cauzalității. De aceea textul conține semne prevestitoare ale sfârșitului fiecărui personaj care este o victimă a fatalității. Înlănțuite temporal și cauzal, faptele sunt <b>verosimile</b>. </p>
+
+	<h5> Care este tema romanului? </h5>
+	<p> Tema romanului este prezentarea problematicii pământului în condițiile satului ardelean de la începutul secolului XX.  Tema centrală este dublată de tema iubirii. Simbolic, destinul protagonistului se plasează pe două coordonate: Eros și Thanatos. </p>
+
+	<h5> Cum sunt incipitul și finalul? </h5>
+
+	<p> 
+		Incipitul operei este simetric cu finalul. Simetria se realizează prin deschiderea 
+		<input type = "text" class = "form-control short-input-box" ng-model = "Path" value = "{Path}">
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Path', 'drumului')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Path', 'drumului')"></span>
+		care intră și iese din satul Pripas: cadrul spațial pentru acțiunea din roman. Drumul are semnificația simbolică a destinului unor oameni. Asemenea ramei unui tablou, el separă viața cititorului de viața ficțională a personajelor din roman. 
+	</p>
+
+	<p> Descrierea drumului este supusă convenției veridicității prin detaliile toponimice și introduce cititorul în lumea ardeleană rurală din secolul XX.  </p>
+
+	<p>
+		Descrierea finală face mai accesibilă semnificația simbolică a drumului prin metafora șoselei – viață: </p>
+	<div class = "well">
+		<i> „Drumul trece prin Jidovița, pe podul de lemn, acoperit, de peste Someș și pe urmă se pierde în șoseaua cea mare și fără început...” </i>
+	</div>
+
+	<h5> De ce e roman monografic? </h5>
+	<p> „Ion” este roman monografic deoarece obiceiurile (hora) și tradițiile sunt prezentate (încă din expozițiune) împreună cu descrierea arhitecturii, a condiției sociale a locuitorilor.  </p>
+
+	<h5> Cum este structurat romanul? </h5>
+
+	<p> 
+		Romanul este structurat în 13 capitole (număr simbolic, nefast) împărțite în două părți coordonate de evoluția interioară a personajului principală: <i> „Glasul 
+		<input type = "text" class = "form-control short-input-box" ng-model = "Voice1" value = "{Voice1}">
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Voice1', 'pământului')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Voice1', 'pământului')"></span> 
+		” </i> și <i> „Glasul 
+		<input type = "text" class = "form-control short-input-box" ng-model = "Voice2" value = "{Voice2}">
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Voice2', 'iubirii')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Voice2', 'iubirii')"></span>
+		” </i>.
+	</p>
+
+	<h5> Ce se întâmplă? </h5>
+	<p>	Prin tehnica planurilor paralele este prezentată viața țărănimii și a intelectualității rurale. Trecerea de la un plan narativ la altul se face prin alternanță, iar succesiunea secvențelor narative este redată prin înlănțuire. Amestecul claselor sociale este dezaprobat de doamna Herdelea la horă, dar interferența se produce în sensul determinării destinului 
+	unui personaj din celălalt plan, prin gesturi care par a fi dictate de hazard. </p>
+
+	<div class = "row">
+		<div class = "col-md-8 col-sm-8">
+			<p> Acțiunea romanului începe într-o zi de duminică, în care locuitorii satului Pripas se află la horă, în curtea Todosiei, văduva lui Maxim Oprea. În expozițiune sunt prezentate personajele principale, timpul și spațiul. Descrierea jocului tradițional și a pașilor specifici, a portului popular, a cântecului susținut de figurile pitorești ale lăutarilor. Cercul horei, centru al lumii satului, este o descătușare dionisiacă de energii. </p>	
+			<p> Așezarea privitorilor reflevctă relațiile sociale. Primarii și chiaburii discută separat de țăranii mijlocași, așezați pe prispă. În satul tradițional, lipsa averii este echivalentă cu lipsa demnității umane. Fetele rămasenepoftite privesc la hore, iar mamele și babele discută despre gospodărie. </p>
+		</div>
+		<div class = "col-md-4 col-md-4">
+			<center> <img src = "img/interbelic/hora.jpg" class = "img-300" /> </center>
+		</div>
+	</div>
+
+	<p> Copiii se amestecă printre adulți. Este prezentă și Savista: oloaga satului, prevestitoare a veștilor rele în sat, înfățișată cu un portret grotest – un personaj realist. Intelectualii (preotul Belciug și familia învățătorului Herdelea) privesc hora fără a se amesteca în joc. </p>
+
+	<p> Hotărârea lui Ion de a pofti la joc o fată ce dispune de o situație materială foarte bună (pe Ana) în locul fetei pe care o plăcea (Florica) marchează începutul conflictului. Tatăl Anei, Vasile Baciu, îl numește hoț și tâlhar pentru că „sărăntocul” umblă să-i ia fata promisă altui țăran bogat, George Bulbuc, constituie intriga romanului. Ion dorește să se răzbune. Îl va face la rândul său pe chiabur de rușinea satului, lăsând-o pe Ana însărcinată pentru a-l detemina să accepte nunta. </p>
+
+	<center>
+		<div class = "row">
+			<div class = "col-md-1 col-sm-1"> </div>
+			<div class = "col-md-4 col-sm-4">
+				<img src = "img/interbelic/ion.jpg" class = "conflict-part" />
+				<br /> <br /> 
+				<center> <b>
+				<input type = "text" class = "form-control short-input-box" ng-model = "Conflict1" value = "{Conflict1}">
+				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Conflict1', 'Ion')"></span>
+				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Conflict1', 'Ion')"></span>
+				</center> </b>
+			</div>
+			<div class = "subtitle col-md-1 col-sm-1 conflict-text">
+				VS.
+			</div>
+			<div class = "col-md-4 col-sm-4">
+				<img src = "img/interbelic/vasile baciu.jpg" class = "conflict-part" />
+				<br /> <br /> 
+				<center> <b>
+				<input type = "text" class = "form-control short-input-box" ng-model = "Conflict2" value = "{Conflict2}">
+				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Conflict2', 'Vasile Baciu')"></span>
+				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Conflict2', 'Vasile Baciu')"></span>
+				</center> </b>
+			</div>
+			<div class = "col-md-1 col-sm-1"> </div>
+		</div>
+		<br />
+	</center>
+
+	<p> Bătaia pentru mâna Anei de la sfârșitul petrecerii se încheie cu victoria lui Ion și îi alimentează lui George dorința de răzbunare. La sfârșitul romanului, George îl ucide pe Ion, lovindu-l cu sapa. </p>
+
+	<p> <b> Conflictul central </b> din roman este lupta pentru pământ. Drama lui Ion este drama țăranului sărac. Mândru și orgolios, conștient de calitățile sale, nu-și acceptă condiția și este pus în situația de a alege între iubirea pentru Florica și averea Anei. Conflictul social dintre Ion și Vasile Baciu este dublat de conflictul interior: între glasul pământului și glasul iubirii. </p>
+
+	<p> Personajul principal este marcat de relația cu pământul. Dorința obsesivă a personajului principal de a avea pământ și iubirea lui pătimașă îl fac monumental, dar se încheie omenește prin întoarcerea în această matrice universală. </p>
+
+	<div class = "row">
+		<div class = "col-md-4 col-sm-4">
+			<center> <img src = "img/interbelic/ana.jpg" class = "img-300" /> </center>
+		</div>
+		<div class = "col-md-8 col-sm-8">
+			<p> Ion o seduce pe Ana și îl forțează pe Vasile Baciu să accepte căsători. La nuntă, ion nu cere acte pentru pământ, urmând să înceapă bătăile și drumurile Anei de la Ion la Vasile. Preotul Belciug mediază conflictul dintre cei doi țărani în care Ana nu este decât o victimă tragică. </p>
+			<p> Sinuciderea Anei nu îi trezește lui Ion regrete, pentru că în Ana, iar apoi în Petrișor, fiul lor, nu vede decât garanția proprietății asupra pământurilor. Nici moartea copilului nu-l oprește din drumurile după Florica, măritată între timp cu George. Astfel că deznodământul este previzibil iar George nu este decât un instrument al destinului. George este arestat, Florica rămâne singură, iar averea lui ion revine bisericii. </p>
+		</div>
+	</div>
+
+	<h5> Cum este ion? </h5>
+	<p>Personajul principal este un personaj monumental. Este un exponent al țărănimii prin dorința de a avea pământ, este o individualitate prin modul în care îl obține. Existența sa este guvernată de verbele „a râvni” și „a poseda”. Inițial dotat cu o serie de calități, se dezumanizează treptat, iar moartea lui este expresia intenției moralizatoare a scriitorului ardelean. </p>
+
+	<p> Cele doua femei, conturate antitetic și complementar, Ana și Florica reprezintă cele două obsesii ale protagonistului: averea și iubirea. </p>
+
+</div>

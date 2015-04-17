@@ -108,7 +108,7 @@ creations = [
 			"author": "Liviu Rebreanu",
 			"type": "Romanul realist obiectiv",
 			"img" : "img/interbelic/i.jpg",
-			"page" : "data/creations/alexandrulapusneanul.html"
+			"page" : "data/creations/ion.html"
 		},
 		{
 			"id" : "6",
