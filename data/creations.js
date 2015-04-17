@@ -58,7 +58,7 @@ creations = [
 			"author": "Octavian Goga",
 			"type": "Poezia posteminescianistă",
 			"img" : "img/posteminescianism/r.jpg",
-			"page" : "data/creations/alexandrulapusneanul.html"
+			"page" : "data/creations/tbd.html"
 		},
 	],
 	[
@@ -76,7 +76,7 @@ creations = [
 			"author": "Tudor Arghezi",
 			"type": "Poezia modernistă",
 			"img" : "img/interbelic/fm.jpg",
-			"page" : "data/creations/alexandrulapusneanul.html"
+			"page" : "data/creations/tbd.html"
 		},
 		{
 			"id" : "2",
@@ -84,7 +84,7 @@ creations = [
 			"author": "Lucian Blaga",
 			"type": "Poezia modernistă",
 			"img" : "img/interbelic/ens.jpg",
-			"page" : "data/creations/alexandrulapusneanul.html"
+			"page" : "data/creations/tbd.html"
 		},
 		{
 			"id" : "3",
@@ -92,7 +92,7 @@ creations = [
 			"author": "Ion Barbu",
 			"type": "Poezia modernistă",
 			"img" : "img/interbelic/rcle.jpg",
-			"page" : "data/creations/alexandrulapusneanul.html"
+			"page" : "data/creations/tbd.html"
 		},
 		{
 			"id" : "4",
@@ -116,7 +116,7 @@ creations = [
 			"author": "George Călinescu",
 			"type": "Romanul mitic",
 			"img" : "img/interbelic/eo.jpg",
-			"page" : "data/creations/alexandrulapusneanul.html"
+			"page" : "data/creations/tbd.html"
 		},
 		{
 			"id" : "7",
@@ -134,7 +134,7 @@ creations = [
 			"author": "Marin Preda",
 			"type": "Roman postbelic",
 			"img" : "img/postbelic/m.jpg",
-			"page" : "data/creations/alexandrulapusneanul.html"
+			"page" : "data/creations/tbd.html"
 		},
 		{
 			"id" : "1",
@@ -142,7 +142,7 @@ creations = [
 			"author": "Nichita Stănescu",
 			"type": "Romanul mitic",
 			"img" : "img/postbelic/cg.jpg",
-			"page" : "data/creations/alexandrulapusneanul.html"
+			"page" : "data/creations/tbd.html"
 		},
 		{
 			"id" : "2",
@@ -150,7 +150,7 @@ creations = [
 			"author": "Marin Sorescu",
 			"type": "Teatru postbelic",
 			"img" : "img/postbelic/i.jpg",
-			"page" : "data/creations/alexandrulapusneanul.html"
+			"page" : "data/creations/tbd.html"
 		}
 	]
 ]
