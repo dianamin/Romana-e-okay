@@ -40,7 +40,7 @@ creations = [
 			"author": "Ion Luca Caragiale",
 			"type": "Comedia",
 			"img" : "img/junimea/osp.jpg",
-			"page" : "data/creations/alexandrulapusneanul.html"
+			"page" : "data/creations/oscrisoarepierduta.html"
 		},
 		{
 			"id" : "3",

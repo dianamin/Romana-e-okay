@@ -1,0 +1,126 @@
+<div ng-controller = "GeneralCheckerCtrl">
+	<h4> O scrisoare pierdută </h4>
+
+	<p> Reprezentată pe scenă în 1884, comedia <i> O scrisoare pierdută </i> de I. L. Caragiale este a treia dintre cele patru scrise de autor, o capodoperă a genului dramatic. Este o categorie de moravuri, în care sunt satirizate aspecte ale societății contemporane autorului, fiind inspirată de farsa electorală din anul 1883. </p>
+	<p> Prejudecata criticului E. 
+		<input type = "text" class = "form-control short-input-box" ng-model = "Lider" value = "{Lider}">
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Lider', 'Lovinescu')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Lider', 'Lovinescu')"></span> despre efemeritatea comediei de moravuri față de comedia de caracter nu s-a dovedit îndreptățită în tomp, comedia <i> O scrisoare pierduta </i> fiind actuală și pentru că mentalitatea unei categorii sociale nu diferă prea mult în context românesc de la o epocă la alta. Ambițiile, dorința de avere, privilegii sau ascensiune socială nu țin doar de mentalitatea unei epoci.
+	</p>
+
+	<h5> Ce este comedia? </h5>
+	<div class = "well">
+		<b> Comedia </b> - specie a genului 
+		<div class = "inline-form">
+			<input type = "radio" name = "Genre" ng-model = "Genre" class = "big-dot" value = "epic" /> epic <br />
+			<input type = "radio" name = "Genre" ng-model = "Genre" class = "big-dot" value = "dramatic" /> dramatic
+		</div>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkRadio('Genre', 'dramatic')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkRadio('Genre', 'dramatic')"></span>
+		care stârnește râsul prin surprinderea unor moravuri, a unor tipuri umane sau a unor situații neașteptate, cu un final 
+		<div class = "inline-form">
+			<input type = "radio" name = "Ending" ng-model = "Ending" class = "big-dot" value = "fericit" /> fericit <br />
+			<input type = "radio" name = "Ending" ng-model = "Ending" class = "big-dot" value = "trist" /> trist
+		</div>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkRadio('Ending', 'fericit')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkRadio('Ending', 'fericit')"></span>
+		. 
+	</div>
+	<p> Conflictul comic este realizat prin contrastul dintre aparență și esență. SUnt prezente formele comicului: umorul, ironia, și diferite tipuri de comic: </p>
+	<ul>
+		<li> de situație </li>
+		<li> de caracter </li>
+		<li> de limbaj </li>
+		<li> de nume </li>
+	</ul>
+
+	<p> Genul dramatic cuprinde acele opere literare <i> destinate reprezentării scenice </i> (nu lecturii). De accea, opera dramatica impune anumite limite privind amploarea în timp și spațiu a acțiunii reprezentate. Ideile și sentimentele autorului sunt transmise indirect, prin intermediul acțiunii și al personajelor, intervenția directă a autorului se reduce la didascalii. </p>
+
+	<p> Ca specie a genului dramatic, comedia este destinată reprezentării scenice, dovadă fiind lista cu personajele de la inceputul piesei și didascaliile, singurele intervenții directe ale autorului în piesă. </p>
+
+	<h5> De ce comedie de moravuri? </h5>
+	<p> Opera se încadrează în categoria comediilor de moravuri, prin satirizarea unor defecte omenești, piesa prezintă aspecte din viața politică (lupta pentru putere în contextul alegerilor pentru Cameră) și de familie (relația dintre Tipătescu și Zoe) a unor reprezentanți corupți ai politicianismului românesc. </p>
+
+	<h5> Cum este construită opera? </h5>
+	<p> 
+		Textul dramatic este structurat în 
+		<input type = "range" class = "medium-input-box" min = "1" max = "10" ng-model = "NumberOfActs" style = "display: inline-block;" /> <span> {{NumberOfActs}} </span>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "NumberOfActs == 4"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "NumberOfActs != 4"></span>
+		acte alcătuite din scene, fiind construit sub forma schimbului de replici între personaje. 
+	</p>
+
+	<h5> Care este semnificația titlului? </h5>
+	<p> Titlul pune in evidență contrastul comic dintre aparență și esență. Pretinsa luptă pentru putere politică se realizează, de fapt, prin lupta de culise având ca instrument al șantajului politic „o scrisoare pierdută” - pretextul dramatic al comediei. Articolul nehotărât indică atât banalitatea întâmplării, cât și repetabilitarea ei. </p>
+
+	<h5> Când și unde are loc acțiunea? </h5>
+
+	<p> Fiind destinată reprezentării scenice, creația dramatică impune anumite limite în ceea ce privește amploarea timpului și a spațiului de desfășurare a acțiunii. Acțiunea comediei este plasată „în capitala unui județ de munte, în zilele noastre”, adică la sfârșitul secolului al XIX-lea în perioada campaniei electorale, într-un interval de trei zile. </p>
+
+	<h5> Care este intriga? </h5>
+	<p> 
+		Intriga piesei pornește de la o întâmplare banala: pierderea unei 
+		<input type = "text" class = "form-control short-input-box" ng-model = "Letter" value = "{Letter}">
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Letter', 'scrisori')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Letter', 'scrisori')"></span> 
+		intime, compromițătoare pentru reprezentanții locali ai partidului aflat la putere și găsirea ei de către adversarul politic, care o folosește ca armă de șantaj. Acest fapt ridicol stârnește o agitatie nejustificată și se rezolvă printr-o împăcare generală și neașteptată.
+	</p>
+
+	<h5> Care sunt conflictele? </h5>
+	<p> Conflictul dramatic principal constă în confruntarea pentru puterea politica a două forțe opuse: reprezentanții partidului aflat la putere (prefectul Ștefan Tipătescu, Zaharia Trahanache - președintele grupării locale a partidului și Zoe, soția acestuia) și gruparea independentă constituită în jurul lui Nae Cațavencu, ambițios avocat și proprietar al ziarului „Răcnetul Carpaților. </p>
+	<p> Conflictul secundar este prezentat de grupul Farfuridi - Brânzovenescu, care se teme de trădarea prefectului. </p>
+	<p> Tensiunea dramatică este susținută gradat prin lanțul de evenimente care conduc spre rezolvarea conflictului, în finalul fericit al piesei: scrisoarea revine la destinatar, Zoe, iar trimisul de la centru, Agamiță Dandanache este ales deputat. Este utilizată <b> tehnica aplificării treptate a conflictului</b>. O serie de procedee compoziționale mențin tensiunea dramatică la un nivel ridicat, prin complicarea și multiplicarea situațiilor conflictuale. </p>
+
+	<h5> Ce se întâmplă? </h5>
+
+	<b> Actul I </b> <br />
+	<div class = "row">
+		<div class = "col-md-8 col-sm-8">
+			<p> Scena inițială din actul I (expozițiunea) prezintă personajele: Ștefan Tipătescu Și pristanda, care citesc ziarul lui Nae Cațavencu, „Răcnetul Carpaților”, și numără steagurile. </p>
+			<p> Venirea lui Trahanache cu vestea deținerii scrisorii de amor de către adversarul politic declanșează conflictul dramatic principal și constituie intriga comediei. Convingerea soțului înșelat că scrisoarea este o plastografie și temerea acestuia că Zoe ar putea afla de „machiaverlâcul” lui Cațavencu sunt de un comic savuros. </p>
+			<p> Naivitatea lui Zaharia Trahanache și calmul său contrastează cu zbuciumul amorezilor Tipătescu și Zoe Trahanache, care acționează impulsiv și contradictoriu pentru a smulge scrisoarea șantajistului. </p>
+		</div>
+		<div class = "col-md-4 col-sm-4">
+			<center> <img src = "img/junimea/tipatescu si pristanda.jpg" class = "img-300" /> </center>
+		</div>
+	</div>
+
+
+	<b> Actul II </b> <br />
+	<div class = "row">
+		<div class = "col-md-4 col-sm-4">
+			<center> <img src = "img/junimea/zoe trahanache.jpg" class = "img-300" /> </center>
+		</div>
+		<div class = "col-md-8 col-sm-8">
+			<p> Actul al II-lea prezintă în prima scenă o altă numărătoare: a voturilor, dar cu o zi înaintea alegerilor. Se declanșează conflictul secundar, reprezentat de grupul Farfuridi-Brânzovenescu, care se teme de trădarea prefectului.</p>
+			<br />
+			<p> Dacă Tipătescu îi ceruse lui Pristanda arestarea lui Cațavencu și percheziția locuinței pentru a găsi scrisoarea, Zoe dimpotrivă, ordonă eliberarea lui și uzează de mijloacele de convingere feminine pentru a-l determina pe Tipătescu să susțină candidatura avocatului din opoziție, în schimbul scrisorii. Cum prefectul nu acceptă compromisul politic, Zoe îi promite șantajistului sprijinul său. Depeșa primită de la centru solicită însă alegerea altui candidat pentru colegiul al II-lea. </p>
+		</div>
+	</div>
+
+	<b> Actul III </b> <br />
+	<div class = "row">
+		<div class = "col-md-8 col-sm-8">
+			<p> În actul al III-lea (punctul culminant), acțiunea se mută în sala mare a primăriei unde au loc discursurile candidăților Farfuridi și Cațavencu, în cadrul întrunirii electorale. </p>
+			<p> Între timp, Trahanache găsește o poliță falsificată de Cațavencu, pe care intenționează s-o folosească pentru contrașantaj. Apoi anunță în ședință numele candidatului susținut de comitet: Agamiță Dandanache. </p>
+			<p> Încercarea lui Cațavencu de a vorbi în public despre scrisoare eșuează din cauza scandalului iscat în sală de Pristanda. În încăierare, Cațavencu pierde pălăria cu scrisoarea, găsită pentru a doua oară de Cetățeanul turmentat, care o duce destinatarei. </p>
+		</div>
+		<div class = "col-md-4 col-sm-4">
+			<center> <img src = "img/junimea/catavencu.jpg" class = "img-300" /> </center>
+		</div>
+	</div>
+
+	<b> Actul IV </b> <br />
+	<div class = "row">
+		<div class = "col-md-4 col-sm-4">
+			<center> <img src = "img/junimea/dandanache.jpg" class = "img-300" /> </center>
+		</div>
+		<div class = "col-md-8 col-sm-8">
+			<p> Actul al IV-lea (deznodământul) aduce rezolvarea conflictului inițial, pentru că scrisoarea ajunge la Zoe, iar Cațavencu se supune condițiilor ei. </p>
+			<br />
+			<p> Intervine un alt personaj, Dandanache, care întrece prostia și lipsa de onestitate a candidaților locali. Propulsarea lui politică este cauzată de o poveste asemănătoare: și el găsise o scrisoare compromițătoare. Este ales în unanimitate și totul se încheie cu festivitatea condusă de Cațavencu, unde adversarii se împacă. </p>
+		</div>
+	</div>
+
+
+</div>
