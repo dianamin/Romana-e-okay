@@ -48,7 +48,7 @@ creations = [
 			"author": "Ioan Slavici",
 			"type": "Nuvela realistă și psihologică",
 			"img" : "img/junimea/mn.jpg",
-			"page" : "data/creations/alexandrulapusneanul.html"
+			"page" : "data/creations/moaracunoroc.html"
 		}
 	],
 	[
@@ -63,7 +63,7 @@ creations = [
 	],
 	[
 		{
-			"id" : "1",
+			"id" : "0",
 			"name": "Plumb",
 			"author": "George Bacovia",
 			"type": "Poezia simbolistă",
@@ -71,7 +71,7 @@ creations = [
 			"page" : "data/creations/alexandrulapusneanul.html"
 		},
 		{
-			"id" : "2",
+			"id" : "1",
 			"name": "Flori de mucigai",
 			"author": "Tudor Arghezi",
 			"type": "Poezia modernistă",
@@ -79,7 +79,7 @@ creations = [
 			"page" : "data/creations/alexandrulapusneanul.html"
 		},
 		{
-			"id" : "3",
+			"id" : "2",
 			"name": "Eu nu strivesc corola de minuni a lumii",
 			"author": "Lucian Blaga",
 			"type": "Poezia modernistă",
@@ -87,7 +87,7 @@ creations = [
 			"page" : "data/creations/alexandrulapusneanul.html"
 		},
 		{
-			"id" : "4",
+			"id" : "3",
 			"name": "Riga Crypto și lapona Enigel",
 			"author": "Ion Barbu",
 			"type": "Poezia modernistă",
@@ -95,7 +95,7 @@ creations = [
 			"page" : "data/creations/alexandrulapusneanul.html"
 		},
 		{
-			"id" : "5",
+			"id" : "4",
 			"name": "Ultima noapte de dragoste, întâia noapte de război",
 			"author": "Camil Petrescu",
 			"type": "Romanul psihologic",
@@ -103,7 +103,7 @@ creations = [
 			"page" : "data/creations/alexandrulapusneanul.html"
 		},
 		{
-			"id" : "6",
+			"id" : "5",
 			"name": "Ion",
 			"author": "Liviu Rebreanu",
 			"type": "Romanul realist obiectiv",
@@ -111,7 +111,7 @@ creations = [
 			"page" : "data/creations/alexandrulapusneanul.html"
 		},
 		{
-			"id" : "7",
+			"id" : "6",
 			"name": "Enigma Otiliei",
 			"author": "George Călinescu",
 			"type": "Romanul mitic",
@@ -119,7 +119,7 @@ creations = [
 			"page" : "data/creations/alexandrulapusneanul.html"
 		},
 		{
-			"id" : "8",
+			"id" : "7",
 			"name": "Baltagul",
 			"author": "Mihail Sadoveanu",
 			"type": "Romanul mitic",
