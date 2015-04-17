@@ -100,7 +100,7 @@ creations = [
 			"author": "Camil Petrescu",
 			"type": "Romanul psihologic",
 			"img" : "img/interbelic/und.jpg",
-			"page" : "data/creations/alexandrulapusneanul.html"
+			"page" : "data/creations/ultimaprima.html"
 		},
 		{
 			"id" : "5",
