@@ -25,14 +25,19 @@ app.controller('JocCtrl', function ($scope, $http) {
 	$scope.correctAnswer = false;
 	$scope.asked = new Array();
 	$scope.total = 15;
+	$scope.score = 0;
 
 	$scope.check = function() {
 		$scope.checked = true;
-		if ($scope.GivenAnswer == $scope.questions[$scope.selectedQuestion].raspunsuri[$scope.questions[$scope.selectedQuestion].corect])
+		if ($scope.GivenAnswer == $scope.questions[$scope.selectedQuestion].raspunsuri[$scope.questions[$scope.selectedQuestion].corect]) {
 			$scope.correctAnswer = true;
+			$scope.score += 50;
+		}
 		else {
 			$scope.correctAnswer = false;
 			$scope.loseLife();
+			$scope.score -= 25;
+			if ($scope.score < 0) $scope.score = 0;
 		}
 		showElement("QuestionRez");
 	}
