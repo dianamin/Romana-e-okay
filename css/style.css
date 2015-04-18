@@ -293,3 +293,8 @@ td {
 td {
 	text-align: justify;;
 }
+
+.life-heart {
+	height: 25px;
+	width: 25px;
+}

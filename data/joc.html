@@ -1,0 +1,18 @@
+<div ng-controller = "JocCtrl">
+	<h3> Joc </h3>
+	<center>
+
+		<div ng-show = "Lost == true"> :) </div>
+
+		<button class = "btn btn-danger" ng-click = "LoseLife()"> Click </button>
+		<br />
+
+		<div>
+			<img ng-src = "{{heartImg[LifeLevel[0]]}}" class = "life-heart" />
+			<img ng-src = "{{heartImg[LifeLevel[1]]}}" class = "life-heart" />
+			<img ng-src = "{{heartImg[LifeLevel[2]]}}" class = "life-heart" />
+			<img ng-src = "{{heartImg[LifeLevel[3]]}}" class = "life-heart" />
+			<img ng-src = "{{heartImg[LifeLevel[4]]}}" class = "life-heart" />
+		</div>
+	</center> 
+</div>

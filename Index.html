@@ -14,16 +14,18 @@
 	<script src = "js/controllers.js"></script>
 	<script src = "js/creationscontrollers.js"></script>
 	<script src = "js/answers.js"></script>
+	<script src = "js/joc.js"></script>
 </head>
 
 <body ng-controller = "PageChangeCtrl">
-	<header> 
+	<header ng-click = "changePage(0)"> 
 		<div class = "title">
 			<h1 style = "font-size: 45px;"> Româna e okay! </h1>
 		</div>
 	</header>
 	<div id = "top-line"> </div>
-	<center> <div id = "logo" ng-click = > <span class = "glyphicon glyphicon-thumbs-up"></span> </div> </center>
+	<center> <div id = "logo"  ng-click = "changePage(0)" > <span class = "glyphicon glyphicon-thumbs-up"></span> </div> </center>
+	
 	<ul class = "nav-pills" id = "menu">
 			<li class = "button" ng-class = "{'active': selected == 1}" ng-click = "changePage(1)"> Perioada pașoptistă </li>
 			<li class = "button" ng-class = "{'active': selected == 2}" ng-click = "changePage(2)"> Junimea </li>
@@ -31,8 +33,7 @@
 			<li class = "button" ng-class = "{'active': selected == 4}" ng-click = "changePage(4)"> Perioada interbelică </li>
 			<li class = "button" ng-class = "{'active': selected == 5}" ng-click = "changePage(5)"> Perioada postbelică </li>
 			<li class = "button" ng-class = "{'active': selected == 6}" ng-click = "changePage(6)"> Test </li>
-			<li class = "button" ng-class = "{'active': selected == 7}" ng-click = "changePage(7)"> Tips pentru bac </li>
-			<li class = "button" ng-class = "{'active': selected == 8}" ng-click = "changePage(8)"> Teme maker </li>
+			<li class = "button" ng-class = "{'active': selected == 8}" ng-click = "changePage(7)"> Teme maker </li>
 	</ul>
 
 	<div id = "content">
@@ -41,7 +42,7 @@
 		<div ng-show = "selected == 0" ng-include = "'data/home.html'">
 		</div>
 
-		<div ng-show = "selected > 0">
+		<div ng-show = "selected > 0 && selected < 6">
 			<center>
 				<div class = "text-block">
 					<h3> {{currentContext.name}} </h3>
@@ -102,6 +103,9 @@
 
 				</div>
 			</center>
+		</div>
+
+		<div ng-show = "selected == 6"  ng-include = "'data/joc.html'">
 		</div>
 	</div>
 

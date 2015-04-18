@@ -12,10 +12,9 @@ app.controller('PageChangeCtrl', function ($scope) {
 	}
 
 	$scope.changePage = function(x) {
-		if (x == 0) $scope.selected = 0;
+		$scope.selected = x;
 		$scope.SelectedCreation = -1;
 		if (x > 0 && x <= $scope.Contexts) {
-			$scope.selected = x;
 			$scope.currentContext = context[x - 1];
 			$scope.chosenView = "none";
 			$scope.SelectedCreation = -1;
