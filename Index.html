@@ -38,75 +38,73 @@
 
 	<div id = "content">
 	<!-- placeholder -->
-		
+		<center> <div class = "text-block">
 		<div ng-show = "selected == 0" ng-include = "'data/home.html'">
 		</div>
+		
 
 		<div ng-show = "selected > 0 && selected < 6">
+			<h3> {{currentContext.name}} </h3>
+			<hr />
+
+			<h4 ng-show = "hasLider()"> Mentor: {{currentContext.lider}} </h4>
+			
 			<center>
-				<div class = "text-block">
-					<h3> {{currentContext.name}} </h3>
-					<hr />
+				<br />
+				Vreau să aflu despre: <br />
+	  			<button class = "btn btn-default subtitle-button" ng-click = "chooseView('context')">
+					<div class = "dot subtitle-dot"> 
+						<span class = "glyphicon glyphicon-cog"> </span> 
+					</div> 
+					<span class = "subtitle"> Context </span> 
+	  			</button>
+	  			<button class = "btn btn-default subtitle-button" ng-click = "chooseView('creations')">
+					<div class = "dot subtitle-dot"> 
+						<span class = "glyphicon glyphicon-book"> </span> 
+					</div> 
+					<span class = "subtitle"> Opere </span> 
+	  			</button>
+				<br />
+				<br />
+  			</center>
 
-					<h4 ng-show = "hasLider()"> Mentor: {{currentContext.lider}} </h4>
-					
-					<center>
-						<br />
-						Vreau să aflu despre: <br />
-			  			<button class = "btn btn-default subtitle-button" ng-click = "chooseView('context')">
-							<div class = "dot subtitle-dot"> 
-								<span class = "glyphicon glyphicon-cog"> </span> 
-							</div> 
-							<span class = "subtitle"> Context </span> 
-			  			</button>
-			  			<button class = "btn btn-default subtitle-button" ng-click = "chooseView('creations')">
-							<div class = "dot subtitle-dot"> 
-								<span class = "glyphicon glyphicon-book"> </span> 
-							</div> 
-							<span class = "subtitle"> Opere </span> 
-			  			</button>
-						<br />
-						<br />
-		  			</center>
+			<div ng-show = "chosenView == 'context'" 
+				ng-include = "currentContext.details" 
+				id = "context" 
+				style = "opacity: 0;">
+			</div>
+			<div id = "creations" 
+				ng-show = "chosenView == 'creations'" 
+				style = "opacity: 0;">
+				<center>
+					<ul id = "creationsMenu">
+						<li class = "creation" 
+							ng-repeat = "creation in currentContext.creations"
+							back-img = {{creation.img}}
+							ng-click = "openCreation(creation.id)"
+							>
+							<div class = "creation-presentation" ng-click = "openCreation(creation.id)"	>
+								<b> {{creation.name}} </b>
+								<br /> <br />
+								{{creation.author}}
+								<br />
+								{{creation.type}}
+							<div>
+						</li>
+					</ul>
+				</center>
 
-					<div ng-show = "chosenView == 'context'" 
-						ng-include = "currentContext.details" 
-						id = "context" 
-						style = "opacity: 0;">
-					</div>
-					<div id = "creations" 
-						ng-show = "chosenView == 'creations'" 
-						style = "opacity: 0;">
-						<center>
-							<ul id = "creationsMenu">
-								<li class = "creation" 
-									ng-repeat = "creation in currentContext.creations"
-									back-img = {{creation.img}}
-									ng-click = "openCreation(creation.id)"
-									>
-									<div class = "creation-presentation" ng-click = "openCreation(creation.id)"	>
-										<b> {{creation.name}} </b>
-										<br /> <br />
-										{{creation.author}}
-										<br />
-										{{creation.type}}
-									<div>
-								</li>
-							</ul>
-						</center>
-
-						<div ng-show = "SelectedCreation != -1" 
-							 ng-include = "SelectedCreation">
-							:)
-						</div>
-					</div>
-
+				<div ng-show = "SelectedCreation != -1" 
+					 ng-include = "SelectedCreation">
+					:)
 				</div>
-			</center>
+			</div>
 		</div>
 
-		<div ng-show = "selected == 6"  ng-include = "'data/joc.html'">
-		</div>
+		<center> <div ng-show = "selected == 6" class = "text-block" ng-include = "'data/joc.html'">
+		</div> </center>
+
+		</div> </center> 
 	</div>
 
 </body>

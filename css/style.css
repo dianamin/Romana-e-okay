@@ -298,3 +298,29 @@ td {
 	height: 25px;
 	width: 25px;
 }
+
+.message-bubble {
+	padding: 30px;
+	background: linear-gradient(#eeeeee, #cccccc);
+	background: -webkit-linear-gradient(#eeeeee, #cccccc);
+	background: -moz-linear-gradient(#eeeeee, #cccccc);
+	background: -o-linear-gradient(#eeeeee, #cccccc);
+	border-top-right-radius: 15px
+	border-top-left-radius: 15px;
+	box-shadow: 0 0 10px;
+	display: inline-block;
+}
+
+.question {
+	border-bottom-left-radius: 15px;
+}
+
+.answer {
+	border-bottom-right-radius: 15px;
+}
+
+.question-img {
+	width: 150px;
+	border: 0 0 3px black solid;
+	display: inline-block;
+}

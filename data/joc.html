@@ -1,12 +1,49 @@
 <div ng-controller = "JocCtrl">
-	<h3> Joc </h3>
+	<h3> Test </h3>
 	<center>
+
+		<p> Te plimbi într-o pădure. Te întâlnești cu diverse personaje din literatura și istoria română. Trebuie să le răspunzi la întrebări pentru a termina jocul. </p>
 
 		<div ng-show = "Lost == true"> :) </div>
 
-		<button class = "btn btn-danger" ng-click = "LoseLife()	"> Click </button>
-		<br />
+		<div style = "width: 100%;">
+		
+			<div>
+				<div class = "message-bubble question">
+					{{questions[selectedQuestion].intrebare}}
+				</div>
+				<img class = "question-img" ng-src = "{{questions[selectedQuestion].imagine}}" />
+			</div>
 
+			<br /> <br />
+
+			<div class = "message-bubble answer">
+				<!--
+				<ul style = "list-style: none;">
+					<li ng-repeat = "answer in questions[selectedQuestion].raspunsuri"> 
+						<input class = "big-dot" type = "radio" ng-model = "GivenAnswer" value = "{{answer}}"/> {{answer}} 
+					</li>
+				</ul> -->
+
+				<div ng-repeat = "answer in questions[selectedQuestion].raspunsuri">
+		       		<input type = "radio" ng-model="$parent.GivenAnswer" value = "{{answer}}" /> {{answer}} 
+		       		<br />
+		        </div>
+				<div style = "opacity: 0;" ng-show = "checked == true" id = "QuestionRez">
+					<center>
+						<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "correctAnswer"></span>
+						<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!correctAnswer"></span>
+					</center>
+		        	<br />
+				</div>
+
+				<button class = "btn btn-danger" ng-click = "check()" ng-show = "checked == false"> Verifică </button>
+
+				<button class = "btn btn-danger" ng-click = "next()" ng-show = "checked == true"> Mai departe </button>
+
+			</div>
+		</div>
+		<br />
 		<div>
 			<img ng-src = "{{heartImg[LifeLevel[0]]}}" class = "life-heart" />
 			<img ng-src = "{{heartImg[LifeLevel[1]]}}" class = "life-heart" />
