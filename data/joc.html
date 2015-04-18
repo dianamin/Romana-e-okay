@@ -1,18 +1,21 @@
 <div ng-controller = "JocCtrl">
 	<h3> Test </h3>
+	<hr />
 	<center>
 
 		<p> Te plimbi într-o pădure. Te întâlnești cu diverse personaje din literatura și istoria română. Trebuie să le răspunzi la întrebări pentru a termina jocul. </p>
 
-		<div ng-show = "Lost == true"> :) </div>
+		<div ng-show = "Lost == true"> Ai pierdut :( </div>
+		<div ng-show = "Won == true"> Ai câștigat :) </div>
 
-		<div style = "width: 100%;">
+		<div style = "width: 100%;" ng-show = "!done()">
 		
 			<div>
 				<div class = "message-bubble question">
 					{{questions[selectedQuestion].intrebare}}
 				</div>
-				<img class = "question-img" ng-src = "{{questions[selectedQuestion].imagine}}" />
+				<img ng-src = "{{questions[selectedQuestion].imagine}}" class = "question-img" /> 
+
 			</div>
 
 			<br /> <br />

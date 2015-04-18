@@ -10,8 +10,9 @@ app.controller('JocCtrl', function ($scope, $http) {
 
 	$scope.CurrentLife = 2;
 	$scope.Lost = false;
+	$scope.Won = false;
 
-	$scope.LoseLife = function() {
+	$scope.loseLife = function() {
 		$scope.LifeLevel[$scope.CurrentLife]--;
 		if ($scope.LifeLevel[$scope.CurrentLife] == 0) $scope.CurrentLife--;
 		if ($scope.CurrentLife == -1) $scope.Lost = true;
@@ -23,12 +24,16 @@ app.controller('JocCtrl', function ($scope, $http) {
 	$scope.checked = false;
 	$scope.correctAnswer = false;
 	$scope.asked = new Array();
+	$scope.total = 15;
 
 	$scope.check = function() {
 		$scope.checked = true;
 		if ($scope.GivenAnswer == $scope.questions[$scope.selectedQuestion].raspunsuri[$scope.questions[$scope.selectedQuestion].corect])
 			$scope.correctAnswer = true;
-		else $scope.correctAnswer = false;
+		else {
+			$scope.correctAnswer = false;
+			$scope.loseLife();
+		}
 		showElement("QuestionRez");
 	}
 
@@ -37,12 +42,18 @@ app.controller('JocCtrl', function ($scope, $http) {
 		while ($scope.asked[$scope.selectedQuestion]) $scope.selectedQuestion = Math.floor(Math.random() * $scope.questionsNumber);
 		$scope.asked[$scope.selectedQuestion] = true;
 		console.log($scope.selectedQuestion);
+ 		$scope.total--;
+		if ($scope.total == 0) $scope.Won = true;
 	}
 
 	$scope.next = function() {
 		hideElement("QuestionRez")
 		$scope.checked = false;
  		$scope.chooseNextQuestion();
+	}
+
+	$scope.done = function() {
+		return ($scope.Won || $scope.Lost);
 	}
 
 	$http({method: 'GET', url: 'data/intrebari.json'}).success(function(data, status, headers, config) {

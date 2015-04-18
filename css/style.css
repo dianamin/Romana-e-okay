@@ -300,12 +300,12 @@ td {
 }
 
 .message-bubble {
-	padding: 30px;
+	padding: 15px;
 	background: linear-gradient(#eeeeee, #cccccc);
 	background: -webkit-linear-gradient(#eeeeee, #cccccc);
 	background: -moz-linear-gradient(#eeeeee, #cccccc);
 	background: -o-linear-gradient(#eeeeee, #cccccc);
-	border-top-right-radius: 15px
+	border-top-right-radius: 15px;
 	border-top-left-radius: 15px;
 	box-shadow: 0 0 10px;
 	display: inline-block;
@@ -313,6 +313,8 @@ td {
 
 .question {
 	border-bottom-left-radius: 15px;
+	vertical-align: top;
+	margin: 20px;
 }
 
 .answer {
@@ -321,6 +323,8 @@ td {
 
 .question-img {
 	width: 150px;
+	border-radius: 15px;
+	border: 2px black solid;
 	border: 0 0 3px black solid;
 	display: inline-block;
 }
