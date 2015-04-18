@@ -297,10 +297,18 @@ td {
 .life-heart {
 	height: 25px;
 	width: 25px;
+	transition: all 1s;
+	-moz-transition: all 1s;
+	-webkit-transition: all 1s;
+	-o-transition: all 1s;
+}
+.life-heart:hover {
+	height: 35px;
+	width: 35px;
 }
 
 .message-bubble {
-	padding: 15px;
+	padding: 20px;
 	background: linear-gradient(#eeeeee, #cccccc);
 	background: -webkit-linear-gradient(#eeeeee, #cccccc);
 	background: -moz-linear-gradient(#eeeeee, #cccccc);
@@ -309,6 +317,7 @@ td {
 	border-top-left-radius: 15px;
 	box-shadow: 0 0 10px;
 	display: inline-block;
+	min-height: 100px;
 }
 
 .question {
@@ -322,7 +331,8 @@ td {
 }
 
 .question-img {
-	width: 150px;
+	max-height: 150px;
+	max-width: 150px;
 	border-radius: 15px;
 	border: 2px black solid;
 	border: 0 0 3px black solid;
@@ -335,4 +345,19 @@ td {
 
 .game-won {
 	color: #5cb85c;
+}
+
+#game-area {
+	width: 100%; 
+	background: url('../img/joc/bg.png'); 
+	background-size: cover; 
+	padding-top: 30px;
+	padding-bottom: 30px;
+	box-shadow: 0 0 15px;	
+}
+
+#life-area {
+	width: 100%;
+	padding: 5px;
+	background-color: #444444;
 }

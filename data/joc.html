@@ -8,7 +8,7 @@
 		<div ng-show = "Lost == true"> <p class = "subtitle game-lost"> Ai pierdut :( </p> </div>
 		<div ng-show = "Won == true"> <p class = "subtitle game-won"> Ai câștigat :) </p> </div>
 
-		<div style = "width: 100%; background: url('img/joc/bg.png'); background-size: cover;" ng-show = "!done()">
+		<div id = "game-area" ng-show = "!done()">
 		
 			<div>
 				<div class = "message-bubble question">
@@ -46,8 +46,7 @@
 
 			</div>
 		</div>
-		<br />
-		<div>
+		<div id = "life-area">
 			<img ng-src = "{{heartImg[LifeLevel[0]]}}" class = "life-heart" />
 			<img ng-src = "{{heartImg[LifeLevel[1]]}}" class = "life-heart" />
 			<img ng-src = "{{heartImg[LifeLevel[2]]}}" class = "life-heart" />
