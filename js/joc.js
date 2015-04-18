@@ -43,10 +43,10 @@ app.controller('JocCtrl', function ($scope, $http) {
 		$scope.asked[$scope.selectedQuestion] = true;
 		console.log($scope.selectedQuestion);
  		$scope.total--;
-		if ($scope.total == 0) $scope.Won = true;
 	}
 
 	$scope.next = function() {
+		if ($scope.total == 0) $scope.Won = true;
 		hideElement("QuestionRez")
 		$scope.checked = false;
  		$scope.chooseNextQuestion();

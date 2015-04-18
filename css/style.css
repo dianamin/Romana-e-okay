@@ -328,3 +328,11 @@ td {
 	border: 0 0 3px black solid;
 	display: inline-block;
 }
+
+.game-lost {
+	color: #d9534f;
+}
+
+.game-won {
+	color: #5cb85c;
+}
