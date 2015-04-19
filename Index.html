@@ -27,6 +27,7 @@
 	<center> <div id = "logo"  ng-click = "changePage(0)" > <span class = "glyphicon glyphicon-thumbs-up"></span> </div> </center>
 	
 	<ul class = "nav-pills" id = "menu">
+			<li class = "button" ng-class = "{'active': selected == 0}" ng-click = "changePage(0)"> Home </li>
 			<li class = "button" ng-class = "{'active': selected == 1}" ng-click = "changePage(1)"> Perioada pașoptistă </li>
 			<li class = "button" ng-class = "{'active': selected == 2}" ng-click = "changePage(2)"> Junimea </li>
 			<li class = "button" ng-class = "{'active': selected == 3}" ng-click = "changePage(3)"> Posteminescianism </li>
@@ -106,6 +107,10 @@
 
 		</div> </center> 
 	</div>
+
+	<footer>
+		© Diana Ghinea
+	</footer>
 
 </body>
 

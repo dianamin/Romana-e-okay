@@ -84,6 +84,8 @@ app.controller('JocCtrl', function ($scope, $http) {
 			$scope.asked[i] = false;
 		}
  		$scope.chooseNextQuestion();
+
+		$scope.LifeLevel = [4, 4, 4];
 	}
 
 });

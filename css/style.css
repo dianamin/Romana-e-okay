@@ -389,3 +389,18 @@ td {
 	background-color: black;
 	padding: 3px;
 }
+
+.spoiler {
+	width: 40%;
+	box-shadow: 0 0 10px black;
+	margin: 30px;
+}
+
+footer {
+	background-color: black;
+	padding: 20px;
+	font-family: Verdana;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+}
