@@ -1,21 +1,24 @@
-<div ng-controller = "AlexandruLapusneanulCtrl">
+<div ng-controller = "GeneralCheckerCtrl">
 	<h4> Alexandru Lăpușeanul </h4>
 	<p> Nuvela „Alexandru Lăpușneanul” este prima nuvelă romantică de inspirație istorică din literatura română. Publicată în perioada pașoptistă, în primul număr al revistei
 		<i> 
 		<input type = "text" class = "form-control short-input-box" ng-model = "Magazine" value = "{Magazine}">
-		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkMagazine()"></span>
-		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkMagazine()"></span>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Magazine', 'Dacia literară')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Magazine', 'Dacia literară')"></span>
 		</i>
 	(1840), nuvela ilustrează una dintre sursele literaturii romantice, istoria națională, potrivit recomandărilor lui
-		<input type = "text" class = "form-control medium-input-box" ng-model = "Lider" value = "{Lider}">
-		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkLider()"></span>
-		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkLider()"></span>
+		<input type = "text" class = "form-control short-input-box" ng-model = "Lider" value = "{Lider}">
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Lider', 'Mihail Kogălniceanu')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Lider', 'Mihail Kogălniceanu')"></span>
 		din articolul-program al revistei, intitulat 
 		<i>
 		<input type = "text" class = "form-control short-input-box" ng-model = "Article" value = "{Article}">
 		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkArticle()"></span>
 		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkArticle()"></span>
 		</i>
+		<input type = "text" class = "form-control short-input-box" ng-model = "Article" value = "{Article}">
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Article', 'Introducție')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Article', 'Introducție')"></span>
 		, care constituie și manifestul literar al romantismului românesc.
 	</p>
 	<p> Ulterior, nuvela „Alexandru Lăpușneanul” a fost inclusă în ciclul „Fragmente istorice”, din volumul „Păcatele tinereților” (1875).</p>
@@ -27,22 +30,22 @@
 			<input type = "radio" name = "Type" ng-model = "Type" class = "big-dot" value = "proza" /> proză <br />
 			<input type = "radio" name = "Type" ng-model = "Type" class = "big-dot" value = "versuri" /> versuri
 		</div>
-		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkType()"></span>
-		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkType()"></span>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkRadio('Type', 'proza')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkRadio('Type', 'proza')"></span>
 		, cu o construcție riguroasă, având un fir narativ central. Se observă concizia intrigii, tendința
 		<div class = "inline-form">
 			<input type = "radio" name = "Perspective" ng-model = "Perspective" class = "big-dot" value = "subiectivizare" /> subiectivizare <br />
 			<input type = "radio" name = "Perspective" ng-model = "Perspective" class = "big-dot" value = "obiectivizare" /> obiectivizare
 		</div>
-		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkPerspective()"></span>
-		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkPerspective()"></span>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkRadio('Perspective', 'obiectivizare')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkRadio('Perspective', 'obiectivizare')"></span>
 		a perspectivei narative și verosimilitatea faptelor. Personajele sunt relativ 
 		<div class = "inline-form">
 			<input type = "radio" name = "CharactersNumber" ng-model = "CharactersNumber" class = "big-dot" value = "multe" /> multe <br />
 			<input type = "radio" name = "CharactersNumber" ng-model = "CharactersNumber" class = "big-dot" value = "putine" /> puține
 		</div>
-		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkCharactersNumber()"></span>
-		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkCharactersNumber()"></span>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkRadio('CharactersNumber', 'putine')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkRadio('CharactersNumber', 'putine')"></span>
 		, caracterizate succint și gravitează în jurul personajului principal.
 	</div>
 
@@ -55,9 +58,9 @@
 
 	<h5> Care sunt sursele de inspirație? </h5>
 	<p> 
-		<input type = "text" class = "form-control medium-input-box" ng-model = "Name" value = "{Name}" />
-		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkName()"></span>
-		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkName()"></span>
+		<input type = "text" class = "form-control short-input-box" ng-model = "Name" value = "{Name}">
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Name', 'Costache Negruzzi')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Name', 'Costache Negruzzi')"></span>
 		, întemeietorul nuvelei istorice românești, este primul scriitor care valorifică într-o creație literară cronicile moldovenești (<i> Letopisețul Țării Moldovei </i> de Grigore Ureche și de Miron Costin).
 	</p>
 	<p> Din cronica lui Ureche, Negruzzi preia imaginea personalității domnitorului Alexandru Lăpușneanul, dar și scene, fapte și replici (de exemplu motto-urile capitolelor I și al IV-lea), dar se distanțează de realitatea istorică prin apelul la ficțiune și prin viziunea romantică asupra istoriei, influențată de ideologia pașoptistă. </p>
@@ -82,31 +85,31 @@
 	<ul>
 		<li>
 			Capitolul I 
-			<input type = "text" class = "form-control long-input-box" ng-model = "Chapter1" value = "{Chapter1}" />
-			<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkChapter1()"></span>
-			<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkChapter1()"></span>
+			<input type = "text" class = "form-control long-input-box" ng-model = "Chapter1" value = "{Chapter1}">
+			<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Chapter1', 'Dacă voi nu mă vreți, eu vă vreu...')"></span>
+			<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Chapter1', 'Dacă voi nu mă vreți, eu vă vreu...')"></span>
 			(răspunsul dat de Lăpușneanul soliei de boieri care îi ceruseră să se întoarcă de unde a venit pentru că „norodul” nu îl vrea) - cuprinde <b> expozițiunea </b> și intriga. Alexandru Lăpușneanul se întoarce la tronul Moldovei, în 1564, în fruntea unei armate turcești și se întâlnește cu solia formată din cei patri boieri trimiși de Tomșa: Veveriță, Moțoc, Spancioc, Stroici. Intriga este reprezentată de hotărârea domnului de a-și relua tronul și dorința sa de răzbunare față de boierii trăđători.
 		</li>
 		<li>
 			Capitolul al II-lea 
-			<input type = "text" class = "form-control long-input-box" ng-model = "Chapter2" value = "{Chapter2}" />
-			<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkChapter2()"></span>
-			<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkChapter2()"></span>
+			<input type = "text" class = "form-control long-input-box" ng-model = "Chapter2" value = "{Chapter2}">
+			<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Chapter2', 'Ai să dai samă, Doamnă!')"></span>
+			<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Chapter2', 'Ai să dai samă, Doamnă!')"></span>
 			(avertismentul pe care văduva unui boier decapitat îl adresează doamnei Ruxanda) -
 			corespunde, ca moment al subiectului, <b> desfășurării acțiunii </b> și cuprinde o serie de evenimente declanșate de reluarea tronului de către Alexandru Lăpușneanul: fuga lui Tomșa în Muntenia, incendierea cetăților, desființarea armatei pământene, confiscarea averilor boierești, uciderea unor boieri, intervenția doamnei Ruxanda pe lângă domnitor pentru a înceta omorurile și promisiunea pe care acesta i-o face.
 		</li>
 		<li>
 			Capitolul al III-lea 
-			<input type = "text" class = "form-control long-input-box" ng-model = "Chapter3" value = "{Chapter3}" />
-			<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkChapter3()"></span>
-			<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkChapter3()"></span>
+			<input type = "text" class = "form-control long-input-box" ng-model = "Chapter3" value = "{Chapter3}">
+			<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Chapter3', 'Capul lui Moțoc vrem...')"></span>
+			<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Chapter3', 'Capul lui Moțoc vrem...')"></span>
 			(cererea vindicativă a norodului care găsește în Moțoc vinovatul pentru toate nemulțumirile) - conține mai multe scene romantice, prin caracterul memorabil sau excepțional: participarea și discursul domnitorului la slujba religioasă de la mitropolie, ospățul de la palat și uciderea celor 47 de boieri, omorârea lui Moțoc de mulțimea revoltată și „leacul de frică” pentru doamna Ruxanda. Capitolul cuprinde <b> punctul culminant </b>.
 		</li>
 		<li>
-			Capitolul al IV-lea - 
-			<input type = "text" class = "form-control long-input-box" ng-model = "Chapter4" value = "{Chapter4}" />
-			<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkChapter4()"></span>
-			<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkChapter4()"></span>
+			Capitolul al IV-lea 
+			<input type = "text" class = "form-control long-input-box" ng-model = "Chapter4" value = "{Chapter4}">
+			<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Chapter4', 'De mă voi scula, pre mulți am să popesc și eu...')"></span>
+			<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Chapter4', 'De mă voi scula, pre mulți am să popesc și eu...')"></span>
 			(amenințarea rostită de Lăpușneanul care, bolnav, fusese călugărit potrivit obiceiului vremii, pierzând astfel puterea domnească) - este înfățișat <b> deznodământul </b>, moartea tiranului prin otrăvire. După 4 ani de la cumplitele evenimente, Lăpușneanul se retrage în cetatea Hotinului. Bolnav de friguri, domnul este călugărit după obiceiul vremii. Deoarece când își revine, amenință să-i ucidă pe toți (inclusiv pe propriul fiu, urmașul la tron), doamna Ruxanda acceptă sfatul boierilor de a-l otrăvi. 
 		</li>
 	</ul>
@@ -122,9 +125,9 @@
 				<img src = "img/pasoptism/domnitor.jpg" class = "conflict-part" />
 				<br /> <br /> 
 				<center> <b>
-				<input type = "text" class = "form-control short-input-box" ng-model = "Conflict1" value = "{Conflict1}" />
-				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkConflict1()"></span>
-				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkConflict1()"></span> 
+				<input type = "text" class = "form-control short-input-box" ng-model = "Conflict1" value = "{Conflict1}">
+				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Conflict1', 'Domnitor')"></span>
+				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Conflict1', 'Domnitor')"></span>
 				</center> </b>
 			</div>
 			<div class = "subtitle col-md-1 col-sm-1 conflict-text">
@@ -134,9 +137,9 @@
 				<img src = "img/pasoptism/boieri.jpg" class = "conflict-part" />
 				<br /> <br /> 
 				<center> <b>
-				<input type = "text" class = "form-control short-input-box" ng-model = "Conflict2" value = "{Conflict2}" />
-				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkConflict2()"></span>
-				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkConflict2()"></span> 
+				<input type = "text" class = "form-control short-input-box" ng-model = "Conflict2" value = "{Conflict2}">
+				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Conflict2', 'Boieri')"></span>
+				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Conflict2', 'Boieri')"></span>
 				</center> </b>
 			</div>
 			<div class = "col-md-1 col-sm-1"> </div>
@@ -154,9 +157,9 @@
 				<img src = "img/pasoptism/domnitor.jpg" class = "conflict-part" />
 				<br /> <br /> 
 				<center> <b>
-				<input type = "text" class = "form-control short-input-box" ng-model = "Conflict1" value = "{Conflict1}" />
-				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkConflict1()"></span>
-				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkConflict1()"></span> 
+				<input type = "text" class = "form-control short-input-box" ng-model = "Conflict1" value = "{Conflict1}">
+				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Conflict1', 'Domnitor')"></span>
+				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Conflict1', 'Domnitor')"></span>
 				</center> </b>
 			</div>
 			<div class = "subtitle col-md-1 col-sm-1 conflict-text">
@@ -166,9 +169,9 @@
 				<img src = "img/pasoptism/motoc.jpg" class = "conflict-part" />
 				<br /> <br /> 
 				<center> <b>
-				<input type = "text" class = "form-control short-input-box" ng-model = "Conflict3" value = "{Conflict3}" />
-				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkConflict3()"></span>
-				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkConflict3()"></span> 
+				<input type = "text" class = "form-control short-input-box" ng-model = "Conflict3" value = "{Conflict3}">
+				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Conflict3', 'Moțoc')"></span>
+				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Conflict3', 'Moțoc')"></span>
 				</center> </b>
 			</div>
 			<div class = "col-md-1 col-sm-1"> </div>
@@ -184,21 +187,18 @@
 				<img src = "img/pasoptism/domnitor.jpg" class = "conflict-part" />
 				<br /> <br /> 
 				<center> <b>
-				<input type = "text" class = "form-control short-input-box" ng-model = "Conflict1" value = "{Conflict1}" />
-				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkConflict1()"></span>
-				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkConflict1()"></span> 
+				<input type = "text" class = "form-control short-input-box" ng-model = "Conflict1" value = "{Conflict1}">
+				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Conflict1', 'Domnitor')"></span>
+				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Conflict1', 'Domnitor')"></span>
 				</center> </b>
 			</div>
 			<div class = "subtitle col-md-1 col-sm-1 conflict-text">
 				VS.
 			</div>
 			<div class = "col-md-4 col-sm-4">
-				<img src = "img/pasoptism/poporul.jpg" class = "conflict-part" />
-				<br /> <br /> 
-				<center> <b>
-				<input type = "text" class = "form-control short-input-box" ng-model = "Conflict4" value = "{Conflict4}" />
-				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkConflict4()"></span>
-				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkConflict4()"></span> 
+				<input type = "text" class = "form-control short-input-box" ng-model = "Conflict4" value = "{Conflict4}">
+				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Conflict4', 'Popor') || checkText('Conflict4', 'Mulțime')"></span>
+				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Conflict4', 'Popor') || checkText('Conflict4', 'Mulțime')"></span>
 				</center> </b>
 			</div>
 			<div class = "col-md-1 col-sm-1"> </div>
@@ -214,9 +214,9 @@
 				<img src = "img/pasoptism/domnitor.jpg" class = "conflict-part" />
 				<br /> <br /> 
 				<center> <b>
-				<input type = "text" class = "form-control short-input-box" ng-model = "Conflict1" value = "{Conflict1}" />
-				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkConflict1()"></span>
-				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkConflict1()"></span> 
+				<input type = "text" class = "form-control short-input-box" ng-model = "Conflict1" value = "{Conflict1}">
+				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Conflict1', 'Domnitor')"></span>
+				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Conflict1', 'Domnitor')"></span>
 				</center> </b>
 			</div>
 			<div class = "subtitle col-md-1 col-sm-1 conflict-text">
@@ -226,9 +226,9 @@
 				<img src = "img/pasoptism/ruxanda.jpg" class = "conflict-part" />
 				<br /> <br /> 
 				<center> <b>
-				<input type = "text" class = "form-control medium-input-box" ng-model = "Conflict5" value = "{Conflict5}" />
-				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkConflict5()"></span>
-				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkConflict5()"></span> 
+				<input type = "text" class = "form-control short-input-box" ng-model = "Conflict5" value = "{Conflict5}">
+				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Conflict5', 'Ruxanda') || checkText('Conflict5', 'Doamna Ruxanda')"></span>
+				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Conflict5', 'Ruxanda') || checkText('Conflict5', 'Doamna Ruxanda')"></span>
 				</center> </b>
 			</div>
 			<div class = "col-md-1 col-sm-1"> </div>
@@ -256,13 +256,13 @@
 	<p> Crud, hotărât, viclan, disimulat, inteligent, bun cunoscător al psihologiei umane, abil politic, personajul este <b> puternic individualizat </b> și <b> memorabil</b>. </p>
 	<p> 
 		Este caracterizat 
-		<input type = "text" class = "form-control short-input-box" ng-model = "Characterization1" value = "{Characterization1}" />
-		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkCharacterization1()"></span>
-		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkCharacterization1()"></span> 
+		<input type = "text" class = "form-control short-input-box" ng-model = "Characterization1" value = "{Characterization1}">
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Characterization1', 'Domnitor')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Characterization1', 'direct')"></span>
 		(de către narator, de alte personaje, autocaracterizare) și 
-		<input type = "text" class = "form-control short-input-box" ng-model = "Characterization2" value = "{Characterization2}" />
-		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkCharacterization2()"></span>
-		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkCharacterization2()"></span> 
+		<input type = "text" class = "form-control short-input-box" ng-model = "Characterization2" value = "{Characterization2}">
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Characterization2', 'Domnitor')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Characterization2', 'indirect')"></span>
 		(prin fapte, limbaj, comportament, relații cu alte personaje, gesturi, atitudine vestimentație).
 	</p>
 	<p> Forța excepțională a personajului domină relațiile cu celelalte personaje, care, în general sunt manipulate de domnitor. </p>
