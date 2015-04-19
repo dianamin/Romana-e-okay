@@ -70,4 +70,20 @@ app.controller('JocCtrl', function ($scope, $http) {
  		$scope.chooseNextQuestion();
 	});
 
+	$scope.restart = function() {
+		$scope.selectedQuestion = 0;
+		$scope.checked = false;
+		$scope.correctAnswer = false;
+		$scope.total = 15;
+		$scope.score = 0;
+		$scope.CurrentLife = 2;
+		$scope.Lost = false;
+		$scope.Won = false;
+
+		for (var i = 0; i < $scope.questionsNumber; i++) {
+			$scope.asked[i] = false;
+		}
+ 		$scope.chooseNextQuestion();
+	}
+
 });

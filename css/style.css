@@ -380,3 +380,12 @@ td {
 	padding: 3px;
 	background-color: black;
 }
+
+#restart {
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: white;
+	background-color: black;
+	padding: 3px;
+}

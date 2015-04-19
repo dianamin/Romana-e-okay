@@ -15,8 +15,20 @@
 			</p> 
 		</div>
 
+		<div ng-show = "done()">
+			<br />
+			<center>
+			<button class = "btn btn-danger" ng-click = "restart()"> 
+				Restart <br />
+				<span class = "glyphicon glyphicon-repeat"> </span> 
+			</button>
+			</center>
+			<br /> <br />
+		</div>
+
 		<div id = "game-area" ng-show = "!done()">
 			<div id = "score"> Scor: {{score}} </div>
+			<div id = "restart" ng-click = "restart()"> <span class = "glyphicon glyphicon-repeat"> </span>  </div>
 		
 			<div>
 				<div class = "message-bubble question">
@@ -40,6 +52,7 @@
 		       		<input type = "radio" ng-model="$parent.GivenAnswer" value = "{{answer}}" /> {{answer}} 
 		       		<br />
 		        </div>
+		        <div ng-show = "checked == false"> <br />  <br /></div>
 				<div style = "opacity: 0;" ng-show = "checked == true" id = "QuestionRez">
 					<center>
 						<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "correctAnswer"></span>
