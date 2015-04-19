@@ -1,4 +1,4 @@
-<div ng-controller = "ChiritaCtrl">
+<div ng-controller = "GeneralCheckerCtrl">
 	<h4> Chirița în provinție </h4>
 	<p> Atașat idealurilor pașoptise, V. Alecsandri a fost liderul mișcării literare a epocii, fiind un deschizător de drumuri pentru diferite specii și genuri literare. De asemenea, a avut un rol hotărâtor în formarea și dezvoltarea teatrului românesc național. </p>
 	<p> Mare parte din piesele comice ale lui V. Alexsandri (comedii, vodeviluri, farse) au caracter satiric și critic împotriva moravurilor socuale și politice ale vremii, împotriva stării pe loc, dar și a falsului progres, ridiculizând demagogia, snobismul și parvenitismul. Formele hibride ale civilizației românești la mijlocul secolului al XIX-lea sunt satirizate în comediile de moravuri („Iorgu de la Sadagura” și ciclul „Chirițelor”).
@@ -11,8 +11,8 @@
 	<p>
 		Conflictul dintre concepția consevatoare reprezentată de Bârzoi, dau de fals progres, reprezentată de 
 		<input type = "text" class = "form-control short-input-box" ng-model = "Conflict1" value = "{Conflict1}" />
-		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkConflict1()"></span>
-		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkConflict1()"></span>,
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Conflict1', 'Chirița')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Conflict1', 'Chirița')"></span>,
 		personaje zugrăvite caracatural, și ideile noi, progresiste, reprezentate de Leonaș, un tânăr isteț și cinstit, îndrăgostit de Luluța, se desfășoara gradat, într-o acțiune complicată cu situații comice pline de neprevăzut. Demascând corupția lui Bârzoi, Leonaș devine ispravnic în locul acestuia și se căsătorește cu Luluța. Deznodământul aduce victoria reprezentantului ideilor noi, Lenoaș, adică a onestității și a sentimentelor sincere asupra moravurilor satirizate: parvenitismul, snobismul și corupția.
 	</p>
 
@@ -25,15 +25,15 @@
 				<img src = "img/pasoptism/chirita si barzoi.jpg" class = "conflict-part" />
 				<br /> <br /> 
 				<center> <b>
-				<input type = "text" class = "form-control short-input-box" ng-model = "Conflict2" value = "{Conflict2}" />
-				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkConflict2()"></span>
-				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkConflict2()"></span> 
+					<input type = "text" class = "form-control short-input-box" ng-model = "Conflict2" value = "{Conflict2}" />
+					<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Conflict2', 'Bârzoi')"></span>
+					<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Conflict2', 'Bârzoi')"></span>
 				</center> </b>
 				și <br />
 				<center> <b>
-				<input type = "text" class = "form-control short-input-box" ng-model = "Conflict1" value = "{Conflict1}" />
-				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkConflict1()"></span>
-				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkConflict1()"></span> 
+					<input type = "text" class = "form-control short-input-box" ng-model = "Conflict1" value = "{Conflict1}" />
+					<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Conflict1', 'Chirița')"></span>
+					<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Conflict1', 'Chirița')"></span>
 				</center> </b>
 			</div>
 			<div class = "subtitle col-md-1 col-sm-1 conflict-text">
@@ -43,15 +43,15 @@
 				<img src = "img/pasoptism/leonas si luluta.jpg" class = "conflict-part" />
 				<br /> <br /> 
 				<center> <b>
-				<input type = "text" class = "form-control short-input-box" ng-model = "Conflict3" value = "{Conflict3}" />
-				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkConflict3()"></span>
-				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkConflict3()"></span> 
+					<input type = "text" class = "form-control short-input-box" ng-model = "Conflict3" value = "{Conflict3}" />
+					<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Conflict3', 'Luluța')"></span>
+					<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Conflict3', 'Luluța')"></span>
 				</center> </b>
 				și <br />
 				<center> <b>
-				<input type = "text" class = "form-control short-input-box" ng-model = "Conflict4" value = "{Conflict4}" />
-				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkConflict4()"></span>
-				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkConflict4()"></span> 
+					<input type = "text" class = "form-control short-input-box" ng-model = "Conflict4" value = "{Conflict4}" />
+					<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Conflict4', 'Leonaș')"></span>
+					<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Conflict4', 'Leonaș')"></span>
 				</center> </b>
 			</div>
 			<div class = "col-md-1 col-sm-1"> </div>
@@ -73,15 +73,16 @@
 			<p> 
 				De la început, boieroaica de provincie Chirița, recent întoarsă de la 
 				<input type = "text" class = "form-control short-input-box" ng-model = "City" value = "{City}" />
-				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkCity()"></span>
-				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkCity()"></span> 
+				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('City', 'Iași')"></span>
+				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('City', 'Iași')"></span>
 				, vrea să impună moda vremi la Bârzoieni. De aceea, călărește îmbrăcată în „amazoancă”, fumează „ca un caporal” țigări „de halva” și cochetează cu bărbați mai tineri (profesorul Șarl, Leonaș), motivându-și „modernitățile” prin expresia „dacă-i moda?”.
 			</p>
 			<p> 
 				Tot pentru că e la modă, îl plătește pe profesorul 
 				<input type = "text" class = "form-control short-input-box" ng-model = "Teacher" value = "{Teacher}" />
-				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkTeacher()"></span>
-				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkTeacher()"></span>  să-l învețe franțuzește pe fiul său Guliță, un gogoman prost crescut, care batjocorește țăranii, le ucide vițeii drept vânat și le aprinde bordeile „cu cuibucul cel de hârtie”. Deși nu este în stare să rețină prima frază dintr-un poem francez, Guliță trece cu bine examinarea făcută de mamă în prezența profesorului, oferind drept corespondent în franceză cuvinte inventate: <i> furculision, fripturision, învârtision</i>. Scena comică este memorabilă ca dovadă a falsei culturi. 
+				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Teacher', 'Șarl')"></span>
+				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Teacher', 'Șarl')"></span>
+				să-l învețe franțuzește pe fiul său Guliță, un gogoman prost crescut, care batjocorește țăranii, le ucide vițeii drept vânat și le aprinde bordeile „cu cuibucul cel de hârtie”. Deși nu este în stare să rețină prima frază dintr-un poem francez, Guliță trece cu bine examinarea făcută de mamă în prezența profesorului, oferind drept corespondent în franceză cuvinte inventate: <i> furculision, fripturision, învârtision</i>. Scena comică este memorabilă ca dovadă a falsei culturi. 
 			</p>
 		</li>
 		<li> 
@@ -96,8 +97,8 @@
 	<p> 
 		În portretizarea Chiriței, comicul de limbaj redă inclultura și dorința de a imita vorbirea la modă, cu orice preț. Chirița mărturisește lui „monsiu Șarlă” că a învățat singură 
 		<input type = "text" class = "form-control short-input-box" ng-model = "Language" value = "{Language}" />
-		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkLanguage()"></span>
-		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkLanguage()"></span>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Language', 'franceză')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Language', 'franceză')"></span>
 		,limba de conversație în saloanele vremii. Ca dovadă, ea utilizează cu volubilitate un jargon româno-francez, care amestecă ciudat graiul neaoș moldovenesc cu „franțuzisme”, de fapt de calcuri comice construite de Chirița și urmate de explicația „nous disons comme ca en moldave”.
 	</p>
 
@@ -106,8 +107,8 @@
 		<li> 
 			Cuplul romantic Leonaș și 
 			<input type = "text" class = "form-control short-input-box" ng-model = "Name" value = "{Name}" />
-			<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkName()"></span>
-			<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkName()"></span>
+			<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Name', 'Luluța')"></span>
+			<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Name', 'Luluța')"></span>
 			, tineri cinstiți, reprezentanți ai ideilor noi, progresiste, are și rolul de a pune în lumină caracterul Bârzoienilor, prin antiteză. Cu toate că sunt zugrăvite caricatural, personajele negative sunt mai bine individualizate, în timp ce tinerii îndrăgostiți sunt personaje schematizate, inconsistente.
 		</li>
 		<li> Din grupul țăranilor care apar ca personaj colectiv se desprinde Ion, feciorul de casă, care comentează cu ironia și cu bunul simț al omului simplu „moda” și tertipurile stăpânilor. </li>
