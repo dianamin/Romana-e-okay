@@ -142,7 +142,7 @@ creations = [
 			"author": "Nichita Stănescu",
 			"type": "Romanul mitic",
 			"img" : "img/postbelic/cg.jpg",
-			"page" : "data/creations/tbd.html"
+			"page" : "data/creations/catregalateea.html"
 		},
 		{
 			"id" : "2",
