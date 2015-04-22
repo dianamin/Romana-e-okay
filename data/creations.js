@@ -134,7 +134,7 @@ creations = [
 			"author": "Marin Preda",
 			"type": "Roman postbelic",
 			"img" : "img/postbelic/m.jpg",
-			"page" : "data/creations/tbd.html"
+			"page" : "data/creations/morometii.html"
 		},
 		{
 			"id" : "1",
