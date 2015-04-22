@@ -1,5 +1,120 @@
 <div ng-controller = "GeneralCheckerCtrl">
 	<h4> Rugăciune </h4>
 
-	
+	<p> Primul volum al lui Octavian Goga, publicat în 1905, <i> Poezii</i>, se deschide cu arta poetică <i> Rugăciune</i>, în care scriitoul exprimă cu mijloacele artei concepția sa despre rolul poetului și al creației. În această poezie programatică, potrivit crezului estetic exprimat, scriitorul trebuie să redea suferințele poporului, iar poezia să devină un instrument de luptă. O. Goga impune astfel tonul profetic, neoromantic și optează pentru lirismul obiectiv, în sensul că în poezia de revoltă socială vocea lirică va refuza trăirile individuale, vorbind în numele colectivității. </p>
+
+	<h5> Ce exprimă titlul? </h5>
+	<p> Titlul este o metaforă simbol. Poezia nu are caracter religios, ci exprimă concepția romantică potrivit căreia actul de creație este condiționat de primirea harului divin. </p>
+
+	<h5> Are elemente romantice sau clasice? </h5>
+	<p> Viziunea <b> romantică </b> se susține în text prin ipostaza christică a poetului, de un profund dramatism, și prin particularitățile de limbaj și expresivitate: antitezele, hipsrbola, limbajul popular, arhaic și religios. Din punct de vedere formal (versificația), se poate vorbi despre elaborare și eleganța <b> clasică</b>. </p>
+
+	<h5> Cum este structurată poezia? </h5>
+	<p> 
+		Poezia este alcătuită din 
+		<input type = "range" class = "medium-input-box" min = "2" max = "10" ng-model = "Verses" style = "display: inline-block;" /> <span> {{Verses}} </span>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "Verses == 6"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "Verses != 6"></span>
+		, dispuse în <b>
+		<input type = "range" class = "medium-input-box" min = "2" max = "10" ng-model = "Sequences" style = "display: inline-block;" /> <span> {{Sequences}} </span>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "Sequences == 3"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "Sequences != 3"></span>
+		secvențe poetice: </b>
+	</p>
+
+	<ol>
+		<li> prima strofă - ilustrează căutările poetului care n-a gasit calea creației sale și invocă ajutorul divinității </li>
+		<li> strofele II- V - arată izvoarele și obiectivul creației sale </li>
+		<li> ultima strofă - evidențiază caracterul militant al poeziei, care trebuie să fie „cântarea pătimirii noastre” </li>
+	</ol>
+
+	<h5> Ce e în prima secvență? </h5>
+	<p> Prima secvență poetică ilustrează căutările poetului imaginat ca un drumeț rătăcit și ruga adresată divlinității: „Părinte, -orânduie-mi cărarea!”. Termenii din câmpul lexico-semantic al drumului au valoare de simbol: „drum”, „cale”, „cărare”, „prăpăstii”, „zare”. Atributele scriitorului care nu și-a găsit încă menirea sunt redate printr-o înșiruire de epitete care amintesc de mitul biblic al fiului rătăcitor: </p>
+	<div class = "well"> <i>
+		„Rătăcitor, cu ochii tulburi, <br />
+		Cu trupul istovit de cale, <br />
+		Eu cad neputincios...”
+	</i> </div>
+	<p> 
+		Substantivele în 
+		<input type = "text" class = "form-control short-input-box" ng-model = "Case" value = "{Case}" />
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Case', 'vocativ')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Case', 'vocativ')"></span>
+		: „stăpâne”, „părinte”, „tu, Doamne” susține gradarea tonalității lirice și constituie ipostaze ale relației omului cu divinitatea.
+	</p>
+
+	<h5> Ce e în a doua secvență? </h5>
+	<p> A doua secvența poetică conține o serie de metonimii ale poetului: „pieptul”, „văzul”, „mintea”, „brațul”, „pleoapa”. </p>
+	<p> 
+		Poetul se vrea un apostol al neamului, iar obiectul poeziei este viața celor mulți. Verbele la 
+		<input type = "text" class = "form-control short-input-box" ng-model = "VerbMode" value = "{VerbMode}" />
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('VerbMode', 'imperativ')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('VerbMode', 'imperativ')"></span>
+		se asociază cu metafore-simbol al creației poetice, precum văzul, lacrimile:
+	</p>
+
+	<div class = "well"> <i>
+			„În veci spre cei rămași în urmă <br />
+			Tu, Doamne, văzul meu îndreaptă <br />”,
+			„Nu rostul meu, de-a pururi pradă <br />
+			Ursitei maștere și rele, <br />
+			Ci jale unei lumi, părinte, <br />
+			Să plângă-n lacrimile mele.”
+	</i> </div>
+
+	<p> Temele creației sale poetice, sunt redate, în strofa a III-a, prin metafore: </p>
+	<ul>
+		<li> poezia naturii - „Dezleagă minții mele taina / Și legea farmecelor firii” </li>
+		<li> poezia socială - „Sădește-n brațul meu de-a pururi / Tăria urii și-a iubirii” </li>
+	</ul>
+
+	<p> În strofele a IV-a și a V-a, tonalitatea de bocet și de revoltă susține opțiunea poetului pentru a exprima suferința poporului: </p>
+
+	<div class = "well"> <i>
+			„Nu rostul meu, de-a pururi pradă <br />
+			Ursitei naștere și rele, <br />
+			Ci jalea unei lumi, părinte, <br />
+			Să plângă-n lacrimile mele”
+	</i> </div>
+
+	<p> Laitmotivul „dă-mi” susține titlul poeziei și accentuează termenii aflați în lanțul enumerativ: </p>
+
+	<div class = "well"> <i>
+			„Dă-mi tot amarul, toată truda <br />
+			Atâtor doruri fără leacuri.”
+	</i> </div>
+
+	<p> 
+		Punctul de maximă  
+		<input type = "text" class = "form-control short-input-box" ng-model = "Maximum" value = "{Maximum}" />
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Maximum', 'intensitate')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Maximum', 'intensitate')"></span>
+		se asociază cu metafore- al discursului liric este atins în versurile: 
+	</p>
+
+	<div class = "well"> <i>
+			„Durerea lor înfricoșată <br />
+			În inimă tu mi-o coborai.”
+	</i> </div>
+
+	<h5> Ce e în ultima secvență? </h5>
+
+	<p> Secvența poetică reprezentată de ultima strofă conține imaginea hiperbolică a revoltei, ca furtună, ideea că poezia este un instrument de luptă și că are caracter profetic, dar și crezul poetic angajat: </p>
+
+
+	<div class = "well"> <i>
+			„În smalț de fulgere albastre <br />
+			Încheagă-ți glasul de aramă: <br />
+			Cântarea pătimirii noastre”
+	</i> </div>
+
+	<h5> Cum e versificația? </h5>
+
+	<p> 
+		Versificația conferă poeziei o muzicalitate aparte, strofele de 
+		<input type = "range" class = "medium-input-box" min = "2" max = "10" ng-model = "Lyrics" style = "display: inline-block;" /> <span> {{Lyrics}} </span>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "Lyrics == 8"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "Lyrics != 8"></span> versuri, în fapt, catrene ale căror versuri ample (de 16 silabe), cu rima împerecheată, au fost segmentate în versuri de 8 silabe. Ritmul iambic susține atât lamentația, cât și ruga sau tonul de revoltă. 
+	</p>
+
 </div>
