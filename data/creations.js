@@ -58,7 +58,7 @@ creations = [
 			"author": "Octavian Goga",
 			"type": "Poezia posteminescianistă",
 			"img" : "img/posteminescianism/r.jpg",
-			"page" : "data/creations/tbd.html"
+			"page" : "data/creations/rugaciune.html"
 		},
 	],
 	[
