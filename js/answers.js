@@ -1,3 +1,8 @@
+/*
+	Answers for pasoptism.html, junimea.html, interbelica.html, postemiscianism.html and postbelica.html.
+*/
+
+
 app.controller('AnswersPasoptismCtrl', function($scope) {
 	$scope.checkRevYear = function() {
 		return $scope.RevYear == 1848;

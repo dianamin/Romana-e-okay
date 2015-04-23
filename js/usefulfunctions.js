@@ -1,3 +1,7 @@
+/*
+	Contains some useful functions. :)
+*/
+
 
 var showElement = function(id) {
 	document.getElementById(id).setAttribute("style", "animation: fade-in 1s; -webkit-animation: fade-in 1s; opacity: 1;");
@@ -7,6 +11,11 @@ var hideElement = function(id) {
 }
 
 var getLevenshteinDistance = function(string1, string2) {
+	/*
+		Calculates the Levenshtein Distance (minimum number of single-character edits) between two strings
+		using dynamic programming.
+	*/
+
 	var n = string1.length;
 	var m = string2.length;
 
@@ -29,6 +38,11 @@ var getLevenshteinDistance = function(string1, string2) {
 }
 
 var acceptedError = function(string1, string2) {
+	/*
+		When the Levenshtein Distance between two strings is smaller or equal two the returned value, those
+		strings are almost equal and the input string will be corrected.
+	*/
+
 	var n = string1.length;
 	var m = string2.length;
 

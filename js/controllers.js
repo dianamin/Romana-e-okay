@@ -1,3 +1,7 @@
+/*
+	Contains PageChangeCtrl - for changing views.
+*/
+
 var app = angular.module('app', ['ngRoute']);
 
 app.controller('PageChangeCtrl', function ($scope) {
@@ -8,10 +12,12 @@ app.controller('PageChangeCtrl', function ($scope) {
 	$scope.SelectedCreation = -1;
 
 	$scope.hasLider = function() {
+		// for contexts
 		return $scope.currentContext.lider != "-";
 	}
 
 	$scope.changePage = function(x) {
+		// changing view
 		$scope.selected = x;
 		$scope.SelectedCreation = -1;
 		if (x > 0 && x <= $scope.Contexts) {
@@ -22,24 +28,17 @@ app.controller('PageChangeCtrl', function ($scope) {
 	}
 
 	$scope.chooseView = function(x) {
+		// Creations or Context
 		$scope.chosenView = x;
 		$scope.SelectedCreation = -1;
 		showElement(x);
 	}
 
 	$scope.openCreation = function(id) {
+		//opens Creation
 		console.log(creations[$scope.selected - 1][id].page);
 		$scope.SelectedCreation = creations[$scope.selected - 1][id].page;
 	}
 
 });
 
-app.directive('backImg', function(){
-    return function(scope, element, attrs){
-        var url = attrs.backImg;
-        element.css({
-            'background-image': 'url(' + url +')',
-            'background-size' : 'cover'
-        });
-    };
-})

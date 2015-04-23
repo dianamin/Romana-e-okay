@@ -1,3 +1,7 @@
+/*
+	Contains TemeMakerCtrl - essay generator
+*/
+
 app.controller('TemeMakerCtrl', function ($scope) {
 	$scope.Theme = "";
 	$scope.Hypothesis = "";
@@ -11,6 +15,9 @@ app.controller('TemeMakerCtrl', function ($scope) {
 	$scope.hasErrors = false;
 	$scope.errors = "";
 	$scope.th = ["Primul ", "Al doilea ", "Al treilea ", "Al patrulea ", "Al cincilea ", "Al șaselea ", "Al șaptelea ", "Al optâlea", "Al nouălea", "Al zecelea"];
+
+
+	// Initializing mandatory arguments
 
 	$scope.Arguments[0] = {
 		"domain": "",
@@ -38,6 +45,8 @@ app.controller('TemeMakerCtrl', function ($scope) {
 	}
 
 	$scope.checkText = function(s) {
+		//Checks if there are enough letters in string s to be considered valid
+
 		var l = s.length;
 		s = s.toLowerCase();
 		var letters = 0;
@@ -51,6 +60,8 @@ app.controller('TemeMakerCtrl', function ($scope) {
 	
 
 	$scope.hasConjunction = function(s) {
+		// If argument s begins with a conjunction, a different wording is necessary
+
 		var l = s.length;
 		//if (l < 2) return false;
 		if (s[0] == "c" || s[0] == "s") {
@@ -67,6 +78,8 @@ app.controller('TemeMakerCtrl', function ($scope) {
 
 
 	$scope.generateEssay = function() {
+		//building essay
+
 		$scope.results = [];
 		$scope.result = "Pornind de la premisa că " + $scope.Hypothesis + ", voi demonstra " + $scope.Theme + ". ";
 		$scope.results.push($scope.result);
@@ -78,11 +91,13 @@ app.controller('TemeMakerCtrl', function ($scope) {
 			$scope.result = "";
 			if ($scope.Arguments[i].okay) {
 				if ($scope.Arguments[i].type == "pro") {
+					//argument is for the theme
 					$scope.crtpro++;
 					$scope.result += $scope.th[$scope.crtpro] + "argument ";
 					$scope.result += "în favoarea ipotezei ";
 				}
 				else {
+					//argument is against the theme
 					$scope.crtcon++;
 					console.log("aici", $scope.crtcon);
 					if ($scope.crtcon == 0) $scope.result += "Pe de alta parte, un argument ";
@@ -91,6 +106,7 @@ app.controller('TemeMakerCtrl', function ($scope) {
 				}
 
 				if ($scope.Arguments[i].hasDomain) {
+					//argument is from a domain
 					$scope.result += "provine din domeniul " + $scope.Arguments[i].domain + " și ";
 				}
 
@@ -106,15 +122,17 @@ app.controller('TemeMakerCtrl', function ($scope) {
 	}
 
 	$scope.eliminateExtraPoints = function(s) {
+		// If input is something like "Romana e okay! is awesome....". No extra punctuation needed.
 		var l = s.length;
 		l--;
-		while(l > 0 && s[l] == ".") l--;
+		while(l > 0 && s[l] == "." || s[l] == "!" || s[i] == "?") l--;
 		l++;
 		s = s.substring(0, l);
 		return s;
 	}
 
 	$scope.enoughArguments = function() {
+		//minimum two valid arguments
 		return ($scope.cons + $scope.pros >= 2);
 	}
 	$scope.notEnoughArguments = function() {
@@ -123,16 +141,21 @@ app.controller('TemeMakerCtrl', function ($scope) {
 	}
 
 	$scope.verifyData = function() {
+		//verifies input data
 		var l = $scope.Arguments.length;
 		$scope.pros = 0;
 		$scope.cons = 0;
 
+		// eliminating extra punctuation
 		$scope.Hypothesis = $scope.eliminateExtraPoints($scope.Hypothesis);
 		$scope.Theme = $scope.eliminateExtraPoints($scope.Theme);
 
 		for (var i = 0; i < l; i++) {
+			// eliminating extra punctuation
 			$scope.Arguments[i].domain = $scope.eliminateExtraPoints($scope.Arguments[i].domain);
 			$scope.Arguments[i].text = $scope.eliminateExtraPoints($scope.Arguments[i].text);
+			
+			//checking domain
 			if ($scope.checkText($scope.Arguments[i].domain) == false) {
 				$scope.Arguments[i].hasDomain = false;
 				$scope.Arguments[i].domain = "";
@@ -143,13 +166,15 @@ app.controller('TemeMakerCtrl', function ($scope) {
 			if ($scope.checkText($scope.Arguments[i].text) == false) $scope.Arguments[i].okay = false;
 			else {
 				$scope.Arguments[i].okay = true;
+				//counting arguments
 				if ($scope.Arguments[i].type == "pro") $scope.pros++;
 				else $scope.cons++;
 			}
 		}
+
 		$scope.Conclusion = $scope.eliminateExtraPoints($scope.Conclusion);
 
-
+		//showing errors
 		if ($scope.notEnoughArguments()) {
 			$scope.hasErrors = true;
 			$scope.errors += "Nu sunt suficiente argumente valide pentru a genera eseul. ";
@@ -169,6 +194,8 @@ app.controller('TemeMakerCtrl', function ($scope) {
 
 
 		$scope.verified = true;
+
+		//generating essay, if everything's okay :)
 		if ($scope.enoughArguments()) $scope.generateEssay();
 	}
 
