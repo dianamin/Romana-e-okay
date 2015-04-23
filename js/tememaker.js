@@ -1,10 +1,13 @@
 app.controller('TemeMakerCtrl', function ($scope) {
-	$scope.Theme;
-	$scope.Hypothesis;
+	$scope.Theme = "";
+	$scope.Hypothesis = "";
 	$scope.Arguments = new Array();
 	$scope.pros = 0;
 	$scope.cons = 0;
 	$scope.verified = false;
+	$scope.result;
+	$scope.hasErrors = false;
+	$scope.errors = "";
 
 	$scope.Arguments[0] = {
 		"domain": "",
@@ -48,6 +51,10 @@ app.controller('TemeMakerCtrl', function ($scope) {
 
 	$scope.generateEssay = function() {
 		console.log("generating...");
+
+		$scope.result = "Pornind de la premisa că " + $scope.Hypothesis + ", voi demonstra " + $scope.Theme + ". ";
+		$scope.result = $scope.result + "/n bla bla";
+
 	}
 
 	$scope.enoughArguments = function() {
@@ -80,7 +87,22 @@ app.controller('TemeMakerCtrl', function ($scope) {
 		}
 
 		$scope.verified = true;
-		if (enoughArguments) generateEssay();
+
+		if ($scope.notEnoughArguments()) {
+			$scope.hasErrors = true;
+			$scope.errors += "Nu sunt suficiente argumente valide pentru a genera eseul. ";
+		}
+		if ($scope.checkText($scope.Hypothesis) == false) {
+			$scope.hasErrors = true;
+			$scope.errors += "Nu ai completat corect câmpul premisei. ";
+		}
+		if ($scope.checkText($scope.Theme) == false) {
+			$scope.hasErrors = true;
+			$scope.errors += "Nu ai completat corect tema premisei. ";
+		}
+
+
+		if ($scope.enoughArguments()) $scope.generateEssay();
 	}
 
 });

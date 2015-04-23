@@ -10,6 +10,7 @@
 		<p>
 			Tema este 
 			<input type = "text" class = "form-control short-input-box" ng-model = "Theme" value = "{Theme}" />
+			.
 		</p>
 
 
@@ -62,7 +63,11 @@
 	<br /> <br />
 
 	<div class = "alert alert-danger" ng-show = "notEnoughArguments()">
-		<span class = "glyphicon glyphicon-remove"> </span> Nu sunt suficiente argumente valide pentru a genera eseul.
+		<span class = "glyphicon glyphicon-remove"> </span> {{errors}}
+	</div>
+
+	<div>
+		{{result}}
 	</div>
 
 	</center> </div>
