@@ -15,6 +15,7 @@
 	<script src = "js/creationscontrollers.js"></script>
 	<script src = "js/answers.js"></script>
 	<script src = "js/joc.js"></script>
+	<script src = "js/tememaker.js"></script>
 </head>
 
 <body ng-controller = "PageChangeCtrl">
@@ -84,13 +85,13 @@
 							back-img = {{creation.img}}
 							ng-click = "openCreation(creation.id)"
 							>
-							<div class = "creation-presentation" ng-click = "openCreation(creation.id)"	>
-								<b> {{creation.name}} </b>
-								<br /> <br />
-								{{creation.author}}
-								<br />
-								{{creation.type}}
-							<div>
+								<div class = "creation-presentation" ng-click = "openCreation(creation.id)"	>
+									<b> {{creation.name}} </b>
+									<br /> <br />
+									{{creation.author}}
+									<br />
+									{{creation.type}}
+								</div>
 						</li>
 					</ul>
 				</center>
@@ -103,6 +104,8 @@
 		</div>
 
 		<center> <div ng-show = "selected == 6" class = "text-block" ng-include = "'data/joc.html'">
+		</div> </center>
+		<center> <div ng-show = "selected == 7" class = "text-block" ng-include = "'data/tememaker.html'">
 		</div> </center>
 
 		</div> </center> 
