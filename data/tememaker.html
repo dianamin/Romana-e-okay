@@ -6,10 +6,10 @@
 	<div> <center>
 		<h4> Eseu argumentativ </h4>
 
-		<p> Care este tema eseului? </p>
+		<h5> Care este tema eseului? </h5>
 		<p>
 			Tema este 
-			<input type = "text" class = "form-control short-input-box" ng-model = "Theme" value = "{Theme}" />
+			<input type = "text" class = "form-control long-input-box" ng-model = "Theme" value = "{Theme}" />
 			.
 		</p>
 
@@ -18,15 +18,15 @@
 		<span class = "glyphicon glyphicon-warning-sign"> </span> Dacă este vorba de un eseu pro/contra, vei formula tema în funcție de opinia ta. De exemplu, dacă trebuie să îți exprimi părerea despre „uniforma în școli - un rău necesar?”, vei putea trece ca temă „importanța impunerii uniformelor în școli”, dacă ești de acord, sau „de ce nu trebuie să existe uniforme în școli”, dacă nu ești de acord. 
 	</div>
 
-	<p> De la ce premisă pleci? </p>
+	<h5> De la ce premisă pleci? </h5>
 	<p>
 		Plec de la premisa că 
 		<input type = "text" class = "form-control long-input-box" ng-model = "Hypothesis" value = "{Hypothesis}" />
 		.
 	</p>
 
-	<br /> <br />
-	<p> Care sunt argumentele tale? (în ordinea în care vrei să apară în eseu) </p>
+	<br />
+	<h5> Care sunt argumentele tale? (în ordinea în care vrei să apară în eseu) </h5>
 	<br />
 	<ol>
 		<li ng-repeat = "argument in Arguments"> 
@@ -57,17 +57,32 @@
 		</li>
 	</ol> 
 
-	<button class = "btn btn-primary" ng-click = "addArgument()"><span class = "glyphicon glyphicon-plus"></span> Adaugă argumente</button> <br /> <br />
-	<button class = "btn btn-primary" ng-click = "verifyArguments()"><span class = "glyphicon glyphicon-ok"></span> Construiește eseul!</button>
+	<button class = "btn btn-primary" ng-click = "addArgument()"><span class = "glyphicon glyphicon-plus"></span> Adaugă argumente</button> <br />
+	<br /> <br />
+
+	<h5> Care este concluzia? </h5>
+	<p>
+		Concluzia este că 
+		<input type = "text" class = "form-control long-input-box" ng-model = "Conclusion" value = "{Conclusion}" />
+		.
+	</p>
 
 	<br /> <br />
+	<button class = "btn btn-primary" ng-click = "verifyData()"><span class = "glyphicon glyphicon-ok"></span> Construiește eseul!</button>
+
+	<br />
 
 	<div class = "alert alert-danger" ng-show = "notEnoughArguments()">
 		<span class = "glyphicon glyphicon-remove"> </span> {{errors}}
 	</div>
+	
+	<br />
 
-	<div>
-		{{result}}
+
+	<div id = "essay">
+		<p ng-repeat = "result in results">
+			{{result}}
+		</p>
 	</div>
 
 	</center> </div>

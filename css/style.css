@@ -404,3 +404,13 @@ td {
 	color: white;
 	text-align: center;
 }
+
+#essay {
+	text-align: justify;
+	padding: 50px;
+	background-color: white;
+	border: solid 1px black;
+	border-radius: 10px;
+	font-size: 15px;
+	margin: 20px;
+}
