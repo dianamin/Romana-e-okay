@@ -4,6 +4,7 @@ app.controller('TemeMakerCtrl', function ($scope) {
 	$scope.Arguments = new Array();
 	$scope.pros = 0;
 	$scope.cons = 0;
+	$scope.verified = false;
 
 	$scope.Arguments[0] = {
 		"domain": "",
@@ -41,6 +42,20 @@ app.controller('TemeMakerCtrl', function ($scope) {
 		}
 		console.log(s);
 		if (letters <= 3) return false;
+		return true;
+	}
+
+
+	$scope.generateEssay = function() {
+		console.log("generating...");
+	}
+
+	$scope.enoughArguments = function() {
+		return ($scope.cons + $scope.pros >= 2);
+	}
+	$scope.notEnoughArguments = function() {
+		if (!$scope.verified) return false;
+		return ($scope.cons + $scope.pros < 2);
 	}
 
 	$scope.verifyArguments = function() {
@@ -49,13 +64,23 @@ app.controller('TemeMakerCtrl', function ($scope) {
 		$scope.cons = 0;
 
 		for (var i = 0; i < l; i++) {
-			if ($scope.checkText($scope.Arguments[i].domain) == false) $scope.Arguments[i].hasDomain = false;
+			if ($scope.checkText($scope.Arguments[i].domain) == false) {
+				$scope.Arguments[i].hasDomain = false;
+				$scope.Arguments[i].domain = "";
+			}
+			else {
+				$scope.Arguments[i].hasDomain = true;
+			}
 			if ($scope.checkText($scope.Arguments[i].text) == false) $scope.Arguments[i].okay = false;
 			else {
+				$scope.Arguments[i].okay = true;
 				if ($scope.Arguments[i].type == "pro") $scope.pros++;
 				else $scope.cons++;
 			}
 		}
-		console.log($scope.pros, $scope.cons);
+
+		$scope.verified = true;
+		if (enoughArguments) generateEssay();
 	}
+
 });

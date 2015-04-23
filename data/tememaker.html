@@ -59,5 +59,11 @@
 	<button class = "btn btn-primary" ng-click = "addArgument()"><span class = "glyphicon glyphicon-plus"></span> Adaugă argumente</button> <br /> <br />
 	<button class = "btn btn-primary" ng-click = "verifyArguments()"><span class = "glyphicon glyphicon-ok"></span> Construiește eseul!</button>
 
+	<br /> <br />
+
+	<div class = "alert alert-danger" ng-show = "notEnoughArguments()">
+		<span class = "glyphicon glyphicon-remove"> </span> Nu sunt suficiente argumente valide pentru a genera eseul.
+	</div>
+
 	</center> </div>
 </div>
