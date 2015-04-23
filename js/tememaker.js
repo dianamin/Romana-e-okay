@@ -125,7 +125,7 @@ app.controller('TemeMakerCtrl', function ($scope) {
 		// If input is something like "Romana e okay! is awesome....". No extra punctuation needed.
 		var l = s.length;
 		l--;
-		while(l > 0 && s[l] == "." || s[l] == "!" || s[i] == "?") l--;
+		while(l > 0 && s[l] == "." || s[l] == "!" || s[l] == "?") l--;
 		l++;
 		s = s.substring(0, l);
 		return s;
