@@ -26,7 +26,7 @@ var context = [
 	{
 		"name": "Perioada postbelică",
 		"lider": "-",
-		"details": "data/posbelica2.html",
+		"details": "data/postbelica2.html",
 		"creations" : creations[4]
 	}
 ]
