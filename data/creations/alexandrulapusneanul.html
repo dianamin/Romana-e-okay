@@ -2,26 +2,30 @@
 	<h4> Alexandru Lăpușeanul </h4>
 	<p> Nuvela „Alexandru Lăpușneanul” este prima nuvelă romantică de inspirație istorică din literatura română. Publicată în perioada pașoptistă, în primul număr al revistei
 		<i> 
-		<input type = "text" class = "form-control short-input-box" ng-model = "Magazine" value = "{Magazine}">
+		<input type = "text" class = "form-control short-input-box" ng-model = "Magazine" value = "{Magazine}" />
 		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Magazine', 'Dacia literară')"></span>
 		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Magazine', 'Dacia literară')"></span>
 		</i>
 	(1840), nuvela ilustrează una dintre sursele literaturii romantice, istoria națională, potrivit recomandărilor lui
-		<input type = "text" class = "form-control short-input-box" ng-model = "Lider" value = "{Lider}">
+		<input type = "text" class = "form-control medium-input-box" ng-model = "Lider" value = "{Lider}">
 		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Lider', 'Mihail Kogălniceanu')"></span>
 		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Lider', 'Mihail Kogălniceanu')"></span>
 		din articolul-program al revistei, intitulat 
 		<i>
 		<input type = "text" class = "form-control short-input-box" ng-model = "Article" value = "{Article}">
-		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkArticle()"></span>
-		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkArticle()"></span>
-		</i>
-		<input type = "text" class = "form-control short-input-box" ng-model = "Article" value = "{Article}">
 		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Article', 'Introducție')"></span>
 		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Article', 'Introducție')"></span>
+		</i>
 		, care constituie și manifestul literar al romantismului românesc.
 	</p>
 	<p> Ulterior, nuvela „Alexandru Lăpușneanul” a fost inclusă în ciclul „Fragmente istorice”, din volumul „Păcatele tinereților” (1875).</p>
+
+	<a href = "http://ro.wikisource.org/wiki/Alexandru_L%C4%83pu%C8%99neanul" target = "_blank">
+	 	<div class = "alert alert-success">
+			<span class = "glyphicon glyphicon-book"> </span> 
+			Click aici pentru a citi opera.
+		</div> 
+	</a>
 
 	<h5> Ce este o nuvelă? </h5>
 	<div class = "well">
@@ -58,7 +62,7 @@
 
 	<h5> Care sunt sursele de inspirație? </h5>
 	<p> 
-		<input type = "text" class = "form-control short-input-box" ng-model = "Name" value = "{Name}">
+		<input type = "text" class = "form-control medium-input-box" ng-model = "Name" value = "{Name}">
 		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Name', 'Costache Negruzzi')"></span>
 		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Name', 'Costache Negruzzi')"></span>
 		, întemeietorul nuvelei istorice românești, este primul scriitor care valorifică într-o creație literară cronicile moldovenești (<i> Letopisețul Țării Moldovei </i> de Grigore Ureche și de Miron Costin).
@@ -157,9 +161,7 @@
 				<img src = "img/pasoptism/domnitor.jpg" class = "conflict-part" />
 				<br /> <br /> 
 				<center> <b>
-				<input type = "text" class = "form-control short-input-box" ng-model = "Conflict1" value = "{Conflict1}">
-				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Conflict1', 'Domnitor')"></span>
-				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Conflict1', 'Domnitor')"></span>
+				{{Conflict1}}
 				</center> </b>
 			</div>
 			<div class = "subtitle col-md-1 col-sm-1 conflict-text">
@@ -178,7 +180,7 @@
 		</div>
 	</center>
 
-	<p> <b> Conflictul secundar </b> este limitat la revolta mulțimii din capitolul al II-lea. </p>
+	<!-- <p> <b> Conflictul secundar </b> este limitat la revolta mulțimii din capitolul al II-lea. </p>
 
 	<center>
 		<div class = "row">
@@ -187,18 +189,18 @@
 				<img src = "img/pasoptism/domnitor.jpg" class = "conflict-part" />
 				<br /> <br /> 
 				<center> <b>
-				<input type = "text" class = "form-control short-input-box" ng-model = "Conflict1" value = "{Conflict1}">
-				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Conflict1', 'Domnitor')"></span>
-				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Conflict1', 'Domnitor')"></span>
+				{{Conflict1}}
 				</center> </b>
 			</div>
 			<div class = "subtitle col-md-1 col-sm-1 conflict-text">
 				VS.
 			</div>
 			<div class = "col-md-4 col-sm-4">
+				<img src = "img/pasoptism/poporul.jpg" class = "conflict-part" />
+				<br /> <br /> 
 				<input type = "text" class = "form-control short-input-box" ng-model = "Conflict4" value = "{Conflict4}">
 				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Conflict4', 'Popor') || checkText('Conflict4', 'Mulțime')"></span>
-				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Conflict4', 'Popor') || checkText('Conflict4', 'Mulțime')"></span>
+				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Conflict4', 'Popor') && !checkText('Conflict4', 'Mulțime')"></span>
 				</center> </b>
 			</div>
 			<div class = "col-md-1 col-sm-1"> </div>
@@ -226,14 +228,18 @@
 				<img src = "img/pasoptism/ruxanda.jpg" class = "conflict-part" />
 				<br /> <br /> 
 				<center> <b>
+				<input type = "text" class = "form-control short-input-box" ng-model = "abc" value = "{abc}">
+				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('abc', 'Domnitor')"></span>
+				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('abc', 'Domnitor')"></span>
+
 				<input type = "text" class = "form-control short-input-box" ng-model = "Conflict5" value = "{Conflict5}">
 				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Conflict5', 'Ruxanda') || checkText('Conflict5', 'Doamna Ruxanda')"></span>
-				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Conflict5', 'Ruxanda') || checkText('Conflict5', 'Doamna Ruxanda')"></span>
+				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Conflict5', 'Ruxanda') || checkText('Conflict5', 'Doamna Ruxanda')"></span> 
 				</center> </b>
 			</div>
 			<div class = "col-md-1 col-sm-1"> </div>
 		</div>
-	</center>
+	</center> -->
 	
 	<h5> Timpul și spațiul sunt bine precizate? </h5>
 
@@ -250,18 +256,18 @@
 	</ul> </center>
 
 	<h5> Care sunt trăsăturile lui Alexandru Lăpușneanul? </h5>
-	<p> Alexandru Lăpușneanul este personajul principal al nuvelei, personaj romantic, excepțional, cre acționează în situații excepționale (de exeplu: scena uciderii boierilor, a pedepsirii lui Moțoc, scena morții domnitorului otrăvit). Întruchipează tipul <b>domnitorului sângeros</b>, tiran și crud. El este construit din contraste și are o psihologie complexă, calități și defecte puternice, <b> „un damnat” </b> romantic (G. Călinescu). </p>
+	<p> Alexandru Lăpușneanul este personajul principal al nuvelei, personaj romantic, excepțional, care acționează în situații excepționale (de exeplu: scena uciderii boierilor, a pedepsirii lui Moțoc, scena morții domnitorului otrăvit). Întruchipează tipul <b>domnitorului sângeros</b>, tiran și crud. El este construit din contraste și are o psihologie complexă, calități și defecte puternice, <b> „un damnat” </b> romantic (G. Călinescu). </p>
 
 	<p> Echilibrul dintre convenția romantică și realitatea individului se realizează prin modul de construire a personajului: subordonarea trăsăturilor uneia principale, <b> voința de putere</b>, care ii călăuzește acțiunile. </p>
-	<p> Crud, hotărât, viclan, disimulat, inteligent, bun cunoscător al psihologiei umane, abil politic, personajul este <b> puternic individualizat </b> și <b> memorabil</b>. </p>
+	<p> Crud, hotărât, viclean, disimulat, inteligent, bun cunoscător al psihologiei umane, abil politic, personajul este <b> puternic individualizat </b> și <b> memorabil</b>. </p>
 	<p> 
 		Este caracterizat 
-		<input type = "text" class = "form-control short-input-box" ng-model = "Characterization1" value = "{Characterization1}">
-		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Characterization1', 'Domnitor')"></span>
+		<input type = "text" class = "form-control short-input-box" ng-model = "Characterization1" value = "{Characterization1}" />
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Characterization1', 'direct')"></span>
 		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Characterization1', 'direct')"></span>
 		(de către narator, de alte personaje, autocaracterizare) și 
-		<input type = "text" class = "form-control short-input-box" ng-model = "Characterization2" value = "{Characterization2}">
-		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Characterization2', 'Domnitor')"></span>
+		<input type = "text" class = "form-control short-input-box" ng-model = "Characterization2" value = "{Characterization2}" />
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Characterization2', 'indirect')"></span>
 		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Characterization2', 'indirect')"></span>
 		(prin fapte, limbaj, comportament, relații cu alte personaje, gesturi, atitudine vestimentație).
 	</p>
@@ -284,7 +290,7 @@
 	<p> Limbajul conține expresii populare („rămasă cu gura cascată”), regionalisme fonetice („clipală”, „găsând”), dar forță de sugestie au neologismele care conservă forma de secol XIX, unele fiind integrate în figuri de stil - comparația „Acest din urmă cuvânt [...] fu ca o schinteie electrică”, metafora „în brațele ideri acestei cu multe capete”. </p>
 
 	<h5> Care sunt modurile de expunere? </h5>
-	<p> <b> Narațiunea </b> și <b> Descrierea </b> sunt reduse, naratorul obiectiv limitânduși intervențiile. Caracterul dramatic al textului este dat de rolul capitolelor în ansamblul textului (asemenea actelor dintr-o piesă de teatru), de realizare scenică a secvențelor narative, de utilizarea predominantă a <b> dialogului </b> și de minima intervenție a naratorului prin considerații personale. </p>
+	<p> <b> Narațiunea </b> și <b> Descrierea </b> sunt reduse, naratorul obiectiv limitându-și intervențiile. Caracterul dramatic al textului este dat de rolul capitolelor în ansamblul textului (asemenea actelor dintr-o piesă de teatru), de realizare scenică a secvențelor narative, de utilizarea predominantă a <b> dialogului </b> și de minima intervenție a naratorului prin considerații personale. </p>
 	<p> Descrierile „au valoare documentară nu valoare epică” (Nicolae Manolescu) și conferă culoarea locală. </p>
 
 	<h5> Există și elemente clasice? </h5>
