@@ -92,7 +92,7 @@ creations = [
 			"author": "Ion Barbu",
 			"type": "Poezia modernistă",
 			"img" : "img/interbelic/rcle.jpg",
-			"page" : "data/creations/tbd.html"
+			"page" : "data/creations/rigacrypto.html"
 		},
 		{
 			"id" : "4",

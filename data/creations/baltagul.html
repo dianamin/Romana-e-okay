@@ -5,21 +5,22 @@
 
 	<h5> Ce este romanul? </h5>
 
-	<p> 
+	<p style = "display: inline-block;"> 
+		<div class = "inline-form"> </div>
 		Romanul este o creație epică în proză de
 		<div class = "inline-form">
 			<input type = "radio" name = "Size" ng-model = "Size" class = "big-dot" value = "mici" /> mici <br />
 			<input type = "radio" name = "Size" ng-model = "Size" class = "big-dot" value = "mari" /> mari
 		</div>
-		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkRadio('Size', 'multe')"></span>
-		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkRadio('Size', 'multe')"></span>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkRadio('Size', 'mari')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkRadio('Size', 'mari')"></span>
 		dimensiuni, cu acțiune 
 		<div class = "inline-form">
 			<input type = "radio" name = "Conflict" ng-model = "Conflict" class = "big-dot" value = "complexă" /> complexă <br />
 			<input type = "radio" name = "Conflict" ng-model = "Conflict" class = "big-dot" value = "simplistă" /> simplistă
 		</div>
-		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkRadio('Plans', 'complexă')"></span>
-		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkRadio('Plans', 'complexă')"></span>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkRadio('Conflict', 'complexă')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkRadio('Conflict', 'complexă')"></span>
 		, desfășurată pe 
 		<div class = "inline-form">
 			<input type = "radio" name = "Plans" ng-model = "Plans" class = "big-dot" value = "putine" /> un singur plan <br />
@@ -32,8 +33,8 @@
 			<input type = "radio" name = "Number" ng-model = "Number" class = "big-dot" value = "mare" /> mare <br />
 			<input type = "radio" name = "Number" ng-model = "Number" class = "big-dot" value = "mic" /> mic
 		</div>
-		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkRadio('Plans', 'mare')"></span>
-		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkRadio('Plans', 'mare')"></span>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkRadio('Number	', 'mare')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkRadio('Number	', 'mare')"></span>
 		de personaje puternic individualizate.  
 	</p>
 
