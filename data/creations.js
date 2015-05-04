@@ -84,7 +84,7 @@ creations = [
 			"author": "Lucian Blaga",
 			"type": "Poezia modernistă",
 			"img" : "img/interbelic/ens.jpg",
-			"page" : "data/creations/tbd.html"
+			"page" : "data/creations/eunustrivesc.html"
 		},
 		{
 			"id" : "3",
