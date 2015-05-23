@@ -1,0 +1,172 @@
+<div ng-controller = "GeneralCheckerCtrl">
+	<h4> Iona </h4>
+	<p> 
+		Iona (1968) a fost 
+		<input type = "text" class = "form-control short-input-box" ng-model = "Public" value = "{Public}" />
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Public', 'publicată')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Public', 'publicată')"></span>
+		în revista <i> Luceafărul</i>, fiind inclusă ulterior în trilogia cu titlu simbolic <i> Setea muntelui de sare</i>, alături de <i> Paracliserul </i> și <i> Matca</i>.	
+	</p>
+
+	<h5> Care este tema piesei? </h5>
+	<p> Tema piesei este singurătatea, frământarea omului în efortul de aflare a sinelui, ezitarea în a-şi asuma conştient drumul în viaţă. Problematica se diversifică prin revolta omului în faţa destinului, raportul dintre libertate şi necesitate sau incomunicarea socială, ca sursă a singurătăţii. </p>
+
+	<h5> Ce semnifică titlul? </h5>
+	<p> Titlul trimite la mitul biblic al lui Iona, proorocul revoltat, care se întoarce la calea sa după cele treizile de pocăinţă şi recluziune în burta unui chit. Însă pescarul Iona din textul lui Marin Sorescu nu are un destin asemănător. <b> Teatrul modern valorifică şi reinterpretează miturile. </b> </p>
+
+	<h5> Ce specie literară e? </h5>
+	<p> 
+		Subintitulată „tragedie în 
+		<input type = "text" class = "form-control short-input-box" ng-model = "Tablouri" value = "{Tablouri}" />
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Tablouri', 'patru')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Tablouri', 'patru')"></span> tablouri”, piesa iese din clasificările clasice, fiind o parabolă dramatică, alcătuită sub forma unui monolog, care cultivă alegoria şi metafora.
+	</p>
+
+	<div class = "well">
+		<b> Tragedie </b> = specie a genului dramatic care prezintă personaje puternice, angajate în luptă cu un destin potrivnic sau cu propriile sentimente, conflictul soluționându-se cu înfrângerea sau moartea eroului.
+	</div>
+	<div class = "well">
+		<b> Dramă </b> = specie a genului dramatic caracterizată prin deznodământ grav, dar în care conflictul, deși foarte puternic, nu mai duce neapărat, ca în <i> tragedie</i>, la moartea eroului, și în care accentele tragice se împletesc uneori cu cele comice sau lirice.
+	</div>
+	<div class = "well">
+		<b> Parabolă </b> = o povestire alegorică având un cuprins religios sau moral.
+	</div>
+	<div class = "well">
+		<b> Teatrul modern </b> = eliberarea de formele dramaturgiei tradiţionale şi se manifestă între altele prin: preferinţa pentru teatru-parabolă sau teatrul absurdului,alăturarea tragicului şi a comicului, inserţia liricului în text, valorificarea miturilor, apariţia personajului + idee, lipsa conflictului, încălcarea succesiunii temporale a evenimentelor etc.
+	</div>
+
+	<h5> Care sunt particularitățile de construcție? </h5>
+	<p> Chiar dacă existenţa în scenă a unui singur personaj poate părea surprinzătoare, ea nu este neapărat neobişnuită, căci, asemeni majorităţii dramaturgilor moderni, Sorescu îşi construieşte piesa în răspăr cu regulile teatrului „clasic”. </p>
+	<p style = "display: inline-block;"> 
+		El renunţă în primul rând la 
+		<div class = "inline-form">
+			<input type = "radio" name = "Type" ng-model = "Type" class = "big-dot" value = "dialog" /> dialog <br />
+			<input type = "radio" name = "Type" ng-model = "Type" class = "big-dot" value = "monolog" /> monolog
+		</div>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkRadio('Type', 'dialog')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkRadio('Type', 'dialog')"></span>, obligându-şi personajul (şi implicit, actorul) „să se dedubleze, să se plieze şi să se «strângă» după cerinţele vieţii sale interioare şi trebuinţele scenice”, făcându-l să se comporte „ca şi când în scena ar fi două persoane”. Consecinţele sunt dispariţia conflictuluişi a intrigii şi plasarea acţiunii în planul parabolei. 
+	</p>
+
+	<h5> Care sunt particularitățile de compoziție? </h5>
+	<p> 
+		Piesa este alcătuită dintr-o succesiune de 
+		<input type = "range" class = "medium-input-box" min = "2" max = "10" ng-model = "Number" style = "display: inline-block;" /> <span> {{Number}} </span>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "Number == 4"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "Number != 4"></span>
+		acte (numite tablouri). Fiecare dintre acestea prezintă alt context în carese află personajul.
+	</p>
+	<p> 
+		Rolul indicațiilor 
+		<input type = "text" class = "form-control short-input-box" ng-model = "Indications" value = "{Indications}" />
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Indications', 'scenice')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Indications', 'scenice')"></span>
+		este de a ajuta la clarificarea semnificațiilor simbolice și, de asemenea, de a oferi un sprijin pentru înțelegerea problematicii textului.
+	</p>
+
+	<p> Precizarea din debutul textului, din didascalii, oferă atât informații legate de punerea în scenă a piesei, cât și ajutor în descifrarea temei. </p>
+	<div class = "well"> <i>
+		Ca orice om foarte singur, Iona vorbeşte tare cu sine însuşi, îşi pune întrebări şi-şi răspunde, se comportă, tot timpul, ca şi când în scenă ar fi două personaje. Se dedublează şi se „strânge”, după cerinţele vieţii sale interioare şi trebuinţele scenice. 
+	</i> </div>
+
+	<p> Evident, nimic din ceea ce se întâmplă pe scenă nu trebuie interpretat real, piesa fiind în fond o <b> parabolă a căutării spirituale a individului</b>, Este vorba de drumul dificil și dureros spre înțelegere privită ca <b> iluminare</b>. Toate gesturile eroului, indicațiile de regie, decorul, totul trebuie așadar „citit” în cheie simbolică. </p>
+
+	<h5> Ce se întâmplă în primul act? </h5>
+
+	<div class = "row">
+		<div class = "col-md-9 col-sm-9">
+			<p> În primul act, <i> „scena e împărţită în două. Jumătate din ea reprezintă o gură imensă de peşte. Cealaltă jumătate – apa, nişte cercuri făcute cu creta. Iona stă în gura peştelui, nepăsător, cu năvodul aruncat peste cercurile de cretă. E întors cu spatele spre întunecimea din fundul gurii peştelui uriaş”</i>. În acest moment, Iona ignoră pur și simplu pericolul. </p>
+			<p> <i> Micul acvariu </i> aflat lângă Iona și pe care el îl ignoră este o reprezentare și totodată un avertisment despre inconștiența cu care se comportă omul în fața iminentei produceri a unei situații-limită. Lumea peștișorilor nu este acvariul, în fond o închisoare, dar ei „dau veseli din coadă”, părând a se fi adaptat pe deplin la situația anormală în care se află. Este ceea ce va face și Iona, odată înghițit de „gura imensă de pește” pe care, „nepăsător”, o ignorase de atâta vreme. </p>
+			<p> Gestul său disperat din finalul primului tablou, când încearcă să oprească fălcile „care se încleștează scârțâind groaznic”, vine prea târziu, iar strigătul zadarnic, „Ajutoooor!”, este o confirmare. </p>
+		</div>
+		<div class = "col-md-3 col-sm-3">
+			<center> <img src = "img/postbelic/iona1.jpg" class = "img-300" /> </center>
+		</div>
+	</div>
+
+	<h5> Ce se întâmplă în al doilea act? </h5>
+
+	<div class = "row">
+		<div class = "col-md-3 col-sm-3">
+			<center> <img src = "img/postbelic/iona2.jpg" class = "img-300" /> </center>
+		</div>
+		<div class = "col-md-9 col-sm-9">
+			<p> În actul al doilea, odată ajuns prizonier în burta peștelui, el va încerca să se adapteze să-și demonstreze sieși că e liber să facă ceea ce dorește. Chiar va încerca să prindă în năvod peștii care-i cad în celulă. Doar acesta este rostul unui pescar!</p>
+
+			<div class = "well"> <i>
+				<p> - (Aduce argumente.) Pot să merg, uite, pot să merg încolo. (Merge într-o direcţie, până se izbeşte de limită.) </p>
+				<p> - (Întorcându-se, calm.) Şi pot să merg şi încoace. (Merge; acelaşi joc.) </p>
+				<p> - Pot să merg unde vreau. </p>
+				<p> - Fac ce vreau. Vorbesc. </p>
+				<p> - Să vedem dacă pot să şi tac. Să-mi ţin gura. (Încearcă.) </p>
+			</i> </div>
+		</div>
+	</div>
+
+	<h5> Ce se întâmplă în al treilea act? </h5>
+
+	<div class = "row">
+		<div class = "col-md-9 col-sm-9">
+			<p> În actul al III-lea, „mica moară de vânt” aflată în burta <i> Peștelui II </i> și de care Iona se simte „atras ca de un vârtej”, constituie și ea un avertisment simbolic. Eroul „se va feri tot timpul să nu nimerească între dinții ei de lemn”, dar nu va face singurul gest cu adevărat normal într-o astfel de situație: să o înlăture din cale. </p>
+			<p> La fel făcuse de fapt tot timpul până acum: refuzase să-și conștientizeze situația, încercând doar să se adapteze. </p>
+		</div>
+		<div class = "col-md-3 col-sm-3">
+			<center> <img src = "img/postbelic/iona3.jpg" class = "img-300" /> </center>
+		</div>
+	</div>
+
+	<h5> Ce se întâmplă în ultimul act? </h5>
+
+	<div class = "row">
+		<div class = "col-md-3 col-sm-3">
+			<center> <img src = "img/postbelic/iona4.jpg" class = "img-300" /> </center>
+		</div>
+		<div class = "col-md-9 col-sm-9">
+			<p> Actul al 4-lea reprezintă „O gură de grotă, spărtura ultimului peşte spintecat de Iona. În faţă, ceva nisipos, murdar de alge, scoici. Ceva ca o plajă. În dreapta o movilă de pietroaie, case, lemne. La început, scena e pustie. Linişte”. </p>
+			<p> „Barba lui Iona” care răsare la gura grotei, „lungă și ascuțită” este un indice de timp: a trecut o viață de când omul încearcă zadarnic să găsească soluția. </p>
+		</div>
+	</div>
+
+
+	<h5> Cum este Iona? </h5>
+
+	<p> Iona este omul prins într-o capcană din care încearcă să scape. Conștientizarea propriei condiții și gândul că trebuie să găsească o soluție de salvare nu vin de la sine. Ideea căutării insinuează mult mai târziu în mintea lui. </p>
+	<p> Primele sale acțiuni sunt mai degrabă rodul unor impulsuri de moment decât niște acte raționale: prins în capcană, el doar se zbate să scape. Iar rezultatul este nul. Iona spintecă burta peștelui care l-a înghițit și se trezește în burta altuia mai mare decât a primului. </p>
+	<center> <img src="img/postbelic/iona pesti.jpg" class="img-300" /> </center>
+	<br /> 
+	<p> 
+		Ieșirea din limite vechi înseamnă intrarea în limite
+		<input type = "text" class = "form-control short-input-box" ng-model = "Limits" value = "{Limits}" />
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Limits', 'noi')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Limits', 'noi')"></span>.
+		Va repeta gestul de mai multe ori, dar de fiecare dată cu același rezultat, căci voința de a se salva, ea singură, nu este suficientă.
+	</p>
+
+	<div class = "well"> <i>
+		- Doamne, câți pești unul în altul, când au avut timp să se așeze atâtea straturi?
+	</i> </div>
+
+	<p> Înțelegerea se va produce abia în final. Eroul alesese un drum greșit, care duce <i> în afară</i>. Calea cea adevarată, singura de altfel, singura de altfel, se află însă <i> înăuntrul </i> nostru. </p>
+	<p> „Trebuie s-o iau în partea cealaltă. ...E invers. Totul e invers”, exclamă el în final, iluminat. Cuvântul magic, care marchează clipa descoperirii propriei identități a fost <i> eu</i>: „Eu sunt Iona!”. </p>)
+
+	<h5> Ce semnifică finalul? </h5>
+
+	<div class = "row">
+		<div class = "col-md-9 col-sm-9">
+			<p> 
+				Gestul de a-și spinteca burta nu trebuie înțeles ca o sinucidere, de vreme ce nicio acțiune din text nu se manifestase în planul realității, ci tot 
+				<input type = "text" class = "form-control short-input-box" ng-model = "Untitled" value = "{Untitled}" />
+				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Untitled', 'simbolic')"></span>
+				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Untitled', 'simbolic')"></span>:
+				omul a găsit calea, iar aceasta se află <i> în sine</i>.
+			</p>
+			<p> Mitul labirintului și metafora luminii din final (<i>„Răzbim noi cumva la lumină</i>”) susțin semnificația simbolică a piesei. </p>
+		</div>
+		<div class = "col-md-3 col-sm-3">
+			<center> <img src = "img/postbelic/iona5.jpg" class = "img-300" /> </center>
+		</div>
+	</div>
+
+	<h5> Care este mitul valorificat? </h5>
+	<p> Iona, conform Bibliei, Tanahului și Coranului, a fost un profet care a fost înghițit de către pește mare. </p>
+
+</div>

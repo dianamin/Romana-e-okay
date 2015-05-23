@@ -150,7 +150,7 @@ creations = [
 			"author": "Marin Sorescu",
 			"type": "Teatru postbelic",
 			"img" : "img/postbelic/i.jpg",
-			"page" : "data/creations/tbd.html"
+			"page" : "data/creations/iona.html"
 		}
 	]
 ]
