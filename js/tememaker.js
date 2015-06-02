@@ -35,13 +35,15 @@ app.controller('TemeMakerCtrl', function ($scope) {
 	}
 
 	$scope.addArgument = function() {
-		$scope.Arguments.push({
-			"domain": "",
-			"text": "",
-			"type": "pro",
-			"okay": true,
-		"hasDomain": true
-		});
+		if (scope.Arguments.length == 10) alert("Sunt prea multe argumente!");
+		else 
+			$scope.Arguments.push({
+				"domain": "",
+				"text": "",
+				"type": "pro",
+				"okay": true,
+			"hasDomain": true
+			});
 	}
 
 	$scope.checkText = function(s) {
@@ -72,7 +74,7 @@ app.controller('TemeMakerCtrl', function ($scope) {
 			return false;
 		}
 
-		if (s[0] == "d" && s[1] == "a" && s[2] == "c" && (s[3] == "a" || s[3] == "ă") && s[4] == " ") return true;
+		//if (s[0] == "d" && s[1] == "a" && s[2] == "c" && (s[3] == "a" || s[3] == "ă") && s[4] == " ") return true;
 		return false;
 	}
 
@@ -99,7 +101,6 @@ app.controller('TemeMakerCtrl', function ($scope) {
 				else {
 					//argument is against the theme
 					$scope.crtcon++;
-					console.log("aici", $scope.crtcon);
 					if ($scope.crtcon == 0) $scope.result += "Pe de alta parte, un argument ";
 					else $scope.result += $scope.th[$scope.crtcon] + "argument ";
 					$scope.result += "în defavoarea ipotezei ";
@@ -173,11 +174,12 @@ app.controller('TemeMakerCtrl', function ($scope) {
 		}
 
 		$scope.Conclusion = $scope.eliminateExtraPoints($scope.Conclusion);
-
+		console.log($scope.Conclusion);
 		//showing errors
+		$scope.errors = "";
 		if ($scope.notEnoughArguments()) {
 			$scope.hasErrors = true;
-			$scope.errors += "Nu sunt suficiente argumente valide pentru a genera eseul. ";
+			$scope.errors += "Nu sunt suficiente argumente valide pentru a genera eseul. Trebuie minim două argumente.";
 		}
 		if ($scope.checkText($scope.Hypothesis) == false) {
 			$scope.hasErrors = true;
@@ -188,6 +190,7 @@ app.controller('TemeMakerCtrl', function ($scope) {
 			$scope.errors += "Nu ai completat corect tema premisei. ";
 		}
 		if ($scope.checkText($scope.Conclusion) == false) {
+			console.log("yay");
 			$scope.hasErrors = true;
 			$scope.errors += "Nu ai completat concluzia. ";
 		}
