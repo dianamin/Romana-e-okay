@@ -13,6 +13,9 @@
 	<script src = "js/angular.js"></script>
 	<script src = "js/angular-route.js"></script>
 
+	<script src = "js/jQuery.js"></script>
+	<script src = "js/bootstrap.js"></script>
+
 	<script src = "js/facebook-login.js"></script>
 	<script src = "js/usefulfunctions.js"></script>
 	<script src = "js/controllers.js"></script>
@@ -29,15 +32,13 @@
 			<h1 style = "font-size: 45px;"> Româna e okay! </h1>
 		</div>
 		<div id = "login-panel">
-			
-			<br /> 
 			<div>
 				<div id = "profile-photo"> </div>
 				<div id = "profile-data"> 
-					<div id = "user-name"> </div>
+					<div id = "user-name"> Bine ai venit! </div>
 					<div> <center>
 						<button id = "login-button" class = "btn-default" onclick = "login()"> Log In </button>
-						<button id = "logout-button" class = "btn-danger" onclick = "logout()"> Log Out </button>
+						<div id = "logout-button" onclick = "logout()"> Log Out </button>
 					</center> </div>
 				</div>
 			</div>
@@ -47,16 +48,38 @@
 	<div id = "top-line"> </div>
 	<center> <div id = "logo"  ng-click = "changePage(0)" > <span class = "glyphicon glyphicon-thumbs-up"></span> </div> </center>
 	
-	<ul class = "nav-pills" id = "menu">
-			<li class = "button" ng-class = "{'active': selected == 0}" ng-click = "changePage(0)"> Home </li>
-			<li class = "button" ng-class = "{'active': selected == 1}" ng-click = "changePage(1)"> Perioada pașoptistă </li>
-			<li class = "button" ng-class = "{'active': selected == 2}" ng-click = "changePage(2)"> Junimea </li>
-			<li class = "button" ng-class = "{'active': selected == 3}" ng-click = "changePage(3)"> Posteminescianism </li>
-			<li class = "button" ng-class = "{'active': selected == 4}" ng-click = "changePage(4)"> Perioada interbelică </li>
-			<li class = "button" ng-class = "{'active': selected == 5}" ng-click = "changePage(5)"> Perioada postbelică </li>
-			<li class = "button" ng-class = "{'active': selected == 6}" ng-click = "changePage(6)"> Test </li>
-			<li class = "button" ng-class = "{'active': selected == 7}" ng-click = "changePage(7)"> Teme maker </li>
-	</ul> 
+
+	<nav class = "navbar navbar-default" style = "height": 30px;>
+	  <div class = " container-fluid">
+	    <div class = "navbar-header">
+			<button type = "button" class = "navbar-toggle collapsed" data-toggle = "collapse" data-target = "#bs-example-navbar-collapse-1">
+				<span class = "sr-only"> Toggle navigation </span>
+				<span class = "icon-bar"> </span>
+				<span class = "icon-bar"> </span>
+				<span class =" icon-bar"> </span>
+			</button>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class = "collapse navbar-collapse" id = "bs-example-navbar-collapse-1">
+			<ul class = "nav navbar-nav" style = "margin-top: 15px;">
+				<li class = "button" ng-class = "{'active': selected == 0}" ng-click = "changePage(0)"> Home </li>
+				<li class = "button" ng-class = "{'active': selected == 1}" ng-click = "changePage(1)"> Perioada pașoptistă </li>
+				<li class = "button" ng-class = "{'active': selected == 2}" ng-click = "changePage(2)"> Junimea </li>
+				<li class = "button" ng-class = "{'active': selected == 3}" ng-click = "changePage(3)"> Posteminescianism </li>
+				<li class = "button" ng-class = "{'active': selected == 4}" ng-click = "changePage(4)"> Perioada interbelică </li>
+				<li class = "button" ng-class = "{'active': selected == 5}" ng-click = "changePage(5)"> Perioada postbelică </li>
+			</ul>
+	      <ul class = "nav navbar-nav navbar-right" style = "margin-top: 15px;">
+				<li class = "button" ng-class = "{'active': selected == 6}" ng-click = "changePage(6)"> Test </li>
+				<li class = "button" ng-class = "{'active': selected == 7}" ng-click = "changePage(7)"> Teme maker </li>
+	          </ul>
+	        </li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+
 	<div id = "content">
 	<!-- placeholder -->
 		<center> <div class = "text-block">

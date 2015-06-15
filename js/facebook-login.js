@@ -81,7 +81,7 @@
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
-      document.getElementById('user-name').innerHTML = 'Bine ai venit, <br />  ' + response.name + '!';
+      document.getElementById('user-name').innerHTML = 'Bine ai venit, <br />' + response.first_name + '!';
         profile_photo = "http://graph.facebook.com/" + response.id + "/picture?width=100&height=100"
         document.getElementById("profile-photo").setAttribute("style", "background: url('" + profile_photo + "'); background-size: cover;");
     });
