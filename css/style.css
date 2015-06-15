@@ -4,6 +4,7 @@ header {
 	background: url('../img/banner.jpg');
 	background-position: center;
 	border-bottom: double white;
+	z-index: -1000;
 }
 .title {
 	padding-top: 20px;
@@ -413,4 +414,23 @@ td {
 	border-radius: 10px;
 	font-size: 15px;
 	margin: 20px;
+}
+
+#login-panel {
+	float: right;
+	width: 200px;
+	background-color: #dddddd;
+}
+
+#profile-photo {
+	height: 80px;
+	width: 80px;
+	border-radius: 100%;
+	display: inline-block;
+}
+#profile-data {
+	display: inline-block;
+	vertical-align: top;
+    word-wrap: break-word;
+    text-align: center;
 }

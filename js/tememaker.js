@@ -35,7 +35,7 @@ app.controller('TemeMakerCtrl', function ($scope) {
 	}
 
 	$scope.addArgument = function() {
-		if (scope.Arguments.length == 10) alert("Sunt prea multe argumente!");
+		if ($scope.Arguments.length == 10) alert("Sunt prea multe argumente!");
 		else 
 			$scope.Arguments.push({
 				"domain": "",

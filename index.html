@@ -12,6 +12,8 @@
 
 	<script src = "js/angular.js"></script>
 	<script src = "js/angular-route.js"></script>
+
+	<script src = "js/facebook-login.js"></script>
 	<script src = "js/usefulfunctions.js"></script>
 	<script src = "js/controllers.js"></script>
 	<script src = "js/directives.js"></script>
@@ -25,6 +27,18 @@
 	<header ng-click = "changePage(0)"> 
 		<div class = "title">
 			<h1 style = "font-size: 45px;"> Româna e okay! </h1>
+		</div>
+		<div id = "login-panel">
+			<div id = "login-button">
+				<button class = "default-btn" onclick = "login()"> Log In </button>
+				<button class = "danger-btn" onclick = "logout()"> Log Out </button>
+			</div>
+			<br /> 
+			<div>
+				<div id = "profile-photo"> </div>
+				<div id = "profile-data"> </div>
+			</div>
+			<p id = "status" style = "display: none;"> </p>
 		</div>
 	</header>
 	<div id = "top-line"> </div>
@@ -40,7 +54,6 @@
 			<li class = "button" ng-class = "{'active': selected == 6}" ng-click = "changePage(6)"> Test </li>
 			<li class = "button" ng-class = "{'active': selected == 7}" ng-click = "changePage(7)"> Teme maker </li>
 	</ul> 
-
 	<div id = "content">
 	<!-- placeholder -->
 		<center> <div class = "text-block">
