@@ -111,7 +111,7 @@
 				<br />
 				<br />
   			</center>
-
+  			<div id = "alege"> </div>
 			<div ng-show = "chosenView == 'context'" 
 				ng-include = "currentContext.details" 
 				id = "context" 
@@ -135,13 +135,14 @@
 									{{creation.type}}
 								</div>
 						</li>
+						<div id = "continut"> </div>
 					</ul>
 				</center>
 
 				<div ng-show = "SelectedCreation != -1" 
 					 ng-include = "SelectedCreation">
-					:)
 				</div>
+				
 			</div>
 		</div>
 
@@ -153,10 +154,11 @@
 		</div> </center> 
 	</div>
 
+	<div id = "back-to-top" onclick = "$('html, body').animate({scrollTop: 0}, 'slow');"> <span class = "glyphicon glyphicon-arrow-up"> </span> </div>
+
 	<footer id = "page-footer">
 		© Diana Ghinea
 	</footer>
-
 </body>
 
 </html>

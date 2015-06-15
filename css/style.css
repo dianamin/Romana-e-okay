@@ -447,3 +447,14 @@ td {
     word-wrap: break-word;
     text-align: center;
 }
+
+#back-to-top {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	cursor: pointer;
+	font-family: impact;
+	font-size: 30px;
+	color: #800000;
+	z-index: 1000;
+}
