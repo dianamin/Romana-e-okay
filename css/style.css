@@ -419,10 +419,12 @@ td {
 #login-panel {
 	float: right;
 	width: 200px;
-	background-color: #dddddd;
+	height: 90px;
+	background-color: rgba(190, 190, 190, 0.5);
 }
 
 #profile-photo {
+	margin-left: 20px;
 	height: 80px;
 	width: 80px;
 	border-radius: 100%;

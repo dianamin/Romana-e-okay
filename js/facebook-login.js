@@ -7,17 +7,23 @@
     // for FB.getLoginStatus().
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
-     // document.getElementById("login_button").setAttribute("style", "display: none;")
+      document.getElementById("login-button").setAttribute("style", "display: none;");
+      document.getElementById("logout-button").setAttribute("style", "display: block;");
       testAPI();
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
       document.getElementById('status').innerHTML = 'Please log ' +
         'into this app.';
+
+      document.getElementById("login-button").setAttribute("style", "display: block;");
+      document.getElementById("logout-button").setAttribute("style", "display: none;");
     } else {
       // The person is not logged into Facebook, so we're not sure if
       // they are logged into this app or not.
       document.getElementById('status').innerHTML = 'Please log ' +
         'into Facebook.';
+      document.getElementById("login-button").setAttribute("style", "display: block;");
+      document.getElementById("logout-button").setAttribute("style", "display: none;");
     }
   }
 
@@ -75,7 +81,7 @@
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
-      document.getElementById('profile-data').innerHTML = 'Bine ai venit, <br />  ' + response.name + '!';
+      document.getElementById('user-name').innerHTML = 'Bine ai venit, <br />  ' + response.name + '!';
         profile_photo = "http://graph.facebook.com/" + response.id + "/picture?width=100&height=100"
         document.getElementById("profile-photo").setAttribute("style", "background: url('" + profile_photo + "'); background-size: cover;");
     });

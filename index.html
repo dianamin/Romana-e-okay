@@ -29,14 +29,17 @@
 			<h1 style = "font-size: 45px;"> Româna e okay! </h1>
 		</div>
 		<div id = "login-panel">
-			<div id = "login-button">
-				<button class = "default-btn" onclick = "login()"> Log In </button>
-				<button class = "danger-btn" onclick = "logout()"> Log Out </button>
-			</div>
+			
 			<br /> 
 			<div>
 				<div id = "profile-photo"> </div>
-				<div id = "profile-data"> </div>
+				<div id = "profile-data"> 
+					<div id = "user-name"> </div>
+					<div> <center>
+						<button id = "login-button" class = "btn-default" onclick = "login()"> Log In </button>
+						<button id = "logout-button" class = "btn-danger" onclick = "logout()"> Log Out </button>
+					</center> </div>
+				</div>
 			</div>
 			<p id = "status" style = "display: none;"> </p>
 		</div>
