@@ -289,7 +289,7 @@ app.controller('AnswersInterbelicaCtrl', function ($scope) {
 	$scope.Characteristics2 = new Array($scope.Characteristics2Number);
 	$scope.showCharacteristics2 = false;
 	$scope.RightCharacteristics2 = false;
-	$scope.TrueCharacteristics2 = [true, true, true, true, false];
+	$scope.TrueCharacteristics2 = [false, true, true, true, false];
 	$scope.checkCharacteristics2 = function() {
 		$scope.RightCharacteristics2 = true;
 		for (var i = 0; i < $scope.Characteristics2Number; i++) {
