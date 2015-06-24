@@ -76,7 +76,7 @@ creations = [
 			"author": "Tudor Arghezi",
 			"type": "Poezia modernistă",
 			"img" : "img/interbelic/fm.jpg",
-			"page" : "data/creations/tbd.html"
+			"page" : "data/creations/floridemucigai.html"
 		},
 		{
 			"id" : "2",

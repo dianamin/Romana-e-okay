@@ -458,3 +458,18 @@ td {
 	color: #800000;
 	z-index: 1000;
 }
+
+.img-200-height {
+	height: 180px;
+	display: inline-block;
+	margin: 5px;
+	box-shadow: 0 0 10px black;
+	transition: all 1s;
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
+	-o-transition: all 1s;
+}
+.img-200-height:hover {
+	height: 200px;
+	box-shadow: 0 0 100px #333333;
+}
