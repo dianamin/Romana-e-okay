@@ -116,7 +116,7 @@ creations = [
 			"author": "George Călinescu",
 			"type": "Romanul mitic",
 			"img" : "img/interbelic/eo.jpg",
-			"page" : "data/creations/tbd.html"
+			"page" : "data/creations/enigmaotiliei.html"
 		},
 		{
 			"id" : "7",
