@@ -114,7 +114,7 @@ creations = [
 			"id" : "6",
 			"name": "Enigma Otiliei",
 			"author": "George Călinescu",
-			"type": "Romanul mitic",
+			"type": "Romanul balzacian",
 			"img" : "img/interbelic/eo.jpg",
 			"page" : "data/creations/enigmaotiliei.html"
 		},
