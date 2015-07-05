@@ -12,6 +12,10 @@ app.controller('PageChangeCtrl', function ($scope) {
 	$scope.chosenView = "none";
 	$scope.SelectedCreation = -1;
 
+	$scope.showLogo = function() {
+		return window.innerWidth >= 450;
+	}
+
 	$scope.hasLider = function() {
 		// for contexts
 		return $scope.currentContext.lider != "-";

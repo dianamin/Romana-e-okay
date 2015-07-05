@@ -2,6 +2,26 @@
 	Contains some useful functions. :)
 */
 
+$(window).bind('scroll', function () {
+	var pozitie = $('#topnavbar').offset();
+	console.log(pozitie.top);
+	console.log($(window).scrollTop());
+	if ($(window).scrollTop() <= window.innerHeight / 4) {
+        $('#topnavbar').removeClass('fixed');
+	}
+	else {
+	    if ($(window).scrollTop() >= pozitie.top) {
+	        $('#topnavbar').addClass('fixed');
+	    } else {
+	        $('#topnavbar').removeClass('fixed');
+	    }
+	}
+});
+
+var showLogo = function() {
+	console.log ("Screen width: ", window.innerWidth);
+	return window.innerWidth >= 450;
+}
 
 var showElement = function(id) {
 	document.getElementById(id).setAttribute("style", "animation: fade-in 1s; -webkit-animation: fade-in 1s; opacity: 1;");
