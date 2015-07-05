@@ -67,7 +67,7 @@ header {
 	text-align: justify;
 	background: url('../img/contentbg2.jpg');
 	background-attachment: fixed;
-	min-height: 200px;
+	min-height: 50%;
 }
 
 #top-line {
@@ -405,6 +405,7 @@ td {
 	font-size: 16px;
 	color: white;
 	text-align: center;
+	height: 15%;
 }
 
 #essay {

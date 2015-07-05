@@ -16,6 +16,7 @@ app.controller('TemeMakerCtrl', function ($scope) {
 	$scope.errors = "";
 	$scope.th = ["Primul ", "Al doilea ", "Al treilea ", "Al patrulea ", "Al cincilea ", "Al șaselea ", "Al șaptelea ", "Al optâlea", "Al nouălea", "Al zecelea"];
 
+	$scope.wordCount = 0;
 
 	// Initializing mandatory arguments
 
@@ -78,6 +79,27 @@ app.controller('TemeMakerCtrl', function ($scope) {
 		return false;
 	}
 
+	$scope.isLetter = function(c) {
+		if ('a' <= c && c <= 'z') return true;
+		if ('A' <= c && c <= 'Z') return true;
+		return false;
+	}
+
+	$scope.countWords = function() {
+		var cnt = 0;
+		var isWord;
+		for (var i = 0; i < $scope.results.length; i++) {
+			var a = $scope.results[i].split(new RegExp('[-+()*/:? ]', 'g'));
+			for (var j = 0; j < a.length; j++) {
+				isWord = false;
+				console.log(a[j]);
+				for (var k = 0; k < a[j].length && isWord == false; k++) 
+					if ($scope.isLetter(a[j][k])) isWord = true;
+				if (isWord) cnt++;
+			}
+		}
+		return cnt;
+	}
 
 	$scope.generateEssay = function() {
 		//building essay
@@ -120,7 +142,9 @@ app.controller('TemeMakerCtrl', function ($scope) {
 
 		$scope.result = "În concluzie, " + $scope.Conclusion + ". ";
 		$scope.results.push($scope.result);
+		$scope.wordCount = $scope.countWords();
 	}
+
 
 	$scope.eliminateExtraPoints = function(s) {
 		// If input is something like "Romana e okay! is awesome....". No extra punctuation needed.
@@ -200,6 +224,40 @@ app.controller('TemeMakerCtrl', function ($scope) {
 
 		//generating essay, if everything's okay :)
 		if ($scope.enoughArguments()) $scope.generateEssay();
+	}
+
+	$scope.resetEssay = function() {
+		var deleteEverything = confirm("Sigur vrei să ștergi tot eseul?");
+		if (deleteEverything == true) {
+			$scope.Theme = "";
+			$scope.Hypothesis = "";
+			$scope.Arguments = new Array();
+			$scope.Conclusion = "";
+
+			$scope.pros = 0;
+			$scope.cons = 0;
+			$scope.verified = false;
+			$scope.results = [];
+			$scope.hasErrors = false;
+			$scope.errors = "";
+
+			$scope.wordCount = 0;
+			$scope.Arguments[0] = {
+				"domain": "",
+				"text": "",
+				"type": "pro",
+				"okay": true,
+				"hasDomain": true
+			}
+			$scope.Arguments[1] = {
+				"domain": "",
+				"text": "",
+				"type": "pro",
+				"okay": true,
+				"hasDomain": true
+			}
+
+		}
 	}
 
 });

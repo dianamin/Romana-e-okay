@@ -69,6 +69,7 @@
 
 	<br /> <br />
 	<button class = "btn btn-primary" ng-click = "verifyData()"><span class = "glyphicon glyphicon-ok"></span> Construiește eseul!</button>
+	<button class = "btn btn-danger" ng-click = "resetEssay()"><span class = "glyphicon glyphicon-remove"></span> Șterge tot! </button>
 
 	<br />
 
@@ -78,7 +79,7 @@
 	
 	<br />
 
-
+	<p> Număr de cuvinte: {{wordCount}} </p>
 	<div id = "essay">
 		<p ng-repeat = "result in results">
 			{{result}}

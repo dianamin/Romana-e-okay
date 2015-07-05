@@ -4,8 +4,6 @@
 
 $(window).bind('scroll', function () {
 	var pozitie = $('#topnavbar').offset();
-	console.log(pozitie.top);
-	console.log($(window).scrollTop());
 	if ($(window).scrollTop() <= window.innerHeight / 4) {
         $('#topnavbar').removeClass('fixed');
 	}
@@ -17,6 +15,10 @@ $(window).bind('scroll', function () {
 	    }
 	}
 });
+
+var scrollToTop = function() {
+	$('html, body').animate({scrollTop: 0}, 'slow');
+}
 
 var showLogo = function() {
 	console.log ("Screen width: ", window.innerWidth);

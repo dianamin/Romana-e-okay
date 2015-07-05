@@ -23,6 +23,7 @@ app.controller('PageChangeCtrl', function ($scope) {
 
 	$scope.changePage = function(x) {
 		// changing view
+		scrollToTop();
 		$scope.selected = x;
 		$scope.SelectedCreation = -1;
 		if (x > 0 && x <= $scope.Contexts) {
@@ -30,7 +31,7 @@ app.controller('PageChangeCtrl', function ($scope) {
 			$scope.chosenView = "none";
 			$scope.SelectedCreation = -1;
 		}
-		$('html, body').animate({scrollTop: 0}, "slow");
+		//$('html, body').animate({scrollTop: 0}, "slow");
 	}
 
 	$scope.chooseView = function(x) {
