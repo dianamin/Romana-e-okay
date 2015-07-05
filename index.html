@@ -53,7 +53,7 @@
 		</div> 
 	</center>
 
-	<div id = "topnavbar" onclick = "scrollToTop();"">
+	<div id = "topnavbar" onclick = "scrollToTop();">
 		<nav class = "navbar navbar-default" style = "height: 30px;">
 			<div class = "nav-collapse">
 			  <div class = "container-fluid">
@@ -67,16 +67,22 @@
 
 			    <div class = "collapse navbar-collapse" id = "navbar-collapse" style = "background-color: #f8f8f8;">
 					<ul class = "nav navbar-nav" style = "margin-top: 15px;">
-						<li class = "button" ng-class = "{'active': selected == 0}" ng-click = "changePage(0)"> Home </li>
-						<li class = "button" ng-class = "{'active': selected == 1}" ng-click = "changePage(1)"> Perioada pașoptistă </li>
-						<li class = "button" ng-class = "{'active': selected == 2}" ng-click = "changePage(2)"> Junimea </li>
-						<li class = "button" ng-class = "{'active': selected == 3}" ng-click = "changePage(3)"> Posteminescianism </li>
-						<li class = "button" ng-class = "{'active': selected == 4}" ng-click = "changePage(4)"> Perioada interbelică </li>
-						<li class = "button" ng-class = "{'active': selected == 5}" ng-click = "changePage(5)"> Perioada postbelică </li>
+						<li ng-repeat = "page in pages"
+							class = "button"
+							ng-class = "{'active': selected == page.id}"
+							ng-if = "page.place == 'left'"
+							ng-click = "changePage(page.id)">
+							{{page.name}}
+						</li>
 					</ul>
 			      <ul class = "nav navbar-nav navbar-right" style = "margin-top: 15px;">
-						<li class = "button" ng-class = "{'active': selected == 6}" ng-click = "changePage(6)"> Test </li>
-						<li class = "button" ng-class = "{'active': selected == 7}" ng-click = "changePage(7)"> Teme maker </li>
+			      		<li ng-repeat = "page in pages"
+							class = "button"
+							ng-class = "{'active': selected == page.id}"
+							ng-if = "page.place == 'right'"
+							ng-click = "changePage(page.id)">
+							{{page.name}}
+						</li>
 			          </ul>
 			        </li>
 			      </ul>
@@ -88,15 +94,13 @@
 
 	<div id = "content">
 		<center> <div class = "text-block">
-		<div ng-show = "selected == 0" ng-include = "'data/home.html'">
-		</div>
-		
+		<div ng-show = "pages[selected].category == ''" ng-include = "pages[selected].details"> </div>
 
-		<div ng-show = "selected > 0 && selected < 6">
-			<h3> {{currentContext.name}} </h3>
+		<div ng-show = "pages[selected].category == 'lesson'">
+			<h3> {{currentPage.name}} </h3>
 			<hr />
 
-			<h4 ng-show = "hasLider()"> Mentor: {{currentContext.lider}} </h4>
+			<h4 ng-show = "hasLider()"> Mentor: {{currentPage.lider}} </h4>
 			
 			<center>
 				<br />
@@ -118,7 +122,7 @@
   			</center>
   			<div id = "alege"> </div>
 			<div ng-show = "chosenView == 'context'" 
-				ng-include = "currentContext.details" 
+				ng-include = "currentPage.details" 
 				id = "context" 
 				style = "opacity: 0;">
 			</div>
@@ -128,10 +132,9 @@
 				<center>
 					<ul id = "creationsMenu">
 						<li class = "creation" 
-							ng-repeat = "creation in currentContext.creations"
+							ng-repeat = "creation in currentPage.creations"
 							back-img = {{creation.img}}
-							ng-click = "openCreation(creation.id)"
-							>
+							ng-click = "openCreation(creation.id)">
 								<div class = "creation-presentation" ng-click = "openCreation(creation.id)"	>
 									<b> {{creation.name}} </b>
 									<br /> <br />
@@ -144,17 +147,30 @@
 					</ul>
 				</center>
 
+				<br /> <br />
+
 				<div ng-show = "SelectedCreation != -1" 
-					 ng-include = "SelectedCreation">
+					ng-include = "SelectedCreation">
 				</div>
 				
 			</div>
 		</div>
+		
+		<div ng-show = "pages[selected].category == 'buttons'">
+			<h3> {{currentPage.name}} </h3>
+			<hr />	
+			<center>
+				<p> Teme Maker te va ajuta sa îți faci temele! Ce fel de temă ai? </p>
+	  			<button class = "btn btn-default subtitle-button"
+					ng-repeat = "button in pages[selected].options"
+					ng-click = "chooseView2(button.address)"> 
+					<span class = "subtitle"> {{button.name}} </span>
+	  			</button>
+  				<div id = "scrollHere"> </div>
 
-		<center> <div ng-show = "selected == 6" class = "text-block" ng-include = "'data/joc.html'">
-		</div> </center>
-		<center> <div ng-show = "selected == 7" class = "text-block" ng-include = "'data/tememaker.html'">
-		</div> </center>
+	  			<div ng-include = "selectedPage"> </div>
+	  		</center>
+  		</div>
 
 		</div> </center> 
 	</div>

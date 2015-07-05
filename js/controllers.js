@@ -7,8 +7,8 @@ var app = angular.module('app', ['ngRoute']);
 
 app.controller('PageChangeCtrl', function ($scope) {
 	$scope.selected = 0;
-	$scope.currentContext = context[0];
-	$scope.Contexts = 5;
+	$scope.pages = pages;
+	$scope.currentPage = pages[0];
 	$scope.chosenView = "none";
 	$scope.SelectedCreation = -1;
 
@@ -18,7 +18,7 @@ app.controller('PageChangeCtrl', function ($scope) {
 
 	$scope.hasLider = function() {
 		// for contexts
-		return $scope.currentContext.lider != "-";
+		return $scope.currentPage.lider != "-";
 	}
 
 	$scope.changePage = function(x) {
@@ -26,8 +26,8 @@ app.controller('PageChangeCtrl', function ($scope) {
 		scrollToTop();
 		$scope.selected = x;
 		$scope.SelectedCreation = -1;
-		if (x > 0 && x <= $scope.Contexts) {
-			$scope.currentContext = context[x - 1];
+		$scope.currentPage = pages[x];
+		if ($scope.currentPage.category == "lesson") {
 			$scope.chosenView = "none";
 			$scope.SelectedCreation = -1;
 		}
@@ -40,7 +40,15 @@ app.controller('PageChangeCtrl', function ($scope) {
 		$scope.SelectedCreation = -1;
 		showElement(x);
 		var position = $('#alege').offset();
-		$('html, body').animate({scrollTop: position.top}, "slow");
+		$('html, body').animate({scrollTop: position.top - 100}, "slow");
+	}
+
+	$scope.selectedPage = -1;
+
+	$scope.chooseView2 = function(page) {
+		$scope.selectedPage = page;
+		var position = $('#scrollHere').offset();
+		$('html, body').animate({scrollTop: position.top - 150}, "slow");
 	}
 
 	$scope.openCreation = function(id) {

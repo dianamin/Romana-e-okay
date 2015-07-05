@@ -1,0 +1,86 @@
+<div ng-controller = "TemeMakerCtrl">
+	<div> <center>
+		<h4> Eseu argumentativ </h4>
+
+		<h5> Care este tema eseului? </h5>
+		<p>
+			Tema este 
+			<input type = "text" class = "form-control long-input-box" ng-model = "Theme" value = "{Theme}" />
+			.
+		</p>
+
+
+	<div class = "alert alert-warning">
+		<span class = "glyphicon glyphicon-warning-sign"> </span> Dacă este vorba de un eseu pro/contra, vei formula tema în funcție de opinia ta. De exemplu, dacă trebuie să îți exprimi părerea despre „uniforma în școli - un rău necesar?”, vei putea trece ca temă „importanța impunerii uniformelor în școli”, dacă ești de acord, sau „de ce nu trebuie să existe uniforme în școli”, dacă nu ești de acord. 
+	</div>
+
+	<h5> De la ce premisă pleci? </h5>
+	<p>
+		Plec de la premisa că 
+		<input type = "text" class = "form-control long-input-box" ng-model = "Hypothesis" value = "{Hypothesis}" />
+		.
+	</p>
+
+	<br />
+	<h5> Care sunt argumentele tale? (în ordinea în care vrei să apară în eseu) </h5>
+	<br />
+	<ol>
+		<li ng-repeat = "argument in Arguments"> 
+			<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!argument.okay"></span>
+			<table class = "table table-striped table-bordered" style = "font-size: 13px;">
+				<tr>
+					<td> <b> Argumentul provine din domeniul: </b> </td>
+					<td>  
+						<input type = "text" class = "form-control short-input-box" ng-model = "argument.domain" value = "{argument.domain}" /> (poate rămâne necompletat)
+					</td>
+				</tr>
+				<tr>
+					<td> <b> Argument: </b> </td> 
+					<td>  
+						<input type = "text" class = "form-control long-input-box" ng-model = "argument.text" value = "{argument.text}" />
+					</td>
+				</tr>
+				<tr>
+					<td> <b> Este un argument: </b> </td>
+					<td> 
+						<div class = "inline-form" sytle = "text-align: left; margin-right: 10px;">
+							<input type = "radio" ng-model = "argument.type" class = "big-dot" value = "pro" /> Pro <br />
+							<input type = "radio" ng-model = "argument.type" class = "big-dot" value = "contra" /> Contra
+						</div>
+					</td>
+				</tr>
+			</table>
+		</li>
+	</ol> 
+
+	<button class = "btn btn-primary" ng-click = "addArgument()"><span class = "glyphicon glyphicon-plus"></span> Adaugă argumente</button> <br />
+	<br /> <br />
+
+	<h5> Care este concluzia? </h5>
+	<p>
+		Concluzia este că 
+		<input type = "text" class = "form-control long-input-box" ng-model = "Conclusion" value = "{Conclusion}" />
+		.
+	</p>
+
+	<br /> <br />
+	<button class = "btn btn-primary" ng-click = "verifyData()"><span class = "glyphicon glyphicon-ok"></span> Construiește eseul!</button>
+	<button class = "btn btn-danger" ng-click = "resetEssay()"><span class = "glyphicon glyphicon-remove"></span> Șterge tot! </button>
+
+	<br />
+
+	<div class = "alert alert-danger" ng-show = "notEnoughArguments()">
+		<span class = "glyphicon glyphicon-remove"> </span> {{errors}}
+	</div>
+	
+	<br />
+
+	<p> Număr de cuvinte: {{wordCount}} </p>
+	<div id = "essay">
+		<p ng-repeat = "result in results">
+			{{result}}
+		</p>
+	</div>
+
+	</center> </div>
+</div>
