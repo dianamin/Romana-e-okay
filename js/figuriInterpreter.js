@@ -77,8 +77,8 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 		$scope.Checked = false;
 		$scope.Okay = false;
 		$scope.Error = "";
-		var position = $('#descriptions').offset();
-		$('html, body').animate({scrollTop: position.top}, "slow");
+		var pos = $(window).scrollTop();
+		$('html, body').animate({scrollTop: pos + 300}, 'slow');
 		var len = $scope.Symbols.length;
 		for (var i = 0; i < len; i++)
 			$scope.BinarySearch($scope.Symbols[i]);
@@ -135,6 +135,8 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 				$scope.IdeasCount++;
 			}
 		$scope.showSortableIdeas = true;
+		var pos = $(window).scrollTop();
+		$('html, body').animate({scrollTop: pos + 300}, 'slow');
 	}
 
 
@@ -177,6 +179,8 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 			}
 			else $scope.Result += idea.description + " ";
 		}
+		var pos = $(window).scrollTop();
+		$('html, body').animate({scrollTop: pos + 200}, 'slow');
 	}
 
 	$scope.Reset = function() {
@@ -208,6 +212,7 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 			$scope.Figure = "";
 			$scope.FigureType = "";
 			$scope.PrincipalIdea = "";
+			scrollToTop()
 		}
 	}
 });
