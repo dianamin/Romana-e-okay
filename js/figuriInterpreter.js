@@ -137,7 +137,7 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 			}
 		$scope.showSortableIdeas = true;
 		var pos = $(window).scrollTop();
-		$('html, body').animate({scrollTop: pos + 300}, 'slow');
+		$('html, body').animate({scrollTop: pos + 200 * $scope.Ideas.length + 100}, 'slow');
 	}
 
 	
