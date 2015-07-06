@@ -178,4 +178,36 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 			else $scope.Result += idea.description + " ";
 		}
 	}
+
+	$scope.Reset = function() {
+		var deleteEverything = confirm("Sigur vrei să ștergi tot comentariul?");
+		if (deleteEverything == true) {
+			$scope.Result = "";
+			$scope.SymbolsCount = 0;
+			$scope.IdeasCount = 0;
+			$scope.Symbols = [
+				{
+					"name": "",
+					"id": 0,
+					"description": ""
+				}
+			];
+			$scope.Ideas = [
+				{
+					"name": "",
+					"description": "",
+					"id": 0
+				}
+			]
+			$scope.showDescriptions = false;
+			$scope.SortableIdeas = [];
+			$scope.showSortableIdeas = false;
+			$scope.Checked = false;
+			$scope.Okay = false;
+			$scope.Error = "";	
+			$scope.Figure = "";
+			$scope.FigureType = "";
+			$scope.PrincipalIdea = "";
+		}
+	}
 });
