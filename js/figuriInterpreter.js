@@ -57,6 +57,7 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 	$scope.Checked = false;
 	$scope.Okay = false;
 	$scope.Error = "";
+	$scope.wordCount = 0;
 
 	$scope.AddSymbol = function() {
 		$scope.showSortableIdeas = false;
@@ -139,6 +140,26 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 		$('html, body').animate({scrollTop: pos + 300}, 'slow');
 	}
 
+	$scope.isLetter = function(c) {
+		if ('a' <= c && c <= 'z') return true;
+		if ('A' <= c && c <= 'Z') return true;
+		return false;
+	}
+
+	$scope.countWords = function() {
+		var cnt = 0;
+		var isWord;
+		var a = $scope.Result.split(new RegExp('[-+()*/:? ]', 'g'));
+		for (var j = 0; j < a.length; j++) {
+			isWord = false;
+			console.log(a[j]);
+			for (var k = 0; k < a[j].length && isWord == false; k++) 
+				if ($scope.isLetter(a[j][k])) isWord = true;
+			if (isWord) cnt++;
+		}
+		return cnt;
+	}
+
 
 	$scope.Check = function() {
 		$scope.Okay = true;
@@ -181,6 +202,7 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 		}
 		var pos = $(window).scrollTop();
 		$('html, body').animate({scrollTop: pos + 200}, 'slow');
+		$scope.wordCount = $scope.countWords();
 	}
 
 	$scope.Reset = function() {
@@ -212,7 +234,8 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 			$scope.Figure = "";
 			$scope.FigureType = "";
 			$scope.PrincipalIdea = "";
-			scrollToTop()
+			$scope.wordCount = 0;
+			scrollToTop();
 		}
 	}
 });
