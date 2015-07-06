@@ -71,7 +71,7 @@ var pages = [
 			},
 			{
 			 	"name": "Figuri de stil",
-			 	"address": "data/tbd.html",
+			 	"address": "data/figuriInterpreter.html",
 			}
 		],
 		"place": "right",

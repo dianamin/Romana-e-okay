@@ -16,6 +16,7 @@ $(window).bind('scroll', function () {
 	}
 });
 
+
 var scrollToTop = function() {
 	$('html, body').animate({scrollTop: 0}, 'slow');
 }
@@ -72,4 +73,13 @@ var acceptedError = function(string1, string2) {
 
 	var epsilon = Math.min(n, m) / 2;
 	return epsilon;
+}
+
+var removeDiacritics = function(text) {
+	text = text.replace("ă", "a");
+	text = text.replace("â", "a");
+	text = text.replace("î", "i");
+	text = text.replace("ș", "s");
+	text = text.replace("ț", "t");
+	return text;
 }

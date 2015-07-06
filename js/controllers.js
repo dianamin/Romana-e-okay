@@ -2,7 +2,7 @@
 	Contains PageChangeCtrl - for changing views.
 */
 
-var app = angular.module('app', ['ngRoute']);
+
 
 
 app.controller('PageChangeCtrl', function ($scope) {
