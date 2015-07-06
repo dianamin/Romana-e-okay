@@ -83,3 +83,24 @@ var removeDiacritics = function(text) {
 	text = text.replace("ț", "t");
 	return text;
 }
+
+var isLetter = function(c) {
+	if ('a' <= c && c <= 'z') return true;
+	if ('A' <= c && c <= 'Z') return true;
+	return false;
+}
+
+
+var countWords = function(s) {
+	var cnt = 0;
+	var isWord;
+	var a = s.split(new RegExp('[-+()*/:? ]', 'g'));
+	for (var j = 0; j < a.length; j++) {
+		isWord = false;
+		console.log(a[j]);
+		for (var k = 0; k < a[j].length && isWord == false; k++) 
+			if (isLetter(a[j][k])) isWord = true;
+		if (isWord) cnt++;
+	}
+	return cnt;
+}

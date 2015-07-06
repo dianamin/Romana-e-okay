@@ -79,24 +79,11 @@ app.controller('TemeMakerCtrl', function ($scope) {
 		return false;
 	}
 
-	$scope.isLetter = function(c) {
-		if ('a' <= c && c <= 'z') return true;
-		if ('A' <= c && c <= 'Z') return true;
-		return false;
-	}
 
-	$scope.countWords = function() {
+	$scope.count = function() {
 		var cnt = 0;
-		var isWord;
 		for (var i = 0; i < $scope.results.length; i++) {
-			var a = $scope.results[i].split(new RegExp('[-+()*/:? ]', 'g'));
-			for (var j = 0; j < a.length; j++) {
-				isWord = false;
-				console.log(a[j]);
-				for (var k = 0; k < a[j].length && isWord == false; k++) 
-					if ($scope.isLetter(a[j][k])) isWord = true;
-				if (isWord) cnt++;
-			}
+			cnt += countWords($scope.results[i]);
 		}
 		return cnt;
 	}
@@ -142,7 +129,9 @@ app.controller('TemeMakerCtrl', function ($scope) {
 
 		$scope.result = "În concluzie, " + $scope.Conclusion + ". ";
 		$scope.results.push($scope.result);
-		$scope.wordCount = $scope.countWords();
+		$scope.wordCount = $scope.count();
+		$('html, body').animate({scrollTop: pos + 200}, 'slow');
+		$scope.wordCount = countWords($scope.Result);
 	}
 
 
