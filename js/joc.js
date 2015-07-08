@@ -96,15 +96,15 @@ app.controller('JocCtrl', function ($scope, $http, GameFactory) {
 		$scope.LifeLevel = [];
 		$scope.Lost = false;
 		$scope.Won = false;
-		$scope.errors = "";
 	}
 
 
 	$scope.StartGame = function() {
 		var len = $scope.SelectedLessons.length;
+		$scope.errors = "";
 
 		if ($scope.SelectedChapter == "") $scope.errors = "Nu ai ales perioada! ";
-		if (len == 0) $scope.errors += "Nu ai ales operele! ";
+		if (len == 0) $scope.errors += "Nu ai ales operele!";
 
 		if ($scope.errors != "") return;
 
