@@ -3,7 +3,7 @@
 	<hr />
 	<center>
 
-		<p> Te plimbi într-o pădure. Te întâlnești cu diverse personaje din literatura și istoria română. Trebuie să le răspunzi la întrebări pentru a termina testul. </p>
+		<p> Alege mai întâi perioada în care au fost scrise operele din care vrei să fii testat. Apoi, selectează operele. </p>
 
 		<div ng-show = "started == false">
 			<select ng-model = "SelectedChapter" class = "form-control long-input-box">
@@ -14,7 +14,6 @@
 
 			<br />
 			<br />
-
 			<select multiple ng-model = "SelectedLessons" class="form-control long-input-box">
 				<option ng-repeat = "lesson in Chapters[SelectedChapter].creations" ng-value = "lesson.id">
 					{{lesson.name}}
@@ -22,7 +21,13 @@
 			</select>
 
 			<br />
+
 			<br />
+
+			<div class = "alert alert-danger" ng-show = "errors != ''">
+				<span class = "glyphicon glyphicon-remove"> </span> {{errors}}
+			</div>
+
 
 			<button class = "btn btn-success" ng-click = "StartGame()"> 
 				<div class = "dot subtitle-dot"> <span class = "glyphicon glyphicon-ok"> </span> </div>
@@ -96,9 +101,7 @@
 				</div>
 			</div>
 			<div id = "life-area">
-				<img ng-src = "{{heartImg[LifeLevel[0]]}}" class = "life-heart" />
-				<img ng-src = "{{heartImg[LifeLevel[1]]}}" class = "life-heart" />
-				<img ng-src = "{{heartImg[LifeLevel[2]]}}" class = "life-heart" />
+				<img ng-repeat = "life in LifeLevel track by $index" class = "life-heart" ng-src = "{{heartImg[life]}}" />
 			</div>
 		</div>
 	</center> 

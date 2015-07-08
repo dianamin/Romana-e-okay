@@ -72,15 +72,18 @@ app.controller('JocCtrl', function ($scope, $http, GameFactory) {
 	$scope.total = 15;
 	$scope.score = 0;
 	$scope.started = false;
+	
+	$scope.LifeLevel = [];
+	$scope.maxHeart = 4;
 
+	$scope.Lifes;
+	$scope.CurrentLife;
+	$scope.Lost = false;
+	$scope.Won = false;
+
+	$scope.errors = "";
 
 	$scope.init = function() {
-		$scope.LifeLevel = [4, 4, 4];
-
-		$scope.CurrentLife = 2;
-		$scope.Lost = false;
-		$scope.Won = false;
-
 		$scope.selectedQuestion = 0;
 		$scope.questionsNumber = 0;
 		$scope.questions = [];
@@ -90,12 +93,23 @@ app.controller('JocCtrl', function ($scope, $http, GameFactory) {
 		$scope.total = 15;
 		$scope.score = 0;
 		$scope.started = false;
+		$scope.LifeLevel = [];
+		$scope.Lost = false;
+		$scope.Won = false;
+		$scope.errors = "";
 	}
 
 
 	$scope.StartGame = function() {
-		$scope.init();
 		var len = $scope.SelectedLessons.length;
+
+		if ($scope.SelectedChapter == "") $scope.errors = "Nu ai ales perioada! ";
+		if (len == 0) $scope.errors += "Nu ai ales operele! ";
+
+		if ($scope.errors != "") return;
+
+		$scope.init();
+
 		for (var i = 0; i < len; i++) {
 			var id = $scope.SelectedChapter + "a" + $scope.SelectedLessons[i];
 			$scope.questions = $scope.questions.concat(GameFactory.getQuestions(id))
@@ -105,17 +119,20 @@ app.controller('JocCtrl', function ($scope, $http, GameFactory) {
 		$scope.started = true;
 
 		$scope.total = Math.min($scope.questionsNumber, 15);
-		console.log($scope.total);
 
+		$scope.Lifes = Math.max(Math.floor($scope.total / 5), 1);
+		$scope.CurrentLife = $scope.Lifes - 1;
+		for (var i = 0; i < $scope.Lifes; i++) $scope.LifeLevel.push($scope.maxHeart);  
 
  		$scope.chooseNextQuestion();
 	}
 
 	$scope.loseLife = function() {
-		// For every wrong answer, we lose 1/4 heart
+		// For every wrong answer, 1/4 heart is lost
 		$scope.LifeLevel[$scope.CurrentLife]--;
 		if ($scope.LifeLevel[$scope.CurrentLife] == 0) $scope.CurrentLife--;
 		if ($scope.CurrentLife == -1) $scope.Lost = true;
+		console.log($scope.CurrentLife);
 	}
 	
 
@@ -160,8 +177,6 @@ app.controller('JocCtrl', function ($scope, $http, GameFactory) {
 
 	$scope.restart = function() {
 		// Restarting the game
-		$scope.started == true;
+		$scope.started = false;
 	}
-
-
 });
