@@ -3,8 +3,6 @@
 */
 
 
-
-
 app.controller('PageChangeCtrl', function ($scope) {
 	$scope.selected = 0;
 	$scope.pages = pages;

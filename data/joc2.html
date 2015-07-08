@@ -1,0 +1,105 @@
+<div ng-controller = "JocCtrl">
+	<h3> Test </h3>
+	<hr />
+	<center>
+
+		<p> Te plimbi într-o pădure. Te întâlnești cu diverse personaje din literatura și istoria română. Trebuie să le răspunzi la întrebări pentru a termina testul. </p>
+
+		<div ng-show = "started == false">
+			<select ng-model = "SelectedChapter" class = "form-control long-input-box">
+				<option ng-repeat = "chapter in Chapters" ng-if = "chapter.category == 'lesson'" ng-value = "chapter.id">
+					{{chapter.name}}
+				</option>
+			</select>
+
+			<br />
+			<br />
+
+			<select multiple ng-model = "SelectedLessons" class="form-control long-input-box">
+				<option ng-repeat = "lesson in Chapters[SelectedChapter].creations" ng-value = "lesson.id">
+					{{lesson.name}}
+				</option>
+			</select>
+
+			<br />
+			<br />
+
+			<button class = "btn btn-success" ng-click = "StartGame()"> 
+				<div class = "dot subtitle-dot"> <span class = "glyphicon glyphicon-ok"> </span> </div>
+				<span class = "subtitle"> Start </span> 
+			</button>
+
+		</div>
+
+		<div ng-show = "started == true">
+
+			<div ng-show = "Lost == true"> 
+				<p class = "subtitle game-lost"> Ai pierdut :( </p> 
+			</div>
+			<div ng-show = "Won == true"> 
+				<p class = "subtitle game-won"> 
+					Ai câștigat :) <br /> <br />
+					Scorul tău: {{score}}
+				</p> 
+			</div>
+
+			<div ng-show = "done()">
+				<br />
+				<center>
+				<button class = "btn btn-danger" ng-click = "restart()"> 
+					Restart <br />
+					<span class = "glyphicon glyphicon-repeat"> </span> 
+				</button>
+				</center>
+				<br /> <br />
+			</div>
+
+			<div id = "game-area" ng-show = "!done()">
+				<div id = "score"> Scor: {{score}} </div>
+				<div id = "restart" ng-click = "restart()"> <span class = "glyphicon glyphicon-repeat"> </span>  </div>
+			
+				<div>
+					<div class = "message-bubble question">
+						{{questions[selectedQuestion].intrebare}}
+					</div>
+					<img ng-src = "{{questions[selectedQuestion].imagine}}" class = "question-img" /> 
+
+				</div>
+
+				<br /> <br />
+
+				<div class = "message-bubble answer">
+					<!--
+					<ul style = "list-style: none;">
+						<li ng-repeat = "answer in questions[selectedQuestion].raspunsuri"> 
+							<input class = "big-dot" type = "radio" ng-model = "GivenAnswer" value = "{{answer}}"/> {{answer}} 
+						</li>
+					</ul> -->
+
+					<div ng-repeat = "answer in questions[selectedQuestion].raspunsuri">
+			       		<input type = "radio" ng-model="$parent.GivenAnswer" value = "{{answer}}" /> {{answer}} 
+			       		<br />
+			        </div>
+			        <div ng-show = "checked == false"> <br />  <br /></div>
+					<div style = "opacity: 0;" ng-show = "checked == true" id = "QuestionRez">
+						<center>
+							<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "correctAnswer"></span>
+							<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!correctAnswer"></span>
+						</center>
+			        	<br />
+					</div>
+
+					<button class = "btn btn-danger" ng-click = "check()" ng-show = "checked == false"> Verifică </button>
+
+					<button class = "btn btn-danger" ng-click = "next()" ng-show = "checked == true"> Mai departe </button>
+
+				</div>
+			</div>
+			<div id = "life-area">
+				<img ng-src = "{{heartImg[LifeLevel[0]]}}" class = "life-heart" />
+				<img ng-src = "{{heartImg[LifeLevel[1]]}}" class = "life-heart" />
+				<img ng-src = "{{heartImg[LifeLevel[2]]}}" class = "life-heart" />
+			</div>
+		</div>
+	</center> 
+</div>

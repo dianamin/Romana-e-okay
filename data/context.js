@@ -2,7 +2,6 @@ var pages = [
 	{
 		"name": "Home",
 		"details": "data/home.html",
-		"creations" : creations[0],
 		"category": "",
 		"place": "left",
 		"id": "0"
@@ -55,7 +54,7 @@ var pages = [
 	{
 		"name": "Test",
 		"lider": "-",
-		"details": "data/joc.html",
+		"details": "data/joc2.html",
 		"category": "",
 		"place": "right",
 		"id": "6"
