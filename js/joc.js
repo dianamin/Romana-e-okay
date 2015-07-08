@@ -125,6 +125,9 @@ app.controller('JocCtrl', function ($scope, $http, GameFactory) {
 		for (var i = 0; i < $scope.Lifes; i++) $scope.LifeLevel.push($scope.maxHeart);  
 
  		$scope.chooseNextQuestion();
+ 	
+		var pos = $(window).scrollTop();
+		$('html, body').animate({scrollTop: pos + 300}, 'slow');
 	}
 
 	$scope.loseLife = function() {
