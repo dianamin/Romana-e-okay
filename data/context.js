@@ -54,7 +54,7 @@ var pages = [
 	{
 		"name": "Test",
 		"lider": "-",
-		"details": "data/joc2.html",
+		"details": "data/joc.html",
 		"category": "",
 		"place": "right",
 		"id": "6"
