@@ -137,7 +137,9 @@ app.controller('JocCtrl', function ($scope, $http, GameFactory) {
 	                type: "POST",
 	                url: 'php/add_score.php',
 	                data: ({'id': userID, 'score': $scope.score}),
-	                success: function(data) {alert(data)}
+	                success: function(data) {
+                    	document.getElementById('user-score').innerHTML = data;
+	                }
 	            });
 	        });
 		}

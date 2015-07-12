@@ -20,4 +20,6 @@
 
 		$score_result = mysql_query($update_score_query);
 	}
+
+	echo $score;
 ?>
