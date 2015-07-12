@@ -88,7 +88,7 @@ function testAPI() {
         $(function(){
             $.ajax({
                 type: "POST",
-                url: 'php/init/connect.php',
+                url: 'php/add_user.php',
                 data: ({'id': response.id, 'name': response.name}),
                 success: function(data) {}
             });
