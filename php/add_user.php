@@ -1,9 +1,12 @@
 <?php
 	include 'db_connect.php';
-
 	$id = $_POST['id'];
 	$name = $_POST['name'];
 	$user_score = 0;
+	
+	session_start();
+
+	$_SESSION["id"] = $id;
 
 	$find_id_query = "
 		SELECT *

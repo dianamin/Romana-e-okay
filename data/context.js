@@ -1,7 +1,7 @@
 var pages = [
 	{
 		"name": "Home",
-		"details": "data/home.html",
+		"details": "data/home.php",
 		"category": "",
 		"place": "left",
 		"id": "0"
@@ -63,6 +63,7 @@ var pages = [
 		"name": "Teme maker",
 		"lider": "-",
 		"category": "buttons",
+		"description": "Teme Maker te va ajuta sa îți faci temele!",
 		"options": [
 			{
 				"name": "Argumente",
@@ -71,6 +72,10 @@ var pages = [
 			{
 			 	"name": "Figuri de stil",
 			 	"address": "data/figuriInterpreter.html",
+			},
+			{
+				"name": "Comentariile mele",
+				"address": "data/myComments.php"
 			}
 		],
 		"place": "right",

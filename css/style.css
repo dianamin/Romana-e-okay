@@ -107,7 +107,7 @@ header {
 	margin-left: 10px;
 }
 .subtitle-button {
-	width: 200px;
+	min-width: 200px;
 	text-align: center;
 	margin: 20px;
 	transition: all 2s;
@@ -116,7 +116,6 @@ header {
 	-o-transition: all 1s;
 }
 .subtitle-button:hover {
-	width: 200px;
 	text-align: center;
 	margin: 20px;
 	color: #eeeeee;

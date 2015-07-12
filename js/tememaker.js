@@ -17,6 +17,7 @@ app.controller('TemeMakerCtrl', function ($scope) {
 	$scope.th = ["Primul ", "Al doilea ", "Al treilea ", "Al patrulea ", "Al cincilea ", "Al șaselea ", "Al șaptelea ", "Al optâlea", "Al nouălea", "Al zecelea"];
 
 	$scope.wordCount = 0;
+	$scope.canBeSaved = false;
 
 	// Initializing mandatory arguments
 
@@ -130,8 +131,18 @@ app.controller('TemeMakerCtrl', function ($scope) {
 		$scope.result = "În concluzie, " + $scope.Conclusion + ". ";
 		$scope.results.push($scope.result);
 		$scope.wordCount = $scope.count();
+		var pos = $(window).scrollTop();
 		$('html, body').animate({scrollTop: pos + 200}, 'slow');
 		$scope.wordCount = countWords($scope.Result);
+	}
+
+	$scope.saveHomework = function() {
+		var FinalEssay = $scope.results[0];
+		var l = $scope.results.length;
+		for (i = 1; i < l; i++) {
+			FinalEssay = FinalEssay + " <br /> " + $scope.results[i];
+		}
+		addHomework(FinalEssay);
 	}
 
 
@@ -187,7 +198,6 @@ app.controller('TemeMakerCtrl', function ($scope) {
 		}
 
 		$scope.Conclusion = $scope.eliminateExtraPoints($scope.Conclusion);
-		console.log($scope.Conclusion);
 		//showing errors
 		$scope.errors = "";
 		if ($scope.notEnoughArguments()) {
@@ -212,7 +222,10 @@ app.controller('TemeMakerCtrl', function ($scope) {
 		$scope.verified = true;
 
 		//generating essay, if everything's okay :)
-		if ($scope.enoughArguments()) $scope.generateEssay();
+		if ($scope.enoughArguments()) {
+			if (userConnected == true) $scope.canBeSaved = true;
+			$scope.generateEssay();
+		}
 	}
 
 	$scope.resetEssay = function() {

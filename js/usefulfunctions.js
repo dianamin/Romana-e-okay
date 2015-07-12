@@ -22,7 +22,6 @@ var scrollToTop = function() {
 }
 
 var showLogo = function() {
-	console.log ("Screen width: ", window.innerWidth);
 	return window.innerWidth >= 450;
 }
 
@@ -97,10 +96,21 @@ var countWords = function(s) {
 	var a = s.split(new RegExp('[-+()*/:? ]', 'g'));
 	for (var j = 0; j < a.length; j++) {
 		isWord = false;
-		console.log(a[j]);
 		for (var k = 0; k < a[j].length && isWord == false; k++) 
 			if (isLetter(a[j][k])) isWord = true;
 		if (isWord) cnt++;
 	}
 	return cnt;
+}
+
+
+var addHomework = function(s) {
+	$(function(){
+        $.ajax({
+            type: "POST",
+            url: 'php/add_homework.php',
+            data: ({'s': s}),
+            success: function(data) {alert(data);}
+        });
+    });
 }

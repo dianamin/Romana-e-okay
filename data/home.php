@@ -1,0 +1,54 @@
+<div>
+	<center> <p class = "subtitle" style = "font-size: 30px;"> Bine ai venit! </p> </center>
+
+	<div style = "font-size: 15px;">
+		<br />	
+		<p> "Româna e okay!" este soft-ul educațional care te ajută să înveți materia pentru bac. Lecțiile sunt interactive și te ajută să înțelegi materia. </p>
+		<p> Pentru fiecare operă, trebuie să știi: </p>
+		<ul>
+			<li> contextul istoric și politic </li>
+			<li> curentul literar din care face parte opera </li>
+			<li> informațiile prezentate :) </li>
+		</ul> 
+
+		<h5> Cine sunt top 10 utilizatori? </h5>
+
+		<table class="table">
+			<thead>
+				<tr> <th> # </th> <th> Nume </th> <th> Scor </th> </tr>
+			</thead>
+			<tbody>
+				<?php 
+					include '../php/top_users.php' 
+				?>
+			</tbody>
+		</table>
+
+		<h5> Cum învăț? </h5>
+		<ol>
+			<li> 
+				<p> Alegi o perioadă din meniul de sub banner. </p>
+				<p> Operele sunt deja clasificate în funcție de perioada în care au fost scrise. </p>
+			</li>
+			<li>
+				<p> Pentru fiecare perioadă, ai două opțiuni: </p>
+				<center> <img class = "spoiler" src = "img/home/1.png" /> </center>
+			</li>
+			<li>
+				<p> <b> Grilele </b> te ajută să înveți mai ușor. </p>
+				<center> <img class = "spoiler" src = "img/home/2.png" /> </center>
+			</li>
+			<li>
+				<p> După ce reții câteva informații despre context, vei citi despre <b> opere</b>. </p>
+				<center> <img class = "spoiler" src = "img/home/3.png" /> </center>
+			</li>
+			<li>
+				<p> Apoi, îți vei putea testa cunoștiințele folosind <b> testul</b>. </p>
+				<center> <img class = "spoiler" src = "img/home/4.png" /> </center>
+			</li>
+		</ol>
+
+
+		<p> Asta numai pentru subiectul III! Pentru subiectul I, trebuie să scrii rezolvările clar și concis, iar la subiectul II e ideal să folosești tiparul din „Teme maker”! :D </p>
+	</div>
+</div>
