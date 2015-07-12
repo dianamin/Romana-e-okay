@@ -11,7 +11,8 @@
 	else {
 		$find_table = "
 			SELECT *
-			FROM table" . $id;
+			FROM table" . $id . "
+			ORDER BY id DESC";
 
 		$table_result = mysql_query($find_table);
 		$comments_count = mysql_numrows($table_result);
@@ -20,9 +21,14 @@
 			echo "<h5> Nu ai salvat niciun comentariu încă! </h5>";
 		}
 		else {
-			for ($i = 0; $i < $comments_count; $i++) {	
-				echo mysql_result($table_result, $i, "id") . " " . mysql_result($table_result, $i, "homework") . "<br />";
+			echo "<table class = 'table table-striped'>";
+			echo "<thead> <tr> <th> # </th> <th> Comentariu </th> </tr> </thead>";
+			echo "<tbody> ";
+			for ($i = 1; $i <= $comments_count; $i++) {	
+				echo "<tr> <td> " . $i . ". </td> <td style = 'text-align: justify;'> " . mysql_result($table_result, $i - 1, "homework") . " </td> </tr>";
 			}
+			echo "</tbody>";
+			echo "</table>";
 		}
 	}
 ?>
