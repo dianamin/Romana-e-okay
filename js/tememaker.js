@@ -18,6 +18,7 @@ app.controller('TemeMakerCtrl', function ($scope) {
 
 	$scope.wordCount = 0;
 	$scope.canBeSaved = false;
+	$scope.Saved = false;
 
 	// Initializing mandatory arguments
 
@@ -91,7 +92,7 @@ app.controller('TemeMakerCtrl', function ($scope) {
 
 	$scope.generateEssay = function() {
 		//building essay
-
+		$scope.Saved = false;
 		$scope.results = [];
 		$scope.result = "Pornind de la premisa că " + $scope.Hypothesis + ", voi demonstra " + $scope.Theme + ". ";
 		$scope.results.push($scope.result);
@@ -143,6 +144,7 @@ app.controller('TemeMakerCtrl', function ($scope) {
 			FinalEssay = FinalEssay + " <br /> " + $scope.results[i];
 		}
 		addHomework(FinalEssay);
+		$scope.Saved = true;
 	}
 
 
@@ -213,7 +215,6 @@ app.controller('TemeMakerCtrl', function ($scope) {
 			$scope.errors += "Nu ai completat corect tema premisei. ";
 		}
 		if ($scope.checkText($scope.Conclusion) == false) {
-			console.log("yay");
 			$scope.hasErrors = true;
 			$scope.errors += "Nu ai completat concluzia. ";
 		}
@@ -242,6 +243,8 @@ app.controller('TemeMakerCtrl', function ($scope) {
 			$scope.results = [];
 			$scope.hasErrors = false;
 			$scope.errors = "";
+			$scope.canBeSaved = false;
+			$scope.Saved = false;
 
 			$scope.wordCount = 0;
 			$scope.Arguments[0] = {

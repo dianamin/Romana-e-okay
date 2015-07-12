@@ -71,7 +71,7 @@ var pages = [
 			},
 			{
 			 	"name": "Figuri de stil",
-			 	"address": "data/figuriInterpreter.html",
+			 	"address": "data/figuriInterpreter2.html",
 			},
 			{
 				"name": "Comentariile mele",

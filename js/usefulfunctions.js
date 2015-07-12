@@ -110,7 +110,7 @@ var addHomework = function(s) {
             type: "POST",
             url: 'php/add_homework.php',
             data: ({'s': s}),
-            success: function(data) {alert(data);}
+            success: function(data) {}
         });
     });
 }

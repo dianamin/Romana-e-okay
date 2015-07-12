@@ -3,6 +3,8 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 	$scope.Descriptions;
 	$scope.FigureType = "";
 	$scope.PrincipalIdea = "";
+	$scope.canBeSaved = false;
+	$scope.Saved = true;
 
 	function comp(a, b) {
 		if (a.noDiacritics < b.noDiacritics) return -1;
@@ -157,6 +159,12 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 	}
 
 	$scope.Result = "";
+
+
+	$scope.saveHomework = function() {
+		addHomework($scope.Result);
+		$scope.Saved = true;
+	}
 	
 	$scope.BuildComment = function() {
 		$scope.Check();
@@ -184,6 +192,8 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 		var pos = $(window).scrollTop();
 		$('html, body').animate({scrollTop: pos + 200}, 'slow');
 		$scope.wordCount = countWords($scope.Result);
+		$scope.canBeSaved = true;
+		$scope.Saved = false;
 	}
 
 	$scope.Reset = function() {
@@ -216,6 +226,8 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 			$scope.FigureType = "";
 			$scope.PrincipalIdea = "";
 			$scope.wordCount = 0;
+			$scope.canBeSaved = false;
+			$scope.Saved = true;
 			scrollToTop();
 		}
 	}

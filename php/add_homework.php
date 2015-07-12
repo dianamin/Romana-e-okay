@@ -4,8 +4,7 @@
 	session_start();
 	$id = $_SESSION["id"];
 
-
-	$insert_text = "INSERT INTO table". $id . " (id_user, id, homework) VALUES (" . $id . "'NULL', '". $s ."')";
+	$insert_text = "INSERT INTO essays(id_user, id, homework) VALUES (" . $id . ", 'NULL', '". $s ."')";
 	$inserted_query = mysql_query($insert_text);
 
 ?>
