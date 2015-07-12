@@ -1,3 +1,6 @@
+var userConnected = false;
+var userID;
+
 function statusChangeCallback(response) {
     console.log('statusChangeCallback');
     console.log(response);
@@ -10,6 +13,7 @@ function statusChangeCallback(response) {
         document.getElementById("login-button").setAttribute("style", "display: none;");
         document.getElementById("logout-button").setAttribute("style", "display: block;");
         testAPI();
+        userConnected = true;
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
         document.getElementById('status').innerHTML = 'Please log ' +
@@ -85,11 +89,12 @@ function testAPI() {
         document.getElementById('user-name').innerHTML = 'Bine ai venit, <br />' + response.first_name + '!';
         profile_photo = "http://graph.facebook.com/" + response.id + "/picture?width=100&height=100"
         document.getElementById("profile-photo").setAttribute("style", "background: url('" + profile_photo + "'); background-size: cover;");
+        userID = response.id;
         $(function(){
             $.ajax({
                 type: "POST",
                 url: 'php/add_user.php',
-                data: ({'id': response.id, 'name': response.name}),
+                data: ({'id': userID, 'name': response.name}),
                 success: function(data) {}
             });
         });
@@ -111,4 +116,5 @@ function logout() {
             });
         }
     });
+    userConnected = false;
 }

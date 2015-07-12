@@ -130,12 +130,27 @@ app.controller('JocCtrl', function ($scope, $http, GameFactory) {
 		$('html, body').animate({scrollTop: pos + 300}, 'slow');
 	}
 
+	$scope.addScore = function() {
+		if (userConnected == true) {
+			$(function(){
+	            $.ajax({
+	                type: "POST",
+	                url: 'php/add_score.php',
+	                data: ({'id': userID, 'score': $scope.score}),
+	                success: function(data) {alert(data)}
+	            });
+	        });
+		}
+	}
+
 	$scope.loseLife = function() {
 		// For every wrong answer, 1/4 heart is lost
 		$scope.LifeLevel[$scope.CurrentLife]--;
 		if ($scope.LifeLevel[$scope.CurrentLife] == 0) $scope.CurrentLife--;
-		if ($scope.CurrentLife == -1) $scope.Lost = true;
-		console.log($scope.CurrentLife);
+		if ($scope.CurrentLife == -1) {
+			$scope.Lost = true;
+			$scope.addScore();
+		}
 	}
 	
 
@@ -165,7 +180,10 @@ app.controller('JocCtrl', function ($scope, $http, GameFactory) {
 
 	$scope.next = function() {
 		// Next step in game
-		if ($scope.total == 0)	$scope.Won = true;
+		if ($scope.total == 0 && $scope.score != 0)	{
+			$scope.Won = true;
+			$scope.addScore();
+		}
 		hideElement("QuestionRez")
 		$scope.checked = false;
  		if ($scope.total != 0) $scope.chooseNextQuestion();
