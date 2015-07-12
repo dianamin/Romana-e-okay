@@ -9,13 +9,14 @@
 		echo "<h5> Trebuie să te autentifici pentru a salva comentarii! </h5>";
 	}
 	else {
-		$find_table = "
+		$get_comments = "
 			SELECT *
-			FROM table" . $id . "
+			FROM essays
+			WHERE id_user = " . $id. "
 			ORDER BY id DESC";
 
-		$table_result = mysql_query($find_table);
-		$comments_count = mysql_numrows($table_result);
+		$comments = mysql_query($get_comments);
+		$comments_count = mysql_numrows($comments);
 
 		if ($comments_count == 0 || $comments_count == NULL) {
 			echo "<h5> Nu ai salvat niciun comentariu încă! </h5>";
@@ -25,7 +26,7 @@
 			echo "<thead> <tr> <th> # </th> <th> Comentariu </th> </tr> </thead>";
 			echo "<tbody> ";
 			for ($i = 1; $i <= $comments_count; $i++) {	
-				echo "<tr> <td> " . $i . ". </td> <td style = 'text-align: justify;'> " . mysql_result($table_result, $i - 1, "homework") . " </td> </tr>";
+				echo "<tr> <td> " . $i . ". </td> <td style = 'text-align: justify;'> " . mysql_result($comments, $i - 1, "homework") . " </td> </tr>";
 			}
 			echo "</tbody>";
 			echo "</table>";
