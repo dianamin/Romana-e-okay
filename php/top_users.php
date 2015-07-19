@@ -3,8 +3,8 @@
 
 	$query = "
 		SELECT * 
-		FROM Users
-		Order By Score DESC";
+		FROM users
+		Order By score DESC";
 	$result = mysql_query($query);
 	$num = mysql_numrows($result);
 

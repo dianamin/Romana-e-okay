@@ -1,0 +1,32 @@
+[
+	{
+		"intrebare": "Cine îi dă numele lui Harap-Alb?",
+		"imagine" : "img/junimea/ha.jpg",
+		"raspunsuri" : ["Craiul", "Împăratul Verde", "Roș Împărat", "Spânul"],
+		"corect" : 3
+	},
+	{
+		"intrebare": "Cu ajutorul cui trece Harap-Alb proba de la pod?",
+		"imagine" : "img/junimea/harap-alb si ursul.jpg",
+		"raspunsuri" : ["Calul", "Spânul"],
+		"corect" : 0
+	},
+	{
+		"intrebare": "Cu ajutorul cui trece Harap-Alb proba cu salățile?",
+		"imagine" : "img/junimea/harap-alb si ursul.jpg",
+		"raspunsuri" : ["Spânul", "Sfânta Duminică", "Alexandru Lăpușneanul"],
+		"corect" : 1
+	},
+	{
+		"intrebare": "Ce fel de basm este „Povestea lui Harap-Alb?",
+		"imagine" : "img/junimea/ha.jpg",
+		"raspunsuri" : ["popular", "cult"],
+		"corect" : 1
+	},
+	{
+		"intrebare": "Care este o caracteristică a stilului lui Ion Creangă?",
+		"imagine" : "img/junimea/ha.jpg",
+		"raspunsuri" : ["proverbe și zicători", "anticalofilism"],
+		"corect" : 0
+	}
+]

@@ -31,7 +31,7 @@ app.factory('GameFactory', function ($http) {
 		}
 
 		var fileName = pages[page].id + "a" + pages[page].creations[lesson].id;
-		$http({method: 'GET', url: 'data/questions/' + fileName + '.json'}).success(function(data, status, headers, config) {
+		$http({method: 'GET', url: 'partials/questions/' + fileName + '.json'}).success(function(data, status, headers, config) {
 			allData[fileName] = data;
 			read(page, lesson - 1);
 		});

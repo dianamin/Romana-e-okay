@@ -1,0 +1,72 @@
+<div ng-controller = "AnswersPostbelicaCtrl">
+	<p> Literatura după al Doilea Război Mondial este marcată de contextul social-politic. Primii ani ai „obsedantului deceniu” proletcultist înregistrează producții ilizibile astăzi, compromise, respectând temele și convențiile epice ale momentului, pe linia dogmatică realist-socialistă, sub presiunea unei cenzuri totalitare. </p>
+	
+	<h5> Ce s-a întâmplat cu romanul? </h5>
+	<p>
+		Romanul <i>
+		<input type = "text" class = "form-control short-input-box" ng-model = "Novel" value = "{Novel}">
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkNovel()"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkNovel()"></span>
+		</i> de Marin Preda (1955) este prima izbânda a geniului în deceniul al VI-lea, care anunță și un al doilea volum și deschide seria operelor valoroase ale unei întregi generații de romancieri, afirmate în perioada 1960-1980: Nicolae Breban, Fănuș Neagu, Alexandru Ivasiuc etc.
+	</p>
+	<p> Criticul Eugen Simion realizează, în lucrarea <i> Scriitori români de azi </i>, volumul I, o tipologie a romanului acestor două decenii, care ilustrează fenomenul de continuitate cu modernismul și cu formele romanului interbelic: </p>
+	<center>
+		<table class = "reprezentanti">
+			<tr> 
+				<td><input type = "checkbox" class = "big-dot" ng-model = "Characteristics[0]" /> </td> 
+				<td> realismul psihologic </td>
+			</tr>
+			<tr> 
+				<td><input type = "checkbox" class = "big-dot" ng-model = "Characteristics[1]" /> </td> 
+				<td> proza de analiză </td>
+			</tr>
+			<tr> 
+				<td><input type = "checkbox" class = "big-dot" ng-model = "Characteristics[2]" /> </td> 
+				<td> drama țăranului </td>
+			</tr>
+			<tr> 
+				<td><input type = "checkbox" class = "big-dot" ng-model = "Characteristics[3]" /> </td> 
+				<td> romanul pitoresc și baroc </td>
+			</tr>
+			<tr> 
+				<td><input type = "checkbox" class = "big-dot" ng-model = "Characteristics[4]" /> </td> 
+				<td> comedia limbajului </td>
+			</tr>
+			<tr> 
+				<td><input type = "checkbox" class = "big-dot" ng-model = "Characteristics[5]" /> </td> 
+				<td> romanul monografic </td>
+			</tr>
+		</table>
+		<br />
+		<button class = "btn btn-danger" ng-click = "checkCharacteristics()"> Verifică </button>
+
+		<div class = "alert alert-success" style = "opacity: 0;" ng-show = "showCharacteristics == true" id = "Characteristics">
+			<center>
+				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "RightCharacteristics"></span>
+				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!RightCharacteristics"></span>
+				<br />
+				Trăsăturile romanului postbelic sunt realismul psihologic, proza de analiză, eseul romanesc, romanul pitoresc și baroc, realismul artistic - romanul mitic, proza fantastică, comedia limbajului.
+		</center>
+		</div>
+	</center>
+
+	<h5> Care au fost grupările literare influente? </h5>
+	<p> Grupările literare influente au fost: </p>
+	<center> <ul>
+		<li> Școala de la Târgoviște (Costache Olăreanu, Mircea Horia Simionescu, Radu Petrescu) </li>
+		<li> „optzeciștii” (Mircea Cărtărescu, Gheorghe Crăciun, Mircea Nedelciu, Nicolae Iliescu etc.) </li>
+	</ul> </center>
+	<p> Grupările literare influente în epocă destramă, prin abordarea parodică, convențiile modernismului, continuând astfel procesul de europenizare ale literaturii române. </p>
+
+	<h5> Ce s-a întâmplat cu proza de după 1980? </h5>
+	<p> 
+		Proza de după 1980 stă sub semnul postmodernismului, curent literar cre a cunoscut o puternică autohtonizare prin reprezentanții generației '
+		<input type = "number" min = 50 max = 90 ng-model = "Generation" class = "form-control short-input-box"/>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkGeneration()"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkGeneration()"></span>.
+		După anul 2000, alături de Mircea Cărtărescu, cel mai important scriitor al ultimelor două decenii, își fac loc tineri prozatori (Filip Florian, Ion Manolescu, Răzvan Rădulescu), care aduc un suflu epic nou.
+	</p>
+
+	<h5> Ce s-a întâmplat cu poezia în perioada postbelică? </h5>
+	<p> După Mihai Eminescu și Tudor Arghezi, Nichita Stănescu este al treilea inovator al limbajului poetic în literatura română. </p>
+</div>

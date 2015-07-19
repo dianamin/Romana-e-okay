@@ -1,0 +1,26 @@
+[
+	{
+		"intrebare": "Alexandru Lăpușneanul a fost domnitorul Moldovei. Unde a murit în nuvelă?",
+		"imagine" : "img/pasoptism/domnitor.jpg",
+		"raspunsuri" : ["La Cetatea Hotinului", "La Castelul Bran", "la Cetatea Aiudului"],
+		"corect" : 0
+	}, 
+	{
+		"intrebare": "Din câte capete a construit Alexandru Lăpușneanul piramida?",
+		"imagine" : "img/pasoptism/domnitor.jpg",
+		"raspunsuri" : ["45", "47", "50", "80"],
+		"corect" : 1
+	},
+	{
+		"intrebare": "Ce fel de nuvelă este „Alexandru Lăpușneanul”?",
+		"imagine" : "img/pasoptism/domnitor.jpg",
+		"raspunsuri" : ["realistă și psihologică", "romantică și istorică"],
+		"corect" : 1
+	},
+	{
+		"intrebare": "Cum o cheamă pe soția lui Alexandru Lăpușneanul?",
+		"imagine" : "img/pasoptism/ruxanda.jpg",
+		"raspunsuri" : ["Ruxandra", "Ruxanda"],
+		"corect" : 1
+	}
+]

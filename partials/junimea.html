@@ -1,0 +1,219 @@
+<div ng-controller = "AnswersJunimeaCtrl">
+ 
+	<p> Curentul cultural promovat de societatea ieșeană Junimea se manifestă începând cu anul 1863, timp de un sfert de secol, ca o mișcare de modernizare profundă și de aplicare frecventă a spiritului critic. Junimiștii au recunoscut contribuția predecesorilor, dar s-au raportat critic la etapa pașoptistă. (1830-1860). Junimismul include atât elemente de ruptură față de trecut, cât și tendințe de continuitate cu direcția inițiată de MIhail Kogălniceanu. </p>
+
+	<h5> Deci ce face criticismul junimist? </h5>
+	<p> Junimea reprezintă fondarea spiritului critic modern în literatura și cultura română, dar și o reacție împotriva lipsei de echilibru între formele și fondul cultural moștenit de la pașoptiști. Criticismul junimist analizează și sancționează urmările adaptării superficiale a instituțiilor și a formelor civilizației occidentale din perioada pașoptistă. </p>
+
+	<p> Pașoptismul a întemeiat civilizația și cultura română modernă cu elanul începuturilor, prin: </p>
+	<center> 
+		<input type = "radio" ng-model = "CrossingPhases" class = "big-dot" value = "ardere" /> 
+		„arderea etapelor” <br />
+		<input type = "radio" ng-model = "CrossingPhases" class = "big-dot" value = "construire" /> construirea gradată a fondului necesar sincronizării cu literatura occidentaă <br />
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkCrossingPhases()"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkCrossingPhases()"></span>
+	</center>
+
+	<p> Junimismul reașaza fundamentele culturii noastre moderne, printr-o acțiune critică vizând toate domeniile ei. </p>
+
+	<h5> Care sunt ideile și temele comune cu ale pașoptiștilor? </h5>
+	<center>Prelecțiuni populare - Organizate pe teme variate, în diverse cicluri sistematice și ținute într-o formă academică, ele au avut ca scop educarea publicului larg, care să înțeleagă cultura ca factor de progres și moralitate.
+		<table class = "reprezentanti">
+			<tr> 
+				<td><input type = "checkbox" class = "big-dot" ng-model = "Intersection[0]" /> </td> 
+				<td> Promovarea unei literaturi originale, cu specific românesc </td>
+			</tr>
+			<tr> 
+				<td><input type = "checkbox" class = "big-dot" ng-model = "Intersection[1]" /> </td> 
+				<td> Trecerea de la alfabetul latin la alfabetul chiliric </td>
+			</tr>
+			<tr> 
+				<td><input type = "checkbox" class = "big-dot" ng-model = "Intersection[2]" /> </td> 
+				<td> Combaterea imitațiilor </td>
+			</tr>
+			<tr> 
+				<td><input type = "checkbox" class = "big-dot" ng-model = "Intersection[3]" /> </td> 
+				<td> Aplicarea principiilor valorice în actul critic </td>
+			</tr>
+			<tr> 
+				<td><input type = "checkbox" class = "big-dot" ng-model = "Intersection[4]" /> </td> 
+				<td> Imitarea scrierilor occidentului </td>
+			</tr>
+		</table>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkIntersection()"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkIntersection()"></span>
+	</center>
+
+	<p> Mai departe, Junimea înseamnă o ideologie nouă, un discurs intercultural, o raportare a modelului literar românesc la cel european, prin lărgirea criteriilor estetice la nivel universal.</p>
+
+	<h5> Din cine este formată noua generație de intelectuali? </h5>
+	<p> Câțiva tineri reveniți de la studii din ștrăinătate - Petre Carp, Vasile Pogor, Theodor Rosetti, Iacob Negruzzi și Titu Maiorescu (<i> spiritus rector </i> al grupării), conștienți de situația precară a culturii române, au hotărât înființarea la 
+		<input type = "text" class = "form-control short-input-box" ng-model = "City" value = "{City}">
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkCity()"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkCity()"></span>,
+	în 
+		<input type = "number" class = "form-control short-input-box" ng-model = "Year">
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkYear()"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkYear()"></span>,
+	a societății Junimea, o asociație menită să aducă un suflu nou în cultura română. </p>
+
+	<center>
+	<div class = "row">
+		<div class = "col-md-3 col-sm-3"> <img src = "img/pc.jpg" class = "img-round"/> <br /> <br /> Petre Carp </div>
+		<div class = "col-md-3 col-sm-3"> <img src = "img/vp.jpg" class = "img-round"/> <br /> <br /> Vasile Pogor </div>
+		<div class = "col-md-3 col-sm-3"> <img src = "img/tr.jpg" class = "img-round"/> <br /> <br /> Theodor Rosetti </div>
+		<div class = "col-md-3 col-sm-3"> <img src = "img/tm.jpg" class = "img-round"/> <br /> <br /> Titu Maiorescu </div>
+	</div>
+</center>
+
+	<h5> Cum circulau ideile? Era totuși secolul al XIX-lea. </h5>
+	<p> Circulația ideilor junimiste în epocă este asigurată de faptul că societatea avea o tipografie proprie, o librărie și editează revista <i> Convorbiri literare </i>, începând din 1867. </p>
+	<p> În paginile revistei vor fi publicate articolele lui Titu Maiorescu și operele <b> marilor clasici </b>: </p>
+	<center>
+		<table class = "reprezentanti">
+			<tr> 
+				<td><input type = "checkbox" class = "big-dot" ng-model = "Classics[0]" /> </td> 
+				<td> Mihai Eminescu </td>
+			</tr>
+			<tr> 
+				<td><input type = "checkbox" class = "big-dot" ng-model = "Classics[1]" /> </td> 
+				<td> Vasile Alecsandri </td>
+			</tr>
+			<tr> 
+				<td><input type = "checkbox" class = "big-dot" ng-model = "Classics[2]" /> </td> 
+				<td> Ion Luca Caragiale </td>
+			</tr>
+			<tr> 
+				<td><input type = "checkbox" class = "big-dot" ng-model = "Classics[3]" /> </td> 
+				<td> Liviu Rebreanu </td>
+			</tr>
+			<tr> 
+				<td><input type = "checkbox" class = "big-dot" ng-model = "Classics[4]" /> </td> 
+				<td> Tudor Arghezi </td>
+			</tr>
+			<tr> 
+				<td><input type = "checkbox" class = "big-dot" ng-model = "Classics[5]" /> </td> 
+				<td> Ioan Slavici </td>
+			</tr>
+			<tr> 
+				<td><input type = "checkbox" class = "big-dot" ng-model = "Classics[6]" /> </td> 
+				<td> Ion Creangă </td>
+			</tr>
+		</table>
+		<br />
+		<button class = "btn btn-danger" ng-click = "checkClassics()"> Verifică </button>
+		<br />
+		<div class = "alert alert-success" style = "opacity: 0;" ng-show = "showClassics == true" id = "Classics">
+			<center>
+				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "RightClassics"></span>
+				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!RightClassics"></span>
+				<br />
+				Marii Clasici sunt Mihai Eminescu, Ion Creangă, Ioan Slavici și Ion Luca Caragiale.
+			</center>
+		</div>
+	</center>
+
+	<h5> Care au fost etapele? </h5>
+	<ol>
+		<li> 
+			<p> Etapa ieșeană (1863 - 1874) are un pronunțat caracter polemic și se manifestă în trei direcții: limbă, literatură și cultură. În această perioadă se elaborează principiile sociale și estetice ale junimismului. Tot acum se impune necesitatea educării publicului prin așa-numitele <i>prelecțiuni populare</i>.</p>
+
+			<div class = "well"> Prelecțiuni populare - Organizate pe teme variate, în diverse cicluri sistematice și ținute într-o formă academică, ele au avut ca scop educarea publicului larg, care să înțeleagă cultura ca factor de progres și moralitate.  </div>
+			
+			<p> Această etapă marchează căutările febrile de modele apte să asigure progresul la care aspira Titu Maiorescu. Interesul pentru literatură se manifestă în 1865, când se avansează ideea alcătuirii unei antologii de poezie românească pentru școlari. Aceasta i-a determinat pe junimști să citească în ședințele societății autorii mai vechi, pe ale căror texte și-au exersat spiritul critic și gustul literar. </p>
+		</li>
+		<li> 
+			<p> Cea de-a doua etapă, din 1874 pănă în 1885 (cu desfășurarea ședințelor Junimii la București, dar a activității revistei la Iași), este o etapă de consolidare, în sensul că în această perioadă se afirmă reprezentanții de seamă ai „direcției noi” în poezia și proza română: Eminescu, Creangă, Slavici, Caragiale, dar și scriitori aproape necunoscuți astăzi precum: Samson Bodnărescu, Matilda Culger-Poni. </p>
+			<p> Este o perioadă în care se diminuează teoretizarea criticismului în favoarea judecăților de valoare. Acum sunt elaborate studiile esențiale prin care Titu Maiorescu se impune ca autentic întemeietor al criticii noastre literare moderne, fără însă a neglija preocupările din domeniul civilizației, dar mai ales din domeniul limbii literare, necesare și pentru că în anul 1860 se făcuse trecerea de la alfabetul chiliric la cel latin. </p>
+			<p> Maiorescu susține utilitatea îmbogățirii vocabularului limbii române prin neologisme de origine romanică, într-un studiu din 1881 (Neologisme). </p>
+		</li>
+		<li>
+			<p>Etapa a treia (bucureșteană) începe din 1885, când revista convorbiri literare este mutată la București, ca și întreaga societate Junimea. Această etapă are un caracter are un caracter preponderent universitar, prin studiile de specialitate din domeniile: istorie, filozofie, geografie. Revista va apărea până în 1944, dar ea nu va mai atinge gradul de popularitate din primii 20 de ani. </p>
+		</li>
+	</ol>
+
+	<h5> Care sunt trăsăturile junimismului? </h5> 
+
+	<div class = "row">
+		<div class = "col-md-4 col-sm-4"> <img src = "img/ilr.jpg" class = "img-300"/> </div>
+		<div class = "col-md-8 col-sm-8"> 
+			<p> În lucrarea <i>Istoria literaturii române moderne</i>, criticul Tudor Vianu identifică trăsături definitorii ale junimismului: </p>
+			<center>			
+			<table class = "reprezentanti">
+				<tr> 
+					<td><input type = "checkbox" class = "big-dot" ng-model = "Characteristic[0]" /> </td> 
+					<td> spiritul critic </td>
+				</tr>
+				<tr> 
+					<td><input type = "checkbox" class = "big-dot" ng-model = "Characteristic[1]" /> </td> 
+					<td> dorința de sincronizare cu occidentul rapid </td>
+				</tr>
+				<tr> 
+					<td><input type = "checkbox" class = "big-dot" ng-model = "Characteristic[2]" /> </td> 
+					<td> spiritul filosofic </td>
+				</tr>
+				<tr> 
+					<td><input type = "checkbox" class = "big-dot" ng-model = "Characteristic[3]" /> </td> 
+					<td> gustul pentru clasic și academic </td>
+				</tr>
+				<tr> 
+					<td><input type = "checkbox" class = "big-dot" ng-model = "Characteristic[4]" /> </td> 
+					<td> spiritul oratoric </td>
+				</tr>
+				<tr> 
+					<td><input type = "checkbox" class = "big-dot" ng-model = "Characteristic[5]" /> </td> 
+					<td> inspirația în operele occidentale </td>
+				</tr>
+				<tr> 
+					<td><input type = "checkbox" class = "big-dot" ng-model = "Characteristic[6]" /> </td> 
+					<td> ironia </td>
+				</tr>
+			</table>
+			<button class = "btn btn-danger" ng-click = "checkCharacteristics()"> Verifică </button>
+			<br />
+			<div class = "alert alert-success" style = "opacity: 0;" ng-show = "showCharacteristics == true" id = "Characteristics">
+				<center>
+					<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "RightCharacteristics"></span>
+					<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!RightCharacteristics"></span>
+					<br />
+					Trăsăturile definitorii identificate de Tudor Vianu sunt: spiritul critic, spiritoul filosofic, gustul pentru clasic și academic, spiritul oratoric, ironia.
+				</center>
+			</div>
+			</center> 
+		</div>
+	</div>
+
+	<h5> Care au fost direcțiile de manifestare a criticismului junimist? </h5>
+	<p> Atitudinea criticistă față de direcția veche se manifestă mai ales în prima etapă din evoluția Junimii (7-8 ani), când se abordează polemic aspecte ale limbii române, ale literaturii și ale culturii: discuția în problema ortografiei, discuțiile pentru alcătuirea unei antologii a poeziei de până la 1865 (finalizate în articolul <i> O cercetare critică asupra poeziei române de la 1867 </i>) și critica formelor fără fond, ca expresie sintetică a ideologiei junimiste (<i> În contra direcției de astăzi din literatura română </i>). </p>
+	<p> 
+		Ulterior, junimismul își afirmă propria direcție („direcția nouă”), începând cu studiul maiorescian din 1872, <i>Direcția 
+		<input type = "text" class = "form-control short-input-box" ng-model = "Direction" value = "{Direction}">
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkDirection()"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkDirection()"></span>
+		în poezia și proza română. </i> </p>
+
+	<h5> Care a fost rolul lui Titu Maiorescu? </h5>
+	<p> 
+		Criticismul junimist este legat în primul rând de activitatea lui Titu Maiorescu, mentorul societății Junimea, dar și îndrumătorul cultural și literar al epocii. Reunite în volumul sub titlul <i>
+		<input type = "text" class = "form-control short-input-box" ng-model = "VolumeName" value = "{VolumeName}">
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkVolumeName()"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkVolumeName()"></span>
+		</i>, scrierile lui ilustrează domeniile de manifestare ale spiritului critic maiorescian: limba română, literatura, cultura, estetica filosofia.
+	</p>
+
+	<blockquote>
+		<p> Ai un singur bloc de marmură: dacă îl întrebuințezi pentru o figură caricată, de unde mai poți sculpta o Minervă? </p>
+		<footer> Titu Maiorescu </footer>
+	</blockquote>
+
+	<p> Ultima lucrare a mentorului („În contra direcției de astăzi în cultura română”) lansează teoria „formelor fără fond”, de mare importanță în perioadă. Teoria exprimă viziunea lui Titu Maiorescu asupra culturii, find construită cu un fundament filozofic, pe trei principii: autonomia valorilor, unitatea dintre cultură și societate, unitatea dintre fond și formă în cultură și în dezvoltarea socială. </p>
+
+	<div class = "well">
+		<b> fond </b> = activități materiale, sociale și culturale, tradiții, mentalități
+	</div>
+	<div class = "well">
+		<b> formă </b> = structurile instituționale ale societății, sistemul de educație, instituțiile culturale prin care se realizează circulația valorilor în cadrul societății
+	</div>
+
+	<p> Criticul consideră formele fără fond, „pretenții fără fundament, stafii fără trup, iluzii fără adevăr” și le denunță ca fiind „stricăcioase, fiindcă nimicesc un mijloc puternic de cultură”.<p>
+</div>

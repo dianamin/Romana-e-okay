@@ -1,0 +1,150 @@
+<div ng-controller = "FiguriInterpreterCtrl">
+	<h4> Figuri de stil 1.0</h4>
+
+	<h5> Care este figura de stil? </h5>
+
+	<p> 
+		Figura este <i> „
+		<input type = "text" class = "form-control long-input-box" ng-model = "Figure" value = "{Figure}" />
+		”</i>.
+	</p>
+	
+	<h5> Ce tip de figură e? </h5>
+
+	<table>
+		<tr>
+			<td> <input type = "radio" name = "FigureType" ng-model = "FigureType" class = "big-dot" value = "o repetiție" /> </td>
+			<td> o repetiție </td>
+		</tr>
+		<tr>
+			<td> <input type = "radio" name = "FigureType" ng-model = "FigureType" class = "big-dot" value = "o enumerație" /> </td>
+			<td> o enumerație </td>
+		</tr>
+		<tr>
+			<td> <input type = "radio" name = "FigureType" ng-model = "FigureType" class = "big-dot" value = "o elipsă" /> </td>
+			<td> o elipsă </td>
+		</tr>
+		<tr>
+			<td> <input type = "radio" name = "FigureType" ng-model = "FigureType" class = "big-dot" value = "o inversiune" /> </td>
+			<td> o inversiune </td>
+		</tr>
+		<tr>
+			<td> <input type = "radio" name = "FigureType" ng-model = "FigureType" class = "big-dot" value = "o metaforă" /> </td>
+			<td> o metaforă </td>
+		</tr>
+		<tr>
+			<td> <input type = "radio" name = "FigureType" ng-model = "FigureType" class = "big-dot" value = "un epitet" /> </td>
+			<td> un epitet </td>
+		</tr>
+		<tr>
+			<td> <input type = "radio" name = "FigureType" ng-model = "FigureType" class = "big-dot" value = "o personificare" /> </td>
+			<td> o personificare </td>
+		</tr>
+		<tr>
+			<td> <input type = "radio" name = "FigureType" ng-model = "FigureType" class = "big-dot" value = "o hiperbolă" /> </td>
+			<td> o hiperbolă </td>
+		</tr>
+		<tr>
+			<td> <input type = "radio" name = "FigureType" ng-model = "FigureType" class = "big-dot" value = "o antiteză" /> </td>
+			<td> o antiteză </td>
+		</tr>
+		<tr>
+			<td> <input type = "radio" name = "FigureType" ng-model = "FigureType" class = "big-dot" value = "o comparație" /> </td>
+			<td> o comparație </td>
+		</tr>
+	</table>
+
+	<h5> Care este ideea principală? (sentiment, stare etc.) </h5>
+	<p> 
+		Figura exprimă/sugerează
+		<input type = "text" class = "form-control medium-input-box" ng-model = "PrincipalIdea" value = "{PrincipalIdea}" />
+		.
+	</p>
+	<p> (poate rămâne necompletat) </p>
+
+	<h5> Ce simboluri apar? </h5>
+	<div class = "alert alert-warning">
+		<span class = "glyphicon glyphicon-warning-sign"> </span> Forma nearticulată!
+	</div>
+	<ol>
+		<li ng-repeat = "symbol in Symbols" style = "margin-top: 15px;">
+			<input type = "text" class = "form-control medium-input-box" ng-model = "symbol.name" value = "{symbol.name}" />
+		</li>
+	</ol>
+	<br /> <br />
+
+	<button class = "btn btn-primary" ng-click = "AddSymbol()"><span class = "glyphicon glyphicon-plus"></span> Adaugă simboluri </button> 
+	<button class = "btn btn-primary" ng-click = "InterpretSymbols()"><span class = "glyphicon glyphicon-check"></span> Interpretează simboluri </button> <br /> <br />
+
+	<div ng-show = "showDescriptions">
+		<h5> Descrierile găsite pentru simboluri: </h5>
+		<div class = "alert alert-warning">
+			<span class = "glyphicon glyphicon-warning-sign"> </span> Dacă ai modificat vreun simbol, apasă din nou butonul "Interpretează simboluri"! :)
+		</div>
+		<div id = "descriptions"> </div>
+		<ol>
+			<li ng-repeat = "symbol in Symbols" style = "margin-top: 15px;">
+				<div class="form-group">
+  					<label>{{symbol.name}}:</label>
+ 					<textarea class="form-control" rows = "5" ng-model = "symbol.description" value = "{symbol.description}"></textarea>
+ 					<br />
+				</div>
+			</li>
+		</ol>
+	</div>
+
+	<h5> Alte idei? </h5>
+	<ul>
+		<li ng-repeat = "idea in Ideas">
+			<textarea class="form-control" rows = "5" ng-model = "idea.description" value = "{idea.description}"></textarea>
+		</li>
+	</ul>
+	<button class = "btn btn-primary" ng-click = "AddIdea()"><span class = "glyphicon glyphicon-plus"></span> Adaugă idei </button> 
+	
+	<br /> <br /> <br />
+
+	<button class = "btn btn-success" ng-click = "BuildSortableIdeas()"><span class = "glyphicon glyphicon-thumbs-up"></span> Construiește ideile principale ale comentariului! </button> 
+
+	<div ng-show = "showSortableIdeas"> 
+		<h5> Ideile principale sunt: </h5>
+		<div ng-show = "SymbolsCount + IdeasCount == 0" class = "alert alert-danger">
+			<span class = "glyphicon glyphicon-exclamation-sign"> </span>
+			Trebuie să adaugi idei, simboluri + semnficațiile lor!
+		</div>
+		<div ng-show = "SymbolsCount + IdeasCount != 0">
+			<ul class = "list-group" ui-sortable ng-model = "SortableIdeas">
+				<li class = "list-group-item" ng-repeat = "idea in SortableIdeas"> {{idea.description}} </li>
+			</ul>
+			<p> Drag & Drop: Poți reordona ideile! </p>
+			<br /> <br />
+			<button class = "btn btn-success" ng-click = "BuildComment()"><span class = "glyphicon glyphicon-thumbs-up"></span> Construiește comentariul! </button> 
+		</div>
+
+
+		<div ng-show = "Checked">
+			<br /> <br />
+			<div ng-show = "Okay == false" class = "alert alert-danger">
+				<span class = "glyphicon glyphicon-exclamation-sign"> </span>
+				{{Error}}
+			</div>
+
+			<p ng-show = "Okay == true"> Număr de cuvinte: {{wordCount}} </p>
+			<div ng-show = "Okay == true" id = "essay">
+				<p>
+					{{Result}}
+				</p>
+			</div>
+			
+			<div class="alert alert-success" role="alert" ng-show = "Saved">
+				Eseul a fost salvat. Îl poți vedea la „Comentariile mele”!
+			</div>
+
+			<button ng-show = "canBeSaved" class = "btn btn-success" ng-click = "saveHomework()"> Salvează în „Comentariile mele”! </button>
+		</div>
+	</div>
+
+	<br />
+
+	<button class = "btn btn-danger" ng-click = "Reset()"><span class = "glyphicon glyphicon-remove"></span> Șterge tot! </button>
+
+</div>

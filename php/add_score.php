@@ -5,7 +5,7 @@
 	$score = $_POST['score'];
 	$find_user_query = "
 		SELECT *
-		FROM Users
+		FROM users
 		WHERE ID = ". $id ." ;";
 
 	$user_result = mysql_query($find_user_query);
@@ -14,7 +14,7 @@
 	if ($user_found != 0) {
 		$score = floor($score / 10) + mysql_result($user_result, 0, "score");
 		$update_score_query = "
-			UPDATE Users
+			UPDATE users
 			SET score = ". $score . "
 			WHERE id = " . $id . ";";
 

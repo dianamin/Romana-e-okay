@@ -1,0 +1,144 @@
+<div ng-controller = "GeneralCheckerCtrl">
+	<h4> Plumb </h4>
+
+	<p> Poezia simbolistă „Plumb” reprezintă o emblemă a universului bacovian și a fost publicată în volumul cu același titlu în anul 1916. </p>
+	
+	<a href = "http://www.poezie.ro/index.php/poetry/22561/Plumb" target = "_blank">
+	 	<div class = "alert alert-success">
+			<span class = "glyphicon glyphicon-book"> </span> 
+			Click aici pentru a citi opera.
+		</div> 
+	</a>
+
+	<h5> Ce este simbolismul? </h5>
+	<p> Simbolismul a apărut în a doua jumătate a secolului al XIX-lea ca o negare a retorismului romantic și a impasibilității parnasiene.  În anul 1886, poetul francez Jean Moreas a publicat manifestul literar „Le Symbolisme”. Una dintre trăsăturile curentului este respingerea prozaismului. Poezia era definită ca „arta de a simți”. </p>
+
+	<p> Simbolismul românesc s-a manifestat la sfârșitul secolului al XIX-lea – începutul secolului al XX-lea și a avut patru ramuri: </p>
+	<ul>
+		<li> <b> Simbolismul tatonărilor </b> <br /> Reprezentantul simbolismului tatonărilor este Alexandru Macedonski. Datorită articolelor publicate în revista „Literatorul”, el poate fi considerat părintele simbolismului românesc. Creația lui îmbină elemente romantice (ciclul „Nopților”), parnasiene (rondelurile) și simboliste. </li>
+		<li> <b> Simbolismul cu elemente parnasiene  </b> <br /> În etapa simbolismului cu elemente parnasiene, s-a remarcat Dimitrie Anghel. Poet de structură romantică, se apropie de simbolism prin rafinamentul senzațiilor, predispoziția pentru reverie, preferința pentru stări vagi.  </li>
+		<li> <b> Simbolismul retoric </b> <br /> O personalitate importantă din simbolismul retoric este Ion Minulescu. Apar efecte sonore, neologisme, cantabile („Cânta un matelot la proră”), numărul fatidic, mirajul depărtărilor („Romanța celor trei corăbii”). Prin notele grave ale operelor, simbolismul retoric s-a apropiat de simbolismul autentic. </li>
+		<li> <b> Simbolismul „autentic” </b> <br /> Simbolistul autentic este cunoscut și ca bacovian, întrucât George Bacovia este cel mai mare poet simbolist român. Creațiile sale îmbină toate trăsăturile specifice acestui curent. De asemenea, în critica românească s-a vorbit despre existența unor elemente expresioniste, suprarealiste și a unor trăsături specifice teatrului absurd. </li>
+	</ul>
+
+	<p> Simbolismul aduce în literatura română o nouă concepție despre poezie și o tehnica artistică inovativă. </p>
+
+	<p> Operele încadrate în acest curent cultivă senzații diverse (vizuale, auditive, tactile).  Stările sufletești vagi precum înstrăinarea, împietrirea, izolarea, singurătatea fac parte din estetica simbolistă. Totodată, se remarcă prezența sinesteziilor și cultivarea culorilor, iar elementele realității care pot susține un sentiment sunt ridicate la rangul de simbol. </p>
+
+	<h5> Ce e în operă? </h5>
+
+	<p> 
+		„Plumb” este realizată preponderent din 
+		<input type = "text" class = "form-control short-input-box" ng-model = "Images" value = "{Images}">
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Images', 'imagini')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Images', 'imagini')"></span>
+		vizuale. Sunt exploatate emoții produse de elementele decorului funerar, care transmit o stare interioară de vid sufletesc, de angoasă a existenței, de <b> spleen</b>. 
+	</p>
+
+	<p> Simbolurile din operă, precum „plumb”, „cavou” și „singur”, organizează discursul liric și conferă ambiguitate prin plurivalența semnificațiilor. </p>
+
+	<p> Paralelismul sintactic, repetiția obsedantă a unor cuvinte („plumb”), a anumitor vocale și consoane au ca efect muzicalitate interioară. De asemenea, transmit senzația de împietrire, spaimă de moarte și de vidul existențial. </p>
+
+	<h5> Cum este viziunea despre lume și viață? </h5>
+
+	<p> Viziunea despre lume și viață din operă este nemetafizică. Textul hiperbolizează starea de singurătate și presimțirea morții. </p>
+
+	<h5> Care este tema poeziei? </h5>
+
+	<p> 
+		Tema poeziei este vidul 
+		<input type = "text" class = "form-control short-input-box" ng-model = "Void" value = "{Void}">
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Void', 'existențial')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Void', 'existențial')"></span>
+		, condiția poetului într-o societate artificială și fără 
+		<input type = "text" class = "form-control short-input-box" ng-model = "LackOf" value = "{LackOf}">
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('LackOf', 'idealuri')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('LackOf', 'idealuri')"></span>
+		. 
+	</p>
+
+	<h5> Ce semnifică titlul poeziei? </h5>
+
+	<p> 
+		Titlul poeziei, simbolul central „plumb”, sugerează apăsarea, greutatea sufocantă, angoasa, cenușiul existențial, universul monoton. Este un simbol plurivalent. Reluat de 
+		<input type = "range" class = "medium-input-box" min = "2" max = "10" ng-model = "Number" style = "display: inline-block;" /> <span> {{Number}} </span>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "Number == 6"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "Number != 6"></span> 
+		ori în poziții simetric distribuite în cele două strofe, simbolul configurează atmosfera lirică. 
+	</p>
+	<p> Ca element anorganic, plumbul semnifică mineralizare. Culoarea cenușie redă tristețea, plictisul, monotonia, lipsa de viață, absența sentimentelor. Plumbul este substanța utilizată la sigilarea sicrielor. </p>
+	<p> Alcătuit din patru consoane și o vocală închisă, „plumb” sugerează căderea fără ecou. </p>
+	<p> G. Bacovia dezvăluie semnificațiile pe care le dă simbolului central al operei: </i> „În plumb văd culoarea galbenă. Compușii lui dau precipitat galben. Temperamentului meu îi convine această culoare… Sufletul ars este galben. Galbenul este culoarea sufletului meu”. </i> </p>
+
+	<h5> Cum este structurat textul liric? </h5>
+
+	<p> Cele două catrene sunt realizate prin paralelism. Corespund celor două planuri ale realității: </p>
+	<ul>
+		<li> realitatea exterioară, obiectivă, simbolizată de cimitir </li>
+		<li> realitatea interioară, subiectivă, simbolizată de sentimentul iubirii („amorul meu de plumb”) </li>
+	</ul>
+
+	<p> 
+		Poezia exploatează stările și emoțiile produse de elementele decorului 
+		<input type = "text" class = "form-control short-input-box" ng-model = "Design" value = "{Design}">
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Design', 'funerar')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Design', 'funerar')"></span>
+		. Între planul exterior și planul interior se stabilesc o serie de corespondențe. 
+	</p>
+
+	<h5> Ce conține prima strofă? </h5>
+
+	<p> Prima strofă conține elemente ale cadrului spațial sufocant în care eul liric este închis: </p>
+	<ul>
+		<li> „sicriele de plumb” </li>
+		<li> „vestmântul funerar” </li>
+		<li> „flori de plumb” </li>
+		<li> „coroanele de plumb” </li>
+	</ul>
+	<p> Aceste simboluri contribuie la crearea unui decor macabru, dezolant, specific direcției simboliste a decadenților. Repetarea epitetului „de plumb” insistă asupra existenței mohorâte, lipsită de posibilitatea înălțării. </p>
+	<p> Vântul este singurul element care sugerează mișcarea. Imaginea auditivă „Și scârțâiau coroanele de plumb” reprezintă efectele reci, ale morții, produse de vânt și dezacordul eului cu lumea. </p>
+
+	<h5> Ce conține a doua strofă? </h5>
+	<p> Primul vers din strofa a doua <i> („Dormea întors amorul meu de plumb”) </i> este un vers-cheie și reprezintă moartea afectivității. Cuvântul „întors” se referă la întoarcerea mortului cu fața spre apus. </p>
+	<p> Tot în strofa a doua, apare sintagma „Aripile de plumb”. Acestea nu presupun un zbor, ci o cădere surdă si grea și pot fi asociate cu îngerul morții. Eul liric încearcă să se salveze: „Și-am început să-l strig”. Strigătul poate simboliza spaima de neant a ființei. </p>
+
+	<h5> Cum e construită poezia? </h5>
+	<p style = "display: inline-block;">
+		Poezia este riguros construită. Versurile sunt închise cu rimă 
+		<div class = "inline-form">
+			<input type = "radio" name = "Rhyme" ng-model = "Rhyme" class = "big-dot" value = "imperecheata" /> împerecheată <br />
+			<input type = "radio" name = "Rhyme" ng-model = "Rhyme" class = "big-dot" value = "imbratisata" /> îmbrățișată <br />
+			<input type = "radio" name = "Rhyme" ng-model = "Rhyme" class = "big-dot" value = "monorimă" /> monorimă <br />
+			<input type = "radio" name = "Rhyme" ng-model = "Rhyme" class = "big-dot" value = "incrucisata" /> încrucișată
+		</div>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkRadio('Rhyme', 'imbratisata')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkRadio('Rhyme', 'imbratisata')"></span>
+		, măsură fixă de
+		<input type = "range" class = "medium-input-box" min = "7" max = "15" ng-model = "Syllable" style = "display: inline-block;" /> <span> {{Syllable}} </span>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "Syllable == 10"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "Syllable != 10"></span> 
+		silabe, iambul alternează cu amfibrahul. Conferă muzicalitate exterioară și, împreună cu repetiții și pauze, elementele de prozodie transformă poezia într-un vaier monoton. 
+	</p>
+
+	<h5> Ce timpuri verbale apar în poezie? </h5>
+	<p style = "display: inline-block;"> 
+		Se remarcă prezența verbelor la imperfect („dormeam”, „stam”, „era”). Desemnează trecutul nedeterminat, permanența unei stări de teamă. Sunt așezate cu precădere la  
+		<div class = "inline-form">
+			<input type = "radio" name = "Position" ng-model = "Position" class = "big-dot" value = "inceput" /> început <br />
+			<input type = "radio" name = "Position" ng-model = "Position" class = "big-dot" value = "sfarsit" /> sfârșit
+		</div>
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkRadio('Position', 'inceput')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkRadio('Position', 'inceput')"></span>
+		de vers, iar acelor verbe cărora nu le este atestata staticitatea în dicționar, li se reduce intensitatea mișcării.
+	</p>
+
+	<p> Cele două verbe la perfect compus - „am început” și la conjunctiv „să strig” sugerează disperarea poetului atunci când constată că universul înconjurător este cuprins de atmosfera sumbră a morții. </p>
+	<p> Verbul „a fi”, impersonal, apare în două versuri simetrice sintactic. 
+	
+	<p> Versul al treilea din prima strofă se remarcă prin elipsa verbului „a fi” cu sens existențial, conturând imaginea statică și sugerând o imagine impresionistă: </p>
+	<div class = "well"> <i> Și flori de plumb și funerar vestmânt </i> </div>
+	<p> Adverbul „adânc” așezat lângă verbul „đormeau” sugerează somnul veșnic, moartea. Apropierea dintre somn și moarte este clasică, atât datorită nemișcării pe care ambele stări o presupun, cât și faptul că ambele constituie o rupere din lumea reală. </p>
+
+
+
+</div>

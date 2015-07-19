@@ -163,6 +163,7 @@ h5 {
 	margin-top: 50px;
 	background-color: #800000;
 	color: white;	
+	z-index: 100;
 }
 
 

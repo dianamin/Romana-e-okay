@@ -1,0 +1,133 @@
+<div ng-controller = "GeneralCheckerCtrl">
+	<h4> Chirița în provinție </h4>
+	<p> Atașat idealurilor pașoptise, V. Alecsandri a fost liderul mișcării literare a epocii, fiind un deschizător de drumuri pentru diferite specii și genuri literare. De asemenea, a avut un rol hotărâtor în formarea și dezvoltarea teatrului românesc național. </p>
+	<p> Mare parte din piesele comice ale lui V. Alexsandri (comedii, vodeviluri, farse) au caracter satiric și critic împotriva moravurilor socuale și politice ale vremii, împotriva stării pe loc, dar și a falsului progres, ridiculizând demagogia, snobismul și parvenitismul. Formele hibride ale civilizației românești la mijlocul secolului al XIX-lea sunt satirizate în comediile de moravuri („Iorgu de la Sadagura” și ciclul „Chirițelor”).
+	<p> <i> Chirița în provinție</i>, <b> „comedie cu cântice, în 2 acte”</b> reprezentată pe scenă în 1852, este a doua dintre cele cinci piese din ciclul „Chirițelor”. Toate au în centru același personaj feminin comic reprezentativ pentru epoca imediat de după 1848 și pentru un anumit tip uman: <b> boieroaica de provincie dornică de parvenire</b>.
+
+	<a href = "http://ro.wikisource.org/wiki/Chiri%C8%9Ba_%C3%AEn_provincie" target = "_blank">
+	 	<div class = "alert alert-success">
+			<span class = "glyphicon glyphicon-book"> </span> 
+			Click aici pentru a citi opera.
+		</div> 
+	</a>
+
+	<h5> Care este tema piesei? </h5>
+	<p> Tema piesei este demascarea parvenitismului, a snobismului și a abuzurilor administrației. </p>
+
+	<h5> Care este conflictul? </h5>
+	<p>
+		Conflictul dintre concepția consevatoare reprezentată de Bârzoi, dau de fals progres, reprezentată de 
+		<input type = "text" class = "form-control short-input-box" ng-model = "Conflict1" value = "{Conflict1}" />
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Conflict1', 'Chirița')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Conflict1', 'Chirița')"></span>,
+		personaje zugrăvite caracatural, și ideile noi, progresiste, reprezentate de Leonaș, un tânăr isteț și cinstit, îndrăgostit de Luluța, se desfășoara gradat, într-o acțiune complicată cu situații comice pline de neprevăzut. Demascând corupția lui Bârzoi, Leonaș devine ispravnic în locul acestuia și se căsătorește cu Luluța. Deznodământul aduce victoria reprezentantului ideilor noi, Lenoaș, adică a onestității și a sentimentelor sincere asupra moravurilor satirizate: parvenitismul, snobismul și corupția.
+	</p>
+
+	<center>
+		(completează personajele în ordinea în care apar în poze) <br />
+
+		<div class = "row">
+			<div class = "col-md-1 col-sm-1"> </div>
+			<div class = "col-md-4 col-sm-4">
+				<img src = "img/pasoptism/chirita si barzoi.jpg" class = "conflict-part" />
+				<br /> <br /> 
+				<center> <b>
+					<input type = "text" class = "form-control short-input-box" ng-model = "Conflict2" value = "{Conflict2}" />
+					<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Conflict2', 'Bârzoi')"></span>
+					<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Conflict2', 'Bârzoi')"></span>
+				</center> </b>
+				și <br />
+				<center> <b>
+					<input type = "text" class = "form-control short-input-box" ng-model = "Conflict1" value = "{Conflict1}" />
+					<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Conflict1', 'Chirița')"></span>
+					<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Conflict1', 'Chirița')"></span>
+				</center> </b>
+			</div>
+			<div class = "subtitle col-md-1 col-sm-1 conflict-text">
+				VS.
+			</div>
+			<div class = "col-md-4 col-sm-4">
+				<img src = "img/pasoptism/leonas si luluta.jpg" class = "conflict-part" />
+				<br /> <br /> 
+				<center> <b>
+					<input type = "text" class = "form-control short-input-box" ng-model = "Conflict3" value = "{Conflict3}" />
+					<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Conflict3', 'Luluța')"></span>
+					<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Conflict3', 'Luluța')"></span>
+				</center> </b>
+				și <br />
+				<center> <b>
+					<input type = "text" class = "form-control short-input-box" ng-model = "Conflict4" value = "{Conflict4}" />
+					<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Conflict4', 'Leonaș')"></span>
+					<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Conflict4', 'Leonaș')"></span>
+				</center> </b>
+			</div>
+			<div class = "col-md-1 col-sm-1"> </div>
+		</div>
+	</center>
+
+	<h5> Ce tipologie de personaj reprezintă Chirița? </h5>
+	<p> Dincolo de filiațiile pe care comparatistul Charles Drouhet le-a găsit cu personajele feminine din comedia franceză, Chirița rămâne un personaj autohton, tipic. Prin această „prețioasă ridicolă”, Vasile Alecsandri satirizează imitarea modei occidentale fără asimilarea culturii corespunzătoare, adică realizează expresia comică a „formelor fără fond” înainte de formularea teoriei maioresciene. </p>
+
+	<h5> Care sunt trăsăturile Chiriței? </h5>
+	<p> Chirița este soția unui boier de țară, Grigore Bârzoi, cu pretenții, dornică de mărire și de a fi la modă, combinație de parvenitism și de snobism. </p>
+	<p> Chirița este un personaj ridicol prin contrastul între ceea ce este și ceea ce vrea să pară. Comportamentul Chiriței oferă prilejul criticării unor moravori din epocă: falsă cultură, imitarea cu orice preț a modei, cosmopolitismul, negarea tradiției. </p>
+	<p> Caracterizarea Chiriței se realizează prin modalități specifice personajului dramatic: directe, în didascalii sau autocaracterizare („și eu îs ușurică ca o pană”) și indirecte, prin particularități de limbaj, relații cu alte personaje etc. </p>
+
+	<h5> Care sunt obiectivele Chiriței? </h5>
+	<ol>
+		<li>
+			<p> Să introducă „în provinție” la Bârzoieni moda timpulului. </p>
+			<p> 
+				De la început, boieroaica de provincie Chirița, recent întoarsă de la 
+				<input type = "text" class = "form-control short-input-box" ng-model = "City" value = "{City}" />
+				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('City', 'Iași')"></span>
+				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('City', 'Iași')"></span>
+				, vrea să impună moda vremi la Bârzoieni. De aceea, călărește îmbrăcată în „amazoancă”, fumează „ca un caporal” țigări „de halva” și cochetează cu bărbați mai tineri (profesorul Șarl, Leonaș), motivându-și „modernitățile” prin expresia „dacă-i moda?”.
+			</p>
+			<p> 
+				Tot pentru că e la modă, îl plătește pe profesorul 
+				<input type = "text" class = "form-control short-input-box" ng-model = "Teacher" value = "{Teacher}" />
+				<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Teacher', 'Șarl')"></span>
+				<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Teacher', 'Șarl')"></span>
+				să-l învețe franțuzește pe fiul său Guliță, un gogoman prost crescut, care batjocorește țăranii, le ucide vițeii drept vânat și le aprinde bordeile „cu cuibucul cel de hârtie”. Deși nu este în stare să rețină prima frază dintr-un poem francez, Guliță trece cu bine examinarea făcută de mamă în prezența profesorului, oferind drept corespondent în franceză cuvinte inventate: <i> furculision, fripturision, învârtision</i>. Scena comică este memorabilă ca dovadă a falsei culturi. 
+			</p>
+		</li>
+		<li> 
+			<p> Să devină isprăvniceasă. </p>
+			<p> Ca să devină isprăvniceasă, îl trimite pe Bârzoi la Iași. În discuția cu Safta, Chirița își expune „temeiurile” ridicole ale pretenției ca Bârzoi să obțină isprăvnicia. Parvenitismul, demagogia și falsul patriotism care îi definesc monologul anticipează personajele Caragialen, precum Dandanache sau Cațavencu. </p>
+		</li>
+		<li> Să-și însoare fiul nătâng, Gulița, cu Luluța, o orfană crescută în casa ei, care va moșteni o mare avere. </li>
+	</ol>
+	<p> În personajul Chirița, parvenitismul și snobismul sunt inseparabile. Pentru atingerea unui scop (material, social etc.) este necesar un anumit comportament. Pentru atingera unui scop este necesar un anumit comportament. Parvenitul își schimbă existența, de la vestimentație și limbaj la relații de familie. </p>
+
+	<h5> Apare comicul de limbaj? </h5>
+	<p> 
+		În portretizarea Chiriței, comicul de limbaj redă inclultura și dorința de a imita vorbirea la modă, cu orice preț. Chirița mărturisește lui „monsiu Șarlă” că a învățat singură 
+		<input type = "text" class = "form-control short-input-box" ng-model = "Language" value = "{Language}" />
+		<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Language', 'franceză')"></span>
+		<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Language', 'franceză')"></span>
+		,limba de conversație în saloanele vremii. Ca dovadă, ea utilizează cu volubilitate un jargon româno-francez, care amestecă ciudat graiul neaoș moldovenesc cu „franțuzisme”, de fapt de calcuri comice construite de Chirița și urmate de explicația „nous disons comme ca en moldave”.
+	</p>
+
+	<h5> Cine sunt celelalte personaje? </h5>
+	<ul>
+		<li> 
+			Cuplul romantic Leonaș și 
+			<input type = "text" class = "form-control short-input-box" ng-model = "Name" value = "{Name}" />
+			<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "checkText('Name', 'Luluța')"></span>
+			<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!checkText('Name', 'Luluța')"></span>
+			, tineri cinstiți, reprezentanți ai ideilor noi, progresiste, are și rolul de a pune în lumină caracterul Bârzoienilor, prin antiteză. Cu toate că sunt zugrăvite caricatural, personajele negative sunt mai bine individualizate, în timp ce tinerii îndrăgostiți sunt personaje schematizate, inconsistente.
+		</li>
+		<li> Din grupul țăranilor care apar ca personaj colectiv se desprinde Ion, feciorul de casă, care comentează cu ironia și cu bunul simț al omului simplu „moda” și tertipurile stăpânilor. </li>
+	</ul>
+
+	<p> Alături de comicul de moravuri, în piesa presărată cu cântece ca în vodevilurile vremii, este prezent comicul de situații și de limbaj, valorificat în portretizarea personajelor. </p>
+
+	<h5> Cum a fost apreziată opera de critici? </h5>
+	<p> Expresie a unui fenomen tipic pentru vremea sa, boieroaica de provincie cu dorința de parvenire nu este o aperiție respingătoare sau grotescă, ci este îngroșată caricatural. Reprezentând o lume hibridă, Chirița este un personaj comic realizat din contraste:
+	<blockquote>
+		<p>  O burgheză cu dor de parvenire, dar și o inteligența deschisă pentru ideea de progres, o bunjuristă. </p>
+		<footer> G. Călinescu </footer>
+	</blockquote>
+
+</div>

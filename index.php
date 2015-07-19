@@ -8,8 +8,8 @@
     <link rel = "stylesheet" href = "css/bootstrap.css" />
 	<link rel = "stylesheet" href = "css/style.css" />
 
-	<script src = "data/creations.js"></script>
-	<script src = "data/context.js"></script>
+	<script src = "partials/creations.js"></script>
+	<script src = "partials/context.js"></script>
 
 	<script src = "js/jQuery.js"></script>
 	<script src = "js/jquery-ui.js"></script>
@@ -21,14 +21,14 @@
 
 	<script src = "js/bootstrap.js"></script>
 
-	<script src = "js/facebook-login.js"></script>
-	<script src = "js/usefulfunctions.js"></script>
-	<script src = "js/controllers.js"></script>
+	<script src = "js/facebookLogin.js"></script>
+	<script src = "js/usefulFunctions.js"></script>
+	<script src = "js/pageChanging.js"></script>
 	<script src = "js/directives.js"></script>
 	<script src = "js/creationscontrollers.js"></script>
 	<script src = "js/answers.js"></script>
 	<script src = "js/joc.js"></script>
-	<script src = "js/tememaker.js"></script>
+	<script src = "js/eseuriMaker.js"></script>
 	<script src = "js/figuriInterpreter.js"></script>
 </head>
 
@@ -59,7 +59,7 @@
 		</div> 
 	</center>
 
-	<div id = "topnavbar" onclick = "scrollToTop();">
+	<div id = "topnavbar">
 		<nav class = "navbar navbar-default" style = "height: 30px;">
 			<div class = "nav-collapse">
 			  <div class = "container-fluid">
@@ -71,7 +71,7 @@
 					</button>
 			    </div>
 
-			    <div class = "collapse navbar-collapse" id = "navbar-collapse" style = "background-color: #f8f8f8;">
+			    <div class = "collapse navbar-collapse" id = "navbar-collapse" style = "background-color: #f8f8f8; z-index: 1000;">
 					<ul class = "nav navbar-nav" style = "margin-top: 15px;">
 						<li ng-repeat = "page in pages"
 							class = "button"
@@ -81,7 +81,7 @@
 							{{page.name}}
 						</li>
 					</ul>
-			        <ul class = "nav navbar-nav navbar-right" style = "margin-top: 15px;">
+			        <ul class = "nav navbar-nav navbar-right" style = "margin-top: 15px; z-index: 1000;">
 			      		<li ng-repeat = "page in pages"
 							class = "button"
 							ng-class = "{'active': selected == page.id}"
@@ -97,82 +97,92 @@
 	</div>
 
 	<div id = "content">
-		<center> <div class = "text-block">
-		<div ng-show = "pages[selected].category == ''" ng-include = "pages[selected].details"> </div>
 
-		<div ng-show = "pages[selected].category == 'lesson'">
-			<h3> {{currentPage.name}} </h3>	<hr />
-			<h4 ng-show = "hasLider()"> Mentor: {{currentPage.lider}} </h4>
-			
-			<center>
-				<br />
-				Vreau să aflu despre: <br />
-	  			<button class = "btn btn-default subtitle-button" ng-click = "chooseView('context')">
-					<div class = "dot subtitle-dot"> 
-						<span class = "glyphicon glyphicon-cog"> </span> 
-					</div> 
-					<span class = "subtitle"> Context </span> 
-	  			</button>
-	  			<button class = "btn btn-default subtitle-button" ng-click = "chooseView('creations')">
-					<div class = "dot subtitle-dot"> 
-						<span class = "glyphicon glyphicon-book"> </span> 
-					</div> 
-					<span class = "subtitle"> Opere </span> 
-	  			</button>
-				<br />
-				<br />
-  			</center>
+		<div class = "text-block" ng-show = "editing">
+			<div ng-include = "'partials/edit.php'"></div>
+		</div>
 
-  			<div id = "alege"> </div>
+		<div ng-show = "!editing">
+			<center> 
+			<div class = "text-block">
+				<div ng-show = "pages[selected].category == ''" ng-include = "pages[selected].details"></div>
 
-			<div ng-show = "chosenView == 'context'" ng-include="currentPage.details" id = "context" style = "opacity: 0;"></div>
+				<div ng-show = "pages[selected].category == 'lesson'">
+					<h3> {{currentPage.name}} </h3>	<hr />
+					<h4 ng-show = "hasLider()"> Mentor: {{currentPage.lider}} </h4>
+					
+					<center>
+						<br /> Vreau să aflu despre: <br />
+			  			<button class = "btn btn-default subtitle-button" ng-click = "chooseView('context')">
+							<div class = "dot subtitle-dot"> 
+								<span class = "glyphicon glyphicon-cog"> </span> 
+							</div> 
+							<span class = "subtitle"> Context </span> 
+			  			</button>
+			  			<button class = "btn btn-default subtitle-button" ng-click = "chooseView('creations')">
+							<div class = "dot subtitle-dot"> 
+								<span class = "glyphicon glyphicon-book"> </span> 
+							</div> 
+							<span class = "subtitle"> Opere </span> 
+			  			</button>
+						<br /> <br />
+		  			</center>
+		  			<div id = "alege"> </div>
 
-			<div id = "creations" ng-show = "chosenView == 'creations'" style = "opacity: 0;">
-				<center> <ul id = "creationsMenu">
-					<li class = "creation" 
-						ng-repeat = "creation in currentPage.creations"
-						back-img = {{creation.img}}
-						ng-click = "openCreation(creation.id)">
-							<div class = "creation-presentation" ng-click = "openCreation(creation.id)">
-								<b> {{creation.name}} </b>
-								<br /> <br />
-								{{creation.author}}
-								<br />
-								{{creation.type}}
-							</div>
-					</li>
-					<div id = "continut"> </div>
-				</ul></center>
-				<br /> <br />
-				<div ng-show = "SelectedCreation != -1" ng-include = "SelectedCreation"> </div>
+					<div ng-show = "chosenView == 'context'">
+						<div style = "text-align: right;"> <?php include 'php/buttons.php'; ?> </div>
+						<div ng-include = "currentPage.details" id = "context" style = "opacity: 0;"></div>
+					</div>
+					<div id = "creations" ng-show = "chosenView == 'creations'" style = "opacity: 0;">
+						<center> <ul id = "creationsMenu">
+							<li class = "creation" 
+								ng-repeat = "creation in currentPage.creations"
+								back-img = {{creation.img}}
+								ng-click = "openCreation(creation.id)">
+									<div class = "creation-presentation" ng-click = "openCreation(creation.id)">
+										<b> {{creation.name}} </b>
+										<br /> <br />
+										{{creation.author}}
+										<br />
+										{{creation.type}}
+									</div>
+							</li>
+							<div id = "continut"> </div>
+						</ul></center>
+						<br /> <br />
+						<div ng-show = "SelectedCreation != -1">
+							<div style = "text-align: right;"> <?php include 'php/buttons.php'; ?> </div>
+							<div ng-include = "SelectedCreation"> </div>
+						</div>
+					</div>
+				</div>
 			</div>
 		
-		</div>
-		
-		<div ng-show = "pages[selected].category == 'buttons'">
-			<h3> {{currentPage.name}} </h3>
-			<hr />	
-			<center>
-				<p> {{currentPage.description}} </p>
-	  			<button class = "btn btn-default subtitle-button"
-					ng-repeat = "button in pages[selected].options"
-					ng-click = "chooseView2(button.address)"> 
-					<span class = "subtitle"> {{button.name}} </span>
-	  			</button>
-  				<div id = "scrollHere"> </div>
+			<div ng-show = "pages[selected].category == 'buttons'">
+				<h3> {{currentPage.name}} </h3>
+				<hr />	
+				<center>
+					<p> {{currentPage.description}} </p>
+		  			<button class = "btn btn-default subtitle-button"
+						ng-repeat = "button in pages[selected].options"
+						ng-click = "chooseView2(button.address)"> 
+						<span class = "subtitle"> {{button.name}} </span>
+		  			</button>
+	  				<div id = "scrollHere"> </div>
 
-	  			<div ng-include = "selectedPage"> </div>
-	  		</center>
-  		</div>
-
-		</div> </center> 
-	</div>
+		  			<div ng-include = "selectedPage"> </div>
+		  		</center>
+	  		</div>
+	  	</div> 
+	  	</center> 
+	</div> </div>
 
 	<div id = "back-to-top" onclick = "scrollToTop();"> <span class = "glyphicon glyphicon-arrow-up"> </span> </div>
 
 	<footer id = "page-footer">
 		© Diana Ghinea
 	</footer>
+
 </body>
 
 </html>
