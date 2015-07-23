@@ -13,7 +13,8 @@
 
 	if ($essay_found == 1) {
 		if (mysql_result($find_essay, 0, "id_user") == $id) {
-			echo "OKAY!";
+			$delete_query = "DELETE FROM essays WHERE id = " . $id_essay . " ;";
+			$deleted = mysql_query($delete_query);
 		}
 	}
 ?>

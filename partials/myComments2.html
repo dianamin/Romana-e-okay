@@ -3,6 +3,9 @@
 	<h4> Comentariile mele </h4>
 	<br />
 
+	<p> În total, ai {{essays.length}} comentarii salvate. </p>
+	<br />
+
 	<table class = "table table-striped">
 		<thead>
 			<tr> <th style = "min-width: 100px; text-align: center;"> # </th> <th> Comentariu </th> <th> </th> </tr>
@@ -12,7 +15,7 @@
 				<td style = "min-width: 100px; text-align: center;"> {{essay.index + 1}} </td>
 				<td ng-bind-html = "essay.content | to_trusted"></td>
 				<td>
-					<button class = "btn btn-danger" ng-click = "deleteEssay(essay.id)"> 
+					<button class = "btn btn-danger" ng-click = "deleteEssay(essay.index)"> 
 						<span class = "glyphicon glyphicon-remove"> </span> 
 					</button>
 				</td>
