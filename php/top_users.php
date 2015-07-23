@@ -17,7 +17,7 @@
 		$aux = array(
 			"index" => $i,
 			"name" => mysql_result($result, $i, "name"),
-			"score" => mysql_result($result, $i - 1, "Score")
+			"score" => mysql_result($result, $i, "Score")
 		);
 		array_push($users, $aux);
 		/*echo "
