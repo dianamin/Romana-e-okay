@@ -12,10 +12,27 @@
 		</thead>
 		<tbody>
 			<tr ng-repeat = "essay in essays track by $index">
-				<td style = "min-width: 100px; text-align: center;"> {{essay.index + 1}} </td>
-				<td ng-bind-html = "essay.content | to_trusted"></td>
+				<td style = "min-width: 100px; text-align: center;"> 
+					{{essay.index + 1}}
+				</td>
 				<td>
-					<button class = "btn btn-danger" ng-click = "deleteEssay(essay.index)"> 
+					<div ng-bind-html = "essay.content | to_trusted" ng-show = "!editingEssay[essay.index]"> </div>
+					<textarea class = "form-control" rows = "7" ng-show = "editingEssay[essay.index]" ng-model = "essay.edited"> </textarea>
+				</td>
+				<td>
+					<br />
+					<button class = "btn btn-primary" ng-click = "editEssay(essay.index)" ng-show = "!editingEssay[essay.index]">
+						<span class = "glyphicon glyphicon-pencil"> </span>
+					</button>
+					<button class = "btn btn-primary" ng-click = "saveEssay(essay.index)" ng-show = "editingEssay[essay.index]">
+						<span class = "glyphicon glyphicon-floppy-disk"> </span>
+					</button>
+					<br />
+					<br />
+					<button class = "btn btn-danger" ng-click = "deleteEssay(essay.index)" ng-show = "!editingEssay[essay.index]">
+						<span class = "glyphicon glyphicon-remove"> </span> 
+					</button>
+					<button class = "btn btn-danger" ng-click = "cancelEditingEssay(essay.index)" ng-show = "editingEssay[essay.index]">
 						<span class = "glyphicon glyphicon-remove"> </span> 
 					</button>
 				</td>
