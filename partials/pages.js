@@ -1,7 +1,7 @@
 var pages = [
 	{
 		"name": "Home",
-		"details": "partials/home.php",
+		"details": "partials/home.html",
 		"category": "",
 		"place": "left",
 		"id": "0"

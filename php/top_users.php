@@ -10,13 +10,25 @@
 
 	if ($num > 10) $num = 10;
 
-	for ($i = 1; $i <= $num; $i++) {	
-		echo "
+	$users = array();
+	$aux = array();
+
+	for ($i = 0; $i < $num; $i++) {	
+		$aux = array(
+			"index" => $i,
+			"name" => mysql_result($result, $i, "name"),
+			"score" => mysql_result($result, $i - 1, "Score")
+		);
+		array_push($users, $aux);
+		/*echo "
 			<tr> 
 				<td> " . $i . " </td>
 				<td> " . mysql_result($result, $i - 1, "Name") . "</td>
 				<td> " . mysql_result($result, $i - 1, "Score") . "</td>
 			</tr>
-		";
+		";*/
 	}
+
+
+	echo json_encode($users);
 ?>

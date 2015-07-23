@@ -13,17 +13,20 @@
 
 		<h5> Cine sunt top 10 utilizatori? </h5>
 
-		<table class="table">
-			<thead>
-				<tr> <th> # </th> <th> Nume </th> <th> Scor </th> </tr>
-			</thead>
-			<tbody>
-				<?php 
-					include '../php/top_users.php';
-				?>
-			</tbody>
-		</table>
-		
+		<div ng-controller = "TopUsersCtrl">
+			<table class="table">
+				<thead>
+					<tr> <th> # </th> <th> Nume </th> <th> Scor </th> </tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat = "user in users">
+						<td> {{user.index + 1}} </td>
+						<td> {{user.name}} </td>
+						<td> {{user.score}} </td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 
 
 		<h5> Cum învăț? </h5>

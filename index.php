@@ -32,6 +32,7 @@
 	<script src = "js/figuriInterpreter.js"></script>
 	<script src = "js/commentsFactory.js"></script>
 	<script src = "js/myComments.js"></script>
+	<script src = "js/topUsers.js"></script>
 </head>
 
 <body ng-controller = "PageChangeCtrl">
