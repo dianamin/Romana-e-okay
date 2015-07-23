@@ -114,9 +114,16 @@ function logout() {
     FB.getLoginStatus(function(response) {
         if (response && response.status === 'connected') {
             FB.logout(function(response) {
-                document.location.reload();
+                $.ajax({
+                    url: 'php/end_session.php',
+                    type: 'post',
+                    success: function(data) {
+                        alert(data);
+                        location.reload();
+                        userConnected = false;
+                    }
+                });
             });
         }
     });
-    userConnected = false;
 }

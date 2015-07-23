@@ -8,8 +8,8 @@
     <link rel = "stylesheet" href = "css/bootstrap.css" />
 	<link rel = "stylesheet" href = "css/style.css" />
 
-	<script src = "partials/creations.js"></script>
-	<script src = "partials/context.js"></script>
+	<script src = "partials/lessons.js"></script>
+	<script src = "partials/pages.js"></script>
 
 	<script src = "js/jQuery.js"></script>
 	<script src = "js/jquery-ui.js"></script>
@@ -183,10 +183,6 @@
 	<footer id = "page-footer">
 		© Diana Ghinea
 	</footer>
-
-	<script type="text/javascript">
-		scrollToTop();
-	</script>
 
 </body>
 

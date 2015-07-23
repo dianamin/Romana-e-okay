@@ -3,8 +3,18 @@ app.controller('myCommentsCtrl', function($scope, $http, CommentsFactory) {
     CommentsFactory.getComments().then(function(response) {
     	$scope.essays = response.data;
     });
-  //  $http({method: 'GET', url: 'php/user_homeworks.php'}).success(function(data) {
-  //  	$scope.essays = data;
-  // 	console.log($scope.essays);
-  //  });
+
+    $scope.deleteEssay = function(id) {
+    	if (confirm("Sigur vrei să ștergi comentariul?")) {
+			$(function(){
+		        $.ajax({
+		            type: "POST",
+		            url: 'php/delete_essay.php',
+		            data: ({'id': id}),
+		            success: function(data) {alert(data);}
+		        });
+	    	});
+		}
+    }
+
 });

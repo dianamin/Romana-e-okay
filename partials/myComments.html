@@ -5,12 +5,17 @@
 
 	<table class = "table table-striped">
 		<thead>
-			<tr> <th style = "min-width: 100px; text-align: center;"> # </th> <th> Comentariu </th> </tr>
+			<tr> <th style = "min-width: 100px; text-align: center;"> # </th> <th> Comentariu </th> <th> </th> </tr>
 		</thead>
 		<tbody>
 			<tr ng-repeat = "essay in essays track by $index">
 				<td style = "min-width: 100px; text-align: center;"> {{essay.index + 1}} </td>
 				<td ng-bind-html = "essay.content | to_trusted"></td>
+				<td>
+					<button class = "btn btn-danger" ng-click = "deleteEssay(essay.id)"> 
+						<span class = "glyphicon glyphicon-remove"> </span> 
+					</button>
+				</td>
 			</tr>
 		</tbody>
 	</table>
