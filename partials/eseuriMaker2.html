@@ -1,4 +1,4 @@
-<div ng-controller = "TemeMakerCtrl">
+<div ng-controller = "TemeMakerCtrl" class = "text-block">
 	<div> <center>
 		<h4> Eseu argumentativ </h4>
 
@@ -37,7 +37,7 @@
 				<tr>
 					<td> <b> Argument: </b> </td> 
 					<td>  
-						<input type = "text" class = "form-control long-input-box" ng-model = "argument.text" value = "{argument.text}" />
+						<textarea class = "form-control long-input-box" ng-model = "argument.text" value = "{argument.text}"> </textarea>
 					</td>
 				</tr>
 				<tr>
@@ -82,7 +82,7 @@
 		</p>
 	</div>
 	<div class="alert alert-success" role="alert" ng-show = "Saved">
-		Eseul a fost salvat. Îl poți vedea la „Comentariile mele”!
+		Eseul a fost salvat. Îl poți vedea la „Comentariile mele” după ce pagina se va reîncărca!
 	</div>
 
 	<button ng-show = "canBeSaved" class = "btn btn-success" ng-click = "saveHomework()"> Salvează în „Comentariile mele”! </button>

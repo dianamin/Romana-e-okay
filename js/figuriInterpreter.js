@@ -12,7 +12,7 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 		return 1;
 	}
 
-	$http({method: 'GET', url: 'data/simboluri.json'}).success(function(data, status, headers, config) {
+	$http({method: 'GET', url: 'json/simboluri.json'}).success(function(data, status, headers, config) {
 		$scope.Descriptions = data;
 		var len = $scope.Descriptions.length;
 		for (var i = 0; i < len; i++) {
@@ -164,6 +164,10 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 	$scope.saveHomework = function() {
 		addHomework($scope.Result);
 		$scope.Saved = true;
+		$scope.canBeSaved = false;
+		setTimeout(function() {
+			location.reload();
+		}, 1500);
 	}
 	
 	$scope.BuildComment = function() {

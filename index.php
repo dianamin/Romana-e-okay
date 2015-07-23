@@ -30,6 +30,8 @@
 	<script src = "js/joc.js"></script>
 	<script src = "js/eseuriMaker.js"></script>
 	<script src = "js/figuriInterpreter.js"></script>
+	<script src = "js/commentsFactory.js"></script>
+	<script src = "js/myComments.js"></script>
 </head>
 
 <body ng-controller = "PageChangeCtrl">
@@ -157,7 +159,6 @@
 					</div>
 				</div>
 			</div>
-		
 			<div ng-show = "pages[selected].category == 'buttons'">
 				<h3> {{currentPage.name}} </h3>
 				<hr />	
@@ -182,6 +183,10 @@
 	<footer id = "page-footer">
 		© Diana Ghinea
 	</footer>
+
+	<script type="text/javascript">
+		scrollToTop();
+	</script>
 
 </body>
 

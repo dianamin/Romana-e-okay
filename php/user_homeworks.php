@@ -3,33 +3,37 @@
 	
 	session_start();
 	$id = $_SESSION["id"];
+	$essays_arr = array();
+	$aux = array();
 
-
-	if ($id == 0) {
-		echo "<h5> Trebuie să te autentifici pentru a salva comentarii! </h5>";
-	}
-	else {
-		$get_comments = "
+	if ($id != 0) {
+		$get_essays = "
 			SELECT *
 			FROM essays
 			WHERE id_user = " . $id. "
 			ORDER BY id DESC";
 
-		$comments = mysql_query($get_comments);
-		$comments_count = mysql_numrows($comments);
+		$essays = mysql_query($get_essays);
+		$essays_count = mysql_numrows($essays);
 
-		if ($comments_count == 0 || $comments_count == NULL) {
-			echo "<h5> Nu ai salvat niciun comentariu încă! </h5>";
-		}
-		else {
-			echo "<table class = 'table table-striped'>";
+		if ($essays_count != 0) {
+			/*echo "<table class = 'table table-striped'>";
 			echo "<thead> <tr> <th> # </th> <th> Comentariu </th> </tr> </thead>";
-			echo "<tbody> ";
-			for ($i = 1; $i <= $comments_count; $i++) {	
-				echo "<tr> <td> " . $i . ". </td> <td style = 'text-align: justify;'> " . mysql_result($comments, $i - 1, "homework") . " </td> </tr>";
+			echo "<tbody> ";*/
+			for ($i = 0; $i < $essays_count; $i++) {	
+				$aux = array (
+					"index" => $i,
+					"id" => mysql_result($essays, $i, "id"),
+					"content" => mysql_result($essays, $i, "homework") 
+				);
+				array_push($essays_arr, $aux);
+				//echo "<tr> <td> " . $i . ". </td> <td style = 'text-align: justify;'> " . mysql_result($essays, $i - 1, "homework") . " </td> </tr>";
 			}
-			echo "</tbody>";
-			echo "</table>";
+
+			/*echo "</tbody>";
+			echo "</table>";*/
 		}
+
+		echo json_encode($essays_arr);
 	}
 ?>

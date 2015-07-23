@@ -145,6 +145,10 @@ app.controller('TemeMakerCtrl', function ($scope) {
 		}
 		addHomework(FinalEssay);
 		$scope.Saved = true;
+		$scope.canBeSaved = false;
+		setTimeout(function() {
+			location.reload();
+		}, 1500);
 	}
 
 

@@ -65,7 +65,7 @@ var pages = [
 		"options": [
 			{
 				"name": "Argumente",
-			 	"address":  "partials/eseuriMaker.html"
+			 	"address":  "partials/eseuriMaker2.html"
 			},
 			{
 			 	"name": "Figuri de stil",

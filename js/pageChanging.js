@@ -27,7 +27,7 @@ app.controller('PageChangeCtrl', function ($scope) {
 	            type: "POST",
 	            url: 'php/change_editable_page.php',
 	            data: ({'s': $scope.editablePage}),
-	            success: function(data) {}
+	            success: function(data) {alert(data);}
 	        });
 	    });
 	}
@@ -79,6 +79,7 @@ app.controller('PageChangeCtrl', function ($scope) {
 		//location.href = "#continut";
 		var position = $('#continut').offset();
 		$('html, body').animate({scrollTop: position.top}, "slow");
+		$scope.editing = false;
 	}
 
 	$scope.editPage = function(id) {

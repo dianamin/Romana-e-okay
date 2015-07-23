@@ -5,22 +5,6 @@
 
 app.factory('GameFactory', function ($http) {
 	var allData = [[]];
-	/*
-	for (var i = 0; i < pages.length; i++) {
-		idChapter = pages[i].id;
-		if (pages[i].category == "lesson") {
-			a = pages[i].creations;
-			for (var j = 0; j < a.length; j++) {
-				idLesson = a[j].id;
-				fileName = idChapter + "a" + idLesson;
-				console.log(fileName);
-				$http({method: 'GET', url: 'data/questions/' + fileName + '.json'}).success(function(data, status, headers, config) {
-					allData[fileName] = data;
-					console.log(fileName, data);
-				});
-			}
-		}
-	}*/
 
 	var read = function(page, lesson) {
 		if (lesson == -1) {
@@ -31,11 +15,12 @@ app.factory('GameFactory', function ($http) {
 		}
 
 		var fileName = pages[page].id + "a" + pages[page].creations[lesson].id;
-		$http({method: 'GET', url: 'partials/questions/' + fileName + '.json'}).success(function(data, status, headers, config) {
+		$http({method: 'GET', url: 'json/questions/' + fileName + '.json'}).success(function(data, status, headers, config) {
 			allData[fileName] = data;
 			read(page, lesson - 1);
 		});
 	}
+
 	read(pages.length, -1);
 
 	return {

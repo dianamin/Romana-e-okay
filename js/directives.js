@@ -12,3 +12,13 @@ app.directive('backImg', function(){
         });
     };
 })
+
+app.directive('ngInclude', [
+    function () {
+        return {
+            replace: true,
+            link: function (scope, element, attrs) {
+            }
+        }
+    }
+])
