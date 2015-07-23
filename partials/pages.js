@@ -78,13 +78,5 @@ var pages = [
 		],
 		"place": "right",
 		"id": "7"
-	},
-	{
-		"name": "Clase",
-		"details": "partials/clase.php",
-		"category": "",
-		"place": "right",
-		"id": "8"
 	}
-
 ]
