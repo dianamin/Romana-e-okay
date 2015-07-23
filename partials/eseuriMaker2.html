@@ -69,7 +69,7 @@
 
 	<br />
 
-	<div class = "alert alert-danger" ng-show = "notEnoughArguments()">
+	<div class = "alert alert-danger" role = "alert" ng-show = "hasErrors">
 		<span class = "glyphicon glyphicon-remove"> </span> {{errors}}
 	</div>
 	
@@ -81,7 +81,7 @@
 			{{result}}
 		</p>
 	</div>
-	<div class="alert alert-success" role="alert" ng-show = "Saved">
+	<div class = "alert alert-success" role = "alert" ng-show = "Saved">
 		Eseul a fost salvat. Îl poți vedea la „Comentariile mele” după ce pagina se va reîncărca!
 	</div>
 

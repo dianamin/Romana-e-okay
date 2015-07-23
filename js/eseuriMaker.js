@@ -159,13 +159,12 @@ app.controller('TemeMakerCtrl', function ($scope) {
 		while(l > 0 && s[l] == "." || s[l] == "!" || s[l] == "?") l--;
 		l++;
 		s = s.substring(0, l);
+
+		s = s.replace('<', '');
+		s = s.replace('>', '');
 		return s;
 	}
 
-	$scope.enoughArguments = function() {
-		//minimum two valid arguments
-		return ($scope.cons + $scope.pros >= 2);
-	}
 	$scope.notEnoughArguments = function() {
 		if (!$scope.verified) return false;
 		return ($scope.cons + $scope.pros < 2);
@@ -176,6 +175,8 @@ app.controller('TemeMakerCtrl', function ($scope) {
 		var l = $scope.Arguments.length;
 		$scope.pros = 0;
 		$scope.cons = 0;
+		$scope.results = [];
+		$scope.wordCount = 0;
 
 		// eliminating extra punctuation
 		$scope.Hypothesis = $scope.eliminateExtraPoints($scope.Hypothesis);
@@ -206,6 +207,9 @@ app.controller('TemeMakerCtrl', function ($scope) {
 		$scope.Conclusion = $scope.eliminateExtraPoints($scope.Conclusion);
 		//showing errors
 		$scope.errors = "";
+		$scope.hasErrors = false;
+		$scope.canBeSaved = false;
+
 		if ($scope.notEnoughArguments()) {
 			$scope.hasErrors = true;
 			$scope.errors += "Nu sunt suficiente argumente valide pentru a genera eseul. Trebuie minim două argumente.";
@@ -227,10 +231,11 @@ app.controller('TemeMakerCtrl', function ($scope) {
 		$scope.verified = true;
 
 		//generating essay, if everything's okay :)
-		if ($scope.enoughArguments()) {
+		if (!$scope.hasErrors) {
 			if (userConnected == true) $scope.canBeSaved = true;
 			$scope.generateEssay();
 		}
+		console.log($scope.hasErrors);
 	}
 
 	$scope.resetEssay = function() {
