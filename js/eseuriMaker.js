@@ -160,8 +160,8 @@ app.controller('TemeMakerCtrl', function ($scope) {
 		l++;
 		s = s.substring(0, l);
 
-		s = .replace(/</g, '');
-		s = .replace(/>/g, '');
+		s = s.replace(/</g, '');
+		s = s.replace(/>/g, '');
 		return s;
 	}
 
