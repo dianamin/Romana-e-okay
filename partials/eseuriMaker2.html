@@ -64,10 +64,20 @@
 	</p>
 
 	<br /> <br />
+
+	<h5> Tag-uri </h5>
+
+	<p> Dacă vrei să salvezi eseul argumentativ, îl vei putea căuta în „Comentariile mele” după aceste tag-uri. Separă-le prin virgulă! </p>
+	<p> (câmpul poate rămâne necompletat) </p>
+
+	<input class = "form-control" type = "text" ng-model = "Tags" value = "{Tags}" />
+	<br /> <br />
+	
 	<button class = "btn btn-primary" ng-click = "verifyData()"><span class = "glyphicon glyphicon-ok"></span> Construiește eseul!</button>
 	<button class = "btn btn-danger" ng-click = "resetEssay()"><span class = "glyphicon glyphicon-remove"></span> Șterge tot! </button>
 
 	<br />
+
 
 	<div class = "alert alert-danger" role = "alert" ng-show = "hasErrors">
 		<span class = "glyphicon glyphicon-remove"> </span> {{errors}}

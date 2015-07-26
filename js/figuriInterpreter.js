@@ -160,14 +160,12 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 
 	$scope.Result = "";
 
+	$scope.Tags = "";
 
 	$scope.saveHomework = function() {
-		addHomework($scope.Result);
+		addHomework($scope.Result, $scope.Tags);
 		$scope.Saved = true;
 		$scope.canBeSaved = false;
-		setTimeout(function() {
-			location.reload();
-		}, 1500);
 	}
 	
 	$scope.BuildComment = function() {
@@ -203,6 +201,7 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 	$scope.Reset = function() {
 		var deleteEverything = confirm("Sigur vrei să ștergi tot comentariul?");
 		if (deleteEverything == true) {
+			$scope.Tags = "";
 			$scope.Result = "";
 			$scope.SymbolsCount = 0;
 			$scope.IdeasCount = 0;

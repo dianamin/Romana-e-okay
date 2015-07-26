@@ -73,7 +73,11 @@ var pages = [
 			},
 			{
 				"name": "Comentariile mele",
-				"address": "partials/myComments2.html"
+				"address": "partials/myComments.html"
+			},
+			{
+				"name": "Modele",
+				"address": "partials/models.html"
 			}
 		],
 		"place": "right",

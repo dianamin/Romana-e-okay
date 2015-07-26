@@ -20,6 +20,8 @@ app.controller('TemeMakerCtrl', function ($scope) {
 	$scope.canBeSaved = false;
 	$scope.Saved = false;
 
+	$scope.Tags = "";
+
 	// Initializing mandatory arguments
 
 	$scope.Arguments[0] = {
@@ -143,12 +145,9 @@ app.controller('TemeMakerCtrl', function ($scope) {
 		for (i = 1; i < l; i++) {
 			FinalEssay = FinalEssay + " <br /> " + $scope.results[i];
 		}
-		addHomework(FinalEssay);
+		addHomework(FinalEssay, $scope.Tags);
 		$scope.Saved = true;
 		$scope.canBeSaved = false;
-		setTimeout(function() {
-			location.reload();
-		}, 1500);
 	}
 
 
@@ -162,6 +161,7 @@ app.controller('TemeMakerCtrl', function ($scope) {
 
 		s = s.replace(/</g, '');
 		s = s.replace(/>/g, '');
+		s = s.replace(/'/g, '');
 		return s;
 	}
 
@@ -172,6 +172,7 @@ app.controller('TemeMakerCtrl', function ($scope) {
 
 	$scope.verifyData = function() {
 		//verifies input data
+
 		var l = $scope.Arguments.length;
 		$scope.pros = 0;
 		$scope.cons = 0;
@@ -241,6 +242,7 @@ app.controller('TemeMakerCtrl', function ($scope) {
 	$scope.resetEssay = function() {
 		var deleteEverything = confirm("Sigur vrei să ștergi tot eseul?");
 		if (deleteEverything == true) {
+			$scope.Tags = "";
 			$scope.Theme = "";
 			$scope.Hypothesis = "";
 			$scope.Arguments = new Array();

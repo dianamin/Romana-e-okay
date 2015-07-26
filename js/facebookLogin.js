@@ -106,8 +106,11 @@ function testAPI() {
 
 function login() {
     FB.login(function(response) {
-        checkLoginState();
-    }, {scope: 'public_profile'});            
+        checkLoginState(); 
+        setTimeout(function() {
+            location.reload();
+        }, 500);         
+    }, {scope: 'public_profile'});  
 }
 
 function logout() {

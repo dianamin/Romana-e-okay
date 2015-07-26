@@ -11,6 +11,7 @@ app.controller('PageChangeCtrl', function ($scope) {
 	$scope.SelectedCreation = -1;
 	$scope.editablePage = "";
 	$scope.editing = false;
+	$scope.pageVersion = "0";
 
 	$scope.showLogo = function() {
 		return window.innerWidth >= 450;
@@ -19,17 +20,6 @@ app.controller('PageChangeCtrl', function ($scope) {
 	$scope.hasLider = function() {
 		// for contexts
 		return $scope.currentPage.lider != "-";
-	}
-
-	$scope.changeEditablePage = function() {
-		$(function(){
-	        $.ajax({
-	            type: "POST",
-	            url: 'php/change_editable_page.php',
-	            data: ({'s': $scope.editablePage}),
-	            success: function(data) {alert(data);}
-	        });
-	    });
 	}
 
 	$scope.changePage = function(x) {
@@ -53,7 +43,6 @@ app.controller('PageChangeCtrl', function ($scope) {
 		showElement(x);
 		if (x == 'context') {
 			$scope.editablePage = $scope.currentPage.details;
-			$scope.changeEditablePage();
 		}
 		var position = $('#alege').offset();
 		$('html, body').animate({scrollTop: position.top - 100}, "slow");
@@ -75,7 +64,8 @@ app.controller('PageChangeCtrl', function ($scope) {
 		console.log(creations[$scope.selected - 1][id].page);
 		$scope.SelectedCreation = creations[$scope.selected - 1][id].page;
 		$scope.editablePage = $scope.SelectedCreation;
-		$scope.changeEditablePage();
+		$scope.pageVersion = creations[$scope.selected - 1][id].version;
+		$scope.SelectedCreation = $scope.SelectedCreation + $scope.pageVersion + ".html";
 		//location.href = "#continut";
 		var position = $('#continut').offset();
 		$('html, body').animate({scrollTop: position.top}, "slow");
@@ -83,7 +73,18 @@ app.controller('PageChangeCtrl', function ($scope) {
 	}
 
 	$scope.editPage = function(id) {
-		$scope.editing = true;
+		if ($scope.chosenView == 'context') lesson = -1;
+		else lesson = id;
+		$(function(){
+	        $.ajax({
+	            type: "POST",
+	            url: 'php/change_editable_page.php',
+	            data: ({'url': $scope.editablePage, 'version': $scope.pageVersion, 'chapter': $scope.selected, 'lesson': lesson}),
+	            success: function(data) {
+	            	window.location.href = window.location.href + "admin/edit.php";
+	            }
+	        });
+	    });
 	}
 
 });

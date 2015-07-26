@@ -26,4 +26,5 @@ app.controller('EditPageCtrl', function ($scope, $http) {
 			window.location.href = "http://localhost/Romana-e-okay/";
 		}
 	}
+
 });

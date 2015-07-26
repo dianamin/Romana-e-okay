@@ -12,8 +12,8 @@
 	$id_found = mysql_numrows($id_result);
 
 	if ($id_found == 1 && mysql_result($id_result, 0, "type") == "admin") {
-		$page = "../" . $_SESSION["editable_page"];
-		$file_content = file_get_contents($page);
+		$file = "../" . $_SESSION["editable_page"] . (String)$_SESSION["version"] . ".html";
+		$file_content = file_get_contents($file);
 		echo $file_content;
 	}
 	else echo ":(";

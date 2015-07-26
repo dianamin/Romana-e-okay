@@ -7,7 +7,7 @@
 	<script src = "../js/jQuery.js"></script>
 	<script src = "../js/angular.js"></script>
     <script src = "../js/app.js"></script>
-    <script src = "../js/editPage.js"></script>
+    <script src = "../js/editPage2.js"></script>
 	<script src = "../js/sortable.js"></script>
 </head>
 

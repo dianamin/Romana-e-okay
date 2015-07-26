@@ -15,6 +15,9 @@ app.controller('myCommentsCtrl', function($scope, $http, CommentsFactory) {
 
     $scope.saveEssay = function(index) {  	
     	var edit = false;
+    	
+		$scope.essays[index].edited = $scope.essays[index].edited.replace(/'/g, '');
+
     	if ($scope.essays[index].content == $scope.essays[index].edited) edit = true;
     	else edit = confirm("Sigur vrei să modifici?");
 		

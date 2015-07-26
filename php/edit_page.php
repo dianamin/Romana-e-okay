@@ -12,7 +12,7 @@
 	$id_found = mysql_numrows($id_result);
 
 	if ($id_found == 1 && mysql_result($id_result, 0, "type") == "admin") {
-		$file = "../" . $_SESSION["editable_page"];
+		$file = "../" . $_SESSION["editable_page"] . (1 - $$_SESSION["version"]) . ".html";
 		echo $file;
 		$new_content = $_POST['new_content'];
 		file_put_contents($file, $new_content);

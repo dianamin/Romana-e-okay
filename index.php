@@ -101,11 +101,8 @@
 
 	<div id = "content">
 
-		<div class = "text-block" ng-show = "editing">
-			<div ng-include = "'partials/edit.php'"></div>
-		</div>
 
-		<div ng-show = "!editing">
+		<div>
 			<center> 
 			<div class = "text-block">
 				<div ng-show = "pages[selected].category == ''" ng-include = "pages[selected].details"></div>
