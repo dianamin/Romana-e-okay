@@ -111,7 +111,6 @@ var addHomework = function(s, t) {
             url: 'php/add_homework.php',
             data: ({'s': s, 'tags': t}),
             success: function(data) {
-            	alert (data);	
 				setTimeout(function() {
 					location.reload();
 				}, 1500);

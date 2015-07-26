@@ -25,7 +25,8 @@
 					"index" => $i,
 					"id" => mysql_result($essays, $i, "id"),
 					"content" => mysql_result($essays, $i, "homework"), 
-					"tags" => mysql_result($essays, $i, "tags")
+					"tags" => mysql_result($essays, $i, "tags"),
+					"public" => mysql_result($essays, $i, "public")
 				);
 				array_push($essays_arr, $aux);
 				//echo "<tr> <td> " . $i . ". </td> <td style = 'text-align: justify;'> " . mysql_result($essays, $i - 1, "homework") . " </td> </tr>";

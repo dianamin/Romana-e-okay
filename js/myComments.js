@@ -70,4 +70,26 @@ app.controller('myCommentsCtrl', function($scope, $http, CommentsFactory) {
 		}
     }
 
+    $scope.changeStatus = function(index) {
+    	var ok;
+  		var id = $scope.essays[index].id;
+
+    	if ($scope.essays[index].public == 0) ok = confirm("Sigur vrei să publici comentariul?");
+    	else ok = confirm("Sigur vrei ca acest comentariu să devină privat?");
+
+    	if (ok) {
+    		$(function(){
+		        $.ajax({
+		            type: "POST",
+		            url: 'php/change_essay_status.php',
+		            data: ({'id': id}),
+		            success: function(data) {
+    					$scope.essays[index].public = 1 - $scope.essays[index].public;
+    					$scope.$apply();
+		            }
+		        });
+	    	});
+    	}
+    }
+
 });

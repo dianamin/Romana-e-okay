@@ -1,4 +1,4 @@
-<div ng-controller = "FiguriInterpreterCtrl" class = "text-block">
+<div ng-controller = "FiguriInterpreterCtrl" class = "text-block" style = "text-align: center;">
 	<h4> Figuri de stil 1.0</h4>
 
 	<h5> Care este figura de stil? </h5>
@@ -10,7 +10,7 @@
 	</p>
 	
 	<h5> Ce tip de figură e? </h5>
-
+	<center>
 	<table>
 		<tr>
 			<td> <input type = "radio" name = "FigureType" ng-model = "FigureType" class = "big-dot" value = "o repetiție" /> </td>
@@ -53,6 +53,7 @@
 			<td> o comparație </td>
 		</tr>
 	</table>
+	</center>
 
 	<h5> Care este ideea principală? (sentiment, stare etc.) </h5>
 	<p> 
@@ -153,7 +154,7 @@
 	</div>
 
 	<br />
-
+	<br />
 	<button class = "btn btn-danger" ng-click = "Reset()"><span class = "glyphicon glyphicon-remove"></span> Șterge tot! </button>
-
+	</center>
 </div>

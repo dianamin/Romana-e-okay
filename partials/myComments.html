@@ -22,7 +22,13 @@
 					<textarea class = "form-control" rows = "7" ng-show = "editingEssay[essay.index]" ng-model = "essay.edited"> </textarea>
 
 					<br /> <br />
-					<p> <b> Tag-uri: </b> {{essay.tags}} </p>
+					<p> <b> <span class = "glyphicon glyphicon-tags"> </span> </b> {{essay.tags}} </p>
+					<br />
+					<p> 
+						<b> Public: </b> 
+						<span class = "glyphicon glyphicon-ok" ng-show = "essay.public == 1"> </span> 
+						<span class = "glyphicon glyphicon-remove" ng-show = "essay.public == 0"> </span> 
+					</p>
 				</td>
 				<td>
 					<br />
@@ -39,6 +45,14 @@
 					</button>
 					<button class = "btn btn-danger" ng-click = "cancelEditingEssay(essay.index)" ng-show = "editingEssay[essay.index]">
 						<span class = "glyphicon glyphicon-remove"> </span> 
+					</button>
+					<br />
+					<br />
+					<button class = "btn btn-default" ng-click = "changeStatus(essay.index)" ng-show = "essay.public == 0">
+						<span class = "glyphicon glyphicon-send"> </span>
+					</button>
+					<button class = "btn btn-default" ng-click = "changeStatus(essay.index)" ng-show = "essay.public == 1">
+						<span class = "glyphicon glyphicon-ban-circle"> </span>
 					</button>
 				</td>
 			</tr>
