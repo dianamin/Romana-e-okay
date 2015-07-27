@@ -140,7 +140,7 @@
 								ng-repeat = "creation in creations"
 								ng-show = "creation.chapter_id == currentPage.id"
 								back-img = {{creation.img}}
-								ng-click = "openCreation(creation.id)">
+								ng-click = "openCreation(creation.index)">
 									<div class = "creation-presentation" ng-click = "openCreation(creation.id)">
 										<b> {{creation.name}} </b>
 										<br /> <br />

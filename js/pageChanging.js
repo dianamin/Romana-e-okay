@@ -67,13 +67,12 @@ app.controller('PageChangeCtrl', function ($scope, $http) {
 		$scope.editing = false;
 	}
 
-	$scope.openCreation = function(id) {
+	$scope.openCreation = function(index) {
 		//opens Creation
 		$scope.editing = false;
-		console.log(creations[$scope.selected - 1][id].page);
-		$scope.SelectedCreation = creations[$scope.selected - 1][id].page;
-		$scope.editablePage = $scope.SelectedCreation;
-		$scope.pageVersion = creations[$scope.selected - 1][id].version;
+		$scope.SelectedCreation = creations[index].page;
+		$scope.editablePage = index;
+		$scope.pageVersion = creations[index].version;
 		$scope.SelectedCreation = $scope.SelectedCreation + $scope.pageVersion + ".html";
 		//location.href = "#continut";
 		var position = $('#continut').offset();

@@ -16,6 +16,7 @@
 
 	for ($i = 0; $i < $num; $i++) {	
 		$aux = array(
+			"index" => $i,
 			"global_id" => mysql_result($result, $i, "global_id"),
 			"id" => mysql_result($result, $i, "id"),
 			"chapter_id" => mysql_result($result, $i, "chapter_id"),
