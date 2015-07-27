@@ -1,5 +1,4 @@
 <?php
 	session_start();
-	$_SESSION["editable_page"] = $_POST['url'];
-	$_SESSION["version"] = $_POST['version'];
+	$_SESSION["editable_page"] = $_POST['lesson_id'];
 ?>

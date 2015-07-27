@@ -19,7 +19,6 @@ app.controller('PageChangeCtrl', function ($scope, $http) {
 	$http({method: 'GET', url: 'php/get_lessons.php'}).success(function(data) {
 		creations = data;
 		$scope.creations = data;
-		console.log(data);
 	});
 
 	$scope.showLogo = function() {
@@ -50,9 +49,6 @@ app.controller('PageChangeCtrl', function ($scope, $http) {
 		$scope.chosenView = x;
 		$scope.SelectedCreation = -1;
 		showElement(x);
-		if (x == 'context') {
-			$scope.editablePage = $scope.currentPage.details;
-		}
 		var position = $('#alege').offset();
 		$('html, body').animate({scrollTop: position.top - 100}, "slow");
 		$scope.editing = false;
@@ -80,8 +76,8 @@ app.controller('PageChangeCtrl', function ($scope, $http) {
 		$scope.editing = false;
 	}
 
-	$scope.editPage = function(id) {
-		var id = creations[index].global_id;
+	$scope.editPage = function() {
+		var id = $scope.creations[$scope.editablePage].global_id;
 		$(function(){
 	        $.ajax({
 	            type: "POST",
