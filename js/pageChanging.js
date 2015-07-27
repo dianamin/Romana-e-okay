@@ -2,8 +2,9 @@
 	Contains PageChangeCtrl - for changing views.
 */
 
+var creations = [];
 
-app.controller('PageChangeCtrl', function ($scope) {
+app.controller('PageChangeCtrl', function ($scope, $http) {
 	$scope.selected = 0;
 	$scope.pages = pages;
 	$scope.currentPage = pages[0];
@@ -12,6 +13,14 @@ app.controller('PageChangeCtrl', function ($scope) {
 	$scope.editablePage = "";
 	$scope.editing = false;
 	$scope.pageVersion = "0";
+
+	$scope.creations = [];
+
+	$http({method: 'GET', url: 'php/get_lessons.php'}).success(function(data) {
+		creations = data;
+		$scope.creations = data;
+		console.log(data);
+	});
 
 	$scope.showLogo = function() {
 		return window.innerWidth >= 450;

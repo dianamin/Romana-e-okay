@@ -29,6 +29,5 @@
 		";*/
 	}
 
-
 	echo json_encode($users);
 ?>

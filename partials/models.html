@@ -1,0 +1,24 @@
+<div ng-controller = "PublishedEssaysCtrl" class = "text-block">
+	<h4> Comentarii publicate </h4>
+
+	<label> Caută: <input ng-model = "Search" class = "form-control"> </label>
+	<table class = "table table-striped">
+		<thead>
+			<tr> <th style = "min-width: 100px; text-align: center;"> # </th> <th> Comentariu </th> </tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat = "essay in essays | filter:Search  track by essay.id">
+				<td style = "min-width: 100px; text-align: center;"> 
+					{{essay.index + 1}}.
+				</td>
+				<td>
+					<div ng-bind-html = "essay.content | to_trusted" ng-show = "!editingEssay[essay.index]"> </div>
+					<textarea class = "form-control" rows = "7" ng-show = "editingEssay[essay.index]" ng-model = "essay.edited"> </textarea>
+
+					<br /> <br />
+					<p> <b> <span class = "glyphicon glyphicon-tags"> </span> </b> {{essay.tags}} </p>
+				</td>
+		</tbody>
+	</table>
+
+</div>

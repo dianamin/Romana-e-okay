@@ -8,7 +8,7 @@
     <link rel = "stylesheet" href = "css/bootstrap.css" />
 	<link rel = "stylesheet" href = "css/style.css" />
 
-	<script src = "partials/lessons.js"></script>
+	<!-- <script src = "partials/lessons.js"></script> -->
 	<script src = "partials/pages.js"></script>
 
 	<script src = "js/jQuery.js"></script>
@@ -33,6 +33,7 @@
 	<script src = "js/commentsFactory.js"></script>
 	<script src = "js/myComments.js"></script>
 	<script src = "js/topUsers.js"></script>
+	<script src = "js/publishedEssays.js"></script>
 </head>
 
 <body ng-controller = "PageChangeCtrl">
@@ -136,7 +137,8 @@
 					<div id = "creations" ng-show = "chosenView == 'creations'" style = "opacity: 0;">
 						<center> <ul id = "creationsMenu">
 							<li class = "creation" 
-								ng-repeat = "creation in currentPage.creations"
+								ng-repeat = "creation in creations"
+								ng-show = "creation.chapter_id == currentPage.id"
 								back-img = {{creation.img}}
 								ng-click = "openCreation(creation.id)">
 									<div class = "creation-presentation" ng-click = "openCreation(creation.id)">

@@ -15,7 +15,7 @@
 		<tbody>
 			<tr ng-repeat = "essay in essays | filter:Search  track by essay.id">
 				<td style = "min-width: 100px; text-align: center;"> 
-					{{essay.index + 1}}
+					{{essay.index + 1}}.
 				</td>
 				<td>
 					<div ng-bind-html = "essay.content | to_trusted" ng-show = "!editingEssay[essay.index]"> </div>

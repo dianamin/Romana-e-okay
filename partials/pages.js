@@ -10,7 +10,6 @@ var pages = [
 		"name": "Pașoptismul",
 		"lider": "Ion Heliade-Rădulescu / Mihail Kogălniceanu",
 		"details": "partials/pasoptism.html",
-		"creations" : creations[0],
 		"category": "lesson",
 		"place": "left",
 		"id": "1"
@@ -19,7 +18,6 @@ var pages = [
 		"name": "Junimea",
 		"lider": "Titu Maiorescu",
 		"details": "partials/junimea.html",
-		"creations" : creations[1],
 		"category": "lesson",
 		"place": "left",
 		"id": "2"
@@ -28,7 +26,6 @@ var pages = [
 		"name": "Posteminescianism",
 		"lider": "-",
 		"details": "partials/posteminescianism.html",
-		"creations" : creations[2],
 		"category": "lesson",
 		"place": "left",
 		"id": "3"
@@ -37,7 +34,6 @@ var pages = [
 		"name": "Perioada interbelică",
 		"lider": "Eugen Lovinescu",
 		"details": "partials/interbelica.html",
-		"creations" : creations[3],
 		"category": "lesson",
 		"place": "left",
 		"id": "4"
@@ -46,7 +42,6 @@ var pages = [
 		"name": "Perioada postbelică",
 		"lider": "-",
 		"details": "partials/postbelica.html",
-		"creations" : creations[4],
 		"category": "lesson",
 		"place": "left",
 		"id": "5"
