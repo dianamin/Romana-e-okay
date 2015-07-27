@@ -7,14 +7,15 @@ app.controller('EditPageCtrl', function ($scope, $http) {
 	});
 
 	$scope.edit = function() {
-		if ($scope.pageContent == $scope.editedPage || confirm("Sigur vrei să salvezi modificările?")) {
+		if (confirm("Sigur vrei să salvezi modificările?")) {
 			$(function(){
 		        $.ajax({
 		            type: "POST",
 		            url: '../php/edit_page.php',
 		            data: ({'new_content': $scope.editedPage}),
 		            success: function(data) {
-						window.location.href = "http://localhost/Romana-e-okay/";
+		            	alert(data);
+						//window.location.href = "http://localhost/Romana-e-okay/";
 					}
 		        });
 		    });
