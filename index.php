@@ -131,7 +131,6 @@
 		  			<div id = "alege"> </div>
 
 					<div ng-show = "chosenView == 'context'">
-						<div style = "text-align: right;"> <?php include 'php/buttons.php'; ?> </div>
 						<div ng-include = "currentPage.details" id = "context" style = "opacity: 0;"></div>
 					</div>
 					<div id = "creations" ng-show = "chosenView == 'creations'" style = "opacity: 0;">

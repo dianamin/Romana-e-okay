@@ -81,13 +81,12 @@ app.controller('PageChangeCtrl', function ($scope, $http) {
 	}
 
 	$scope.editPage = function(id) {
-		if ($scope.chosenView == 'context') lesson = -1;
-		else lesson = id;
+		var id = creations[index].global_id;
 		$(function(){
 	        $.ajax({
 	            type: "POST",
 	            url: 'php/change_editable_page.php',
-	            data: ({'url': $scope.editablePage, 'version': $scope.pageVersion, 'chapter': $scope.selected, 'lesson': lesson}),
+	            data: ({'lesson_id': id}),
 	            success: function(data) {
 	            	window.location.href = window.location.href + "admin/edit.php";
 	            }

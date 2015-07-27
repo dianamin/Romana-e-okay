@@ -48,7 +48,7 @@ var pages = [
 	},
 	{
 		"name": "Test",
-		"details": "partials/joc.html",
+		"details": "partials/joc2.html",
 		"category": "",
 		"place": "right",
 		"id": "6"

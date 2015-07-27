@@ -14,8 +14,9 @@
 
 			<br />
 			<br />
-			<select multiple ng-model = "SelectedLessons" class="form-control long-input-box">
-				<option ng-repeat = "lesson in Chapters[SelectedChapter].creations" ng-value = "lesson.id">
+
+			<select multiple ng-model = "SelectedLessons" class = "form-control long-input-box">
+				<option ng-repeat = "lesson in Lessons" ng-show = "lesson.chapter_id == SelectedChapter" ng-value = "lesson.id">
 					{{lesson.name}}
 				</option>
 			</select>

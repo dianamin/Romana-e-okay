@@ -6,22 +6,19 @@
 app.factory('GameFactory', function ($http) {
 	var allData = [[]];
 
-	var read = function(page, lesson) {
-		if (lesson == -1) {
-			page--;
-			while(page >= 0 && pages[page].category != "lesson") page--;
-			if (page < 0) return;
-			lesson = pages[page].creations.length - 1;
-		}
+	var read = function(index) {
 
-		var fileName = pages[page].id + "a" + pages[page].creations[lesson].id;
+		if (index == -1) return;
+
+		var fileName = creations[index].chapter_id + "a" + creations[index].id;
+		console.log(fileName);
 		$http({method: 'GET', url: 'json/questions/' + fileName + '.json'}).success(function(data, status, headers, config) {
 			allData[fileName] = data;
-			read(page, lesson - 1);
+			read(index - 1);
 		});
 	}
 
-	read(pages.length, -1);
+	read(creations.length - 1);
 
 	return {
 		getQuestions: function(id) {
@@ -43,6 +40,7 @@ app.controller('JocCtrl', function ($scope, $http, GameFactory) {
 	] 
 
 	$scope.Chapters = pages;
+	$scope.Lessons = creations;
 	$scope.SelectedChapter = "";
 	$scope.SelectedLessons = [];
 	$scope.Lost = false;
