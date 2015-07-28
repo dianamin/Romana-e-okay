@@ -4,10 +4,12 @@ adminApp.controller('AdminListCtrl', function ($scope, $http) {
 		$scope.list = data;
 	});
 
+	$scope.anyChosenLesson = false;
 	$scope.chosenLesson;
 	
 	$scope.choseLesson = function(lesson) {
 		$scope.chosenLesson = lesson;
+		$scope.anyChosenLesson = true;
 	}
 
 	//thanks stack overflow (http://jsfiddle.net/wizzud/wYndk/)

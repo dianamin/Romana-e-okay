@@ -9,6 +9,10 @@ adminApp.config(['$routeProvider',
         templateUrl: 'list.html',
         controller: 'AdminListCtrl'
       }).
+      when('/edit', {
+        templateUrl: 'edit.html',
+        controller: 'EditPageCtrl'
+      }).
       when('/create', {
         templateUrl: 'create.html',
         controller: 'EditPageCtrl'

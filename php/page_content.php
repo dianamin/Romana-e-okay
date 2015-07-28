@@ -13,7 +13,7 @@
 	$id_found = mysql_numrows($id_result);
 
 	if ($id_found == 1 && mysql_result($id_result, 0, "type") == "admin") {
-		$page_id = $_SESSION["editable_page"];
+		$page_id = 1;//$_SESSION["editable_page"];
 
 		$find_page_query = "
 			SELECT *
@@ -34,7 +34,6 @@
 			$prev_file = "../" . $url . $prev_version . ".html";
 			$prev_file_content = file_get_contents($prev_file);
 
-			
 			$content = array(
 				"name" => $name,
 				"current" => $file_content,

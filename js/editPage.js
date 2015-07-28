@@ -11,9 +11,17 @@ adminApp.controller('EditPageCtrl', function ($scope, $http) {
 		$scope.editedPage = data.current;
 		$scope.prevPage = data.previous;
 		$scope.name = data.name;
-
 		$scope.$apply();
-		CodeMirror();
+		editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
+		    lineNumbers: true,
+		    mode:  "xml"
+		});
+		$('.CodeMirror').resizable({
+			resize: function() {
+				editor.setSize($(this).width(), $(this).height());
+			}
+		});
+
 	});
 
 	$scope.edit = function() {

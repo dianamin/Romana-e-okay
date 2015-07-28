@@ -10,13 +10,24 @@
 		</div> 
 	</div>
 	<div id = 'right'>
-		<div style = "padding: 20px; text-align: justify;">
-			<h2> {{chosenLesson.name}} </h2>
-			<table class = "table">
-				<tr> <td> <b> Tip </b> </td> <td> {{chosenLesson.type}} </td> </tr>
-				<tr> <td> <b> Imagine </b> </td> <td> {{chosenLesson.img}} </td> </tr>
-				<tr> <td> <b> Sursă </b> </td> <td> {{chosenLesson.page + chosenLesson.version + ".html"}} </td> </r> 
-			</table>
+		<div style = "padding: 20px;">
+			<div ng-show = "anyChosenLesson == false">
+				<h3> Alege o lecție pentru a vedea detaliile, pentru a o edita sau pentru a o șterge. </h3>
+			</div>
+			<div ng-show = "anyChosenLesson == true">
+				<h2> {{chosenLesson.name}} </h2>
+				<table class = "table">
+					<tr> <td> <b> Tip </b> </td> <td> {{chosenLesson.type}} </td> </tr>
+					<tr> <td> <b> Imagine </b> </td> <td> {{chosenLesson.img}} </td> </tr>
+					<tr> <td> <b> Sursă </b> </td> <td> {{chosenLesson.page + chosenLesson.version + ".html"}} </td> </tr> 
+				</table>
+
+				<a href = "#/edit">
+					<button class = 'btn btn-primary'> <span class = 'glyphicon glyphicon-pencil'> </span> </button>
+				</a>
+				<button class = 'btn btn-danger'> <span class = 'glyphicon glyphicon-remove'> </span> </button>
+
+			</div>
 		</div>
 	</div>
 	<div id = 'bar'></div>

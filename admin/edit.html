@@ -1,1 +1,12 @@
-edit
+<h3> Lecția editată: {{name}} </h3>
+<br />
+<textarea id = "editor" ng-model = "editedPage"> </textarea>
+<br /> <br />
+<center>
+	<button class = "btn btn-primary" ng-click = "edit()">
+		<span class = "glyphicon glyphicon-floppy-disk"> </span>
+	</button>
+	<button class = "btn btn-danger" ng-click = "cancel()">
+		<span class = "glyphicon glyphicon-remove"> </span> 
+	</button>
+</center>
