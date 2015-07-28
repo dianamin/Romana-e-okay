@@ -2,7 +2,6 @@
 	include 'db_connect.php';
 	session_start();
 	$id = $_SESSION["id"];
-	mysql_query("set names 'utf8'");
 
 	$find_id_query = "
 		SELECT *
@@ -25,7 +24,6 @@
 
 
 		if ($page_found == 1) {
-			$name = mysql_result($page_result, 0, "name");
 			$url = mysql_result($page_result, 0, "page");
 			$version = mysql_result($page_result, 0, "version");
 			$file = "../" . $url . $version . ".html";
@@ -34,9 +32,34 @@
 			$prev_file = "../" . $url . $prev_version . ".html";
 			$prev_file_content = file_get_contents($prev_file);
 
+
+			$crt_file = fopen("../" . $url . $version . ".html", "r");
+			$prev_file = fopen("../" . $url . $prev_version . ".html", "r");
+
+			$crt = array();
+			$prev = array();
+			$result = array();
+
+			while(!feof($crt_file)) {
+				array_push($crt, fgets($crt_file));
+			}
+			fclose($crt_file);
+
+			while(!feof($prev_file)) {
+				array_push($prev, fgets($prev_file));
+			}
+			fclose($prev_file);
 			
+			$index_crt = count($crt);
+			$index_prev = count ($prev);
+
+			while ($i >= 0 && $j >= 0) {
+
+			}
+
+
+
 			$content = array(
-				"name" => $name,
 				"current" => $file_content,
 				"previous" => $prev_file_content
 			);

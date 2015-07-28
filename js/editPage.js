@@ -1,11 +1,28 @@
+var editor;
+
 app.controller('EditPageCtrl', function ($scope, $http) {
 	$scope.pageContent = "Loading";
 	$scope.editedPage = "Loading";
 	$scope.prevPage = "Loading";
+	$scope.name = "Loading";
+
 	$http({method: 'GET', url: '../php/page_content.php'}).success(function(data) {
 		$scope.pageContent = data.current;
 		$scope.editedPage = data.current;
 		$scope.prevPage = data.previous;
+		$scope.name = data.name;
+
+		$scope.$apply();
+		editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
+		    lineNumbers: true,
+		    mode:  "xml"
+		});
+		$('.CodeMirror').resizable({
+		  resize: function() {
+		    editor.setSize($(this).width(), $(this).height());
+		  }
+		});
+		editor.refresh();
 	});
 
 	$scope.edit = function() {
@@ -33,7 +50,7 @@ app.controller('EditPageCtrl', function ($scope, $http) {
 
 
 //thanks stack overflow (http://jsfiddle.net/wizzud/wYndk/)
-$(function(){
+/*$(function(){
     var previous = parseInt($('#previous').width(), 10),
         current = parseInt($('#current').width(), 10),
         bar = parseInt($('#bar').width(), 10),
@@ -57,4 +74,4 @@ $(function(){
         drag : splitter
     });
 
-});
+});*/
