@@ -1,9 +1,11 @@
 app.controller('EditPageCtrl', function ($scope, $http) {
-	$scope.pageContent = "";
-	$scope.editedPage = "";
+	$scope.pageContent = "Loading";
+	$scope.editedPage = "Loading";
+	$scope.prevPage = "Loading";
 	$http({method: 'GET', url: '../php/page_content.php'}).success(function(data) {
-		$scope.pageContent = data;
-		$scope.editedPage = data;
+		$scope.pageContent = data.current;
+		$scope.editedPage = data.current;
+		$scope.prevPage = data.previous;
 	});
 
 	$scope.edit = function() {
@@ -14,8 +16,7 @@ app.controller('EditPageCtrl', function ($scope, $http) {
 		            url: '../php/edit_page.php',
 		            data: ({'new_content': $scope.editedPage}),
 		            success: function(data) {
-		            	alert(data);
-						//window.location.href = "http://localhost/Romana-e-okay/";
+		            	window.location.href = "http://localhost/Romana-e-okay/";
 					}
 		        });
 		    });
@@ -27,5 +28,33 @@ app.controller('EditPageCtrl', function ($scope, $http) {
 			window.location.href = "http://localhost/Romana-e-okay/";
 		}
 	}
+
+});
+
+
+//thanks stack overflow (http://jsfiddle.net/wizzud/wYndk/)
+$(function(){
+    var previous = parseInt($('#previous').width(), 10),
+        current = parseInt($('#current').width(), 10),
+        bar = parseInt($('#bar').width(), 10),
+        minw = parseInt((previous + current + bar) * 10 / 100, 10),
+        offset = $('#container').offset(),
+        splitter = function(event, ui){
+            var aw = parseInt(ui.position.left),
+                bw = previous + current - aw;
+            //set widths and information...
+            $('#previous').css({width : aw});
+            $('#current').css({width : bw});
+        };
+    $('#bar').draggable({
+        axis : 'x',
+        containment : [
+            offset.left + minw,
+            offset.top,
+            offset.left + previous + current - minw,
+            offset.top + $('#container').height()
+            ],
+        drag : splitter
+    });
 
 });

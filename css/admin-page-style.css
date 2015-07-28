@@ -1,0 +1,38 @@
+#container {
+    width: 90%;
+    height: 60%;
+    margin: 0 auto;
+    position: relative;
+}
+
+#previous, #current, #bar {
+    position: absolute;
+    top: 0;
+    height: 100%;
+}
+
+#previous {
+    left: 0;
+    width: 40%;
+}
+
+#current {
+    right: 0;
+    width: 59%;
+}
+
+#bar {
+    left: 40%;
+    width: 1%;
+    background-color: #cc0000;
+    cursor: move;
+}
+
+#previous div, #current div {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+

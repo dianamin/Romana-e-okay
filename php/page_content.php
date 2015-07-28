@@ -28,7 +28,15 @@
 			$version = mysql_result($page_result, 0, "version");
 			$file = "../" . $url . $version . ".html";
 			$file_content = file_get_contents($file);
-			echo $file_content;
+			$prev_version = 1 - $version;
+			$prev_file = "../" . $url . $prev_version . ".html";
+			$prev_file_content = file_get_contents($prev_file);
+
+			$content = array(
+				"current" => $file_content,
+				"previous" => $prev_file_content
+			);
+			echo json_encode($content);
 		}
 	}
 	else echo ":(";
