@@ -1,4 +1,4 @@
-<html ng-app = "app">
+<html ng-app = "adminApp">
 <head>
 	<meta charset = "utf-8" />
 	<title> Editing </title>
@@ -6,12 +6,14 @@
     <link rel = "stylesheet" href = "../css/bootstrap.css" />
     <link rel = "stylesheet" href = "../css/admin-page-style.css" />
     <link rel = "stylesheet" href = "../css/codemirror.css" />
+
 	<script src = "../js/jQuery.js"></script>
 	<script src = "../js/jquery-ui.js"></script>
+
 	<script src = "../js/angular.js"></script>
-    <script src = "../js/app.js"></script>
-    <script src = "../js/editPage.js"></script>
 	<script src = "../js/sortable.js"></script>
+	<script src = "../js/angular-route.js"></script>
+	
 	<script src = "../js/codemirror.js"></script>
     <script src = "../addon/edit/matchbrackets.js"></script>
 	<script src = "../mode/javascript.js"></script>
@@ -19,21 +21,30 @@
 	<script src = "../mode/htmlmixed.js"></script>
 	<script src = "../mode/xml.js"></script>
 
+
+	<script src = "../js/highlighter.js"></script>
+    <script src = "../js/admin_app.js"></script>
+    <script src = "../js/editPage.js"></script>
+
 </head>
 
-<body ng-controller = "EditPageCtrl">
+<body>
 	<h1> Româna e okay - admin view </h1>
 	<hr />
 	<br />
 
+
+  <ng-view></ng-view>
+
 	<!-- <textarea id = "editor" ng-model = "editedPage"> </textarea> -->
 
+	<!--
 	
 	<div ng-show = "editedPage == ':('">
 		<center> <h2> Nu ai permisiunea necesară pentru a edita pagina. </h2> </center>
 	</div>
 	<div ng-show = "editedPage != ':('">
-		<!--<div id = 'container'>
+		<div id = 'container'>
 		    <div id = 'previous'>
 		    	<div style = "position: relative; padding: 10px;">
 		    		<h2> Previous Version </h2>
@@ -47,7 +58,7 @@
 				</div> 
 		    </div>
 		    <div id = 'bar'></div>
-		</div> -->
+		</div> 
 		<h3> Lecția editată: {{name}} </h3>
 		<br />
 		<textarea id = "editor" ng-model = "editedPage"> </textarea>
@@ -61,9 +72,8 @@
 			</button>
 		</center>
 	</div>
-
+	-->
 
 </body>
-	<script src = "../js/highlighter.js"></script>
 
 </html>

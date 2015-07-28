@@ -1,5 +1,5 @@
 /**
- * @license AngularJS v1.4.0-build.3954+sha.9dfa949
+ * @license AngularJS v1.4.3
  * (c) 2010-2015 Google, Inc. http://angularjs.org
  * License: MIT
  */
@@ -75,12 +75,12 @@ function $RouteProvider() {
    *
    *    Object properties:
    *
-   *    - `controller` – `{(string|function()=}` – Controller fn that should be associated with
+   *    - `controller` â€“ `{(string|function()=}` â€“ Controller fn that should be associated with
    *      newly created scope or the name of a {@link angular.Module#controller registered
    *      controller} if passed as a string.
-   *    - `controllerAs` – `{string=}` – An identifier name for a reference to the controller.
+   *    - `controllerAs` â€“ `{string=}` â€“ An identifier name for a reference to the controller.
    *      If present, the controller will be published to scope under the `controllerAs` name.
-   *    - `template` – `{string=|function()=}` – html template as a string or a function that
+   *    - `template` â€“ `{string=|function()=}` â€“ html template as a string or a function that
    *      returns an html template as a string which should be used by {@link
    *      ngRoute.directive:ngView ngView} or {@link ng.directive:ngInclude ngInclude} directives.
    *      This property takes precedence over `templateUrl`.
@@ -90,7 +90,7 @@ function $RouteProvider() {
    *      - `{Array.<Object>}` - route parameters extracted from the current
    *        `$location.path()` by applying the current route
    *
-   *    - `templateUrl` – `{string=|function()=}` – path or function that returns a path to an html
+   *    - `templateUrl` â€“ `{string=|function()=}` â€“ path or function that returns a path to an html
    *      template that should be used by {@link ngRoute.directive:ngView ngView}.
    *
    *      If `templateUrl` is a function, it will be called with the following parameters:
@@ -108,7 +108,7 @@ function $RouteProvider() {
    *      {@link ngRoute.$route#$routeChangeError $routeChangeError} event is fired. The map object
    *      is:
    *
-   *      - `key` – `{string}`: a name of a dependency to be injected into the controller.
+   *      - `key` â€“ `{string}`: a name of a dependency to be injected into the controller.
    *      - `factory` - `{string|function}`: If `string` then it is an alias for a service.
    *        Otherwise if function, then it is {@link auto.$injector#invoke injected}
    *        and the return value is treated as the dependency. If the result is a promise, it is
@@ -116,7 +116,7 @@ function $RouteProvider() {
    *        `ngRoute.$routeParams` will still refer to the previous route within these resolve
    *        functions.  Use `$route.current.params` to access the new route parameters, instead.
    *
-   *    - `redirectTo` – {(string|function())=} – value to update
+   *    - `redirectTo` â€“ {(string|function())=} â€“ value to update
    *      {@link ng.$location $location} path with and trigger route redirection.
    *
    *      If `redirectTo` is a function, it will be called with the following parameters:
@@ -412,7 +412,9 @@ function $RouteProvider() {
      * @name $route#$routeChangeSuccess
      * @eventType broadcast on root scope
      * @description
-     * Broadcasted after a route dependencies are resolved.
+     * Broadcasted after a route change has happened successfully.
+     * The `resolve` dependencies are now available in the `current.locals` property.
+     *
      * {@link ngRoute.directive:ngView ngView} listens for the directive
      * to instantiate the controller and render the view.
      *
@@ -596,9 +598,8 @@ function $RouteProvider() {
                 if (angular.isFunction(templateUrl)) {
                   templateUrl = templateUrl(nextRoute.params);
                 }
-                templateUrl = $sce.getTrustedResourceUrl(templateUrl);
                 if (angular.isDefined(templateUrl)) {
-                  nextRoute.loadedTemplateUrl = templateUrl;
+                  nextRoute.loadedTemplateUrl = $sce.valueOf(templateUrl);
                   template = $templateRequest(templateUrl);
                 }
               }
@@ -752,22 +753,26 @@ ngRouteModule.directive('ngView', ngViewFillContentFactory);
           <a href="Book/Gatsby">Gatsby</a> |
           <a href="Book/Gatsby/ch/4?key=value">Gatsby: Ch4</a> |
           <a href="Book/Scarlet">Scarlet Letter</a><br/>
+
           <div class="view-animate-container">
             <div ng-view class="view-animate"></div>
           </div>
           <hr />
+
           <pre>$location.path() = {{main.$location.path()}}</pre>
           <pre>$route.current.templateUrl = {{main.$route.current.templateUrl}}</pre>
           <pre>$route.current.params = {{main.$route.current.params}}</pre>
           <pre>$routeParams = {{main.$routeParams}}</pre>
         </div>
       </file>
+
       <file name="book.html">
         <div>
           controller: {{book.name}}<br />
           Book Id: {{book.params.bookId}}<br />
         </div>
       </file>
+
       <file name="chapter.html">
         <div>
           controller: {{chapter.name}}<br />
@@ -775,6 +780,7 @@ ngRouteModule.directive('ngView', ngViewFillContentFactory);
           Chapter Id: {{chapter.params.chapterId}}
         </div>
       </file>
+
       <file name="animations.css">
         .view-animate-container {
           position:relative;
@@ -784,15 +790,19 @@ ngRouteModule.directive('ngView', ngViewFillContentFactory);
           height:40px;
           overflow:hidden;
         }
+
         .view-animate {
           padding:10px;
         }
+
         .view-animate.ng-enter, .view-animate.ng-leave {
           -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
           transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+
           display:block;
           width:100%;
           border-left:1px solid black;
+
           position:absolute;
           top:0;
           left:0;
@@ -800,6 +810,7 @@ ngRouteModule.directive('ngView', ngViewFillContentFactory);
           bottom:0;
           padding:10px;
         }
+
         .view-animate.ng-enter {
           left:100%;
         }
@@ -810,6 +821,7 @@ ngRouteModule.directive('ngView', ngViewFillContentFactory);
           left:-100%;
         }
       </file>
+
       <file name="script.js">
         angular.module('ngViewExample', ['ngRoute', 'ngAnimate'])
           .config(['$routeProvider', '$locationProvider',
@@ -825,6 +837,7 @@ ngRouteModule.directive('ngView', ngViewFillContentFactory);
                   controller: 'ChapterCtrl',
                   controllerAs: 'chapter'
                 });
+
               $locationProvider.html5Mode(true);
           }])
           .controller('MainCtrl', ['$route', '$routeParams', '$location',
@@ -841,7 +854,9 @@ ngRouteModule.directive('ngView', ngViewFillContentFactory);
             this.name = "ChapterCtrl";
             this.params = $routeParams;
           }]);
+
       </file>
+
       <file name="protractor.js" type="protractor">
         it('should load and compile correct template', function() {
           element(by.linkText('Moby: Ch1')).click();
@@ -849,7 +864,9 @@ ngRouteModule.directive('ngView', ngViewFillContentFactory);
           expect(content).toMatch(/controller\: ChapterCtrl/);
           expect(content).toMatch(/Book Id\: Moby/);
           expect(content).toMatch(/Chapter Id\: 1/);
+
           element(by.partialLinkText('Scarlet')).click();
+
           content = element(by.css('[ng-view]')).getText();
           expect(content).toMatch(/controller\: BookCtrl/);
           expect(content).toMatch(/Book Id\: Scarlet/);

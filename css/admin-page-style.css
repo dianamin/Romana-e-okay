@@ -5,30 +5,31 @@
     position: relative;
 }
 
-#previous, #current, #bar {
+#left, #right, #bar {
     position: absolute;
     top: 0;
     height: 100%;
 }
 
-#previous {
+#left {
     left: 0;
-    width: 40%;
+    width: 23%;
+    overflow-y: scroll;
 }
 
-#current {
+#right {
     right: 0;
-    width: 59%;
+    width: 75%;
 }
 
 #bar {
-    left: 40%;
+    left: 23%;
     width: 1%;
     background-color: #428bca;
     cursor: move;
 }
 
-#previous div, #current div {
+#left div, #right div {
     position: absolute;
     left: 0;
     width: 100%;
