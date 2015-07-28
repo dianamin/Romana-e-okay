@@ -12,7 +12,7 @@
 	$id_found = mysql_numrows($id_result);
 
 	if ($id_found == 1 && mysql_result($id_result, 0, "type") == "admin") {
-		$page_id = $_SESSION["editable_page"];
+		$page_id = $_POST['lesson_id'];
 
 		$find_page_query = "
 			SELECT *
@@ -28,6 +28,7 @@
 			$version = 1 - mysql_result($page_result, 0, "version");
 			$file = "../" . $url . $version . ".html";
 			$new_content = $_POST['new_content'];
+			echo $new_content;
 			file_put_contents($file, $new_content);
 			$update_version_query = "
 			UPDATE lessons

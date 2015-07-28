@@ -28,13 +28,14 @@ adminApp.controller('EditPageCtrl', function ($scope, $http, $routeParams) {
 
 	$scope.edit = function() {
 		if (confirm("Sigur vrei să salvezi modificările?")) {
+			$scope.editedPage = editor.getValue();
 			$(function(){
 		        $.ajax({
 		            type: "POST",
 		            url: '../php/edit_page.php',
-		            data: ({'new_content': $scope.editedPage}),
+		            data: ({'new_content': $scope.editedPage, 'lesson_id': $scope.lessonId}),
 		            success: function(data) {
-		            	window.location.href = "http://localhost/Romana-e-okay/";
+		            	location.reload();
 					}
 		        });
 		    });
