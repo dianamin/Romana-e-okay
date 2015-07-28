@@ -13,7 +13,7 @@
 	$id_found = mysql_numrows($id_result);
 
 	if ($id_found == 1 && mysql_result($id_result, 0, "type") == "admin") {
-		$page_id = 1;//$_SESSION["editable_page"];
+		$page_id = file_get_contents("php://input");
 
 		$find_page_query = "
 			SELECT *

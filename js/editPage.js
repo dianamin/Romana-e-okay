@@ -1,12 +1,15 @@
 var editor;
 
-adminApp.controller('EditPageCtrl', function ($scope, $http) {
+adminApp.controller('EditPageCtrl', function ($scope, $http, $routeParams) {
 	$scope.pageContent = "Loading";
 	$scope.editedPage = "Loading";
 	$scope.prevPage = "Loading";
 	$scope.name = "Loading";
 
-	$http({method: 'GET', url: '../php/page_content.php'}).success(function(data) {
+	$scope.lessonId =  $routeParams.lessonId;
+
+	$http.post('../php/page_content.php' , $scope.lessonId)
+    .success(function(data){
 		$scope.pageContent = data.current;
 		$scope.editedPage = data.current;
 		$scope.prevPage = data.previous;
@@ -21,8 +24,7 @@ adminApp.controller('EditPageCtrl', function ($scope, $http) {
 				editor.setSize($(this).width(), $(this).height());
 			}
 		});
-
-	});
+    })
 
 	$scope.edit = function() {
 		if (confirm("Sigur vrei să salvezi modificările?")) {

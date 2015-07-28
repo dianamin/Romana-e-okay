@@ -9,7 +9,7 @@ adminApp.config(['$routeProvider',
         templateUrl: 'list.html',
         controller: 'AdminListCtrl'
       }).
-      when('/edit', {
+      when('/edit/:lessonId', {
         templateUrl: 'edit.html',
         controller: 'EditPageCtrl'
       }).
