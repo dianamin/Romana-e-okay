@@ -19,6 +19,21 @@ adminApp.controller('AdminListCtrl', function ($scope, $http) {
 		$scope.anyChosenLesson = true;
 	}
 
+	$scope.delete = function(lesson) {
+		if (confirm("Sigur vrei să ștergi lecția?")) {
+			$(function(){
+		        $.ajax({
+		            type: "POST",
+		            url: '../php/delete_page.php',
+		            data: ({ 'id': lesson.global_id }),
+		            success: function(data) {
+		            	location.reload();
+					}
+		        });
+		    });
+		}
+	}
+
 	//thanks stack overflow (http://jsfiddle.net/wizzud/wYndk/)
 	$(function(){
 	    var left = parseInt($('#left').width(), 10),
