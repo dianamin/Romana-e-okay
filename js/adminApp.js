@@ -15,7 +15,7 @@ adminApp.config(['$routeProvider',
       }).
       when('/create', {
         templateUrl: 'create.html',
-        controller: 'EditPageCtrl'
+        controller: 'CreatePageCtrl'
       }).
       when('/phones/:phoneId', {
         templateUrl: 'partials/phone-detail.html',

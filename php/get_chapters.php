@@ -7,7 +7,7 @@
 
 	$chapters_result = mysql_query($chapters_query);
 	$chapters_count = mysql_numrows($chapters_result);
-
+	
 	$chapters = array();
 	for ($i = 0; $i < $chapters_count; $i++) {
 		$aux = array(

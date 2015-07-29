@@ -31,7 +31,7 @@ adminApp.controller('EditPageCtrl', function ($scope, $http, $routeParams) {
 
 	$scope.edit = function() {
 		if (confirm("Sigur vrei să salvezi modificările?")) {
-			$scope.editedPage = editor.getValue();
+			$scope.lesson.current = editor.getValue();
 			$(function(){
 		        $.ajax({
 		            type: "POST",
@@ -46,7 +46,6 @@ adminApp.controller('EditPageCtrl', function ($scope, $http, $routeParams) {
 		            		'new_author': $scope.lesson.author
 		            	}),
 		            success: function(data) {
-		            	alert(data);
 		            	window.location.href = "#/";
 					}
 		        });

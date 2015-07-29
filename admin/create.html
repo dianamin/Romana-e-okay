@@ -1,1 +1,46 @@
-create
+
+<table class = "table">
+	<tbody>
+		<tr>
+			<td> <label> Titlu </label> </td>
+			<td> <input class = "form-control" type = "text" ng-model = "lesson.name" /> </td>
+			<td rowspan = "4"> <label> Imagine </label> </td>
+			<td rowspan = "4"> 
+				<input class = "form-control" type = "text" ng-model = "lesson.img" />
+				<center> <img class = "thumbnail" style = "height: 150px;" ng-src = "{{lesson.img}}" /> </center> 
+			</td> 
+		</tr>
+		<tr>
+			<td> <label> Autor </label> </td>
+			<td> 
+				<input class = "form-control" type = "text" ng-model = "lesson.author" />
+			</td>
+		</tr>
+		<tr>
+			<td> <label> Capitol </label> </td>
+			<td> 
+				<select class = "form-control" ng-model = "lesson.chapterId" ng-options = "chapter.id as chapter.name for chapter in chapters">
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td> <label> Tip </label> </td>
+			<td>
+				<input class = "form-control" type = "text" ng-model = "lesson.type"/>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<textarea id = "editor" ng-value = "lesson.content">
+	<div ng-controller = "GeneralCheckerCtrl"></div> 
+</textarea>
+
+<center>
+	<button class = "btn btn-primary" ng-click = "save()">
+		<span class = "glyphicon glyphicon-floppy-disk"> </span>
+	</button>
+	<button class = "btn btn-danger" ng-click = "cancel()">
+		<span class = "glyphicon glyphicon-remove"> </span> 
+	</button>
+</center>
