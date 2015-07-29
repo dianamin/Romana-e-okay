@@ -34,6 +34,13 @@
 
 <textarea id = "editor" ng-model = "lesson.current"> </textarea>
 
+
+<div class = "alert alert-danger" ng-show = "error != ''">
+	<span class = "glyphicon glyphicon-exclamation-sign"></span>
+	<b> {{error}} </b>
+</div>
+
+
 <center>
 	<button class = "btn btn-primary" ng-click = "edit()">
 		<span class = "glyphicon glyphicon-floppy-disk"> </span>

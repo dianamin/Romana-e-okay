@@ -86,8 +86,7 @@ adminApp.controller('CreatePageCtrl', function ($scope, $http, $routeParams) {
 		            		'new_page': pageName
 		            	}),
 		            success: function(data) {
-		            	alert(data);
-		            	//window.location.href = "#/";
+		            	window.location.href = "#/";
 					}
 		        });
 		    });
