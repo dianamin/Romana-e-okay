@@ -32,6 +32,11 @@
 	</tbody>
 </table>
 
+<div class = "alert alert-danger" ng-show = "error != ''">
+	<span class = "glyphicon glyphicon-exclamation-sign"></span>
+	<b> {{error}} </b>
+</div>
+
 <textarea id = "editor" ng-value = "lesson.content">
 	<div ng-controller = "GeneralCheckerCtrl"></div> 
 </textarea>

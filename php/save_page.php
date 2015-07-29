@@ -23,12 +23,17 @@
 		$new_type = $_POST['new_type'];
 		$new_name = $_POST['new_name'];
 		$new_author = $_POST['new_author'];
-		file_put_contents($file, $new_content);
+		$new_page = $_POST['new_page'];
 
-		$new_page = "abc.html";
+		$path = "../" . $new_page . "0.html";
+		$file = fopen($path, "w");
+		fwrite($file, $new_content);
+		echo $path;
 
-		echo "abc";
+		$file2 = fopen("../" . $new_page . "1.html", "w");
+		fwrite($file2, $new_content);
 
+		echo $new_content ."abc";
 		$insert_query = "
 			INSERT INTO lessons (global_id, id, chapter_id, name, author, type, img, page, version)
 			VALUES (NULL, 1, '$new_chapter', '$new_name', '$new_author', '$new_type', '$new_img', '$new_page', 0)";

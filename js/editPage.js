@@ -54,7 +54,6 @@ adminApp.controller('EditPageCtrl', function ($scope, $http, $routeParams) {
 	}
 
 	$scope.cancel = function() {
-		$scope.editedPage = editor.getValue();
 		if (confirm("Sigur vrei sa renunți la modificări?")) {
 			window.location.href = "#/";
 		}
