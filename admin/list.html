@@ -17,9 +17,12 @@
 			<div ng-show = "anyChosenLesson == true">
 				<h2> {{chosenLesson.name}} </h2>
 				<table class = "table">
+					<tr> <td> <b> Autor </b> </td> <td> {{chosenLesson.author}} </td> </tr>
+					<tr> <td> <b> Perioadă </b> </td> <td> {{chapters[chosenLesson.chapter_id].name}}
 					<tr> <td> <b> Tip </b> </td> <td> {{chosenLesson.type}} </td> </tr>
 					<tr> <td> <b> Imagine </b> </td> <td> {{chosenLesson.img}} </td> </tr>
 					<tr> <td> <b> Sursă </b> </td> <td> {{chosenLesson.page + chosenLesson.version + ".html"}} </td> </tr> 
+					<tr> <td> <b> Imagine </b> </td> <td> <img class = "thumbnail" style = "height: 150px;" ng-src = "../{{chosenLesson.img}}" /> </td> </tr>
 				</table>
 
 				<a href = "#/edit">

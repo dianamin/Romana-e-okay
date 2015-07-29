@@ -37,7 +37,11 @@
 			$content = array(
 				"name" => $name,
 				"current" => $file_content,
-				"previous" => $prev_file_content
+				"previous" => $prev_file_content,
+				"chapterId" => mysql_result($page_result, 0, "chapter_id"),
+				"img" => mysql_result($page_result, 0, "img"),
+				"type" => mysql_result($page_result, 0, "type"),
+				"author" => mysql_result($page_result, 0, "author")
 			);
 			echo json_encode($content);
 			

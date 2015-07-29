@@ -3,6 +3,7 @@
 	session_start();
 	$id = $_SESSION["id"];
 
+	mysql_query("set names 'utf8'");
 	$find_id_query = "
 		SELECT *
 		FROM users
@@ -28,14 +29,26 @@
 			$version = 1 - mysql_result($page_result, 0, "version");
 			$file = "../" . $url . $version . ".html";
 			$new_content = $_POST['new_content'];
-			echo $new_content;
+			$new_chapter = $_POST['new_chapter'];
+			$new_img = $_POST['new_img'];
+			$new_type = $_POST['new_type'];
+			$new_name = $_POST['new_name'];
+			$new_author = $_POST['new_author'];
 			file_put_contents($file, $new_content);
-			$update_version_query = "
+			$update_query = "
 			UPDATE lessons
-			SET version = ". $version . "
+			SET chapter_id = ". $new_chapter .",
+				name = '" . $new_name . "',
+				author = '" . $new_author . "',
+				type = '" . $new_type . "',
+				img = '" . $new_img . "',
+				version = ". $version . "
 			WHERE global_id = " . $page_id . ";";
-			$version_result = mysql_query($update_version_query);
-			echo $file;
+
+			//echo $update_query;
+
+			$update_result = mysql_query($update_query);
+			//echo $file;
 		}
 	}
 ?>

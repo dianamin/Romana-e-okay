@@ -1,19 +1,22 @@
 var editor;
 
 adminApp.controller('EditPageCtrl', function ($scope, $http, $routeParams) {
-	$scope.pageContent = "Loading";
-	$scope.editedPage = "Loading";
-	$scope.prevPage = "Loading";
-	$scope.name = "Loading";
+	$scope.lesson = {};
+
 
 	$scope.lessonId =  $routeParams.lessonId;
+	
+	$scope.chapters = [];
+
+	$http({method: 'GET', url: '../php/get_chapters.php'}).success(function(data) {
+		$scope.chapters = data;
+	});
+	
 
 	$http.post('../php/page_content.php' , $scope.lessonId)
     .success(function(data){
-		$scope.pageContent = data.current;
-		$scope.editedPage = data.current;
-		$scope.prevPage = data.previous;
-		$scope.name = data.name;
+		$scope.lesson = data;
+		
 		$scope.$apply();
 		editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
 		    lineNumbers: true,
@@ -33,9 +36,18 @@ adminApp.controller('EditPageCtrl', function ($scope, $http, $routeParams) {
 		        $.ajax({
 		            type: "POST",
 		            url: '../php/edit_page.php',
-		            data: ({'new_content': $scope.editedPage, 'lesson_id': $scope.lessonId}),
+		            data: ({
+		            		'new_content': $scope.lesson.current, 
+		            		'lesson_id': $scope.lessonId, 
+		            		'new_chapter': $scope.lesson.chapterId,
+		            		'new_img': $scope.lesson.img,
+		            		'new_type': $scope.lesson.type,
+		            		'new_name': $scope.lesson.name,
+		            		'new_author': $scope.lesson.author
+		            	}),
 		            success: function(data) {
-		            	location.reload();
+		            	alert(data);
+		            	window.location.href = "#/";
 					}
 		        });
 		    });
@@ -44,7 +56,7 @@ adminApp.controller('EditPageCtrl', function ($scope, $http, $routeParams) {
 
 	$scope.cancel = function() {
 		$scope.editedPage = editor.getValue();
-		if ($scope.pageContent == $scope.editedPage || confirm("Sigur vrei sa renunți la modificări?")) {
+		if (confirm("Sigur vrei sa renunți la modificări?")) {
 			window.location.href = "#/";
 		}
 	}
