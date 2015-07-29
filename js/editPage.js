@@ -43,8 +43,9 @@ adminApp.controller('EditPageCtrl', function ($scope, $http, $routeParams) {
 	}
 
 	$scope.cancel = function() {
+		$scope.editedPage = editor.getValue();
 		if ($scope.pageContent == $scope.editedPage || confirm("Sigur vrei sa renunți la modificări?")) {
-			window.location.href = "http://localhost/Romana-e-okay/";
+			window.location.href = "#/";
 		}
 	}
 

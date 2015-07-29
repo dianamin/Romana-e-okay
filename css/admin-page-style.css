@@ -24,7 +24,7 @@
 
 #bar {
     left: 23%;
-    width: 1%;
+    width: 10px;
     background-color: #428bca;
     cursor: move;
 }
