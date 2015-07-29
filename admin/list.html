@@ -1,12 +1,19 @@
-
 <div id = 'container'>
 	<div id = 'left'>
 		<center>
 			<a href = "#/create"> <button class = 'btn btn-success'> <span class = 'glyphicon glyphicon-plus'> </span> </button> </a>
+			<br /> <br /> <br />
+			<table class = "table">
+				<tr> 
+					<td> <span class = "glyphicon glyphicon-search"></span> </td> 
+					<td> <input type = "text" class = "form-control" ng-model = "search"/> </td>
+				</tr>
+			</table>
 		</center>
+
 		<div style = "position: relative; padding: 10px;">
 			<ul class = "list-group">
-				<li ng-repeat = "lesson in list" class = "list-group-item" ng-click = "choseLesson(lesson)">
+				<li ng-repeat = "lesson in list | filter:{'name':  search}" class = "list-group-item" ng-click = "choseLesson(lesson)">
 					{{lesson.name}}
 				</li>
 			</ul>
