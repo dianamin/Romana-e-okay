@@ -78,16 +78,7 @@ app.controller('PageChangeCtrl', function ($scope, $http) {
 
 	$scope.editPage = function() {
 		var id = $scope.creations[$scope.editablePage].global_id;
-		$(function(){
-	        $.ajax({
-	            type: "POST",
-	            url: 'php/change_editable_page.php',
-	            data: ({'lesson_id': id}),
-	            success: function(data) {
-	            	window.location.href = window.location.href + "admin/edit.php";
-	            }
-	        });
-	    });
+		window.location.href += "admin/#/edit/" + id;
 	}
 
 });

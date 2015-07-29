@@ -15,7 +15,6 @@
 		if (mysql_result($user_result, 0, "type") == "admin") {
 			echo "
 				<button class = 'btn btn-primary' ng-click = 'editPage()'> <span class = 'glyphicon glyphicon-pencil'> </span> </button>
-				<button class = 'btn btn-danger'> <span class = 'glyphicon glyphicon-remove'> </span> </button>
 			";
 		}
 	}
