@@ -4,7 +4,7 @@
 	$select_changes_query = "
 		SELECT *
 		FROM changes
-		ORDER BY CONVERT(DATE, date) DESC;
+		ORDER BY date DESC;
 	";
 
 	$select_changes = mysql_query($select_changes_query);
