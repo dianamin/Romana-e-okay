@@ -4,7 +4,7 @@
 	<label> Caută: <input ng-model = "Search" class = "form-control"> </label>
 	<table class = "table table-striped">
 		<thead>
-			<tr> <th style = "min-width: 100px; text-align: center;"> # </th> <th> Comentariu </th> </tr>
+			<tr> <th style = "min-width: 100px; text-align: center;"> # </th> <th> Comentariu </th> <th> </th> </tr>
 		</thead>
 		<tbody>
 			<tr ng-repeat = "essay in essays | filter:Search  track by essay.id">
@@ -42,6 +42,11 @@
 							</td>
 						</tr>
 					</table>
+				</td>
+				<td>
+					<button class = "btn btn-primary" ng-show = "userConnected" ng-click = "unpublish(essay)">
+						<span class = 'glyphicon glyphicon-ban-circle'> </span>
+					</button>
 				</td>
 		</tbody>
 	</table>

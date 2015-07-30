@@ -32,4 +32,24 @@ app.controller('PublishedEssaysCtrl', function($scope, $http) {
 	        });
     	});
 	}
+
+	$scope.unpublish = function(essay) {
+		$(function(){
+	        $.ajax({
+	            type: "POST",
+	            url: 'php/unpublish_essay.php',
+	            data: ({'id_essay': essay.id}),
+	            success: function(data) {
+	            	alert(data);
+	            	if (data == "Comentariul a fost retras!") {
+	            		$scope.essays.splice(essay.index, 1);
+		            	for (var i = 0; i < $scope.essays.length; i++) {
+		            		$scope.essays[i].index = i;
+		            	}
+		            	$scope.$apply();
+	            	}
+	            }
+	        });
+    	});
+	}
 });

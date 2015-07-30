@@ -18,7 +18,7 @@
 			else $status = 0;
 			$edit_query = "	UPDATE essays
 							SET public = '". $status . "'
-							WHERE id = " . $id_essay . ";";;
+							WHERE id = " . $id_essay . ";";
 			echo $edit_query;
 			$edit = mysql_query($edit_query);
 		}
