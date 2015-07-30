@@ -6,6 +6,8 @@ app.controller('PublishedEssaysCtrl', function($scope, $http) {
 	});
 
 	$scope.userConnected = userConnected;
+	
+	$scope.minRating = 0;
 
 
 	$scope.rate = function(index) {

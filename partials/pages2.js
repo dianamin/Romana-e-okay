@@ -77,5 +77,12 @@ var pages = [
 		],
 		"place": "right",
 		"id": "7"
+	},
+	{
+		"name": "Contul meu",
+		"details": "partials/myAccount.html",
+		"category": "",
+		"id": "8",
+		"place": "none"
 	}
 ]

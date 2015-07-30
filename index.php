@@ -9,10 +9,11 @@
 	<link rel = "stylesheet" href = "css/style.css" />
 
 	<!-- <script src = "partials/lessons.js"></script> -->
-	<script src = "partials/pages.js"></script>
+	<script src = "partials/pages2.js"></script>
 
 	<script src = "js/jQuery.js"></script>
 	<script src = "js/jquery-ui.js"></script>
+	<script src = "js/jquery.waypoints.js"></script>
 
 	<script src = "js/angular.js"></script>
 	<script src = "js/app.js"> </script>
@@ -35,14 +36,15 @@
 	<script src = "js/myComments.js"></script>
 	<script src = "js/topUsers.js"></script>
 	<script src = "js/publishedEssays.js"></script>
+	<script src = "js/myAccount.js"></script>
 </head>
 
 <body ng-controller = "PageChangeCtrl">
-	<header ng-click = "changePage(0)"> 
+	<header> 
 		<div class = "title">
 			<h1 style = "font-size: 45px;"> Româna e okay! </h1>
 		</div>
-		<div id = "login-panel" ng-show = "showLogo()">
+		<div id = "login-panel" ng-show = "showLogo()" ng-click = "changePage(8)">
 			<div>
 				<div id = "profile-photo"> </div>
 				<div id = "profile-data"> 

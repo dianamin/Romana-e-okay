@@ -1,13 +1,26 @@
 <div ng-controller = "PublishedEssaysCtrl" class = "text-block">
 	<h4> Comentarii publicate </h4>
 
-	<label> Caută: <input ng-model = "Search" class = "form-control"> </label>
+	<div class = "row">
+		<div class = "col-md-6 col-sm-6">
+			<label> Caută: </label> 
+			<br />
+			<input ng-model = "Search" class = "form-control" />
+		</div>
+		<div class = "col-md-6 col-sm-6">
+			<label> Nota minimă: {{minRating}} </label> 
+			<br />
+			<input ng-model = "minRating" class = "form-control" type = "range" min = "0" max = "10" />
+			
+		</div>
+	</div>
+
 	<table class = "table table-striped">
 		<thead>
 			<tr> <th style = "min-width: 100px; text-align: center;"> # </th> <th> Comentariu </th> <th> </th> </tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat = "essay in essays | filter:Search  track by essay.id">
+			<tr ng-repeat = "essay in essays | filter:Search  track by essay.id" ng-show = "essay.average >= minRating">
 				<td style = "min-width: 100px; text-align: center;"> 
 					{{essay.index + 1}}.
 				</td>

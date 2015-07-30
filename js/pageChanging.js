@@ -3,6 +3,7 @@
 */
 
 var creations = [];
+var progress = [];
 
 app.controller('PageChangeCtrl', function ($scope, $http) {
 	$scope.selected = 0;
@@ -20,6 +21,13 @@ app.controller('PageChangeCtrl', function ($scope, $http) {
 		creations = data;
 		$scope.creations = data;
 	});
+
+
+	$http({method: 'GET', url: 'php/get_user_progress.php'}).success(function(data) {
+		progress = data;
+		console.log(progress);
+	});
+
 
 	$scope.showLogo = function() {
 		return window.innerWidth >= 450;
@@ -80,6 +88,16 @@ app.controller('PageChangeCtrl', function ($scope, $http) {
 		var id = $scope.creations[$scope.editablePage].global_id;
 		window.location.href += "admin/#/edit/" + id;
 	}
+
+	$(function() {
+       $('footer').waypoint(function() {
+			if (userConnected) {
+
+			}
+		}, {
+          	offset: '100%'
+        });
+    });
 
 });
 
