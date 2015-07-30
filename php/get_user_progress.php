@@ -31,7 +31,8 @@
 				"name" => $lesson_name,
 				"id" => $lesson_id,
 				"read" => $read,
-				"index" => $i
+				"index" => $i,
+				"type" => mysql_result($lessons, $i, "type")
 			);
 			array_push($lessons_arr, $aux);
 		}
