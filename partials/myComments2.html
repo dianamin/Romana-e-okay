@@ -29,6 +29,16 @@
 						<span class = "glyphicon glyphicon-ok" ng-show = "essay.public == 1"> </span> 
 						<span class = "glyphicon glyphicon-remove" ng-show = "essay.public == 0"> </span> 
 					</p>
+					<p ng-show = "essay.public == 1">
+						<label> Nota medie: </label>
+						
+						<rating ng-model = "essay.average" 
+							max = "10" 
+							readonly = "true"
+						    on-hover = "hoveringOver(value)" 
+						    on-leave = "overStar = null" />
+						<span> {{essay.average}} stele - {{essay.ratedBy}} utilizatori </span>
+					</p>
 				</td>
 				<td>
 					<br />
