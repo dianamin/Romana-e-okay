@@ -1,0 +1,25 @@
+<center>
+	<table> 
+		<tr>
+			<td> Alege lecția: </td>
+			<td> 
+  				<select class = "form-control" ng-options = "lesson as lesson.name for lesson in list" ng-model = "chosenLesson" ng-change = "chooseLesson()"></select>
+			</td>
+		</tr>
+	</table>
+</center>
+
+<div style = "padding: 20px;">
+	<div ng-show = "!anyChosenLesson">
+		<h3> Alege o lecție pentru a edita fișierul cu întrebări corespunzător. </h3>
+	</div>
+	<div ng-show = "anyChosenLesson">
+		<div style = "float: right; margin-top: 10px;">
+			<button class = 'btn btn-primary' ng-click = "saveQuestions()"> <span class = 'glyphicon glyphicon-floppy-disk'> </span> </button> 
+		</div>
+
+		<h2> {{chosenLesson.name}} </h2>
+		
+		<textarea id = "editor" ng-model = "content"> </textarea>
+	</div>
+</div>

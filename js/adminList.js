@@ -19,7 +19,7 @@ adminApp.controller('AdminListCtrl', function ($scope, $http) {
 	$scope.anyChosenLesson = false;
 	$scope.chosenLesson;
 	
-	$scope.choseLesson = function(lesson) {
+	$scope.chooseLesson = function(lesson) {
 		$scope.chosenLesson = lesson;
 		$scope.anyChosenLesson = true;
 	}
