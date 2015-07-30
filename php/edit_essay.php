@@ -14,9 +14,10 @@
 
 	if ($essay_found == 1) {
 		if (mysql_result($find_essay, 0, "id_user") == $id) {
-			$edit_query = "	UPDATE essays
-							SET homework = '". $content . "'
-							WHERE id = " . $id_essay . ";";;
+			$edit_query = "	
+				UPDATE essays
+				SET homework = '". $content . "'
+				WHERE id = " . $id_essay . ";";
 			$edit = mysql_query($edit_query);
 		}
 	}

@@ -8,15 +8,22 @@
 	</div>
 
 	<div ng-show = "userConnected">
-		<table class = "table">
-			<thead>
-				<tr> <th> # </th> <th> Numele lecției </th> <th> </th> </tr>
-			</thead>
-			<tbody>
-				<tr>
-
-				</tr>
-			</tbody>
-		</table>
+		<center> 
+			<table class = "table" style = "width: 80%">
+				<thead>
+					<tr> <th> # </th> <th> Numele lecției </th> <th> </th> </tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat = "lesson in lessons">
+						<td> {{lesson.index + 1}} </td>
+						<td> {{lesson.name}} </td>
+						<td>
+							<span class = "glyphicon glyphicon-unchecked" ng-show = "lesson.read != 1"> </span>
+							<span class = "glyphicon glyphicon-check" ng-show = "lesson.read == 1" ng-click = "unread(lesson)"> </span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</center>
 	</div>
 </div>
