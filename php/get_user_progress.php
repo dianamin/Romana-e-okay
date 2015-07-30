@@ -30,7 +30,8 @@
 			$aux = array(
 				"name" => $lesson_name,
 				"id" => $lesson_id,
-				"read" => $read 
+				"read" => $read,
+				"index" => $i
 			);
 			array_push($lessons_arr, $aux);
 		}

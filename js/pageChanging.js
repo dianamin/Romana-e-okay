@@ -12,7 +12,6 @@ app.controller('PageChangeCtrl', function ($scope, $http) {
 	$scope.chosenView = "none";
 	$scope.SelectedCreation = -1;
 	$scope.editablePage = "";
-	$scope.editing = false;
 	$scope.pageVersion = "0";
 
 	$scope.creations = [];
@@ -48,7 +47,6 @@ app.controller('PageChangeCtrl', function ($scope, $http) {
 			$scope.chosenView = "none";
 			$scope.SelectedCreation = -1;
 		}
-		$scope.editing = false;
 		//$('html, body').animate({scrollTop: 0}, "slow");
 	}
 
@@ -59,7 +57,6 @@ app.controller('PageChangeCtrl', function ($scope, $http) {
 		showElement(x);
 		var position = $('#alege').offset();
 		$('html, body').animate({scrollTop: position.top - 100}, "slow");
-		$scope.editing = false;
 	}
 
 	$scope.selectedPage = -1;
@@ -78,26 +75,30 @@ app.controller('PageChangeCtrl', function ($scope, $http) {
 		$scope.editablePage = index;
 		$scope.pageVersion = creations[index].version;
 		$scope.SelectedCreation = $scope.SelectedCreation + $scope.pageVersion + ".html";
-		//location.href = "#continut";
 		var position = $('#continut').offset();
 		$('html, body').animate({scrollTop: position.top}, "slow");
 		$scope.editing = false;
+
+		if (userConnected) {
+			if (progress[$scope.creations[index].index].read == 0) {	
+				var id = $scope.creations[index].global_id;	
+				$(function(){
+			        $.ajax({
+			            type: "POST",
+			            url: 'php/mark_as_read.php',
+			            data: ({'lesson': id}),
+			            success: function(data) {
+			    			progress[$scope.creations[index].index].read = 1;
+			            }
+			        });
+			    });
+			}
+		}
 	}
 
 	$scope.editPage = function() {
 		var id = $scope.creations[$scope.editablePage].global_id;
 		window.location.href += "admin/#/edit/" + id;
 	}
-
-	$(function() {
-       $('footer').waypoint(function() {
-			if (userConnected) {
-
-			}
-		}, {
-          	offset: '100%'
-        });
-    });
-
 });
 
