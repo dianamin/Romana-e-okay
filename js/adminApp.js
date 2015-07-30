@@ -29,6 +29,10 @@ adminApp.config(['$routeProvider',
             templateUrl: 'reports.html',
             controller: 'ReportedEssaysCtrl'
         }).
+        when('/symbols', {
+            templateUrl: 'symbols.html',
+            controller: 'SymbolsCtrl'
+        }).
         otherwise({
             redirectTo: 'panel.html',
             controller: 'AdminPanelCtrl'

@@ -16,7 +16,9 @@
 		$aux = array(
 			"name" => mysql_result($result, $i, "symbol"),
 			"description" => mysql_result($result, $i, "description"),
-			"noDiacritics" => ""
+			"noDiacritics" => "",
+			"id" => mysql_result($result, $i, "id"),
+			"index" => $i
 		);
 		array_push($symbols, $aux);
 	}

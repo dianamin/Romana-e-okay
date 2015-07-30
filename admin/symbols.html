@@ -1,0 +1,73 @@
+<div id = 'container'>
+	<div id = 'left'>
+		<center>
+			<button class = 'btn btn-success' ng-click = "startCreating()"> <span class = 'glyphicon glyphicon-plus'> </span> </button>
+			<br /> <br /> <br />
+			<table class = "table">
+				<tr> 
+					<td> <span class = "glyphicon glyphicon-search"></span> </td> 
+					<td> <input type = "text" class = "form-control" ng-model = "search"/> </td>
+				</tr>
+			</table>
+		</center>
+
+		<div style = "position: relative; padding: 10px;">
+			<ul class = "list-group">
+				<li ng-repeat = "symbol in symbols | filter:{'name':  search} | orderBy:'name'" class = "list-group-item" ng-click = "chooseSymbol(symbol)">
+					{{symbol.name}}
+				</li>
+			</ul>
+		</div> 
+	</div>
+	<div id = 'right'>
+		<div style = "padding: 20px;">
+			<div ng-show = "!creating">
+				<div ng-show = "anyChosenSymbol == false">
+					<h3> Alege un simbol pentru a vedea detaliile, pentru a îl edita sau pentru a îl șterge. </h3>
+				</div>
+				<div ng-show = "anyChosenSymbol == true">
+					<h2> {{chosenSymbol.name}} </h2>
+					<table class = "table" ng-show = "!editing">
+						<tr> <td> <b> Simbol </b> </td> <td> {{chosenSymbol.name}} </td> </tr>
+						<tr> <td> <b> Semnificație </b> </td> <td> {{chosenSymbol.description}} </td> </tr>
+					</table>
+					<table class = "table" ng-show = "editing">
+						<tr> 
+							<td> <b> Simbol </b> </td> 
+							<td> <input type = "text" class = "form-control" ng-model = "chosenSymbol.name" /> </td> 
+						</tr>
+						<tr> 
+							<td> <b> Semnificație </b> </td> 
+							<td> <textarea class = "form-control" ng-model = "chosenSymbol.description" rows = 5> </textarea> </td> 
+						</tr>
+					</table>
+
+					<div ng-show = "!editing">
+						<button class = 'btn btn-primary' ng-click = "startEditing(chosenSymbol)"> <span class = 'glyphicon glyphicon-pencil'> </span> </button>
+						<button ng-click = "delete(chosenSymbol)" class = 'btn btn-danger'> <span class = 'glyphicon glyphicon-remove'> </span> </button>
+					</div>
+
+					<div ng-show = "editing">
+						<button class = 'btn btn-primary' ng-click = "edit(chosenSymbol)"> <span class = 'glyphicon glyphicon-floppy-disk'> </span> </button>
+						<button ng-click = "cancelEditing(chosenSymbol)" class = 'btn btn-danger'> <span class = 'glyphicon glyphicon-remove'> </span> </button>
+					</div>
+
+				</div>
+			</div>
+			<div ng-show = "creating">
+				<table class = "table">
+					<tr> 
+						<td> <b> Simbol </b> </td> 
+						<td> <input type = "text" class = "form-control" ng-model = "newSymbol.name" /> </td> 
+					</tr>
+					<tr> 
+						<td> <b> Semnificație </b> </td> 
+						<td> <textarea class = "form-control" ng-model = "newSymbol.description" rows = 5> </textarea> </td> 
+					</tr>
+				</table>
+					<button class = 'btn btn-primary' ng-click = "save()"> <span class = 'glyphicon glyphicon-floppy-disk'> </span> </button>
+					<button ng-click = "cancelCreating()" class = 'btn btn-danger'> <span class = 'glyphicon glyphicon-remove'> </span> </button>
+			</div>
+		</div>
+	</div>
+</div>
