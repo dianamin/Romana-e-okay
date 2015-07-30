@@ -15,7 +15,6 @@ adminApp.controller('CreatePageCtrl', function ($scope, $http, $routeParams) {
 
 	$http({method: 'GET', url: '../php/get_chapters.php'}).success(function(data) {
 		$scope.chapters = data;
-		$scope.$apply();
 		editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
 		    lineNumbers: true,
 		    mode:  "xml"
@@ -86,7 +85,7 @@ adminApp.controller('CreatePageCtrl', function ($scope, $http, $routeParams) {
 		            		'new_page': pageName
 		            	}),
 		            success: function(data) {
-		            	window.location.href = "#/";
+		            	window.location.href = "#/lessons";
 					}
 		        });
 		    });
@@ -96,7 +95,7 @@ adminApp.controller('CreatePageCtrl', function ($scope, $http, $routeParams) {
 	$scope.cancel = function() {
 		$scope.editedPage = editor.getValue();
 		if (confirm("Sigur vrei sa renunți la modificări?")) {
-			window.location.href = "#/";
+			window.location.href = "#/lessons";
 		}
 	}
 

@@ -44,17 +44,18 @@ adminApp.controller('EditPageCtrl', function ($scope, $http, $routeParams) {
 	}
 
 	$scope.edit = function() {
+			
+		$scope.lesson.current = editor.getValue();
 
 		if (!$scope.checkText($scope.lesson.name)) $scope.error += "Nu ai completat corect numele operei. ";
 		if (!$scope.checkText($scope.lesson.author)) $scope.error += "Nu ai completat corect autorul operei. ";
 		if (!$scope.checkText($scope.lesson.type)) $scope.error += "Nu ai completat corect genul operei. ";
 		if (!$scope.checkText($scope.lesson.img)) $scope.error += "Nu pus linkul imaginii corespunzătoare operei. ";
-		if (!$scope.checkText($scope.lesson.content)) $scope.error += "Nu ai completat conținutul lecției. ";
+		if (!$scope.checkText($scope.lesson.current)) $scope.error += "Nu ai completat conținutul lecției. ";
 
 		if ($scope.error != "") return;
 
 		if (confirm("Sigur vrei să salvezi modificările?")) {
-			$scope.lesson.current = editor.getValue();
 			$(function(){
 		        $.ajax({
 		            type: "POST",
@@ -69,7 +70,7 @@ adminApp.controller('EditPageCtrl', function ($scope, $http, $routeParams) {
 		            		'new_author': $scope.lesson.author
 		            	}),
 		            success: function(data) {
-		            	window.location.href = "#/";
+		            	window.location.href = "#/lessons";
 					}
 		        });
 		    });
@@ -78,7 +79,7 @@ adminApp.controller('EditPageCtrl', function ($scope, $http, $routeParams) {
 
 	$scope.cancel = function() {
 		if (confirm("Sigur vrei sa renunți la modificări?")) {
-			window.location.href = "#/";
+			window.location.href = "#/lessons";
 		}
 	}
 

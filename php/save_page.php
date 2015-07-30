@@ -37,20 +37,14 @@
 		$insert_query = "
 			INSERT INTO lessons (global_id, id, chapter_id, name, author, type, img, page, version)
 			VALUES (NULL, 1, '$new_chapter', '$new_name', '$new_author', '$new_type', '$new_img', '$new_page', 0)";
-		/*$update_query = "
-		UPDATE lessons
-		SET chapter_id = ". $new_chapter .",
-			name = '" . $new_name . "',
-			author = '" . $new_author . "',
-			type = '" . $new_type . "',
-			img = '" . $new_img . "',
-			version = ". $version . "
-		WHERE global_id = " . $page_id . ";";
-	*/
-		//echo $update_query;
-
+		
 		$insert_result = mysql_query($insert_query);
-		//echo $file;
+		
+		$insert_change_query = "
+			INSERT INTO changes (id, lesson_name, operation, date)
+			VALUES ('NULL', '$new_name', 'create', now())";
+		
+		$insert_change_result = mysql_query($insert_change_query);
 
 	}
 ?>

@@ -6,6 +6,10 @@ adminApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
         when('/', {
+            templateUrl: 'panel.html',
+            controller: 'AdminPanelCtrl'
+        }).
+        when('/lessons', {
             templateUrl: 'list.html',
             controller: 'AdminListCtrl'
         }).
@@ -18,8 +22,8 @@ adminApp.config(['$routeProvider',
             controller: 'CreatePageCtrl'
         }).
         otherwise({
-            redirectTo: 'list.html',
-            controller : 'AdminListCtrl'
+            redirectTo: 'panel.html',
+            controller: 'AdminPanelCtrl'
         });
     }
 ]);

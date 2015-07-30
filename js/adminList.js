@@ -25,7 +25,7 @@ adminApp.controller('AdminListCtrl', function ($scope, $http) {
 		        $.ajax({
 		            type: "POST",
 		            url: '../php/delete_page.php',
-		            data: ({ 'id': lesson.global_id }),
+		            data: ({ 'id': lesson.global_id, 'name': lesson.name }),
 		            success: function(data) {
 		            	location.reload();
 					}
@@ -33,33 +33,5 @@ adminApp.controller('AdminListCtrl', function ($scope, $http) {
 		    });
 		}
 	}
-
-	//thanks stack overflow (http://jsfiddle.net/wizzud/wYndk/)
-	$(function(){
-	    var left = parseInt($('#left').width(), 10),
-	        right = parseInt($('#right').width(), 10),
-	        bar = parseInt($('#bar').width(), 10),
-	        minw = parseInt((left + right + bar) * 10 / 100, 10),
-	        offset = $('#container').offset(),
-	        splitter = function(event, ui){
-	            var aw = parseInt(ui.position.left),
-	                bw = left + right - aw;
-	            //set widths and information...
-	            $('#left').css({width : aw});
-	            $('#right').css({width : bw});
-	        };
-	    $('#bar').draggable({
-	        axis : 'x',
-	        containment : [
-	            offset.left + minw,
-	            offset.top,
-	            offset.left + left + right - minw,
-	            offset.top + $('#container').height()
-	            ],
-	        drag : splitter
-	    });
-
-	});
-
 });
 

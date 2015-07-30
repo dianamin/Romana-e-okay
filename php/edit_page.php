@@ -45,10 +45,14 @@
 				version = ". $version . "
 			WHERE global_id = " . $page_id . ";";
 
-			//echo $update_query;
 
 			$update_result = mysql_query($update_query);
-			//echo $file;
+
+			$update_change_query = "
+				INSERT INTO changes (id, lesson_name, operation, date)
+				VALUES ('NULL', '$new_name', 'edit', now())";
+			
+			$update_change_result = mysql_query($update_change_query);
 		}
 	}
 ?>

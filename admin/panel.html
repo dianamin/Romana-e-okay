@@ -1,0 +1,45 @@
+<table class = "table">
+	<tbody>
+		<tr>
+			<td>
+				<center>
+					<h2> Modificări recente </h2>
+					<div style = "height: 80%; overflow-y: scroll; width: 100%;">
+						<ul class = "list-group">
+							<li ng-repeat = "change in changes">
+								<div
+								ng-class = "{'list-group-item' : true, 
+											'list-group-item-success' : change.operation == 'create',
+											'list-group-item-info' : change.operation == 'edit', 
+											'list-group-item-danger': change.operation == 'delete'
+											}"> 
+									<span class = "glyphicon glyphicon-plus" ng-show = "change.operation == 'create'"> </span>
+									<span class = "glyphicon glyphicon-pencil" ng-show = "change.operation == 'edit'"> </span>
+									<span class = "glyphicon glyphicon-remove" ng-show = "change.operation == 'delete'"> </span>
+									- {{change.date}} - {{change.name}}
+								</div>
+							</li>
+						</ul>
+					</diV>
+				</center> 
+			</td>
+			<td>
+				<center>
+					panou 2 
+				</center> 
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<center>
+					panou 3 
+				</center> 
+			</td>
+			<td>
+				<center>
+					panou 4 
+				</center> 
+			</td>
+		</tr>
+	</tbody>
+</table>
