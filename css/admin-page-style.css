@@ -2,6 +2,11 @@ h1 {
     margin-left: 2%;
 }
 
+body {
+    background: url('../img/contentbg2.jpg');
+    background-attachment: fixed;
+}
+
 #container {
     width: 90%;
     height: 60%;

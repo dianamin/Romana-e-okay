@@ -9,6 +9,8 @@
 
 	<div ng-show = "userConnected">
 		<center> 
+			<br />
+			<p> Poți debifa căsuțele bifate dacă vrei să ții o nouă evidență. :) </p>
 			<table> 
 				<tr>
 					<td> <h3 style = "display: inline-block;"> <span class = "glyphicon glyphicon-search"> </span> </h3> </td>
@@ -21,7 +23,7 @@
 				</thead>
 				<tbody>
 					<tr ng-repeat = "lesson in lessons | filter:search">
-						<td> {{lesson.index + 1}} </td>
+						<td> {{lesson.index + 1}}. </td>
 						<td> {{lesson.name}} </td>
 						<td>
 							{{lesson.type}}

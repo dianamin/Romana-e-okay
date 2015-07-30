@@ -12,11 +12,11 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 		return 1;
 	}
 
-	$http({method: 'GET', url: 'json/simboluri.json'}).success(function(data, status, headers, config) {
+	$http({method: 'GET', url: 'php/get_symbols.php'}).success(function(data, status, headers, config) {
 		$scope.Descriptions = data;
 		var len = $scope.Descriptions.length;
 		for (var i = 0; i < len; i++) {
-			$scope.Descriptions[i].noDiacritics = removeDiacritics($scope.Descriptions[i].simbol);
+			$scope.Descriptions[i].noDiacritics = removeDiacritics($scope.Descriptions[i].name);
 			$scope.Descriptions[i].noDiacritics = $scope.Descriptions[i].noDiacritics.toLowerCase();
 		}
 		$scope.Descriptions.sort(comp);
@@ -27,12 +27,14 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 		a = removeDiacritics(a);
 		var left = 0, right = $scope.Descriptions.length - 1, middle, done = false;
 		while (left <= right && !done) {
-			middle = (left + right) / 2;
+			middle = Math.floor((left + right) / 2);
+			alert(middle);
 			b = $scope.Descriptions[middle].noDiacritics;
 			if (a == b) {
 				done = true;
-				symbol.name = $scope.Descriptions[middle].simbol;
-				symbol.description = $scope.Descriptions[middle].semnificatie;
+				symbol.name = $scope.Descriptions[middle].name;
+				symbol.description = $scope.Descriptions[middle].description;
+				alert("yay");
 			}
 			else if (a < b) right = middle - 1;
 			else left = middle + 1;
