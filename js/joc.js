@@ -10,8 +10,7 @@ app.factory('GameFactory', function ($http) {
 
 		if (index == -1) return;
 
-		var fileName = creations[index].chapter_id + "a" + creations[index].id;
-		console.log(fileName);
+		var fileName = creations[index].global_id;
 		$http({method: 'GET', url: 'json/questions/' + fileName + '.json'}).success(function(data, status, headers, config) {
 			allData[fileName] = data;
 			read(index - 1);
