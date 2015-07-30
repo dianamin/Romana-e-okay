@@ -17,6 +17,31 @@
 
 					<br /> <br />
 					<p> <b> <span class = "glyphicon glyphicon-tags"> </span> </b> {{essay.tags}} </p>
+
+					<table class = "table">
+						<tr>
+							<td> <label> Nota medie: </label> </td>
+							<td> 
+								<rating ng-model = "essay.average" 
+									max = "10" 
+									readonly = "true"
+								    on-hover = "hoveringOver(value)" 
+								    on-leave = "overStar = null" />
+								<span> {{essay.average}} stele </span>
+							</td>
+						</tr>
+						<tr ng-show = "userConnected">
+							<td> <label> Nota dată de tine: </label> </td>
+							<td>
+								<rating ng-model = "essay.givenRating" 
+									max = "10"  
+								    on-hover = "hoveringOver(value)" 
+								    on-leave = "overStar = null" 
+								    ng-click = "rate(essay.index)" />
+								<span> {{essay.givenRating}} stele </span>
+							</td>
+						</tr>
+					</table>
 				</td>
 		</tbody>
 	</table>

@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ui.sortable']).filter('to_trusted', ['$sce', function($sce){
+var app = angular.module('app', ['ui.sortable', 'ui.bootstrap']).filter('to_trusted', ['$sce', function($sce){
     return function(text) {
         return $sce.trustAsHtml(text);
     };

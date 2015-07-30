@@ -72,7 +72,7 @@ var pages = [
 			},
 			{
 				"name": "Modele",
-				"address": "partials/models.html"
+				"address": "partials/models2.html"
 			}
 		],
 		"place": "right",

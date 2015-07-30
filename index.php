@@ -18,6 +18,7 @@
 	<script src = "js/app.js"> </script>
 	<script src = "js/angular-route.js"></script>
 	<script src = "js/sortable.js"></script>
+	<script src = "js/ui-bootstrap.js"></script>
 
 	<script src = "js/bootstrap.js"></script>
 
