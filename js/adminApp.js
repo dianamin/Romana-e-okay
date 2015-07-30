@@ -1,4 +1,8 @@
-var adminApp = angular.module('adminApp', ['ngRoute']);
+var adminApp = angular.module('adminApp', ['ngRoute']).filter('to_trusted', ['$sce', function($sce){
+    return function(text) {
+        return $sce.trustAsHtml(text);
+    };
+}]);
 
 
 
@@ -20,6 +24,10 @@ adminApp.config(['$routeProvider',
         when('/create', {
             templateUrl: 'create.html',
             controller: 'CreatePageCtrl'
+        }).
+        when('/reports', {
+            templateUrl: 'reports.html',
+            controller: 'ReportedEssaysCtrl'
         }).
         otherwise({
             redirectTo: 'panel.html',

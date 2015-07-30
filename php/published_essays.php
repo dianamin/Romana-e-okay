@@ -63,7 +63,8 @@
 				"ratedBy" => $count,
 				"initialRating" => $given_rating,
 				"average" => $average,
-				"ratedByMe" => $rated_by_user
+				"ratedByMe" => $rated_by_user,
+				"reported" => mysql_result($essays, $i, "reported")
 			);
 			array_push($essays_arr, $aux);
 			//echo "<tr> <td> " . $i . ". </td> <td style = 'text-align: justify;'> " . mysql_result($essays, $i - 1, "homework") . " </td> </tr>";
