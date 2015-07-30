@@ -69,7 +69,10 @@
 	</div>
 	<ol>
 		<li ng-repeat = "symbol in Symbols" style = "margin-top: 15px;">
-			<input type = "text" class = "form-control medium-input-box" ng-model = "symbol.name" value = "{symbol.name}" />
+			<input type = "text" class = "form-control medium-input-box" 
+				typeahead = "description as description.name for description in Descriptions | filter:$viewValue | limitTo:3" 
+				ng-model = "symbol.name" 
+				value = "{symbol.name}" />
 		</li>
 	</ol>
 	<br /> <br />
@@ -87,7 +90,7 @@
 			<li ng-repeat = "symbol in Symbols" style = "margin-top: 15px;">
 				<div class="form-group">
   					<label>{{symbol.name}}:</label>
- 					<textarea class="form-control" rows = "5" ng-model = "symbol.description" value = "{symbol.description}"></textarea>
+ 					<textarea class = "form-control" rows = "5" ng-model = "symbol.description" value = "{symbol.description}"></textarea>
  					<br />
 				</div>
 			</li>

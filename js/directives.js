@@ -12,3 +12,17 @@ app.directive('backImg', function(){
         });
     };
 })
+
+/* http://jsfiddle.net/sebmade/swfjT/light/ */
+app.directive('suggestions', function($timeout) {
+    return function(scope, iElement, iAttrs) {
+            iElement.autocomplete({
+                source: scope[iAttrs.uiItems],
+                select: function() {
+                    $timeout(function() {
+                     	iElement.trigger('input');
+                    }, 0);
+                }
+            });
+    };
+});

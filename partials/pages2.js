@@ -64,7 +64,7 @@ var pages = [
 			},
 			{
 			 	"name": "Figuri de stil",
-			 	"address": "partials/figuriInterpreter.html",
+			 	"address": "partials/figuriInterpreter2.html",
 			},
 			{
 				"name": "Comentariile mele",
