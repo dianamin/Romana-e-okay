@@ -1,5 +1,6 @@
 <?php
 	include 'db_connect.php';
+	mysql_query("set names 'utf8'");
 	
 	session_start();
 	$id = $_SESSION["id"];
