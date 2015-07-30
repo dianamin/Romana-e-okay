@@ -8,6 +8,12 @@ adminApp.controller('AdminListCtrl', function ($scope, $http) {
 	
 	$http({method: 'GET', url: '../php/get_lessons.php'}).success(function(data) {
 		$scope.list = data;
+		var l = $scope.list.length;
+		for (var i = 0; i < l; i++) {
+			var img = $scope.list[i].img;
+			if (img.substring(0, 4) != "http") $scope.list[i].img = "../" + img;
+
+		}
 	});
 
 
