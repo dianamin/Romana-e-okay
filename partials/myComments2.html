@@ -22,7 +22,8 @@
 					<textarea class = "form-control" rows = "7" ng-show = "editingEssay[essay.index]" ng-model = "essay.edited"> </textarea>
 
 					<br /> <br />
-					<p> <b> <span class = "glyphicon glyphicon-tags"> </span> </b> {{essay.tags}} </p>
+					<p ng-show = "!editingEssay[essay.index]"> <b> <span class = "glyphicon glyphicon-tags"> </span> </b> {{essay.tags}} </p>
+					<p ng-show = "editingEssay[essay.index]"> <b> <span class = "glyphicon glyphicon-tags"> </span> </b> <input type = "text" class = "form-control" ng-model = "essay.tags" /> </p>
 					<br />
 					<p> 
 						<b> Public: </b> 

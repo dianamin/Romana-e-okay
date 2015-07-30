@@ -17,6 +17,7 @@ app.controller('myCommentsCtrl', function($scope, $http, CommentsFactory) {
     	var edit = false;
     	
 		$scope.essays[index].edited = $scope.essays[index].edited.replace(/'/g, '');
+		$scope.essays[index].edited = $scope.essays[index].edited.replace('script', '');
 
     	if ($scope.essays[index].content == $scope.essays[index].edited) edit = true;
     	else edit = confirm("Sigur vrei să modifici?");

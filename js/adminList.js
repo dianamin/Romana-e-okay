@@ -12,7 +12,6 @@ adminApp.controller('AdminListCtrl', function ($scope, $http) {
 		for (var i = 0; i < l; i++) {
 			var img = $scope.list[i].img;
 			if (img.substring(0, 4) != "http") $scope.list[i].img = "../" + img;
-
 		}
 	});
 

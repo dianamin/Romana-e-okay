@@ -102,7 +102,7 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 
 	$scope.checkText = function(s) {
 		//Checks if there are enough letters in string s to be considered valid
-
+		
 		var l = s.length;
 		s = s.toLowerCase();
 		var letters = 0;
@@ -196,6 +196,7 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 		$scope.wordCount = countWords($scope.Result);
 		$scope.canBeSaved = true;
 		$scope.Saved = false;
+		$scope.Tags = $scope.Tags.replace("script", "");
 	}
 
 	$scope.Reset = function() {
