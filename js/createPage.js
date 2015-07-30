@@ -85,7 +85,8 @@ adminApp.controller('CreatePageCtrl', function ($scope, $http, $routeParams) {
 		            		'new_page': pageName
 		            	}),
 		            success: function(data) {
-		            	window.location.href = "#/lessons";
+		            	if (data == ":(") alert("Nu ai permisiunea necesară!");
+		            	else window.location.href = "#/lessons";
 					}
 		        });
 		    });

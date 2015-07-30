@@ -21,5 +21,6 @@
 							WHERE id = " . $id_essay . ";";
 			$unreport = mysql_query($unreport_query);
 		}
+		else echo ":(";
 	}
 ?>

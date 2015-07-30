@@ -32,7 +32,8 @@ adminApp.controller('AdminListCtrl', function ($scope, $http) {
 		            url: '../php/delete_page.php',
 		            data: ({ 'id': lesson.global_id, 'name': lesson.name }),
 		            success: function(data) {
-		            	location.reload();
+		            	if (data == ":(") alert("Nu ai permisiunea necesară!");
+		            	else location.reload();
 					}
 		        });
 		    });

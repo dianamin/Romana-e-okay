@@ -53,6 +53,8 @@
 				VALUES ('NULL', '$new_name', 'edit', now())";
 			
 			$update_change_result = mysql_query($update_change_query);
+			echo ":)";
 		}
 	}
+	else echo ":(";
 ?>

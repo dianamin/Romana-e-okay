@@ -28,5 +28,6 @@
 							WHERE id = " . $id_essay . ";";
 			$unpublish = mysql_query($unpublish_query);
 		}
+		else echo ":(";
 	}
 ?>

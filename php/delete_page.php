@@ -26,6 +26,7 @@
 			FROM lessons
 			WHERE global_id = ". $page_id ." ;";
 		$delete_result = mysql_query($delete_page_query);
+		echo ":)";
 	}
 	else echo ":(";
 ?>

@@ -35,8 +35,8 @@
 
 		echo $new_content ."abc";
 		$insert_query = "
-			INSERT INTO lessons (global_id, id, chapter_id, name, author, type, img, page, version)
-			VALUES (NULL, 1, '$new_chapter', '$new_name', '$new_author', '$new_type', '$new_img', '$new_page', 0)";
+			INSERT INTO lessons (global_id, chapter_id, name, author, type, img, page, version)
+			VALUES (NULL, '$new_chapter', '$new_name', '$new_author', '$new_type', '$new_img', '$new_page', 0)";
 		
 		$insert_result = mysql_query($insert_query);
 		
@@ -45,6 +45,7 @@
 			VALUES ('NULL', '$new_name', 'create', now())";
 		
 		$insert_change_result = mysql_query($insert_change_query);
-
+		echo ":)";
 	}
+	else echo ":(";
 ?>

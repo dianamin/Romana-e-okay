@@ -11,12 +11,15 @@ adminApp.controller('ReportedEssaysCtrl', function($scope, $http) {
 	            url: '../php/unreport_essay.php',
 	            data: ({'id_essay': essay.id}),
 	            success: function(data) {
-	            	alert(data);
-            		$scope.essays.splice(essay.index, 1);
-	            	for (var i = 0; i < $scope.essays.length; i++) {
-	            		$scope.essays[i].index = i;
-	            	}
-	            	$scope.$apply();
+	            	if (data == ":(") alert( "Nu ai permisiunea necesară!");
+	            	else {
+		            	alert(data);
+	            		$scope.essays.splice(essay.index, 1);
+		            	for (var i = 0; i < $scope.essays.length; i++) {
+		            		$scope.essays[i].index = i;
+		            	}
+		            	$scope.$apply();
+		            }
 	            }
 	        });
     	});
