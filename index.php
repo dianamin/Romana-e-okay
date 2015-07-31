@@ -4,13 +4,18 @@
 	<meta charset = "utf-8" />
 	<meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
 	<title> Româna e okay! </title>
+
+	<!-- css open source libs -->
     <link rel = "stylesheet" href = "css/glyphicons.css" />
     <link rel = "stylesheet" href = "css/bootstrap.css" />
+
+    <!-- created stylesheet -->
 	<link rel = "stylesheet" href = "css/style.css" />
 
-	<!-- <script src = "partials/lessons.js"></script> -->
+	<!-- data script -->
 	<script src = "partials/pages.js"></script>
 
+	<!-- javacript open source libs -->
 	<script src = "js/jQuery.js"></script>
 	<script src = "js/jquery-ui.js"></script>
 
@@ -22,13 +27,16 @@
 
 	<script src = "js/bootstrap.js"></script>
 
+	<!-- facebook login script-->
 	<script src = "js/facebookLogin.js"></script>
+
+	<!-- created scripts -->
 	<script src = "js/usefulFunctions.js"></script>
 	<script src = "js/pageChanging.js"></script>
 	<script src = "js/directives.js"></script>
 	<script src = "js/creationscontrollers.js"></script>
 	<script src = "js/answers.js"></script>
-	<script src = "js/joc.js"></script>
+	<script src = "js/game.js"></script>
 	<script src = "js/eseuriMaker.js"></script>
 	<script src = "js/figuriInterpreter.js"></script>
 	<script src = "js/commentsFactory.js"></script>
@@ -39,10 +47,12 @@
 </head>
 
 <body ng-controller = "PageChangeCtrl">
+	<!-- header -->
 	<header> 
 		<div class = "title">
 			<h1 style = "font-size: 45px;"> Româna e okay! </h1>
 		</div>
+		<!-- login panel -->
 		<div id = "login-panel" ng-show = "showLogo()" ng-click = "changePage(8)">
 			<div>
 				<div id = "profile-photo"> </div>
@@ -65,6 +75,7 @@
 		</div> 
 	</center>
 
+	<!-- bootstrap navbar -->
 	<div id = "topnavbar">
 		<nav class = "navbar navbar-default" style = "height: 30px;">
 			<div class = "nav-collapse">
@@ -77,6 +88,7 @@
 					</button>
 			    </div>
 
+			    <!-- display main pages -->
 			    <div class = "collapse navbar-collapse" id = "navbar-collapse" style = "background-color: #f8f8f8; z-index: 1000;">
 					<ul class = "nav navbar-nav" style = "margin-top: 15px;">
 						<li ng-repeat = "page in pages"
@@ -103,13 +115,13 @@
 	</div>
 
 	<div id = "content">
-
-
 		<div>
 			<center> 
 			<div class = "text-block">
+				<!-- include simple page -->
 				<div ng-show = "pages[selected].category == ''" ng-include = "pages[selected].details"></div>
 
+				<!-- include lesson page -->
 				<div ng-show = "pages[selected].category == 'lesson'">
 					<h3> {{currentPage.name}} </h3>	<hr />
 					<h4 ng-show = "hasLider()"> Mentor: {{currentPage.lider}} </h4>
@@ -133,9 +145,11 @@
 		  			<div id = "alege"> </div>
 
 					<div ng-show = "chosenView == 'context'">
+						<!-- introduction -->
 						<div ng-include = "currentPage.details" id = "context" style = "opacity: 0;"></div>
 					</div>
 					<div id = "creations" ng-show = "chosenView == 'creations'" style = "opacity: 0;">
+						<!-- creation list -->
 						<center> <ul id = "creationsMenu">
 							<li class = "creation" 
 								ng-repeat = "creation in creations"
@@ -154,12 +168,16 @@
 						</ul></center>
 						<br /> <br />
 						<div ng-show = "SelectedCreation != -1">
+							<!-- shortcut editing button if logged in as admin -->
 							<div style = "text-align: right;"> <?php include 'php/buttons.php'; ?> </div>
+							<!-- selected creation page -->
 							<div ng-include = "SelectedCreation"> </div>
 						</div>
 					</div>
 				</div>
 			</div>
+
+			<!-- page with more buttons view -->
 			<div ng-show = "pages[selected].category == 'buttons'">
 				<h3> {{currentPage.name}} </h3>
 				<hr />	
@@ -179,8 +197,10 @@
 	  	</center> 
 	</div> </div>
 
+	<!-- back to top button -->
 	<div id = "back-to-top" onclick = "scrollToTop();"> <span class = "glyphicon glyphicon-arrow-up"> </span> </div>
 
+	<!-- footer -->
 	<footer id = "page-footer">
 		© Diana Ghinea
 	</footer>
