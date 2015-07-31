@@ -1,3 +1,7 @@
+/*
+	Gets essays saved by users.
+*/
+
 app.factory('CommentsFactory', function ($http) {
 	var url = 'php/user_homeworks.php';
 	var getJson = $http.get(url);

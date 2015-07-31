@@ -1,6 +1,6 @@
 <?php
 /*	
-	Saved created page in admin view.
+	Saved created page in admin view and adding creating to recent changes.
 	Used in createPage.js.
 */
 	include 'db_connect.php';

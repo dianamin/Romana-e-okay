@@ -1,19 +1,27 @@
+/*
+	Contains comments saved by logged in user and operations.
+*/
+
 app.controller('myCommentsCtrl', function($scope, $http, CommentsFactory) {
     $scope.essays = [];
     $scope.editingEssay = [];
     CommentsFactory.getComments().then(function(response) {
+    	//gets comments from factory
     	$scope.essays = response.data;
     	for (var i = 0; i < $scope.essays.length; i++) {
+    		//inits editing operation
     		$scope.editingEssay[i] = false;
     		$scope.essays[i].edited = $scope.essays[i].content;
     	}
     });
 
     $scope.editEssay = function(index) {
+    	//start editing essay
     	$scope.editingEssay[index] = true;
     }
 
-    $scope.saveEssay = function(index) {  	
+    $scope.saveEssay = function(index) {  
+    	//clean and save edited essay	
     	var edit = false;
     	
 		$scope.essays[index].edited = $scope.essays[index].edited.replace(/'/g, '');
@@ -39,7 +47,9 @@ app.controller('myCommentsCtrl', function($scope, $http, CommentsFactory) {
 
     }
 
-    $scope.cancelEditingEssay = function(index) {    	
+    $scope.cancelEditingEssay = function(index) {    
+    	//cancels editing essay if the user is sure about it
+
     	var cancel = false;
     	if ($scope.essays[index].content == $scope.essays[index].edited) cancel = true;
     	else cancel = confirm("Sigur vrei să renunți la modificări?");
@@ -51,6 +61,8 @@ app.controller('myCommentsCtrl', function($scope, $http, CommentsFactory) {
     }
 
     $scope.deleteEssay = function(index) {
+    	//deletes essay if the user is sure about it
+
   		var id = $scope.essays[index].id;
     	if (confirm("Sigur vrei să ștergi comentariul?")) {
 			$(function(){
@@ -72,6 +84,7 @@ app.controller('myCommentsCtrl', function($scope, $http, CommentsFactory) {
     }
 
     $scope.changeStatus = function(index) {
+    	//publish or unpublish essay 
     	var ok;
   		var id = $scope.essays[index].id;
 

@@ -1,3 +1,7 @@
+/*
+	Interprets expressions.
+*/
+
 app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 	$scope.Figure = "";
 	$scope.Descriptions;
@@ -13,6 +17,8 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 	}
 
 	$http({method: 'GET', url: 'php/get_symbols.php'}).success(function(data, status, headers, config) {
+		//gets symbols from database, removes diacritics for better search.
+		//sorts symbols by .noDiacritics
 		$scope.Descriptions = data;
 		var len = $scope.Descriptions.length;
 		for (var i = 0; i < len; i++) {
@@ -23,6 +29,7 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 	});
 
 	$scope.BinarySearch = function(symbol) {
+		//binary searches user's symbol in dictionary
 		a = symbol.name.toLowerCase();
 		a = removeDiacritics(a);
 		var left = 0, right = $scope.Descriptions.length - 1, middle, done = false;
@@ -41,6 +48,7 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 		}
 	}
 
+	//initializing user's symbols and ideas
 	$scope.Symbols = [
 		{
 			"name": "",
@@ -64,6 +72,7 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 	$scope.wordCount = 0;
 
 	$scope.AddSymbol = function() {
+		//add symbol input to form
 		$scope.showSortableIdeas = false;
 		$scope.showDescriptions = false;
 		$scope.Checked = false;
@@ -77,6 +86,7 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 	}
 
 	$scope.InterpretSymbols = function() {
+		//search for symbols definitions in dictionary.
 		$scope.showDescriptions = true;
 		$scope.showSortableIdeas = false;
 		$scope.Checked = false;
@@ -90,6 +100,7 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 	}
 
 	$scope.AddIdea = function() {
+		//add idea input to form
 		$scope.showSortableIdeas = false;
 		$scope.Checked = false;
 		$scope.Okay = false;
@@ -120,6 +131,7 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 	$scope.IdeasCount = 0;
 
 	$scope.BuildSortableIdeas = function() {
+		//gets symbols definitions and user's ideas and builds a sortable list
 		if ($scope.showDescriptions == false) $scope.InterpretSymbols();
 		$scope.SortableIdeas = [];
 		$scope.Checked = false;
@@ -147,6 +159,7 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 	
 
 	$scope.Check = function() {
+		//checks if input is valid
 		$scope.Okay = true;
 		$scope.Error = "";
 		if (!$scope.checkText($scope.Figure)) {
@@ -165,12 +178,14 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 	$scope.Tags = "";
 
 	$scope.saveHomework = function() {
+		//save comment to database if user is logged in
 		addHomework($scope.Result, $scope.Tags);
 		$scope.Saved = true;
 		$scope.canBeSaved = false;
 	}
 	
 	$scope.BuildComment = function() {
+		//checks if input is valid and builds comment.
 		$scope.Check();
 		if ($scope.Okay == false) return;
 		$scope.Result = "";
@@ -202,6 +217,7 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 	}
 
 	$scope.Reset = function() {
+		//reset input
 		var deleteEverything = confirm("Sigur vrei să ștergi tot comentariul?");
 		if (deleteEverything == true) {
 			$scope.Tags = "";

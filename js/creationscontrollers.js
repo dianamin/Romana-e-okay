@@ -5,6 +5,7 @@
 
 app.controller('GeneralCheckerCtrl', function($scope) {
 	$scope.checkText = function(model, properText) {
+		//gets Levenshtein Distance of correct answer and answer given by user to check if given answer is correct
 		var s = $scope[model];
 		var correctText = properText.toLowerCase();
 		if (s == undefined) return false;
@@ -19,12 +20,14 @@ app.controller('GeneralCheckerCtrl', function($scope) {
 	}
 
 	$scope.checkRadio = function(model, correctValue) {
+		//checks radio input
 		return $scope[model] == correctValue;
 	}
 
 });
 
 app.controller('HarapAlbCtrl', function($scope) {
+	//checks checkboxes input
 	$scope.CharacteristicsNumber = 5;
 	$scope.Characteristics = new Array($scope.CharacteristicsNumber);
 	$scope.showCharacteristics = false;

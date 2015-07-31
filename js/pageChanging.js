@@ -17,12 +17,14 @@ app.controller('PageChangeCtrl', function ($scope, $http) {
 	$scope.creations = [];
 
 	$http({method: 'GET', url: 'php/get_lessons.php'}).success(function(data) {
+		//gets lessons from database
 		creations = data;
 		$scope.creations = data;
 	});
 
 
 	$http({method: 'GET', url: 'php/get_user_progress.php'}).success(function(data) {
+		//getting pages read by logged in user
 		progress = data;
 	});
 
@@ -61,6 +63,7 @@ app.controller('PageChangeCtrl', function ($scope, $http) {
 	$scope.selectedPage = -1;
 
 	$scope.chooseView2 = function(page) {
+		//page with buttons - choosing view (@teme maker)
 		$scope.selectedPage = page;
 		var position = $('#scrollHere').offset();
 		$('html, body').animate({scrollTop: position.top - 150}, "slow");
@@ -79,6 +82,7 @@ app.controller('PageChangeCtrl', function ($scope, $http) {
 		$scope.editing = false;
 
 		if (userConnected) {
+			//if the user is connected and the page is marked as unread, mark is as read.
 			if (progress[$scope.creations[index].index].read == 0) {	
 				var id = $scope.creations[index].global_id;	
 				$(function(){
@@ -96,6 +100,7 @@ app.controller('PageChangeCtrl', function ($scope, $http) {
 	}
 
 	$scope.editPage = function() {
+		//admin editing shortcut
 		var id = $scope.creations[$scope.editablePage].global_id;
 		window.location.href += "admin/#/edit/" + id;
 	}

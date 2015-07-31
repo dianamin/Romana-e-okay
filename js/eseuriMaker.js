@@ -1,5 +1,5 @@
 /*
-	Contains TemeMakerCtrl - essay generator
+	Builds argumentative essay.
 */
 
 app.controller('TemeMakerCtrl', function ($scope) {
@@ -71,7 +71,7 @@ app.controller('TemeMakerCtrl', function ($scope) {
 		// If argument s begins with a conjunction, a different wording is necessary
 
 		var l = s.length;
-		//if (l < 2) return false;
+		if (l < 3) return false;
 		if (s[0] == "c" || s[0] == "s") {
 			if (s[1] == "ă" || s[1] == "a") {
 				if (s[2] == " ") return true;
@@ -80,12 +80,12 @@ app.controller('TemeMakerCtrl', function ($scope) {
 			return false;
 		}
 
-		//if (s[0] == "d" && s[1] == "a" && s[2] == "c" && (s[3] == "a" || s[3] == "ă") && s[4] == " ") return true;
 		return false;
 	}
 
 
 	$scope.count = function() {
+		//counts words in essay 
 		var cnt = 0;
 		for (var i = 0; i < $scope.results.length; i++) {
 			cnt += countWords($scope.results[i]);
@@ -139,10 +139,10 @@ app.controller('TemeMakerCtrl', function ($scope) {
 		$scope.wordCount = $scope.count();
 		var pos = $(window).scrollTop();
 		$('html, body').animate({scrollTop: pos + 200}, 'slow');
-		$scope.wordCount = countWords($scope.Result);
 	}
 
 	$scope.saveHomework = function() {
+		// if user is logged in, save essay and wants to save essay
 		var FinalEssay = $scope.results[0];
 		var l = $scope.results.length;
 		for (i = 1; i < l; i++) {
@@ -169,6 +169,7 @@ app.controller('TemeMakerCtrl', function ($scope) {
 	}
 
 	$scope.notEnoughArguments = function() {
+		//checks if given arguments are enough to build essay
 		if (!$scope.verified) return false;
 		return ($scope.cons + $scope.pros < 2);
 	}
@@ -242,6 +243,7 @@ app.controller('TemeMakerCtrl', function ($scope) {
 	}
 
 	$scope.resetEssay = function() {
+		//resets input
 		var deleteEverything = confirm("Sigur vrei să ștergi tot eseul?");
 		if (deleteEverything == true) {
 			$scope.Tags = "";

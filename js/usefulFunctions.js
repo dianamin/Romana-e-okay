@@ -3,6 +3,7 @@
 */
 
 $(window).bind('scroll', function () {
+	//keeps navbar fixed at the top of the screen when scrolling
 	var pozitie = $('#topnavbar').offset();
 	if ($(window).scrollTop() <= window.innerHeight / 4) {
         $('#topnavbar').removeClass('fixed');
@@ -18,17 +19,21 @@ $(window).bind('scroll', function () {
 
 
 var scrollToTop = function() {
+	//smoothly scrolls to top of the page
 	$('html, body').animate({scrollTop: 0}, 'slow');
 }
 
 var showLogo = function() {
+	//only shows logo if screen is wide enough
 	return window.innerWidth >= 450;
 }
 
 var showElement = function(id) {
+	//fade in animation
 	document.getElementById(id).setAttribute("style", "animation: fade-in 1s; -webkit-animation: fade-in 1s; opacity: 1;");
 }
 var hideElement = function(id) {
+	//fade out animation
 	document.getElementById(id).setAttribute("style", "animation: fade-out 1s; -webkit-animation: fade-out 1s; opacity: 0;");
 }
 
@@ -75,6 +80,8 @@ var acceptedError = function(string1, string2) {
 }
 
 var removeDiacritics = function(text) {
+	//removes diacritics from string text
+
 	text = text.replace("ă", "a");
 	text = text.replace("â", "a");
 	text = text.replace("î", "i");
@@ -84,6 +91,8 @@ var removeDiacritics = function(text) {
 }
 
 var isLetter = function(c) {
+	//checks if character c is letter
+
 	if ('a' <= c && c <= 'z') return true;
 	if ('A' <= c && c <= 'Z') return true;
 	return false;
@@ -91,6 +100,7 @@ var isLetter = function(c) {
 
 
 var countWords = function(s) {
+	//counts words from string s
 	var cnt = 0;
 	var isWord;
 	var a = s.split(new RegExp('[-+()*/:? ]', 'g'));
@@ -105,6 +115,7 @@ var countWords = function(s) {
 
 
 var addHomework = function(s, t) {
+	//adds homework to database and reloads page
 	$(function(){
         $.ajax({
             type: "POST",

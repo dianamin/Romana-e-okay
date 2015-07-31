@@ -1,6 +1,6 @@
 <?php
 /*	
-	Editing lesson in admin view.
+	Editing lesson in admin view and adding editing to recent changes
 	Used in editPage.js
 */
 	include 'db_connect.php';

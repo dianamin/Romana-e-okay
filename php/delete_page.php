@@ -1,6 +1,6 @@
 <?php
 /*	
-	Deleting lesson in admin view.
+	Deleting lesson in admin view and adding deleting to recent changes
 	Used in adminList.js
 */
 	include 'db_connect.php';

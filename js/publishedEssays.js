@@ -1,7 +1,12 @@
+/*
+	Controlling published essays page (models.html). Gets published essays from database and allows logged in users to rate them or report them.
+*/
+
 app.controller('PublishedEssaysCtrl', function($scope, $http) {
 	$scope.essays = [];
 	$http({method: 'GET', url: 'php/published_essays.php'}).success(function(data, status, headers, config) {
 		$scope.essays = data;
+		//get published essays content from database
 	});
 
 	$scope.userConnected = userConnected;
@@ -10,6 +15,7 @@ app.controller('PublishedEssaysCtrl', function($scope, $http) {
 
 
 	$scope.rate = function(index) {
+		//allows logged in user to rate essay
 		var essay = $scope.essays[index];
 		$(function(){
 	        $.ajax({
@@ -35,6 +41,7 @@ app.controller('PublishedEssaysCtrl', function($scope, $http) {
 	}
 
 	$scope.unpublish = function(essay) {
+		//report essay or unpublish it if logged in as admin
 		$(function(){
 	        $.ajax({
 	            type: "POST",

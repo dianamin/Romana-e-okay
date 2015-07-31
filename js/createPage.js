@@ -1,3 +1,8 @@
+/*
+	Controls formular for creating a new lesson in admin view.
+	Getting chapters and lessons from database.
+*/
+
 adminApp.controller('CreatePageCtrl', function ($scope, $http, $routeParams) {
 	$scope.lesson = {
 		"name": "",
@@ -7,6 +12,7 @@ adminApp.controller('CreatePageCtrl', function ($scope, $http, $routeParams) {
 		"chapterId": "1",
 		"content": '',
 	};
+	//new lesson properties
 
 	$scope.chapters = [];
 	$scope.lessons = [];
@@ -14,6 +20,7 @@ adminApp.controller('CreatePageCtrl', function ($scope, $http, $routeParams) {
 	$scope.error = "";
 
 	$http({method: 'GET', url: '../php/get_chapters.php'}).success(function(data) {
+		//getting chapters and initializing CodeMirror editor
 		$scope.chapters = data;
 		editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
 		    lineNumbers: true,
@@ -28,6 +35,7 @@ adminApp.controller('CreatePageCtrl', function ($scope, $http, $routeParams) {
 
 
 	$http({method: 'GET', url: '../php/get_lessons.php'}).success(function(data) {
+		//getting lessons to make sure that the new lesson is unique
 		$scope.lessons = data;
 	});
 
@@ -50,7 +58,7 @@ adminApp.controller('CreatePageCtrl', function ($scope, $http, $routeParams) {
 		$scope.error = "";
 		var pageName;
 		$scope.lesson.content = editor.getValue();
-
+		// checks if input is valid
 		if (!$scope.checkText($scope.lesson.name)) $scope.error += "Nu ai completat corect numele operei. ";
 		else {
 			var l = $scope.lessons.length;
@@ -68,8 +76,10 @@ adminApp.controller('CreatePageCtrl', function ($scope, $http, $routeParams) {
 		if (!$scope.checkText($scope.lesson.img)) $scope.error += "Nu pus linkul imaginii corespunzătoare operei. ";
 		if (!$scope.checkText($scope.lesson.content)) $scope.error += "Nu ai completat conținutul lecției. ";
 
-		if ($scope.error != "") return;
+		if ($scope.error != "") return; //if something is not valid
+		//else
 		if (confirm("Sigur vrei să salvezi modificările?")) {
+			//if admin is sure about saving the new page, use save_page.php
 			$(function(){
 		        $.ajax({
 		            type: "POST",
@@ -84,8 +94,8 @@ adminApp.controller('CreatePageCtrl', function ($scope, $http, $routeParams) {
 		            		'new_page': pageName
 		            	}),
 		            success: function(data) {
-		            	if (data == ":(") alert("Nu ai permisiunea necesară!");
-		            	else window.location.href = "#/lessons";
+		            	if (data == ":(") alert("Nu ai permisiunea necesară!"); //if user is not logged in as admin
+		            	else window.location.href = "#/lessons"; //else reload page
 					}
 		        });
 		    });
@@ -93,7 +103,7 @@ adminApp.controller('CreatePageCtrl', function ($scope, $http, $routeParams) {
 	}
 
 	$scope.cancel = function() {
-		$scope.editedPage = editor.getValue();
+		//cancel saving new page.
 		if (confirm("Sigur vrei sa renunți la modificări?")) {
 			window.location.href = "#/lessons";
 		}

@@ -4,6 +4,7 @@
 
 
 app.factory('GameFactory', function ($http) {
+	//gets questions from json files
 	var allData = [[]];
 
 	var read = function(index) {
@@ -66,6 +67,7 @@ app.controller('JocCtrl', function ($scope, $http, GameFactory) {
 	$scope.errors = "";
 
 	$scope.init = function() {
+		//inits variables 
 		$scope.selectedQuestion = 0;
 		$scope.questionsNumber = 0;
 		$scope.questions = [];
@@ -82,6 +84,7 @@ app.controller('JocCtrl', function ($scope, $http, GameFactory) {
 
 
 	$scope.StartGame = function() {
+		//get lessons selected by user and inits game
 		var len = $scope.SelectedLessons.length;
 		$scope.errors = "";
 
@@ -113,6 +116,7 @@ app.controller('JocCtrl', function ($scope, $http, GameFactory) {
 	}
 
 	$scope.addScore = function() {
+		//adds score to database if user is logged in 
 		if (userConnected == true) {
 			$(function(){
 	            $.ajax({
@@ -174,10 +178,9 @@ app.controller('JocCtrl', function ($scope, $http, GameFactory) {
 	}
 
 	$scope.done = function() {
+		//checks if game is finished
 		return ($scope.Won || $scope.Lost);
 	}
-
-	// Getting data from .json file
 	
 
 	$scope.restart = function() {

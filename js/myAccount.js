@@ -1,8 +1,13 @@
+/*
+	Controls logged in user progress page.
+*/
+
 app.controller('myAccountCtrl', function ($scope, $http) {
 	$scope.userConnected = userConnected;
 	$scope.lessons = progress;
 
 	$scope.unread = function(lesson) {
+		//if user wants to mark a read page as unread
 		$(function(){
 	        $.ajax({
 	            type: "POST",

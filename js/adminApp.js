@@ -1,10 +1,17 @@
+/*
+    Admin view initialization
+*/
+
+
 var adminApp = angular.module('adminApp', ['ngRoute']).filter('to_trusted', ['$sce', function($sce){
     return function(text) {
         return $sce.trustAsHtml(text);
     };
 }]);
 
-
+/*
+    Admin app routing
+*/
 
 adminApp.config(['$routeProvider',
   function($routeProvider) {

@@ -1,6 +1,12 @@
 var userConnected = false;
 var userID;
 
+/*
+    Facebook login.
+    Used https://developers.facebook.com/docs/facebook-login/login-flow-for-web/v2.2
+*/
+
+
 function statusChangeCallback(response) {
     console.log('statusChangeCallback');
     console.log(response);
@@ -85,11 +91,13 @@ var profile_photo = "";
 function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
+        //sets user panel
         console.log('Successful login for: ' + response.name);
         document.getElementById('user-name').innerHTML = 'Bine ai venit, ' + response.first_name + '!';
         profile_photo = "http://graph.facebook.com/" + response.id + "/picture?width=100&height=100"
         document.getElementById("profile-photo").setAttribute("style", "background: url('" + profile_photo + "'); background-size: cover;");
         userID = response.id;
+        //adds user to database if not added yet
         $(function(){
             $.ajax({
                 type: "POST",
@@ -121,9 +129,8 @@ function logout() {
                     url: 'php/end_session.php',
                     type: 'post',
                     success: function(data) {
-                        alert(data);
-                        location.reload();
                         userConnected = false;
+                        location.reload();
                     }
                 });
             });

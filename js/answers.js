@@ -1,5 +1,5 @@
 /*
-	Answers for pasoptism.html, junimea.html, interbelica.html, postemiscianism.html and postbelica.html.
+	Answers for pasoptism.html, junimea.html, interbelica.html, postemiscianism.html and postbelica.html inputs.
 */
 
 
