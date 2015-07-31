@@ -16,6 +16,7 @@ adminApp.controller('EditPageCtrl', function ($scope, $http, $routeParams) {
 	$http.post('../php/page_content.php' , $scope.lessonId)
     .success(function(data){
 		$scope.lesson = data;
+		if (data == ":(") alert("Nu ai permisiunea necesară!");
 		
 		$scope.$apply();
 		editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
