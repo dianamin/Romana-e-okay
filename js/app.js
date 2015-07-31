@@ -5,11 +5,11 @@ var app = angular.module('app', ['ui.sortable', 'ui.bootstrap']).filter('to_trus
 }]);
 
 app.filter('array', function() {
-  return function(items) {
-    var filtered = [];
-    angular.forEach(items, function(item) {
-      filtered.push(item);
-    });
-   return filtered;
-  };
+    return function(items) {
+        var filtered = [];
+        angular.forEach(items, function(item) {
+        filtered.push(item);
+        });
+        return filtered;
+    };
 });

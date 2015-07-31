@@ -239,7 +239,6 @@ app.controller('TemeMakerCtrl', function ($scope) {
 			if (userConnected == true) $scope.canBeSaved = true;
 			$scope.generateEssay();
 		}
-		console.log($scope.hasErrors);
 	}
 
 	$scope.resetEssay = function() {

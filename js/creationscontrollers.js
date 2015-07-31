@@ -22,22 +22,6 @@ app.controller('GeneralCheckerCtrl', function($scope) {
 		return $scope[model] == correctValue;
 	}
 
-/*
-
-	$scope.checkMultipleChoice = function(number, chosen, correct, id) {
-		$scope.allCorect = true;
-		for (var i = 0; i < $scope.number; i++) {
-			if (typeof $scope.choosen[i] === "undefined") {
-				if ($scope.correct[i] == true) $scope.allCorect = false;
-			}
-			else if ($scope.choosen[i] != $scope.correct[i]) $scope.allCorect = false;
-		}
-		showElement(id);
-		return $scope.allCorect;
-	}
-*/
-
-
 });
 
 app.controller('HarapAlbCtrl', function($scope) {

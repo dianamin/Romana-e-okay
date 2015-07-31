@@ -180,7 +180,6 @@ app.controller('AnswersJunimeaCtrl', function ($scope) {
 		if (error == 0) return true;
 		else if (error <= acceptedError(s, "critice")) {
 			$scope.VolumeName = "Critice";
-			console.log("yay");
 			return true;
 		}
 		return false;
