@@ -96,9 +96,7 @@ app.controller('JocCtrl', function ($scope, $http, GameFactory) {
 		$scope.init();
 
 		for (var i = 0; i < len; i++) {
-			//var id = $scope.SelectedChapter + "a" + $scope.SelectedLessons[i];
-			var id = creations[$scope.SelectedLessons[i]].global_id;
-			//console.log($scope.SelectedLessons[i]);
+			var id = $scope.SelectedLessons[i];
 			$scope.questions = $scope.questions.concat(GameFactory.getQuestions(id))
 		}
 		$scope.questionsNumber = $scope.questions.length;

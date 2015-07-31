@@ -390,6 +390,7 @@ td {
 	color: white;
 	background-color: black;
 	padding: 3px;
+	cursor: pointer;
 }
 
 .spoiler {
