@@ -9,7 +9,7 @@
 	<link rel = "stylesheet" href = "css/style.css" />
 
 	<!-- <script src = "partials/lessons.js"></script> -->
-	<script src = "partials/pages2.js"></script>
+	<script src = "partials/pages.js"></script>
 
 	<script src = "js/jQuery.js"></script>
 	<script src = "js/jquery-ui.js"></script>

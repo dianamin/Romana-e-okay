@@ -48,7 +48,7 @@ var pages = [
 	},
 	{
 		"name": "Test",
-		"details": "partials/joc2.html",
+		"details": "partials/joc.html",
 		"category": "",
 		"place": "right",
 		"id": "6"
@@ -60,15 +60,15 @@ var pages = [
 		"options": [
 			{
 				"name": "Argumente",
-			 	"address":  "partials/eseuriMaker2.html"
+			 	"address":  "partials/eseuriMaker.html"
 			},
 			{
 			 	"name": "Figuri de stil",
-			 	"address": "partials/figuriInterpreter2.html",
+			 	"address": "partials/figuriInterpreter.html",
 			},
 			{
 				"name": "Comentariile mele",
-				"address": "partials/myComments2.html"
+				"address": "partials/myComments.html"
 			},
 			{
 				"name": "Modele",
