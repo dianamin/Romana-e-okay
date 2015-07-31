@@ -1,4 +1,8 @@
 <?php
+/*	
+	Gets users with highest scores.
+	Used in topUsers.js
+*/
 	include 'db_connect.php';
 	mysql_query("set names 'utf8'");
 
@@ -21,13 +25,6 @@
 			"score" => mysql_result($result, $i, "Score")
 		);
 		array_push($users, $aux);
-		/*echo "
-			<tr> 
-				<td> " . $i . " </td>
-				<td> " . mysql_result($result, $i - 1, "Name") . "</td>
-				<td> " . mysql_result($result, $i - 1, "Score") . "</td>
-			</tr>
-		";*/
 	}
 
 	echo json_encode($users);

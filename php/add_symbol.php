@@ -1,4 +1,8 @@
 <?php
+/*	
+	Adds symbol to database, in admin view.
+	Used in symbols.js
+*/
 	include 'db_connect.php';
 
 	mysql_query("set names 'utf8'");

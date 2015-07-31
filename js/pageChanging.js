@@ -24,7 +24,6 @@ app.controller('PageChangeCtrl', function ($scope, $http) {
 
 	$http({method: 'GET', url: 'php/get_user_progress.php'}).success(function(data) {
 		progress = data;
-		console.log(progress);
 	});
 
 

@@ -1,4 +1,8 @@
 <?php
+/*	
+	Adds user to database if not added.
+	Used in facebookLogin.js
+*/
 	include 'db_connect.php';
 	$id = $_POST['id'];
 	$name = $_POST['name'];

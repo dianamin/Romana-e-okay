@@ -1,4 +1,8 @@
 <?php
+/*
+	Updates rating given by user to a public essay.
+	Used in published_essays.php
+*/
 	include 'db_connect.php';
 	$id_essay = $_POST['id_essay'];
 	$rating = $_POST['rating'];

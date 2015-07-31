@@ -1,4 +1,8 @@
 <?php
+/*
+	Marks read lesson as not read by user.
+	Used in myAccount.js
+*/
 	include 'db_connect.php';
 	mysql_query("set names 'utf8'");
 	

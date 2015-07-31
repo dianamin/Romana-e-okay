@@ -1,4 +1,8 @@
 <?php
+/*	
+	Marks lesson as read by user.
+	Used in pageChanging.js
+*/
 	include 'db_connect.php';
 	mysql_query("set names 'utf8'");
 	

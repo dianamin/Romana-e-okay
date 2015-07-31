@@ -1,4 +1,9 @@
 <?php
+/*	
+	Adds an essay generated in TemeMaker to the database.
+	Used in usefulFunctions.js
+*/
+
 	include 'db_connect.php';
 	$s = $_POST['s'];
 	$t = $_POST['tags'];

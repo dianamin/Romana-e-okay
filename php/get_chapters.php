@@ -1,4 +1,8 @@
 <?php
+/*	
+	Reads chapters from database.
+	Used in adminList.js, createPage.js, editPage.js.
+*/
 	include 'db_connect.php';
 	mysql_query("set names 'utf8'");
 	$chapters_query = "

@@ -1,4 +1,8 @@
 <?php
+/*
+	Used for approving a reported essay in admin view.
+	Used in reportedEssays.js
+*/
 	include 'db_connect.php';
 	session_start();
 	$id = $_SESSION["id"];

@@ -1,4 +1,8 @@
 <?php
+/*
+	Gets latest 20 lesson changes from database.
+	Used in adminPanel.js, figuriInterpreter.js
+*/
 	include 'db_connect.php';
 	mysql_query("set names 'utf8'");
 

@@ -1,4 +1,8 @@
 <?php
+/*
+	Gets lessons status - read or not read by user.
+	Used in pageChanging.js
+*/
 	include 'db_connect.php';
 	mysql_query("set names 'utf8'");
 	

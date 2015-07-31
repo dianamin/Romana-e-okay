@@ -1,4 +1,8 @@
 <?php
+/*	
+	Editing lesson in admin view.
+	Used in editPage.js
+*/
 	include 'db_connect.php';
 	session_start();
 	$id = $_SESSION["id"];

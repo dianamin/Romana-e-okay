@@ -1,4 +1,8 @@
 <?php
+/*	
+	Shortcut to admin view, editing lesson.
+	Used in index.html (public index).
+*/
 	include 'db_connect.php';
 	session_start();
 	$id = $_SESSION["id"];

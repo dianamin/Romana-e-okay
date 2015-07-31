@@ -1,4 +1,9 @@
 <?php
+/*
+	Gets user's saved essays.
+	Used in commentsFactory.js.
+*/
+
 	include 'db_connect.php';
 	
 	session_start();
@@ -17,9 +22,6 @@
 		$essays_count = mysql_numrows($essays);
 
 		if ($essays_count != 0) {
-			/*echo "<table class = 'table table-striped'>";
-			echo "<thead> <tr> <th> # </th> <th> Comentariu </th> </tr> </thead>";
-			echo "<tbody> ";*/
 			for ($i = 0; $i < $essays_count; $i++) {
 				$get_ratings = "
 					SELECT *

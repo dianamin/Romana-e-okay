@@ -1,4 +1,8 @@
 <?php
+/*
+	Gets symbols from database.
+	Used in symbols.js, figuriInterpreter.js
+*/
 	include 'db_connect.php';
 
 	mysql_query("set names 'utf8'");

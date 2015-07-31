@@ -1,4 +1,8 @@
 <?php
+/*	
+	Deletes symbol from database.
+	Used in symbols.js.
+*/
 	include 'db_connect.php';
 
 	mysql_query("set names 'utf8'");

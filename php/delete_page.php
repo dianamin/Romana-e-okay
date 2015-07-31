@@ -1,4 +1,8 @@
 <?php
+/*	
+	Deleting lesson in admin view.
+	Used in adminList.js
+*/
 	include 'db_connect.php';
 	session_start();
 	$id = $_SESSION["id"];

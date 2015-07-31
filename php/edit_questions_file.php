@@ -1,4 +1,8 @@
 <?php
+/*	
+	Editing questions in admin view.
+	Used in questions.js
+*/
 	include 'db_connect.php';
 	session_start();
 	$id = $_SESSION["id"];

@@ -1,4 +1,9 @@
 <?php
+/*
+	Used for reporting (unpublishing for admin) an essay.
+	Used in publishedEssays.js, reportedEssays.js.
+*/
+
 	include 'db_connect.php';
 	session_start();
 	$id = $_SESSION["id"];

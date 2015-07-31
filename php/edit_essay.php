@@ -1,4 +1,8 @@
 <?php
+/*	
+	Edits user's essay.
+	Used in myComments.js
+*/
 	include 'db_connect.php';
 	$id_essay = $_POST['id'];
 	$content = $_POST['content'];

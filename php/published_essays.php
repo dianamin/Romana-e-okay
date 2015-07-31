@@ -1,4 +1,8 @@
 <?php
+/*	
+	Gets public essays made by users.
+	Used in publishedEssays.js, reportedEssays.js. 
+*/
 	include 'db_connect.php';
 	
 	session_start();

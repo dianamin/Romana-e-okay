@@ -1,4 +1,8 @@
 <?php
+/*	
+	Gets page file content.
+	Used in editPage.js
+*/
 	include 'db_connect.php';
 	session_start();
 	$id = $_SESSION["id"];

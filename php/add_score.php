@@ -1,4 +1,8 @@
 <?php
+/*
+	Updates user score
+	Used in game.js
+*/
 	include 'db_connect.php';
 
 	$id = $_POST['id'];

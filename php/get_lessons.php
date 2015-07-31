@@ -1,4 +1,9 @@
 <?php
+/*
+	Gets lessons from database. 
+	Used in adminList.js, createPage.js, questions.js, pageChanging.js.
+*/
+
 	include 'db_connect.php';
 
 	mysql_query("set names 'utf8'");
