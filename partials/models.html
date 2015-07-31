@@ -1,3 +1,5 @@
+<!-- display public essays (models) -->
+
 <div ng-controller = "PublishedEssaysCtrl" class = "text-block">
 	<h4> Comentarii publicate </h4>
 
@@ -32,9 +34,11 @@
 					<p> <b> <span class = "glyphicon glyphicon-tags"> </span> </b> {{essay.tags}} </p>
 
 					<table class = "table">
+						<!-- rating -->
 						<tr>
 							<td> <label> Nota medie: </label> </td>
 							<td> 
+								<!-- average -->
 								<rating ng-model = "essay.average" 
 									max = "10" 
 									readonly = "true"
@@ -46,6 +50,7 @@
 						<tr ng-show = "userConnected">
 							<td> <label> Nota dată de tine: </label> </td>
 							<td>
+								<!-- given rating -->
 								<rating ng-model = "essay.givenRating" 
 									max = "10"  
 								    on-hover = "hoveringOver(value)" 
@@ -57,6 +62,7 @@
 					</table>
 				</td>
 				<td>
+					<!-- report or unpublish button -->
 					<button class = "btn btn-primary" ng-show = "userConnected" ng-click = "unpublish(essay)">
 						<span class = 'glyphicon glyphicon-ban-circle'> </span>
 					</button>
