@@ -1,0 +1,26 @@
+[
+	{
+		"intrebare": "Comedia este o specie a genului...",
+		"imagine" : "img/junimea/osp.jpg",
+		"raspunsuri" : ["epic", "liric", "dramatic"],
+		"corect" : 2
+	},
+	{
+		"intrebare": "Ce reprezintă scrisoarea pierdută?",
+		"imagine" : "img/junimea/osp.jpg",
+		"raspunsuri" : ["pretextul dramatic al comediei", "tema operei"],
+		"corect" : 0
+	},
+	{
+		"intrebare": "Unde are loc acțiunea din „O scrisoare pierdută”?",
+		"imagine" : "img/junimea/osp.jpg",
+		"raspunsuri" : ["în capitala unui județ de munte", "într-un sat dintr-un județ de munte"],
+		"corect" : 0
+	},
+	{
+		"intrebare": "Cine câștiga alegerile din „O scrisoare pierdută”?",
+		"imagine" : "img/junimea/dandanache.jpg",
+		"raspunsuri" : ["Cațavencu", "Dandanache", "Tipătescu"],
+		"corect" : 1
+	}
+]

@@ -1,0 +1,32 @@
+[
+	{
+		"intrebare": "Când a fost publicată „Flori de mucigai”?",
+		"imagine" : "img/interbelic/fm.jpg",
+		"raspunsuri" : ["1905", "1931", "1920"],
+		"corect" : 1
+	},
+	{
+		"intrebare": "Ce reprezintă titlul poeziei „Flori de mucigai”?",
+		"imagine" : "img/interbelic/fm.jpg",
+		"raspunsuri" : ["oximoron sinonim cu estetica urâtului", "imagine vizuală fantastică"],
+		"corect" : 0
+	},
+	{
+		"intrebare": "Care este tema poeziei „Flori de mucigai”?",
+		"imagine" : "img/interbelic/fm.jpg",
+		"raspunsuri" : ["adeziunea poetului la un alt tip de estetică și tematică („estetica urâtului”)", "tutorial de creație pentru închisoare"],
+		"corect" : 0
+	},
+	{
+		"intrebare": "În ce constă estetica urâtului?",
+		"imagine" : "img/interbelic/fm.jpg",
+		"raspunsuri" : ["valorificarea temelor, motivelor și a cuvintelor considerate poetice", "valorificarea temelor, motivelor și a cuvintelor considerate nonpoetice"],
+		"corect" : 1
+	},
+	{
+		"intrebare": "Ce reprezintă unghia îngerească?",
+		"imagine" : "img/interbelic/fm.jpg",
+		"raspunsuri" : ["este o sugestie a felului în care autorul scria înainte de volumul „Flori de mucigai”", "cel mai nou tip de manichiură"],
+		"corect" : 0
+	}
+]

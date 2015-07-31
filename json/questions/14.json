@@ -1,0 +1,32 @@
+[
+	{
+		"intrebare": "Ce fel de roman este „Enigma Otiliei”?",
+		"imagine" : "img/interbelic/eo.jpg",
+		"raspunsuri" : ["roman realist de tip balzacian", "roman tradiționalist"],
+		"corect" : 0
+	},
+	{
+		"intrebare": "De unde vine tânărul Felix la București?",
+		"imagine" : "img/interbelic/strada antim.jpg",
+		"raspunsuri" : ["Timișoara", "Iași"],
+		"corect" : 1
+	},
+	{
+		"intrebare": "Care este strada descrisă în „Enigma Otiliei”?",
+		"imagine" : "img/interbelic/strada antim.jpg",
+		"raspunsuri" : ["Magheru", "Antim"],
+		"corect" : 1
+	},
+	{
+		"intrebare": "Cu voia Felix să studieze?",
+		"imagine" : "img/interbelic/eo.jpg",
+		"raspunsuri" : ["filosofie", "medicină”"],
+		"corect" : 1
+	},
+	{
+		"intrebare": "Ce reprezintă Pascalopol?",
+		"imagine" : "img/interbelic/eo.jpg",
+		"raspunsuri" : ["aristocratul rafinat", "avarul"],
+		"corect" : 0
+	}
+]

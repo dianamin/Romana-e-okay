@@ -1,26 +1,32 @@
 [
 	{
-		"intrebare": "Alexandru Lăpușneanul a fost domnitorul Moldovei. Unde a murit în nuvelă?",
-		"imagine" : "img/pasoptism/domnitor.jpg",
-		"raspunsuri" : ["La Cetatea Hotinului", "La Castelul Bran", "la Cetatea Aiudului"],
+		"intrebare": "Când a fost publicat primul volum al romanului „Moromeții”?",
+		"imagine" : "img/postbelic/m.jpg",
+		"raspunsuri" : ["1955", "1967", "1940"],
 		"corect" : 0
-	}, 
+	},
 	{
-		"intrebare": "Din câte capete a construit Alexandru Lăpușneanul piramida?",
-		"imagine" : "img/pasoptism/domnitor.jpg",
-		"raspunsuri" : ["45", "47", "50", "80"],
+		"intrebare": "Când a fost publicat al doilea volum al romanului „Moromeții”?",
+		"imagine" : "img/postbelic/m.jpg",
+		"raspunsuri" : ["1955", "1967", "1940"],
 		"corect" : 1
 	},
 	{
-		"intrebare": "Ce fel de nuvelă este „Alexandru Lăpușneanul”?",
-		"imagine" : "img/pasoptism/domnitor.jpg",
-		"raspunsuri" : ["realistă și psihologică", "romantică și istorică"],
+		"intrebare": "Care este tema romanului „Moromeții”?",
+		"imagine" : "img/postbelic/m.jpg",
+		"raspunsuri" : ["desacralizarea societății tradiționale", "monografie unui sat"],
+		"corect" : 0
+	},
+	{
+		"intrebare": "Unde are loc acțiunea în romanul „Moromeții”?",
+		"imagine" : "img/postbelic/m.jpg",
+		"raspunsuri" : ["Pripas", "Siliștea Gumești"],
 		"corect" : 1
 	},
 	{
-		"intrebare": "Cum o cheamă pe soția lui Alexandru Lăpușneanul?",
-		"imagine" : "img/pasoptism/ruxanda.jpg",
-		"raspunsuri" : ["Ruxandra", "Ruxanda"],
-		"corect" : 1
+		"intrebare": "Pe ce se bazează sistemul de valori al lui Ilie Moromete?",
+		"imagine" : "img/postbelic/ilie moromete.jpg",
+		"raspunsuri" : ["pământ", "ban"],
+		"corect" : 0
 	}
 ]

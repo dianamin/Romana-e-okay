@@ -22,5 +22,11 @@
 		"imagine" : "img/pasoptism/ruxanda.jpg",
 		"raspunsuri" : ["Ruxandra", "Ruxanda"],
 		"corect" : 1
+	},
+	{
+		"intrebare": "Între ce ani a fost a doua domnie a lui Alexandru Lăpușneanul?",
+		"imagine" : "img/pasoptism/domnitor.jpg",
+		"raspunsuri" : ["1564-1569", "1564-1579", "1565-1569"],
+		"corect" : 0
 	}
 ]

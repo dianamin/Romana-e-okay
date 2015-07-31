@@ -1,0 +1,26 @@
+[
+	{
+		"intrebare": "Când a fost publicată „Moara cu noroc”?",
+		"imagine" : "img/junimea/mn.jpg",
+		"raspunsuri" : ["1880", "1881", "1891"],
+		"corect" : 1
+	},
+	{
+		"intrebare": "Pe ce pune accent realismul?",
+		"imagine" : "img/junimea/mn.jpg",
+		"raspunsuri" : ["relația dintre artă și realitate", "relația dintre realitate și fantastic"],
+		"corect" : 0
+	},
+	{
+		"intrebare": "Când are loc acțiunea din „Moara cu noroc”?",
+		"imagine" : "img/junimea/mn.jpg",
+		"raspunsuri" : ["De la Sf. Gheorghe până la Crăciun", "De la Sf. Gheorghe până la Paște"],
+		"corect" : 1
+	},
+	{
+		"intrebare": "Conflictul interior al lui Ghiță era între dorința de a rămâne cinstit și ...",
+		"imagine" : "img/junimea/mn.jpg",
+		"raspunsuri" : ["dorința de inavuțire", "dorința de a se împrieteni cu Lică"],
+		"corect" : 0
+	}
+]

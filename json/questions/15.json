@@ -1,0 +1,32 @@
+[
+	{
+		"intrebare": "Ce fel de roman este „Baltagul”?",
+		"imagine" : "img/interbelic/b.jpg",
+		"raspunsuri" : ["roman mitic", "roman modernist"],
+		"corect" : 0
+	},
+	{
+		"intrebare": "Când a fost publicat romanul „Baltagul”?",
+		"imagine" : "img/interbelic/b.jpg",
+		"raspunsuri" : ["1910", "1930", "1940"],
+		"corect" : 1
+	},
+	{
+		"intrebare": "Ce semnifică baltagul?",
+		"imagine" : "img/interbelic/baltag.jpg",
+		"raspunsuri" : ["o armă a crimei și totodată instrumentul actului justițiar, reparator", "o armă tradiționalistă"],
+		"corect" : 0
+	},
+	{
+		"intrebare": "Care este numele protagonistei romanului „Baltagul”?",
+		"imagine" : "img/interbelic/vitoria.jpg",
+		"raspunsuri" : ["Victoria", "Vitoria”"],
+		"corect" : 1
+	},
+	{
+		"intrebare": "Ce schemă respectă romanul „Baltagul”?",
+		"imagine" : "img/interbelic/b.jpg",
+		"raspunsuri" : ["specifică unui roman polițist", "specifică unui basm"],
+		"corect" : 0
+	}
+]

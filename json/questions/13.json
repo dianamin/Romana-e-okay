@@ -1,0 +1,32 @@
+[
+	{
+		"intrebare": "Când a fost publicat romanul „Ion”?",
+		"imagine" : "img/interbelic/i.jpg",
+		"raspunsuri" : ["1920", "1930", "1924"],
+		"corect" : 0
+	},
+	{
+		"intrebare": "Care este tema romanului „Ion”?",
+		"imagine" : "img/interbelic/i.jpg",
+		"raspunsuri" : ["problematica pământului în condițiile satului ardelean de la începutul secolului XX", "prezentarea satului pripas"],
+		"corect" : 0
+	},
+	{
+		"intrebare": "Unde se desfășoară acțiunea din „Ion”?",
+		"imagine" : "img/interbelic/ion.jpg",
+		"raspunsuri" : ["Siliștea Gumești", "Pripas"],
+		"corect" : 1
+	},
+	{
+		"intrebare": "Cu cine se însoară Ion?",
+		"imagine" : "img/interbelic/ana.jpg",
+		"raspunsuri" : ["Ana", "Florica”"],
+		"corect" : 0
+	},
+	{
+		"intrebare": "Care sunt cele două părți ale romanului?",
+		"imagine" : "img/interbelic/ion.jpg",
+		"raspunsuri" : ["Glasul pământului și Glasul iubirii", "Dragostea și războiul"],
+		"corect" : 0
+	}
+]

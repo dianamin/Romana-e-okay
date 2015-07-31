@@ -1,0 +1,32 @@
+[
+	{
+		"intrebare": "Când a fost publicată „Iona”?",
+		"imagine" : "img/postbelic/i.jpg",
+		"raspunsuri" : ["1955", "1965", "1968"],
+		"corect" : 2
+	},
+	{
+		"intrebare": "Din ce trilogie face parte „Iona”?",
+		"imagine" : "img/postbelic/i.jpg",
+		"raspunsuri" : ["Setea muntelui", "Setea muntelui de sare"],
+		"corect" : 1
+	},
+	{
+		"intrebare": "Care este tema piesei „Iona”?",
+		"imagine" : "img/postbelic/i.jpg",
+		"raspunsuri" : ["singurătatea, frământarea omului în efortul de aflare a sinelui", "iubirea văzută ca trecere pe o altă treaptă a cunoașterii"],
+		"corect" : 0
+	},
+	{
+		"intrebare": "Ce semnifică titlul operei „Iona”?",
+		"imagine" : "img/postbelic/i.jpg",
+		"raspunsuri" : ["trimite la mitul biblic al lui Iona", "trimite la romanul „Ion”"],
+		"corect" : 0
+	},
+	{
+		"intrebare": "Ce specie literară e „Iona”?",
+		"imagine" : "img/postbelic/i.jpg",
+		"raspunsuri" : ["dramă", "tragedie"],
+		"corect" : 0
+	}
+]

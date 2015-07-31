@@ -1,0 +1,32 @@
+[
+	{
+		"intrebare": "Când a fost publicată poezia „Către Galateea”?",
+		"imagine" : "img/postbelic/cg.jpg",
+		"raspunsuri" : ["1955", "1965", "1940"],
+		"corect" : 1
+	},
+	{
+		"intrebare": "Ce diferențiază „Către Galateea” de artele poetice moderniste?",
+		"imagine" : "img/postbelic/cg.jpg",
+		"raspunsuri" : ["nimic", "răsturnarea relației creator-operă"],
+		"corect" : 1
+	},
+	{
+		"intrebare": "Care este tema poeziei „Către Galateea”?",
+		"imagine" : "img/postbelic/cg.jpg",
+		"raspunsuri" : ["cunoașterii-naștere revelată în procesul de creație", "iubirea văzută ca trecere pe o altă treaptă a cunoașterii"],
+		"corect" : 0
+	},
+	{
+		"intrebare": "La ce mit face referire titlul operei „Către Galateea”?",
+		"imagine" : "img/postbelic/cg.jpg",
+		"raspunsuri" : ["mitul peșterii", "mitul lui Pygmalion"],
+		"corect" : 1
+	},
+	{
+		"intrebare": "Cărui curent aparține „Către Galateea”?",
+		"imagine" : "img/postbelic/cg.jpg",
+		"raspunsuri" : ["neomodernism", "tradiționalism"],
+		"corect" : 0
+	}
+]

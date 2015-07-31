@@ -14,6 +14,7 @@ app.factory('GameFactory', function ($http) {
 		var fileName = creations[index].global_id;
 		$http({method: 'GET', url: 'json/questions/' + fileName + '.json'}).success(function(data, status, headers, config) {
 			allData[fileName] = data;
+			alert(fileName + " " + data);
 			read(index - 1);
 		});
 	}
@@ -98,6 +99,7 @@ app.controller('JocCtrl', function ($scope, $http, GameFactory) {
 		for (var i = 0; i < len; i++) {
 			var id = $scope.SelectedLessons[i];
 			$scope.questions = $scope.questions.concat(GameFactory.getQuestions(id))
+			console.log(id);
 		}
 		$scope.questionsNumber = $scope.questions.length;
 		for (var i = 0; i < $scope.questionsNumber; i++) $scope.asked[i] = false;

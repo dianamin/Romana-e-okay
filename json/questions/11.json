@@ -1,0 +1,32 @@
+[
+	{
+		"intrebare": "Când a fost publicată „Riga Crypto și lapona Enigel”?",
+		"imagine" : "img/interbelica/rcle.jpg",
+		"raspunsuri" : ["1919", "1931", "1924"],
+		"corect" : 2
+	},
+	{
+		"intrebare": "Ce reprezintă titlul poeziei „Riga Crypto și lapona Enigel”?",
+		"imagine" : "img/interbelica/rcle.jpg",
+		"raspunsuri" : ["face referire la marile poveşti de  din literatura universală", "este o enumerație"],
+		"corect" : 0
+	},
+	{
+		"intrebare": "Care este tema poeziei „Riga Crypto și lapona Enigel”?",
+		"imagine" : "img/interbelica/rcle.jpg",
+		"raspunsuri" : ["iubirea împlinită, nunta", "imposibilitatea iubirii văzută ca o cale de acces spre înţelegerea sensurilor lumii"],
+		"corect" : 1
+	},
+	{
+		"intrebare": "Ce semnifică numele Crypto?",
+		"imagine" : "img/interbelica/rcle.jpg",
+		"raspunsuri" : ["deschiderea spre nou", "cel tăinuit, „inimă ascunsă”"],
+		"corect" : 1
+	},
+	{
+		"intrebare": "La ce treaptă de cunoaștere aspiră lapona Enigel?",
+		"imagine" : "img/interbelica/rcle.jpg",
+		"raspunsuri" : ["treapta soarelui", "treapta venerei"],
+		"corect" : 0
+	}
+]

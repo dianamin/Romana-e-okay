@@ -1,0 +1,26 @@
+[
+	{
+		"intrebare": "Când a fost publicată „Rugăciune”?",
+		"imagine" : "img/posteminescianism/r.jpg",
+		"raspunsuri" : ["1905", "1881", "1891"],
+		"corect" : 0
+	},
+	{
+		"intrebare": "Ce sugerează titlul poeziei „Rugăciune”?",
+		"imagine" : "img/posteminescianism/r.jpg",
+		"raspunsuri" : ["actul de creație este condiționat de primirea harului divin", "tema religioasă"],
+		"corect" : 0
+	},
+	{
+		"intrebare": "Ce conține a doua secvență?",
+		"imagine" : "img/posteminescianism/r.jpg",
+		"raspunsuri" : ["conține pilde religioase", "arată izvoarele și obiectivul creației sale"],
+		"corect" : 1
+	},
+	{
+		"intrebare": "Ce conține ultima secvență?",
+		"imagine" : "img/posteminescianism/r.jpg",
+		"raspunsuri" : ["imaginea hiperbolică a revoltei, ca furtună", "căutările poetului imaginat ca un drumeț rătăcit"],
+		"corect" : 0
+	}
+]

@@ -1,0 +1,32 @@
+[
+	{
+		"intrebare": "Când a fost publicat romanul „Ultima noapte de dragoste, întâia noapte de război”?",
+		"imagine" : "img/interbelic/und.jpg",
+		"raspunsuri" : ["1919", "1930", "1924"],
+		"corect" : 1
+	},
+	{
+		"intrebare": "Ce reprezintă titlul romanului „Ultima noapte de dragoste, întâia noapte de război”?",
+		"imagine" : "img/interbelic/stefan si ela.jpg",
+		"raspunsuri" : [" indică temele romanului și, în același timp, cele două experiențe fundamentale de cunoaștere trăite de Ștefan Gheorghidiu", "indică două povești din folclorul românesc"],
+		"corect" : 0
+	},
+	{
+		"intrebare": "Care este numele protagonistului din „Ultima noapte de dragoste, întâia noapte de război”?",
+		"imagine" : "img/interbelic/und.jpg",
+		"raspunsuri" : ["Ștefan Ghiorghidiu", "Ștefan Gheorghidiu"],
+		"corect" : 1
+	},
+	{
+		"intrebare": "Unde era student Ștefan Gheorghidiu?",
+		"imagine" : "img/interbelic/und.jpg",
+		"raspunsuri" : ["Limbi străine", "Filosofie”"],
+		"corect" : 1
+	},
+	{
+		"intrebare": "Care este numele soției lui Ștefan Gheorghidiu?",
+		"imagine" : "img/interbelic/stefan si ela.jpg",
+		"raspunsuri" : ["Ela", "Elena"],
+		"corect" : 0
+	}
+]

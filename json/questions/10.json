@@ -1,0 +1,32 @@
+[
+	{
+		"intrebare": "Când a fost publicată „Eu nu strivesc corola de minuni a lumii”?",
+		"imagine" : "img/interbelic/ens.jpg",
+		"raspunsuri" : ["1919", "1931", "1920"],
+		"corect" : 0
+	},
+	{
+		"intrebare": "Ce reprezintă titlul poeziei „Eu nu strivesc corola de minuni a lumii”?",
+		"imagine" : "img/interbelic/ens.jpg",
+		"raspunsuri" : ["metaforă revelatorie care semnifică ideea cunoaşterii luciferice", "imagine vizuală fantastică"],
+		"corect" : 0
+	},
+	{
+		"intrebare": "Care este tema poeziei „Eu nu strivesc corola de minuni a lumii”?",
+		"imagine" : "img/interbelic/ens.jpg",
+		"raspunsuri" : ["adeziunea poetului la un alt tip de estetică și tematică („estetica urâtului”)", "atitudinea poetică în faţa marilor taine ale universului"],
+		"corect" : 1
+	},
+	{
+		"intrebare": "Ce susține cunoașterea luciferică?",
+		"imagine" : "img/interbelic/ens.jpg",
+		"raspunsuri" : ["reducerea parțială a misterului cu ajutorul logicii, al intelectului", "sporirea misterului cu ajutorul imaginației poetice, al trăirii interioare"],
+		"corect" : 1
+	},
+	{
+		"intrebare": "Ce susține cunoașterea paradisiacă?",
+		"imagine" : "img/interbelic/ens.jpg",
+		"raspunsuri" : ["reducerea parțială a misterului cu ajutorul logicii, al intelectului", "sporirea misterului cu ajutorul imaginației poetice, al trăirii interioare"],
+		"corect" : 0
+	}
+]

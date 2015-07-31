@@ -1,6 +1,6 @@
 [
 	{
-		"intrebare": "Cum îl cheamă pe profesorul de frnceză din „Chirița în provinție?”",
+		"intrebare": "Cum îl cheamă pe profesorul de franceză din „Chirița în provinție?”",
 		"imagine" : "img/pasoptism/chirita.jpg",
 		"raspunsuri" : ["Șarl", "Jean", "Șarlă"],
 		"corect" : 0
@@ -16,5 +16,23 @@
 		"imagine" : "img/pasoptism/chirita.jpg",
 		"raspunsuri" : ["Cluj", "Timișoara", "Târgoviște", "Iași"],
 		"corect" : 3
+	},
+	{
+		"intrebare": "Cum îl cheamă pe fiul Chiriței?",
+		"imagine" : "img/pasoptism/chirita.jpg",
+		"raspunsuri" : ["Leonaș", "Guliță"],
+		"corect" : 1
+	},
+	{
+		"intrebare": "Cum îl cheamă pe fiul Chiriței?",
+		"imagine" : "img/pasoptism/chirita.jpg",
+		"raspunsuri" : ["Leonaș", "Guliță"],
+		"corect" : 1
+	},
+	{
+		"intrebare": "Cum este descrisă Chitița de G. Călinescu?",
+		"imagine" : "img/pasoptism/chirita.jpg",
+		"raspunsuri" : ["cu o inteligență deschisă spre nou", "ca aparținând esteticii urâtului"],
+		"corect" : 0
 	}
 ]

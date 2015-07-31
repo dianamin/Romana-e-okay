@@ -1,0 +1,32 @@
+[
+	{
+		"intrebare": "Când a fost publicată „Plumb”?",
+		"imagine" : "img/interbelic/p.jpg",
+		"raspunsuri" : ["1905", "1916", "1920"],
+		"corect" : 1
+	},
+	{
+		"intrebare": "Ce sugerează titlul poeziei „Plumb”?",
+		"imagine" : "img/interbelic/p.jpg",
+		"raspunsuri" : ["greutatea sufocantă, angoasa, cenușiul existențial, universul monoton", "face referire la soldățelul de plumb"],
+		"corect" : 0
+	},
+	{
+		"intrebare": "Cărui curent aparține poezia „Plumb”?",
+		"imagine" : "img/interbelic/p.jpg",
+		"raspunsuri" : ["realism", "parnasianism", "simbolism"],
+		"corect" : 2
+	},
+	{
+		"intrebare": "Ce simbolizează cimitirul în „Plumb”?",
+		"imagine" : "img/interbelic/p.jpg",
+		"raspunsuri" : ["realitatea exterioară, obiectivă", "realitatea interioară, subiectivă"],
+		"corect" : 0
+	},
+	{
+		"intrebare": "Ce simbolizează sentimentul iubirii în „Plumb”?",
+		"imagine" : "img/interbelic/p.jpg",
+		"raspunsuri" : ["realitatea exterioară, obiectivă", "realitatea interioară, subiectivă"],
+		"corect" : 1
+	}
+]
