@@ -28,12 +28,10 @@
 		$path = "../" . $new_page . "0.html";
 		$file = fopen($path, "w");
 		fwrite($file, $new_content);
-		echo $path;
 
 		$file2 = fopen("../" . $new_page . "1.html", "w");
 		fwrite($file2, $new_content);
 
-		echo $new_content ."abc";
 		$insert_query = "
 			INSERT INTO lessons (global_id, chapter_id, name, author, type, img, page, version)
 			VALUES (NULL, '$new_chapter', '$new_name', '$new_author', '$new_type', '$new_img', '$new_page', 0)";
@@ -43,8 +41,25 @@
 		$insert_change_query = "
 			INSERT INTO changes (id, lesson_name, operation, date)
 			VALUES ('NULL', '$new_name', 'create', now())";
+
 		
 		$insert_change_result = mysql_query($insert_change_query);
+
+
+		$get_id_query = "
+			SELECT *
+			FROM lessons
+			WHERE page = " . $new_page . "
+		;";
+		$get_id = mysql_query($get_id_query);
+		$count = mysql_numrows($get_id);
+		if ($count == 1) {
+			$global_id = mysql_result($get_id, 0, "global_id");
+			$file3 = fopen("../json/questions" . $global_id . "json", "w");
+			echo "../json/questions" . $global_id . "json";
+			fwrite($file3, "");
+		}
+
 		echo ":)";
 	}
 	else echo ":(";

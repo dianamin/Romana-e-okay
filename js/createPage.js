@@ -50,7 +50,6 @@ adminApp.controller('CreatePageCtrl', function ($scope, $http, $routeParams) {
 		$scope.error = "";
 		var pageName;
 		$scope.lesson.content = editor.getValue();
-		alert($scope.lesson.content);
 
 		if (!$scope.checkText($scope.lesson.name)) $scope.error += "Nu ai completat corect numele operei. ";
 		else {

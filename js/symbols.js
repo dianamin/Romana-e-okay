@@ -89,8 +89,6 @@ adminApp.controller('SymbolsCtrl', function ($scope, $http) {
 		}
 	}
 
-
-
 	$scope.delete = function(symbol) {
 		if (confirm("Sigur vrei să ștergi simbolul?")) {
 			$(function(){
