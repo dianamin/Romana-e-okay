@@ -1,6 +1,9 @@
+<!-- List of lessons page -->
+
 <div id = 'container'>
 	<div id = 'left'>
 		<center>
+			<!-- create page button -->
 			<a href = "#/create"> <button class = 'btn btn-success'> <span class = 'glyphicon glyphicon-plus'> </span> </button> </a>
 			<br /> <br /> <br />
 			<table class = "table">
@@ -21,6 +24,7 @@
 	</div>
 	<div id = 'right'>
 		<div style = "padding: 20px;">
+			<!-- show lesson details -->
 			<div ng-show = "anyChosenLesson == false">
 				<h3> Alege o lecție pentru a vedea detaliile, pentru a o edita sau pentru a o șterge. </h3>
 			</div>
@@ -35,6 +39,7 @@
 					<tr> <td> <b> Imagine </b> </td> <td> <img class = "thumbnail" style = "height: 150px;" ng-src = "{{chosenLesson.img}}" /> </td> </tr>
 				</table>
 
+				<!-- edit and delete buttons -->
 				<a ng-href = "#/edit/{{chosenLesson.global_id}}"> <button class = 'btn btn-primary'> <span class = 'glyphicon glyphicon-pencil'> </span> </button> </a>
 				<button ng-click = "delete(chosenLesson)" class = 'btn btn-danger'> <span class = 'glyphicon glyphicon-remove'> </span> </button>
 

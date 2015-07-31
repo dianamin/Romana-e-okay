@@ -1,3 +1,4 @@
+<!-- editing page form -->
 
 <table class = "table">
 	<tbody>
@@ -8,6 +9,7 @@
 			<td rowspan = "4"> 
 				<input class = "form-control" type = "text" ng-model = "lesson.img" />
 				<center> 
+					<!-- checks if img is uploaded on server -->
 					<img class = "thumbnail" style = "height: 150px;" ng-src = "{{lesson.img}}" ng-show = "lesson.img.substring(0, 4) == 'http'" />
 					<img class = "thumbnail" style = "height: 150px;" ng-src = "../{{lesson.img}}" ng-show = "lesson.img.substring(0, 4) != 'http'" /> 
 				</center>
@@ -35,15 +37,18 @@
 	</tbody>
 </table>
 
+<!-- CodeMirror editor -->
 <textarea id = "editor" ng-model = "lesson.current"> </textarea>
 
 
+<!-- CodeMirror editor -->
 <div class = "alert alert-danger" ng-show = "error != ''">
 	<span class = "glyphicon glyphicon-exclamation-sign"></span>
 	<b> {{error}} </b>
 </div>
 
 
+<!-- Save and cancel buttons -->
 <center>
 	<button class = "btn btn-primary" ng-click = "edit()">
 		<span class = "glyphicon glyphicon-floppy-disk"> </span>

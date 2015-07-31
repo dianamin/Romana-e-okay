@@ -1,3 +1,4 @@
+<!-- creating page form -->
 
 <table class = "table">
 	<tbody>
@@ -32,15 +33,18 @@
 	</tbody>
 </table>
 
+<!-- error shown if input is not valid -->
 <div class = "alert alert-danger" ng-show = "error != ''">
 	<span class = "glyphicon glyphicon-exclamation-sign"></span>
 	<b> {{error}} </b>
 </div>
 
+<!-- CodeMirror editor -->
 <textarea id = "editor" ng-value = "lesson.content">
 	<div ng-controller = "GeneralCheckerCtrl"></div> 
 </textarea>
 
+<!-- Save and cancel buttons -->
 <center>
 	<button class = "btn btn-primary" ng-click = "save()">
 		<span class = "glyphicon glyphicon-floppy-disk"> </span>

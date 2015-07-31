@@ -1,6 +1,9 @@
+<!-- displays symbols and symbols operations -->
+
 <div id = 'container'>
 	<div id = 'left'>
 		<center>
+			<!-- button for creating symbols -->
 			<button class = 'btn btn-success' ng-click = "startCreating()"> <span class = 'glyphicon glyphicon-plus'> </span> </button>
 			<br /> <br /> <br />
 			<table class = "table">
@@ -28,10 +31,12 @@
 				<div ng-show = "anyChosenSymbol == true">
 					<h2> {{chosenSymbol.name}} </h2>
 					<table class = "table" ng-show = "!editing">
+						<!-- symbol details -->
 						<tr> <td> <b> Simbol </b> </td> <td> {{chosenSymbol.name}} </td> </tr>
 						<tr> <td> <b> Semnificație </b> </td> <td> {{chosenSymbol.description}} </td> </tr>
 					</table>
 					<table class = "table" ng-show = "editing">
+						<!-- symbol editing view-->
 						<tr> 
 							<td> <b> Simbol </b> </td> 
 							<td> <input type = "text" class = "form-control" ng-model = "chosenSymbol.name" /> </td> 
@@ -43,11 +48,13 @@
 					</table>
 
 					<div ng-show = "!editing">
+						<!-- button for starting editing symbol and for deleting symbol -->
 						<button class = 'btn btn-primary' ng-click = "startEditing(chosenSymbol)"> <span class = 'glyphicon glyphicon-pencil'> </span> </button>
 						<button ng-click = "delete(chosenSymbol)" class = 'btn btn-danger'> <span class = 'glyphicon glyphicon-remove'> </span> </button>
 					</div>
 
 					<div ng-show = "editing">
+						<!-- button for saving symbol changes and for canceling editing symbol -->
 						<button class = 'btn btn-primary' ng-click = "edit(chosenSymbol)"> <span class = 'glyphicon glyphicon-floppy-disk'> </span> </button>
 						<button ng-click = "cancelEditing(chosenSymbol)" class = 'btn btn-danger'> <span class = 'glyphicon glyphicon-remove'> </span> </button>
 					</div>
@@ -55,6 +62,7 @@
 				</div>
 			</div>
 			<div ng-show = "creating">
+				<!-- creating symbol form -->
 				<table class = "table">
 					<tr> 
 						<td> <b> Simbol </b> </td> 
@@ -65,6 +73,7 @@
 						<td> <textarea class = "form-control" ng-model = "newSymbol.description" rows = 5> </textarea> </td> 
 					</tr>
 				</table>
+					<!-- saving new symbol and canceling creating buttons -->
 					<button class = 'btn btn-primary' ng-click = "save()"> <span class = 'glyphicon glyphicon-floppy-disk'> </span> </button>
 					<button ng-click = "cancelCreating()" class = 'btn btn-danger'> <span class = 'glyphicon glyphicon-remove'> </span> </button>
 			</div>
