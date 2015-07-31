@@ -1,6 +1,9 @@
+<!-- expressions interpreter page -->
+
 <div ng-controller = "FiguriInterpreterCtrl" class = "text-block" style = "text-align: center;">
 	<h4> Figuri de stil </h4>
 
+	<!-- user input form -->
 	<h5> Care este figura de stil? </h5>
 
 	<p> 
@@ -69,6 +72,7 @@
 	</div>
 	<ol>
 		<li ng-repeat = "symbol in Symbols" style = "margin-top: 15px;">
+			<!-- suggestions input -->
 			<input type = "text" class = "form-control medium-input-box" 
 				typeahead = "description as description.name for description in Descriptions | filter:$viewValue | limitTo:3" 
 				ng-model = "symbol.name" 
@@ -77,9 +81,12 @@
 	</ol>
 	<br /> <br />
 
+	<!-- add symbol input button -->
 	<button class = "btn btn-primary" ng-click = "AddSymbol()"><span class = "glyphicon glyphicon-plus"></span> Adaugă simboluri </button> 
+	<!-- get symbols definitions button -->
 	<button class = "btn btn-primary" ng-click = "InterpretSymbols()"><span class = "glyphicon glyphicon-check"></span> Interpretează simboluri </button> <br /> <br />
 
+	<!-- display symbols definitions -->
 	<div ng-show = "showDescriptions">
 		<h5> Descrierile găsite pentru simboluri: </h5>
 		<div class = "alert alert-warning">
@@ -97,6 +104,7 @@
 		</ol>
 	</div>
 
+	<!-- other ideas -->
 	<h5> Alte idei? </h5>
 	<p> Dacă mai ai ceva de adăugat, o poți face aici! Scrie ideile ca fraze complete. :) </p>
 	<ul>
@@ -104,19 +112,24 @@
 			<textarea class="form-control" rows = "5" ng-model = "idea.description" value = "{idea.description}"></textarea>
 		</li>
 	</ul>
+	<!-- add idea input button -->
 	<button class = "btn btn-primary" ng-click = "AddIdea()"><span class = "glyphicon glyphicon-plus"></span> Adaugă idei </button> 
 	
 	<br /> <br /> <br />
 
+	<!-- build sortable ideas list button -->
 	<button class = "btn btn-success" ng-click = "BuildSortableIdeas()"><span class = "glyphicon glyphicon-thumbs-up"></span> Construiește ideile principale ale comentariului! </button> 
 
+	<!-- display sortable list -->
 	<div ng-show = "showSortableIdeas"> 
 		<h5> Ideile principale sunt: </h5>
+		<!-- error -->
 		<div ng-show = "SymbolsCount + IdeasCount == 0" class = "alert alert-danger">
 			<span class = "glyphicon glyphicon-exclamation-sign"> </span>
 			Trebuie să adaugi idei, simboluri + semnficațiile lor!
 		</div>
 		<div ng-show = "SymbolsCount + IdeasCount != 0">
+			<!-- sortable list -->
 			<ul class = "list-group" ui-sortable ng-model = "SortableIdeas">
 				<li class = "list-group-item" ng-repeat = "idea in SortableIdeas"> {{idea.description}} </li>
 			</ul>
@@ -127,21 +140,24 @@
 
 			<p> Dacă vrei să salvezi eseul argumentativ, îl vei putea căuta în „Comentariile mele” după aceste tag-uri. Separă-le prin virgulă! </p>
 			<p> (câmpul poate rămâne necompletat) </p>
-
+			<!-- tags input -->
 			<input class = "form-control" type = "text" ng-model = "Tags" value = "{Tags}" />
 			<br /> <br />
 
+			<!-- build button -->
 			<button class = "btn btn-success" ng-click = "BuildComment()"><span class = "glyphicon glyphicon-thumbs-up"></span> Construiește comentariul! </button> 
 		</div>
 
 
 		<div ng-show = "Checked">
 			<br /> <br />
+			<!-- error -->
 			<div ng-show = "Okay == false" class = "alert alert-danger">
 				<span class = "glyphicon glyphicon-exclamation-sign"> </span>
 				{{Error}}
 			</div>
 
+			<!-- word count and result -->
 			<p ng-show = "Okay == true"> Număr de cuvinte: {{wordCount}} </p>
 			<div ng-show = "Okay == true" id = "essay">
 				<p>
@@ -149,16 +165,19 @@
 				</p>
 			</div>
 			
+			<!-- saved essay -->
 			<div class="alert alert-success" role="alert" ng-show = "Saved">
 				Eseul a fost salvat. Îl poți vedea la „Comentariile mele” după ce se reîncarcă pagina!
 			</div>
 
+			<!-- save button -->
 			<button ng-show = "canBeSaved" class = "btn btn-success" ng-click = "saveHomework()"> Salvează în „Comentariile mele”! </button>
 		</div>
 	</div>
 
 	<br />
 	<br />
+	<!-- reseting button -->
 	<button class = "btn btn-danger" ng-click = "Reset()"><span class = "glyphicon glyphicon-remove"></span> Șterge tot! </button>
 	</center>
 </div>

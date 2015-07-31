@@ -1,3 +1,5 @@
+<!-- Game partial -->
+
 <div ng-controller = "JocCtrl">
 	<h3> Test </h3>
 	<hr />
@@ -5,6 +7,7 @@
 
 		<p> Alege mai întâi perioada în care au fost scrise operele din care vrei să fii testat. Apoi, selectează operele. </p>
 
+		<!-- choose chapter -->
 		<div ng-show = "started == false">
 			<select ng-model = "SelectedChapter" class = "form-control long-input-box">
 				<option ng-repeat = "chapter in Chapters" ng-if = "chapter.category == 'lesson'" ng-value = "chapter.id">
@@ -15,8 +18,9 @@
 			<br />
 			<br />
 
+			<!-- choose lessons -->
 			<select multiple ng-model = "SelectedLessons" class = "form-control long-input-box">
-				<option ng-repeat = "lesson in Lessons" ng-show = "lesson.chapter_id == SelectedChapter" ng-value = "lesson.id">
+				<option ng-repeat = "lesson in Lessons" ng-show = "lesson.chapter_id == SelectedChapter" ng-value = "lesson.global_id">
 					{{lesson.name}}
 				</option>
 			</select>
@@ -24,12 +28,12 @@
 			<br />
 
 			<br />
-
+			<!-- errors -->
 			<div class = "alert alert-danger" ng-show = "errors != ''">
 				<span class = "glyphicon glyphicon-remove"> </span> {{errors}}
 			</div>
 
-
+			<!-- start game button -->
 			<button class = "btn btn-success" ng-click = "StartGame()"> 
 				<div class = "dot subtitle-dot"> <span class = "glyphicon glyphicon-ok"> </span> </div>
 				<span class = "subtitle"> Start </span> 
@@ -38,7 +42,9 @@
 		</div>
 
 		<div ng-show = "started == true">
+			<!-- game div -->
 
+			<!-- result -->
 			<div ng-show = "Lost == true"> 
 				<p class = "subtitle game-lost"> Ai pierdut :( </p> 
 			</div>
@@ -52,15 +58,17 @@
 			<div ng-show = "done()">
 				<br />
 				<center>
-				<button class = "btn btn-danger" ng-click = "restart()"> 
-					Restart <br />
-					<span class = "glyphicon glyphicon-repeat"> </span> 
-				</button>
+					<!--restart button -->
+					<button class = "btn btn-danger" ng-click = "restart()"> 
+						Restart <br />
+						<span class = "glyphicon glyphicon-repeat"> </span> 
+					</button>
 				</center>
 				<br /> <br />
 			</div>
 
 			<div id = "game-area" ng-show = "!done()">
+
 				<div id = "score"> Scor: {{score}} </div>
 				<div id = "restart" ng-click = "restart()"> <span class = "glyphicon glyphicon-repeat"> </span>  </div>
 			
@@ -75,15 +83,15 @@
 				<br /> <br />
 
 				<div class = "message-bubble answer">
-					<!--
-					<ul style = "list-style: none;">
+				
+					<!-- <ul style = "list-style: none;">
 						<li ng-repeat = "answer in questions[selectedQuestion].raspunsuri"> 
 							<input class = "big-dot" type = "radio" ng-model = "GivenAnswer" value = "{{answer}}"/> {{answer}} 
 						</li>
 					</ul> -->
 
 					<div ng-repeat = "answer in questions[selectedQuestion].raspunsuri">
-			       		<input type = "radio" ng-model="$parent.GivenAnswer" value = "{{answer}}" /> {{answer}} 
+			       		<input type = "radio" ng-model = "$parent.GivenAnswer" value = "{{answer}}" /> {{answer}} 
 			       		<br />
 			        </div>
 			        <div ng-show = "checked == false"> <br />  <br /></div>
@@ -102,6 +110,7 @@
 				</div>
 			</div>
 			<div id = "life-area">
+				<!-- life -->
 				<img ng-repeat = "life in LifeLevel track by $index" class = "life-heart" ng-src = "{{heartImg[life]}}" />
 			</div>
 		</div>
