@@ -74,9 +74,8 @@
 		<li ng-repeat = "symbol in Symbols" style = "margin-top: 15px;">
 			<!-- suggestions input -->
 			<input type = "text" class = "form-control medium-input-box" 
-				typeahead = "description as description.name for description in Descriptions | filter:$viewValue | limitTo:3" 
-				ng-model = "symbol.name" 
-				value = "{symbol.name}" />
+				typeahead = "description.name as description.name for description in Descriptions | filter:$viewValue | limitTo:3" 
+				ng-model = "symbol.name" />
 		</li>
 	</ol>
 	<br /> <br />

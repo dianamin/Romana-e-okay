@@ -35,13 +35,11 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 		var left = 0, right = $scope.Descriptions.length - 1, middle, done = false;
 		while (left <= right && !done) {
 			middle = Math.floor((left + right) / 2);
-			alert(middle);
 			b = $scope.Descriptions[middle].noDiacritics;
 			if (a == b) {
 				done = true;
 				symbol.name = $scope.Descriptions[middle].name;
 				symbol.description = $scope.Descriptions[middle].description;
-				alert("yay");
 			}
 			else if (a < b) right = middle - 1;
 			else left = middle + 1;
@@ -87,6 +85,7 @@ app.controller('FiguriInterpreterCtrl', function ($scope, $http) {
 
 	$scope.InterpretSymbols = function() {
 		//search for symbols definitions in dictionary.
+
 		$scope.showDescriptions = true;
 		$scope.showSortableIdeas = false;
 		$scope.Checked = false;

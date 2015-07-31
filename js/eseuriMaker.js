@@ -54,7 +54,7 @@ app.controller('TemeMakerCtrl', function ($scope) {
 	$scope.checkText = function(s) {
 		//Checks if there are enough letters in string s to be considered valid
 
-		$scope.essays[index].edited = $scope.essays[index].edited.replace('script', '');
+		s = s.replace('script', '');
 		var l = s.length;
 		s = s.toLowerCase();
 		var letters = 0;
@@ -146,7 +146,7 @@ app.controller('TemeMakerCtrl', function ($scope) {
 		var FinalEssay = $scope.results[0];
 		var l = $scope.results.length;
 		for (i = 1; i < l; i++) {
-			FinalEssay = FinalEssay + " <br /> " + $scope.results[i];
+			FinalEssay = FinalEssay + " <br /> <br />" + $scope.results[i];
 		}
 		addHomework(FinalEssay, $scope.Tags);
 		$scope.Saved = true;
