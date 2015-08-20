@@ -1,10 +1,12 @@
 header {
 	width: 100%;
-	min-height: 25%;
+	min-height: 150px;
+	height: 25%;
 	background: url('../img/banner.jpg');
 	background-position: center;
 	border-bottom: double white;
 	z-index: -1000;
+	position: relative;
 }
 .title {
 	padding-top: 20px;
@@ -420,11 +422,13 @@ td {
 }
 
 #login-panel {
-	float: right;
 	width: 300px;
 	height: 70px;
 	border-top-left-radius: 20px;
 	background-color: rgba(190, 190, 190, 0.8);
+	position: absolute;
+	right: 0;
+	bottom: 0;
 }
 #login-panel-sm {
 	width: 100%;
