@@ -93,7 +93,7 @@ function testAPI() {
     FB.api('/me', function(response) {
         //sets user panel
         console.log('Successful login for: ' + response.name);
-        document.getElementById('user-name').innerHTML = 'Bine ai venit, ' + response.first_name + '!';
+        document.getElementById('user-name').innerHTML =  response.first_name + ' - ';
         profile_photo = "http://graph.facebook.com/" + response.id + "/picture?width=100&height=100"
         document.getElementById("profile-photo").setAttribute("style", "background: url('" + profile_photo + "'); background-size: cover;");
         userID = response.id;
@@ -104,7 +104,7 @@ function testAPI() {
                 url: 'php/add_user.php',
                 data: ({'id': userID, 'name': response.name}),
                 success: function(data) {
-                    document.getElementById('user-score').innerHTML = data;
+                    document.getElementById('user-score').innerHTML = data + " puncte";
                 }
             });
         });

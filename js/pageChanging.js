@@ -30,7 +30,7 @@ app.controller('PageChangeCtrl', function ($scope, $http) {
 
 
 	$scope.showLogo = function() {
-		return window.innerWidth >= 450;
+		return true;
 	}
 
 	$scope.hasLider = function() {

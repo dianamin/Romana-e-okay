@@ -25,7 +25,8 @@ var scrollToTop = function() {
 
 var showLogo = function() {
 	//only shows logo if screen is wide enough
-	return window.innerWidth >= 450;
+	//return window.innerWidth >= 450;
+	return true;
 }
 
 var showElement = function(id) {

@@ -2,20 +2,28 @@ header {
 	width: 100%;
 	min-height: 150px;
 	height: 25%;
-	background: url('../img/banner.jpg');
+	background: url('http://cf.mp-cdn.net/ff/f1/f1fc0eb6164bc6560d1a7ce802dd.jpg');
+	/*background: url('../img/banner.jpg');*/
 	background-position: center;
 	border-bottom: double white;
-	z-index: -1000;
+	z-index: -1;
 	position: relative;
 }
+
+#login-panel2 {
+	background-color: black;
+	color: white;
+	text-shadow: 0 0 10px black;
+}
+
 .title {
-	padding-top: 20px;
 	font-size: 20px;
+	padding-top: 0.3%;
 	font-family: Impact;
 	font-weight: 100;
 	letter-spacing: 3;
 	word-spacing: 5;
-	text-shadow: 0 0 10px black;
+	text-shadow: 0 0 15px black;
 	text-align: center;
 	color: white;
 }
@@ -35,6 +43,7 @@ header {
 	-webkit-transition: all 1s;
 	-moz-transition: all 1s;
 	-o-transition: all 1s;
+	z-index: 2000;
 }
 #logo:hover {
 	transform: rotate(360deg);
@@ -437,18 +446,21 @@ td {
 }
 
 #logout-button {
-	font-size: 9px;
 	color: #800000;
+	z-index: 1000;
+}
+
+.user-button {
+	font-size: 9px;
 	cursor: pointer;
 }
 
 #profile-photo {
 	margin-left: 20px;
-	height: 50px;
-	width: 50px;
+	height: 25px;
+	width: 25px;
 	border-radius: 100%;
 	display: inline-block;
-	margin-top: 10px;
 	box-shadow: 0 0 10px;
 }
 #profile-data {
@@ -458,6 +470,7 @@ td {
 	vertical-align: top;
     word-wrap: break-word;
     text-align: center;
+    font-size: 20px;
 }
 
 #back-to-top {

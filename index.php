@@ -47,25 +47,30 @@
 </head>
 
 <body ng-controller = "PageChangeCtrl">
+
+	<!-- login panel -->
+	<div id = "login-panel2" ng-show = "showLogo()" ng-click = "changePage(8)">
+		<div id = "profile-data"> 
+			<div id = "profile-photo" style = "display: inline-block;"> </div>
+			<div style = "display: inline-block; margin-left: 10px; vertical-align: top;">
+				<div style = "float: left;">
+					<span id = "user-name"> Bine ai venit! </span> 
+					<span style = "display: inline-block;" id = "user-score"> </span>
+				</div>
+			</div> 
+		</div>
+		<div style = "margin-top: 10px; float: right;">
+			<button id = "login-button" class = "btn btn-default user-button" onclick = "login()"> Log In </button>
+			<button id = "logout-button" class = "btn btn-default user-button" onclick = "logout()"> Log Out </button>
+		</div>
+		<p id = "status" style = "display: none;"> </p>
+	</div>
+
 	<!-- header -->
 	<header> 
+
 		<div class = "title">
 			<h1 style = "font-size: 45px;"> Româna e okay! </h1>
-		</div>
-		<!-- login panel -->
-		<div id = "login-panel" ng-show = "showLogo()" ng-click = "changePage(8)">
-			<div>
-				<div id = "profile-photo"> </div>
-				<div id = "profile-data"> 
-					<div> <center>
-						<div id = "user-name"> Bine ai venit! </div>
-						<div> Scor: <span id = "user-score">0</span> </div>
-						<button id = "login-button" class = "btn-default" onclick = "login()"> Log In </button>
-						<div id = "logout-button" onclick = "logout()"> Log Out </button>
-					</center> </div>
-				</div>
-			</div>
-			<p id = "status" style = "display: none;"> </p>
 		</div>
 	</header>
 	<div id = "top-line"> </div>
