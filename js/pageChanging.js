@@ -19,6 +19,7 @@ app.controller('PageChangeCtrl', function ($scope, $http) {
 	$http({method: 'GET', url: 'php/get_lessons.php'}).success(function(data) {
 		//gets lessons from database
 		creations = data;
+		console.log(creations);
 		$scope.creations = data;
 	});
 
@@ -74,8 +75,8 @@ app.controller('PageChangeCtrl', function ($scope, $http) {
 		//opens Creation
 		$scope.editing = false;
 		$scope.editablePage = index;
-		$scope.pageVersion = creations[index].version;
-		$scope.SelectedCreation = $scope.SelectedCreation + $scope.pageVersion + ".html";
+		$scope.pageVersion = $scope.creations[index].version;
+		$scope.SelectedCreation = $scope.creations[index].page + $scope.pageVersion + ".html";
 		var position = $('#continut').offset();
 		$('html, body').animate({scrollTop: position.top}, "slow");
 		$scope.editing = false;

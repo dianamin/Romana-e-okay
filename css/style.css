@@ -1,9 +1,14 @@
+body {
+	background: url('http://cf.mp-cdn.net/ff/f1/f1fc0eb6164bc6560d1a7ce802dd.jpg');
+	background-position: bottom;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
 header {
 	width: 100%;
 	height: 150px;
-	background: url('http://cf.mp-cdn.net/ff/f1/f1fc0eb6164bc6560d1a7ce802dd.jpg');
 	/*background: url('../img/banner.jpg');*/
-	background-position: center;
 	border-bottom: double white;
 	z-index: -1;
 }

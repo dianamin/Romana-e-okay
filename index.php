@@ -68,17 +68,21 @@
 
 	<!-- header -->
 	<header> 
-
 		<div class = "title">
 			<span id = "title-text"> Româna e okay! </span>
 		</div>
 	</header>
+
+
+	<div style = "background-color: white;">
+		
 	<div id = "top-line"> </div>
 	<center> 
 		<div id = "logo" ng-show = "showLogo()" ng-click = "changePage(0)"> 
 			<span class = "glyphicon glyphicon-thumbs-up"></span> 
 		</div>
 	</center>
+
 
 	<!-- bootstrap navbar -->
 	<div id = "topnavbar">
@@ -209,7 +213,7 @@
 	<footer id = "page-footer">
 		© Diana Ghinea
 	</footer>
-
+</div>
 </body>
 
 </html>
