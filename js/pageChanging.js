@@ -73,7 +73,6 @@ app.controller('PageChangeCtrl', function ($scope, $http) {
 	$scope.openCreation = function(index) {
 		//opens Creation
 		$scope.editing = false;
-		$scope.SelectedCreation = creations[index].page;
 		$scope.editablePage = index;
 		$scope.pageVersion = creations[index].version;
 		$scope.SelectedCreation = $scope.SelectedCreation + $scope.pageVersion + ".html";

@@ -1,13 +1,11 @@
 header {
 	width: 100%;
-	min-height: 150px;
-	height: 25%;
+	height: 150px;
 	background: url('http://cf.mp-cdn.net/ff/f1/f1fc0eb6164bc6560d1a7ce802dd.jpg');
 	/*background: url('../img/banner.jpg');*/
 	background-position: center;
 	border-bottom: double white;
 	z-index: -1;
-	position: relative;
 }
 
 #login-panel2 {
@@ -18,7 +16,6 @@ header {
 
 .title {
 	font-size: 20px;
-	padding-top: 0.3%;
 	font-family: Impact;
 	font-weight: 100;
 	letter-spacing: 3;
@@ -26,6 +23,16 @@ header {
 	text-shadow: 0 0 15px black;
 	text-align: center;
 	color: white;
+	height: 130px;
+	line-height: 130px;
+	white-space: nowrap;
+}
+
+#title-text {
+  vertical-align: middle;
+  font-size: 45px;
+  font-weight: 400;
+  text-align: center;
 }
 
 #logo{

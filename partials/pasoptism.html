@@ -42,7 +42,7 @@
 		<input type = "radio" name = "Characteristic" ng-model = "CharacteristicCheck" class = "big-dot" value = "Elementele moderniste din opere" /> Elementele moderniste din opere <br />
 		<input type = "radio" name = "Characteristic" ng-model = "CharacteristicCheck" class = "big-dot" value = "Dezvoltarea romanului" /> Dezvoltarea romanului <br />
 		<br />
-		<div class = "alert alert-success" style = "opacity: 0;" ng-show = "checkCharacteristics()" id = "characteristic1">
+		<div class = "alert alert-success" ng-show = "checkCharacteristics()" id = "characteristic1">
 			Curentele literare din occident (iluminismul, preromantismul, romantismul, clasicismul și realismul incipient) sunt asimilate simultan. Deci, principala trăsătură a pașoptismului constă în coexistența curentelor literare, nu numai în opera aceluiași scriitor, ci chiar și în aceeași creație.
 		</div>
 		<div class = "alert alert-danger" ng-show = "!checkCharacteristics()" id = "characteristic1">
@@ -128,7 +128,7 @@
 			<button class = "btn btn-danger" ng-click = "checkProseWriters()"> Verifică </button>
 			</center>
 
-			<div class = "alert alert-success" style = "opacity: 0;" ng-show = "showProseWriters == true" id = "ProseWriters">
+			<div class = "alert alert-success" ng-show = "showProseWriters == true" id = "ProseWriters">
 				<center>
 					<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "RightProseWriters"></span>
 					<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!RightProseWriters"></span>
@@ -167,7 +167,7 @@
 			<button class = "btn btn-danger" ng-click = "checkPoetryWriters()"> Verifică </button>
 			</center>
 
-			<div class = "alert alert-success" style = "opacity: 0;" ng-show = "showPoetryWriters == true" id = "PoetryWriters">
+			<div class = "alert alert-success" ng-show = "showPoetryWriters == true" id = "PoetryWriters">
 				<center>
 					<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "RightPoetryWriters"></span>
 					<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!RightPoetryWriters"></span>
@@ -206,7 +206,7 @@
 			<button class = "btn btn-danger" ng-click = "checkDramaWriters()"> Verifică </button>
 			</center>
 
-			<div class = "alert alert-success" style = "opacity: 0;" ng-show = "showDramaWriters == true" id = "DramaWriters">
+			<div class = "alert alert-success" ng-show = "showDramaWriters == true" id = "DramaWriters">
 				<center>
 					<span class = "glyphicon glyphicon-ok" style = "color: #5cb85c" ng-show = "RightDramaWriters"></span>
 					<span class = "glyphicon glyphicon-remove" style = "color: #d9534f" ng-show = "!RightDramaWriters"></span>

@@ -46,6 +46,7 @@ app.controller('AnswersPasoptismCtrl', function($scope) {
 			else if ($scope.ProseWriter[i] != $scope.CorrectProseWriters[i]) $scope.RightProseWriters = false;
 		}
 		$scope.showProseWriters = true;
+		console.log($scope.showProseWriters);
 		showElement("ProseWriters");
 		return $scope.RightProseWriters;
 	}
@@ -64,7 +65,6 @@ app.controller('AnswersPasoptismCtrl', function($scope) {
 			else if ($scope.PoetryWriter[i] != $scope.CorrectPoetryWriters[i]) $scope.RightPoetryWriters = false;
 		}
 		$scope.showPoetryWriters = true;
-		showElement("PoetryWriters");
 		return $scope.RightPoetryWriters;
 	}
 
@@ -82,7 +82,6 @@ app.controller('AnswersPasoptismCtrl', function($scope) {
 			else if ($scope.DramaWriter[i] != $scope.CorrectDramaWriters[i]) $scope.RightDramaWriters = false;
 		}
 		$scope.showDramaWriters = true;
-		showElement("DramaWriters");
 		return $scope.RightDramaWriters;
 	}
 });
@@ -134,7 +133,6 @@ app.controller('AnswersJunimeaCtrl', function ($scope) {
 			else if ($scope.TrueClassics[i] != $scope.Classics[i]) $scope.RightClassics = false;
 		}
 		$scope.showClassics = true;
-		showElement("Classics");
 		return $scope.RightClassics;
 	}
 
@@ -152,7 +150,6 @@ app.controller('AnswersJunimeaCtrl', function ($scope) {
 			else if ($scope.TrueCharacteristics[i] != $scope.Characteristic[i]) $scope.RightCharacteristics = false;
 		}
 		$scope.showCharacteristics = true;
-		showElement("Characteristics");
 
 		return $scope.RightCharacteristics;
 	}
@@ -201,7 +198,7 @@ app.controller('AnswersPosteminescianismCtrl', function ($scope) {
 			else if ($scope.TrueCharacteristics[i] != $scope.Characteristics[i]) $scope.RightCharacteristics = false;
 		}
 		$scope.showCharacteristics = true;
-		showElement("Characteristics");
+
 
 		return $scope.RightCharacteristics;
 	}
@@ -265,7 +262,6 @@ app.controller('AnswersInterbelicaCtrl', function ($scope) {
 			else if ($scope.TrueCharacteristics[i] != $scope.Characteristics[i]) $scope.RightCharacteristics = false;
 		}
 		$scope.showCharacteristics = true;
-		showElement("Characteristics");
 
 		return $scope.RightCharacteristics;
 	}
@@ -298,7 +294,7 @@ app.controller('AnswersInterbelicaCtrl', function ($scope) {
 			else if ($scope.TrueCharacteristics2[i] != $scope.Characteristics2[i]) $scope.RightCharacteristics2 = false;
 		}
 		$scope.showCharacteristics2 = true;
-		showElement("Characteristics2");
+
 
 		return $scope.RightCharacteristics2;
 	}
@@ -334,7 +330,6 @@ app.controller('AnswersPostbelicaCtrl', function ($scope) {
 			else if ($scope.TrueCharacteristics[i] != $scope.Characteristics[i]) $scope.RightCharacteristics = false;
 		}
 		$scope.showCharacteristics = true;
-		showElement("Characteristics");
 
 		return $scope.RightCharacteristics;
 	}

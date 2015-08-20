@@ -70,14 +70,14 @@
 	<header> 
 
 		<div class = "title">
-			<h1 style = "font-size: 45px;"> Româna e okay! </h1>
+			<span id = "title-text"> Româna e okay! </span>
 		</div>
 	</header>
 	<div id = "top-line"> </div>
 	<center> 
 		<div id = "logo" ng-show = "showLogo()" ng-click = "changePage(0)"> 
 			<span class = "glyphicon glyphicon-thumbs-up"></span> 
-		</div> 
+		</div>
 	</center>
 
 	<!-- bootstrap navbar -->
