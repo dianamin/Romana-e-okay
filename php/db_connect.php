@@ -1,7 +1,7 @@
 <?php
-	$host = "localhost";
-	$username = "root";
-	$password = "diana123";
+	$host = "";
+	$username = "";
+	$password = "";
 	$db = "Romana-e-okay";
 	$c = mysql_connect($host, $username, $password);
 	@mysql_select_db($db);
