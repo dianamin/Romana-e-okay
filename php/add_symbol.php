@@ -17,9 +17,9 @@
 		WHERE id = {$id}";
 
 	$data = $DB->query($find_id_query);
-	$type = $data->fetch_array(MYSQLI_ASSOC);
+	$user = $data->fetch_array(MYSQLI_ASSOC);
 
-	if ($data->num_rows == 1 && $type == "admin") {
+	if ($data->num_rows == 1 && $type['type'] == "admin") {
 		$symbol_new_name = isset($_POST['name']) ? $DB->real_escape_string($_POST['name']) : NULL;
 		$symbol_new_description = isset($_POST['description']) ? $DB->real_escape_string($_POST['description']) : NULL;
 
