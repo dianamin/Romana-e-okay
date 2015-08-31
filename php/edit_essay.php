@@ -4,25 +4,25 @@
 	Used in myComments.js
 */
 	include 'db_connect.php';
-	$id_essay = $_POST['id'];
-	$content = $_POST['content'];
+	$id_essay = isset($_POST['id']) ? $DB->real_escape_string($_POST['id']) : NULL;
+	$content = isset($_POST['content']) ? $DB->real_escape_string($_POST['content']) : NULL;
 	session_start();
 	$id = $_SESSION["id"];
 
 	$find_essay_query = "
 		SELECT *
 		FROM essays
-		WHERE id = ". $id_essay ." ;";
-	$find_essay = mysql_query($find_essay_query);
-	$essay_found = mysql_numrows($find_essay);
+		WHERE id = '{$id_essay}'";
+	$find_essay = $DB->query($find_essay_query);
+	$essay = $find_essay->fetch_array(MYSQLI_ASSOC);
 
-	if ($essay_found == 1) {
-		if (mysql_result($find_essay, 0, "id_user") == $id) {
+	if ($find_essay->num_rows == 1) {
+		if ($essay['id_user'] == $id) {
 			$edit_query = "	
 				UPDATE essays
-				SET homework = '". $content . "'
-				WHERE id = " . $id_essay . ";";
-			$edit = mysql_query($edit_query);
+				SET homework = '{$content}'
+				WHERE id = '{$id_essay}' ";
+			$edit = $DB->query($edit_query);
 		}
 	}
 ?>
