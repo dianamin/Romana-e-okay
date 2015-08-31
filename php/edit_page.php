@@ -7,30 +7,30 @@
 	session_start();
 	$id = $_SESSION["id"];
 
-	mysql_query("set names 'utf8'");
+	$DB->query("set names 'utf8'");
 	$find_id_query = "
 		SELECT *
 		FROM users
-		WHERE id = ". $id ." ;";
+		WHERE id = '{$id}' ";
 
-	$id_result = mysql_query($find_id_query);
-	$id_found = mysql_numrows($id_result);
+	$id_result = $DB->query($find_id_query);
+	$user = $id_result->fetch_array(MYSQLI_ASSOC);
 
-	if ($id_found == 1 && mysql_result($id_result, 0, "type") == "admin") {
-		$page_id = $_POST['lesson_id'];
+	if ($id_result->num_rows == 1 && $user['type'] == "admin") {
+		$page_id = isset($_POST['lesson_id']) ? $DB->real_escape_string($_POST['lesson_id']) : NULL;
 
 		$find_page_query = "
 			SELECT *
 			FROM lessons
-			WHERE global_id = ". $page_id ." ;";
+			WHERE global_id = '{$page_id}'";
 
-		$page_result = mysql_query($find_page_query);
-		$page_found = mysql_numrows($page_result);
+		$page_result = $DB->query($find_page_query);
+		$page = $page_result->fetch_array(MYSQLI_ASSOC);
 
 
-		if ($page_found == 1) {
-			$url = mysql_result($page_result, 0, "page");
-			$version = 1 - mysql_result($page_result, 0, "version");
+		if ($page_result->num_rows == 1) {
+			$url = $page['page'];
+			$version = 1 - $page['version'];
 			$file = "../" . $url . $version . ".html";
 			$new_content = $_POST['new_content'];
 			$new_chapter = $_POST['new_chapter'];
@@ -50,13 +50,13 @@
 			WHERE global_id = " . $page_id . ";";
 
 
-			$update_result = mysql_query($update_query);
+			$update_result = $DB->query($update_query);
 
 			$update_change_query = "
 				INSERT INTO changes (id, lesson_name, operation, date)
 				VALUES ('NULL', '$new_name', 'edit', now())";
 			
-			$update_change_result = mysql_query($update_change_query);
+			$update_change_result = $DB->query($update_change_query);
 			echo ":)";
 		}
 	}
