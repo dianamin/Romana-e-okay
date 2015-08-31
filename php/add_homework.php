@@ -5,11 +5,16 @@
 */
 
 	include 'db_connect.php';
-	$s = $_POST['s'];
-	$t = $_POST['tags'];
+	
+	$s = isset($_POST['s']) ? $DB->real_escape_string($_POST['s']) : NULL;
+	$t = isset($_POST['tags']) ? $DB->real_escape_string($_POST['tags']) : NULL;
+	
 	session_start();
 	$id = $_SESSION["id"];
+	
 	$insert_text = "INSERT INTO essays(id_user, id, homework, tags, public, reported) VALUES (" . $id . ", 'NULL', '". $s . "', '" . $t ."', 'false', 0)";
-	echo $insert_text;
-	$inserted_query = mysql_query($insert_text);
+	
+	//echo $insert_text; why ??
+	
+	$inserted_query = @$DB->query($insert_text);
 ?>
