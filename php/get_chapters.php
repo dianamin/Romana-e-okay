@@ -4,19 +4,20 @@
 	Used in adminList.js, createPage.js, editPage.js.
 */
 	include 'db_connect.php';
-	mysql_query("set names 'utf8'");
+	$DB->query("set names 'utf8'");
 	$chapters_query = "
 		SELECT *
-		FROM chapters;";
+		FROM chapters";
 
-	$chapters_result = mysql_query($chapters_query);
-	$chapters_count = mysql_numrows($chapters_result);
+	$chapters_result = $DB->query($chapters_query);
+	$chapters_count = $chapters_result->num_rows;
+	$chapter = $chapters_result->fetch_array(MYSQLI_ASSOC);
 	
 	$chapters = array();
 	for ($i = 0; $i < $chapters_count; $i++) {
 		$aux = array(
-			"id" => mysql_result($chapters_result, $i, "id"),
-			"name" => mysql_result($chapters_result, $i, "name")
+			"id" => $chapter['id'],
+			"name" => $chapter['name']
 		);
 		array_push($chapters, $aux);
 	}
