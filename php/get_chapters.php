@@ -16,8 +16,8 @@
 	$chapters = array();
 	for ($i = 0; $i < $chapters_count; $i++) {
 		$aux = array(
-			"id" => $chapter['id'],
-			"name" => $chapter['name']
+			"id" => $chapter[$i]['id'],
+			"name" => $chapter[$i]['name']
 		);
 		array_push($chapters, $aux);
 	}
