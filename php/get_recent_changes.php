@@ -4,16 +4,17 @@
 	Used in adminPanel.js, figuriInterpreter.js
 */
 	include 'db_connect.php';
-	mysql_query("set names 'utf8'");
+	$DB->query("set names 'utf8'");
 
 	$select_changes_query = "
 		SELECT *
 		FROM changes
-		ORDER BY date DESC;
+		ORDER BY date DESC
 	";
 
-	$select_changes = mysql_query($select_changes_query);
-	$count = mysql_numrows($select_changes);
+	$select_changes = $DB->query($select_changes_query);
+	$count = $select_changes->num_rows;
+	$change = $select_changes->fetch_array(MYSQLI_ASSOC);
 
 	if ($count > 20) $count = 20;
 	$changes = array();
@@ -21,9 +22,9 @@
 
 	for ($i = 0; $i < $count; $i++) {
 		$aux = array(
-			"name" => mysql_result($select_changes, $i, "lesson_name"),
-			"date" => mysql_result($select_changes, $i, "date"),
-			"operation" => mysql_result($select_changes, $i, "operation")
+			"name" => $change[$i]['lesson_name'],
+			"date" => $change[$i]['date'],
+			"operation" => $change[$i]['operation']
 		);
 		array_push($changes, $aux);
 	}
