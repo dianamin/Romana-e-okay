@@ -6,17 +6,17 @@
 	include 'db_connect.php';
 	session_start();
 	$id = $_SESSION["id"];
-	mysql_query("set names 'utf8'");
+	$DB->query("set names 'utf8'");
 
 	$find_id_query = "
 		SELECT *
 		FROM users
-		WHERE id = ". $id ." ;";
+		WHERE id = '{$id}' ";
 
-	$id_result = mysql_query($find_id_query);
-	$id_found = mysql_numrows($id_result);
+	$id_result = $DB->query($find_id_query);
+	$user = $id_result->fetch_array(MYSQLI_ASSOC);
 
-	if ($id_found == 1 && mysql_result($id_result, 0, "type") == "admin") {
+	if ($id_result->num_rows == 1 && $user['type'] == "admin") {
 		$page_id = $_POST['id'];
 		$file = "../json/questions/" . $page_id . ".json";
 		echo file_get_contents($file);
