@@ -5,23 +5,24 @@
 */
 	include 'db_connect.php';
 
-	mysql_query("set names 'utf8'");
+	$DB->query("set names 'utf8'");
 
 	$query = "
 		SELECT * 
 		FROM symbols";
-	$result = mysql_query($query);
-	$count = mysql_numrows($result);
+	$result = $DB->query($query);
+	$count = $result->num_rows;
+	$symbol = $result->fetch_array(MYSQLI_ASSOC);
 
 	$symbols = array();
 	$aux = array();
 
 	for ($i = 0; $i < $count; $i++) {
 		$aux = array(
-			"name" => mysql_result($result, $i, "symbol"),
-			"description" => mysql_result($result, $i, "description"),
+			"name" => $symbol[$i]['symbol'],
+			"description" => $symbol[$i]['description'],
 			"noDiacritics" => "",
-			"id" => mysql_result($result, $i, "id"),
+			"id" => $symbol[$i]['description'],
 			"index" => $i
 		);
 		array_push($symbols, $aux);
