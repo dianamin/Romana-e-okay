@@ -22,14 +22,14 @@
 	for ($i = 0; $i < $num; $i++) {	
 		$aux = array(
 			"index" => $i,
-			"global_id" => $lesson['global_id'],
-			"chapter_id" => $lesson['chapter_id'],
-			"name" => $lesson['name'],
-			"author" => $lesson['author'],
-			"type" => $lesson['type'],
-			"img" => $lesson['img'],
-			"page" => $lesson['page'],
-			"version" => $lesson['version']
+			"global_id" => $lesson[$i]['global_id'],
+			"chapter_id" => $lesson[$i]['chapter_id'],
+			"name" => $lesson[$i]['name'],
+			"author" => $lesson[$i]['author'],
+			"type" => $lesson[$i]['type'],
+			"img" => $lesson[$i]['img'],
+			"page" => $lesson[$i]['page'],
+			"version" => $lesson[$i]['version']
 		);
 		array_push($creations, $aux);
 	}
