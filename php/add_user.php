@@ -4,10 +4,9 @@
 	Used in facebookLogin.js
 */
 	include 'db_connect.php';
+	
 	$id = isset($_POST['id']) ? $DB->real_escape_string($_POST['id']) : NULL;
 	$name = isset($_POST['name']) ? $DB->real_escape_string($_POST['name']) : NULL;
-	
-	session_start();
 
 	$_SESSION["id"] = $id;
 
