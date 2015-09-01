@@ -7,16 +7,16 @@
 	session_start();
 	$id = $_SESSION["id"];
 
-	mysql_query("set names 'utf8'");
+	$DB->query("set names 'utf8'");
 	$find_id_query = "
 		SELECT *
 		FROM users
-		WHERE id = ". $id ." ;";
+		WHERE id = '{$id}' ";
 
-	$id_result = mysql_query($find_id_query);
-	$id_found = mysql_numrows($id_result);
+	$id_result = $DB->query($find_id_query);
+	$user = $id_result->fetch_array(MYSQLI_ASSOC);
 
-	if ($id_found == 1 && mysql_result($id_result, 0, "type") == "admin") {
+	if ($id_result->num_rows == 1 && $user['type'] == "admin") {
 
 		$url = mysql_result($page_result, 0, "page");
 		$version = 1 - mysql_result($page_result, 0, "version");
@@ -40,14 +40,14 @@
 			INSERT INTO lessons (global_id, chapter_id, name, author, type, img, page, version)
 			VALUES (NULL, '$new_chapter', '$new_name', '$new_author', '$new_type', '$new_img', '$new_page', 0)";
 		
-		$insert_result = mysql_query($insert_query);
+		$insert_result = $DB->query($insert_query);
 		
 		$insert_change_query = "
 			INSERT INTO changes (id, lesson_name, operation, date)
 			VALUES ('NULL', '$new_name', 'create', now())";
 
 		
-		$insert_change_result = mysql_query($insert_change_query);
+		$insert_change_result = $DB->query($insert_change_query);
 
 
 		$get_id_query = "
@@ -55,10 +55,11 @@
 			FROM lessons
 			WHERE page = " . $new_page . "
 		;";
-		$get_id = mysql_query($get_id_query);
+		$get_id = $DB->query($get_id_query);
+		$id = $get_id->fetch_array(MYSQLI_ASSOC);
 		$count = mysql_numrows($get_id);
 		if ($count == 1) {
-			$global_id = mysql_result($get_id, 0, "global_id");
+			$global_id = $id['global_id'];
 			$file3 = fopen("../json/questions" . $global_id . "json", "w");
 			echo "../json/questions" . $global_id . "json";
 			fwrite($file3, "");
