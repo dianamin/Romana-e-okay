@@ -6,14 +6,14 @@
 
 	include 'db_connect.php';
 
-	mysql_query("set names 'utf8'");
+	$DB->query("set names 'utf8'");
 
 	$query = "
 		SELECT * 
 		FROM lessons";
-	$result = mysql_query($query);
-	$num = mysql_numrows($result);
-
+	$result = $DB->query($query);
+	$num = $result->num_rows;
+	$lesson = $result->fetch_array(MYSQLI_ASSOC);
 
 	$creations = array();
 	$aux = array();
@@ -22,14 +22,14 @@
 	for ($i = 0; $i < $num; $i++) {	
 		$aux = array(
 			"index" => $i,
-			"global_id" => mysql_result($result, $i, "global_id"),
-			"chapter_id" => mysql_result($result, $i, "chapter_id"),
-			"name" => mysql_result($result, $i, "name"),
-			"author" => mysql_result($result, $i, "author"),
-			"type" => mysql_result($result, $i, "type"),
-			"img" => mysql_result($result, $i, "img"),
-			"page" => mysql_result($result, $i, "page"),
-			"version" => mysql_result($result, $i, "version")
+			"global_id" => $lesson[$i]['global_id'],
+			"chapter_id" => $lesson[$i]['chapter_id'],
+			"name" => $lesson[$i]['name'],
+			"author" => $lesson[$i]['author'],
+			"type" => $lesson[$i]['type'],
+			"img" => $lesson[$i]['img'],
+			"page" => $lesson[$i]['page'],
+			"version" => $lesson[$i]['version']
 		);
 		array_push($creations, $aux);
 	}
