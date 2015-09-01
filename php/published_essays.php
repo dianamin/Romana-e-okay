@@ -48,7 +48,7 @@
 
 			$get_given_rating = $DB->query($get_given_rating_query);
 			$rate = $get_given_rating->fetch_array(MYSQLI_ASSOC);
-			if (mysql_numrows($get_given_rating)) {
+			if ($get_given_rating->num_rows) {
 				$given_rating = $rate['rating'];
 				$rated_by_user = 1;
 			}
