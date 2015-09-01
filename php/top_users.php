@@ -4,15 +4,15 @@
 	Used in topUsers.js
 */
 	include 'db_connect.php';
-	mysql_query("set names 'utf8'");
+	$DB->query("set names 'utf8'");
 
 	$query = "
 		SELECT * 
 		FROM users
 		Order By score DESC";
-	$result = mysql_query($query);
-	$num = mysql_numrows($result);
-
+	$result = $DB->query($query);
+	$num = $result->num_rows;
+	$data = $result->fetch_array(MYSQLI_ASSOC);
 	if ($num > 10) $num = 10;
 
 	$users = array();
@@ -21,8 +21,8 @@
 	for ($i = 0; $i < $num; $i++) {	
 		$aux = array(
 			"index" => $i,
-			"name" => mysql_result($result, $i, "name"),
-			"score" => mysql_result($result, $i, "Score")
+			"name" => $data[$i]['name'],
+			"score" => $data[$i]['score']
 		);
 		array_push($users, $aux);
 	}
