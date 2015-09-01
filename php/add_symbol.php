@@ -4,17 +4,13 @@
 	Used in symbols.js
 */
 	include 'db_connect.php';
-
-	//mysql_query("set names 'utf8'");
 	
-	session_start();
 	$id = $_SESSION["id"];
 
-	$DB->query("set names 'utf8'");
 	$find_id_query = "
 		SELECT *
 		FROM users
-		WHERE id = {$id}";
+		WHERE id = '{$id}' ";
 
 	$data = $DB->query($find_id_query);
 	$user = $data->fetch_array(MYSQLI_ASSOC);
