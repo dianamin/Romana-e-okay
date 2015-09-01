@@ -10,13 +10,13 @@
 	$find_user_query = "
 		SELECT *
 		FROM users
-		WHERE ID = ". $id ." ;";
+		WHERE id = {$id}";
 
-	$user_result = mysql_query($find_user_query);
-	$found = mysql_numrows($user_result);
+	$user_result = $DB->query($find_user_query);
+	$user = $user_result->fetch_array(MYSQLI_ASSOC);
 
-	if ($found == 1) {
-		if (mysql_result($user_result, 0, "type") == "admin") {
+	if ($user_result->num_rows == 1) {
+		if ($user['type'] == "admin") {
 			echo "
 				<button class = 'btn btn-primary' ng-click = 'editPage()'> <span class = 'glyphicon glyphicon-pencil'> </span> </button>
 			";
