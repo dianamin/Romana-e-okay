@@ -93,7 +93,7 @@ function testAPI() {
     FB.api('/me', function(response) {
         //sets user panel
         console.log('Successful login for: ' + response.name);
-        document.getElementById('user-name').innerHTML =  response.first_name + ' - ';
+        document.getElementById('user-name').innerHTML =  response.name + ' - ';
         profile_photo = "http://graph.facebook.com/" + response.id + "/picture?width=100&height=100"
         document.getElementById("profile-photo").setAttribute("style", "background: url('" + profile_photo + "'); background-size: cover;");
         userID = response.id;
