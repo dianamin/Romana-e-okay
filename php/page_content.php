@@ -6,32 +6,33 @@
 	include 'db_connect.php';
 	session_start();
 	$id = $_SESSION["id"];
-	mysql_query("set names 'utf8'");
+	$DB->query("set names 'utf8'");
 
 	$find_id_query = "
 		SELECT *
 		FROM users
-		WHERE id = ". $id ." ;";
+		WHERE id = '{$id}' ";
 
-	$id_result = mysql_query($find_id_query);
-	$id_found = mysql_numrows($id_result);
+	$id_result = $DB->query($find_id_query);
+	$user = $id_result->fetch_array(MYSQLI_ASSOC);
 
-	if ($id_found == 1 && mysql_result($id_result, 0, "type") == "admin") {
+	if ($id_result->num_rows == 1 && $user['type'] == "admin") {
 		$page_id = file_get_contents("php://input");
 
 		$find_page_query = "
 			SELECT *
 			FROM lessons
-			WHERE global_id = ". $page_id ." ;";
+			WHERE global_id = '{$page_id}' ";
 
-		$page_result = mysql_query($find_page_query);
-		$page_found = mysql_numrows($page_result);
+		$page_result = $DB->query($find_page_query);
+		$page_found = $page_result->num_rows;
+		$page = $page_result->fetch_array(MYSQLI_ASSOC);
 
 
 		if ($page_found == 1) {
-			$name = mysql_result($page_result, 0, "name");
-			$url = mysql_result($page_result, 0, "page");
-			$version = mysql_result($page_result, 0, "version");
+			$name = $page['page'];
+			$url = $page['page'];
+			$version = $page['version'];
 			$file = "../" . $url . $version . ".html";
 			$file_content = file_get_contents($file);
 			$prev_version = 1 - $version;
@@ -42,10 +43,10 @@
 				"name" => $name,
 				"current" => $file_content,
 				"previous" => $prev_file_content,
-				"chapterId" => mysql_result($page_result, 0, "chapter_id"),
-				"img" => mysql_result($page_result, 0, "img"),
-				"type" => mysql_result($page_result, 0, "type"),
-				"author" => mysql_result($page_result, 0, "author")
+				"chapterId" => $page['chapter_id'],
+				"img" => $page['img'],
+				"type" => $page['type'],
+				"author" => $page['author']
 			);
 			echo json_encode($content);
 			
