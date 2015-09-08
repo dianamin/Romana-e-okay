@@ -4,10 +4,9 @@
 	Used in createPage.js.
 */
 	include 'db_connect.php';
-	session_start();
+
 	$id = $_SESSION["id"];
 
-	$DB->query("set names 'utf8'");
 	$find_id_query = "
 		SELECT *
 		FROM users
@@ -17,7 +16,7 @@
 	$user = $id_result->fetch_array(MYSQLI_ASSOC);
 
 	if ($id_result->num_rows == 1 && $user['type'] == "admin") {
-
+		// page_result ??
 		$url = mysql_result($page_result, 0, "page");
 		$version = 1 - mysql_result($page_result, 0, "version");
 		$file = "../" . $url . $version . ".html";
