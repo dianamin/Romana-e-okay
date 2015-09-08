@@ -4,13 +4,13 @@
 	Used in index.html (public index).
 */
 	include 'db_connect.php';
-	session_start();
+
 	$id = $_SESSION["id"];
 
 	$find_user_query = "
 		SELECT *
 		FROM users
-		WHERE id = {$id}";
+		WHERE id = '{$id}' ";
 
 	$user_result = $DB->query($find_user_query);
 	$user = $user_result->fetch_array(MYSQLI_ASSOC);
