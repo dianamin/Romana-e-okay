@@ -5,7 +5,7 @@
 */
 
 	include 'db_connect.php';
-	session_start();
+
 	$id = $_SESSION["id"];
 
 	$find_user_query = "
