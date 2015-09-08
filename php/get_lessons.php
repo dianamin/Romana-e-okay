@@ -13,7 +13,7 @@
 		FROM lessons";
 	$result = $DB->query($query);
 	$num = $result->num_rows;
-	$lesson = $result->fetch_array(MYSQLI_ASSOC);
+	$lesson = $result->fetch_all(MYSQLI_ASSOC);
 
 	$creations = array();
 	$aux = array();
