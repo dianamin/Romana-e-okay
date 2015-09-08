@@ -19,7 +19,7 @@
 		";
 		$lessons = $DB->query($get_lessons);
 		$lessons_count = $lessons->num_rows;
-		$lesson = $lessons->fetch_array(MYSQLI_ASSOC);
+		$lesson = $lessons->fetch_all(MYSQLI_ASSOC);
 
 		for ($i = 0; $i < $lessons_count; $i++) {
 			$lesson_id = $lesson[$i]['global_id'];
