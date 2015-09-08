@@ -12,7 +12,7 @@
 		FROM symbols";
 	$result = $DB->query($query);
 	$count = $result->num_rows;
-	$symbol = $result->fetch_array(MYSQLI_ASSOC);
+	$symbol = $result->fetch_all(MYSQLI_ASSOC);
 
 	$symbols = array();
 	$aux = array();
