@@ -6,7 +6,6 @@
 
 	include 'db_connect.php';
 	
-	session_start();
 	$id = $_SESSION["id"];
 	$essays_arr = array();
 	$aux = array();
@@ -15,26 +14,28 @@
 		$get_essays = "
 			SELECT *
 			FROM essays
-			WHERE id_user = " . $id. "
+			WHERE id_user = "{$id}"
 			ORDER BY id DESC";
 
-		$essays = mysql_query($get_essays);
-		$essays_count = mysql_numrows($essays);
-
+		$essays = $DB->query($get_essays);
+		$essays_count = $essays->num_rows;
+		$essay = $essays->fetch_all(MYSQLI_ASSOC);
+		
 		if ($essays_count != 0) {
 			for ($i = 0; $i < $essays_count; $i++) {
 				$get_ratings = "
 					SELECT *
 					FROM ratings
-					WHERE id_essay = " . mysql_result($essays, $i, "id") . ";";
-				$ratings = mysql_query($get_ratings);
-				$count = mysql_numrows($ratings);
+					WHERE id_essay = '{$essay[$i]['id']}' ";
+				$ratings = $DB->query($get_ratings);
+				$count = $ratings->num_rows;
+				$rating = $ratings->fetch_all(MYSQLI_ASSOC);
 
 				$total_rating = 0;
 				$average = 0;
 
 				for ($j = 0; $j < $count; $j++) {
-					$total_rating = $total_rating + mysql_result($ratings, $j, "rating");
+					$total_rating = $total_rating + $rating[$j]['rating'];
 				}
 
 
@@ -43,10 +44,10 @@
 
 				$aux = array (
 					"index" => $i,
-					"id" => mysql_result($essays, $i, "id"),
-					"content" => mysql_result($essays, $i, "homework"), 
-					"tags" => mysql_result($essays, $i, "tags"),
-					"public" => mysql_result($essays, $i, "public"),
+					"id" => $essay[$i]['id'],
+					"content" => $essay[$i]['homework'], 
+					"tags" => $essay[$i]['tags'],
+					"public" => $essay[$i]['public'],
 					"average" => $average,
 					"ratedBy" => $count
 				);
