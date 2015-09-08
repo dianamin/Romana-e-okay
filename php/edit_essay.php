@@ -4,9 +4,9 @@
 	Used in myComments.js
 */
 	include 'db_connect.php';
+	
 	$id_essay = isset($_POST['id']) ? $DB->real_escape_string($_POST['id']) : NULL;
 	$content = isset($_POST['content']) ? $DB->real_escape_string($_POST['content']) : NULL;
-	session_start();
 	$id = $_SESSION["id"];
 
 	$find_essay_query = "
