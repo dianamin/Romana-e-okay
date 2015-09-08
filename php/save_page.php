@@ -4,7 +4,7 @@
 	Used in createPage.js.
 */
 	include 'db_connect.php';
-	session_start();
+;
 	$id = $_SESSION["id"];
 
 	$DB->query("set names 'utf8'");
