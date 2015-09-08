@@ -4,9 +4,7 @@
 	Used in myAccount.js
 */
 	include 'db_connect.php';
-	$DB->query("set names 'utf8'");
-	
-	session_start();
+
 	$id = $_SESSION["id"];
 	$lesson = $_POST["lesson"];
 
