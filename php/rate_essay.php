@@ -4,9 +4,9 @@
 	Used in published_essays.php
 */
 	include 'db_connect.php';
+	
 	$id_essay = $_POST['id_essay'];
 	$rating = $_POST['rating'];
-	session_start();
 	$id = $_SESSION["id"];
 
 	$find_essay_query = "
