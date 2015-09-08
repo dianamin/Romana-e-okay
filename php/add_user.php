@@ -14,7 +14,7 @@
 	$find_id_query = "
 		SELECT *
 		FROM users
-		WHERE id = {$id}";
+		WHERE id = '{$id}' ";
 
 	$id_result = $DB->query($find_id_query);
 	
