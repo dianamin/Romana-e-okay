@@ -12,7 +12,7 @@
 		Order By score DESC";
 	$result = $DB->query($query);
 	$num = $result->num_rows;
-	$data = $result->fetch_array(MYSQLI_ASSOC);
+	$data = $result->fetch_all(MYSQLI_ASSOC);
 	if ($num > 10) $num = 10;
 
 	$users = array();
