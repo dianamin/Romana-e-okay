@@ -4,8 +4,7 @@
 	Used in publishedEssays.js, reportedEssays.js. 
 */
 	include 'db_connect.php';
-	
-	session_start();
+
 	$id = $_SESSION['id'];
 	$essays_arr = array();
 	$aux = array();
