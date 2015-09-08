@@ -4,7 +4,7 @@
 	Used in adminList.js, createPage.js, editPage.js.
 */
 	include 'db_connect.php';
-	$DB->query("set names 'utf8'");
+
 	$chapters_query = "
 		SELECT *
 		FROM chapters";
