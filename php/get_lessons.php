@@ -6,8 +6,6 @@
 
 	include 'db_connect.php';
 
-	$DB->query("set names 'utf8'");
-
 	$query = "
 		SELECT * 
 		FROM lessons";
