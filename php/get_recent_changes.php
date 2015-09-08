@@ -4,7 +4,6 @@
 	Used in adminPanel.js, figuriInterpreter.js
 */
 	include 'db_connect.php';
-	$DB->query("set names 'utf8'");
 
 	$select_changes_query = "
 		SELECT *
