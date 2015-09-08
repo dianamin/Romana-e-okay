@@ -11,7 +11,7 @@
 
 	$chapters_result = $DB->query($chapters_query);
 	$chapters_count = $chapters_result->num_rows;
-	$chapter = $chapters_result->fetch_array(MYSQLI_ASSOC);
+	$chapter = $chapters_result->fetch_all(MYSQLI_ASSOC);
 	
 	$chapters = array();
 	for ($i = 0; $i < $chapters_count; $i++) {
