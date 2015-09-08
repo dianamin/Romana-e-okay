@@ -14,7 +14,7 @@
 
 	$select_changes = $DB->query($select_changes_query);
 	$count = $select_changes->num_rows;
-	$change = $select_changes->fetch_array(MYSQLI_ASSOC);
+	$change = $select_changes->fetch_all(MYSQLI_ASSOC);
 
 	if ($count > 20) $count = 20;
 	$changes = array();
