@@ -16,7 +16,7 @@
 	$found = $user_result->num_rows;
 	$user = $user_result->fetch_array(MYSQLI_ASSOC);
 
-	$id_essay = $_POST['id_essay'];
+	$id_essay = isset($_POST['id_essay']) ? $DB->real_escape_string($_POST['id_essay']) : NULL; 
 
 	if ($found == 1) {
 		if ($user['type'] == "admin") {
