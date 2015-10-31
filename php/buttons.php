@@ -5,7 +5,7 @@
 */
 	include 'db_connect.php';
 
-	$id = $_SESSION["id"];
+	$id = isset($_SESSION["id"]) ? $_SESSION['id'] : NULL;
 
 	$find_user_query = "
 		SELECT *
